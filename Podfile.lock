@@ -1,0 +1,13 @@
+PODS:
+  - ObjectMapper (0.12)
+  - PureLayout (3.0.1)
+
+DEPENDENCIES:
+  - ObjectMapper (~> 0.12)
+  - PureLayout
+
+SPEC CHECKSUMS:
+  ObjectMapper: ef4a369cbab75546029ceb7e8155772b5f8e8841
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+
+COCOAPODS: 0.38.2

@@ -1,0 +1,10 @@
+framework module ObjectMapper {
+  umbrella header "Pods-projectY-ObjectMapper-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module ObjectMapper.Swift {
+    header "ObjectMapper-Swift.h"
+}
