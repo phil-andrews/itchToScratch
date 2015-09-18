@@ -18,6 +18,9 @@ import Charts
 
 class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, ChartViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
 
+    @IBOutlet weak var constraintProfilePicTrailingToView: NSLayoutConstraint!
+    @IBOutlet weak var contraintProfilePicToTopOfView: NSLayoutConstraint!
+    @IBOutlet weak var constraintPieChartToProfilePic: NSLayoutConstraint!
 
     @IBOutlet weak var profilePictureRing1: UIView!
     @IBOutlet weak var profilePictureRing2: UIView!
@@ -68,6 +71,8 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.childView.backgroundColor = UIColor.clearColor()
         self.childView.frame = CGRectMake(0.0, 0.0, self.view.frame.width, (self.view.frame.height * 3))
         
+        self.setConstraints()
+        
         self.view.backgroundColor = backgroundColor
         
         imagePicker.delegate = self
@@ -81,12 +86,14 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.hidden = false
         
         self.checkForUser()
+        
         
     }
     
@@ -471,6 +478,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.categoryChartCenterButton.layer.cornerRadius = self.categoryChartCenterButton.frame.height/2
         
         self.categoryChartBackgroundCenterColor.backgroundColor = UIColor.clearColor()
+        self.categoryChartBackgroundCenterColor.layer.borderColor = UIColor.clearColor().CGColor
         
         let geography = userObject?.valueForKey(geographyCategory) as! NSArray
         let music = userObject?.valueForKey(musicCategory) as! NSArray
@@ -814,5 +822,63 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
     }
     
+
+
+
+//Constraints and Layout
+//////////////////////////
+////////////////////////////
+
+
+    func setConstraints() {
+        
+        let viewHeight = self.view.frame.height
+        println(viewHeight)
+
+        
+        switch(viewHeight) {
+            
+        case 480:
+            
+            self.constraintPieChartToProfilePic.constant = self.view.frame.height/20
+            self.constraintProfilePicTrailingToView.constant = self.view.frame.width/12.5
+            self.contraintProfilePicToTopOfView.constant = self.view.frame.height/10
+            
+        case 568:
+            
+            self.constraintPieChartToProfilePic.constant = self.view.frame.height/11.5
+            self.constraintProfilePicTrailingToView.constant = self.view.frame.width/12.5
+            self.contraintProfilePicToTopOfView.constant = self.view.frame.height/10
+            
+        case 667:
+            
+            self.constraintPieChartToProfilePic.constant = self.view.frame.height/12
+            self.constraintProfilePicTrailingToView.constant = self.view.frame.width/11
+            self.contraintProfilePicToTopOfView.constant = self.view.frame.height/10
+            
+        case 736:
+            
+            self.constraintPieChartToProfilePic.constant = self.view.frame.height/12
+            self.constraintProfilePicTrailingToView.constant = self.view.frame.width/11
+            self.contraintProfilePicToTopOfView.constant = self.view.frame.height/10
+            
+        default:
+            
+            break
+            
+        }
+        
+    }
+    
+
 }
+
+
+
+
+
+
+
+
+
 
