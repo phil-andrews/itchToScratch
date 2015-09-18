@@ -668,7 +668,7 @@
                                             <constraint firstAttribute="width" secondItem="baB-7t-vhG" secondAttribute="height" multiplier="1:1" id="wZb-28-zSg"/>
                                         </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222.5" y="148" width="66.5" height="67.5"/>
+                                            <rect key="frame" x="222" y="148" width="66.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="fZn-9C-H1J">
@@ -689,7 +689,7 @@
                                             <constraint firstAttribute="width" secondItem="jb0-7k-I0W" secondAttribute="height" multiplier="1:1" id="3vZ-5I-xwj"/>
                                         </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222.5" y="363.5" width="66.5" height="67.5"/>
+                                            <rect key="frame" x="222" y="363.5" width="66.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="bzg-q1-gzM">
@@ -698,7 +698,7 @@
                                             <constraint firstAttribute="width" secondItem="bzg-q1-gzM" secondAttribute="height" multiplier="1:1" id="GYN-8K-9Zy"/>
                                         </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222.5" y="434.5" width="66.5" height="67.5"/>
+                                            <rect key="frame" x="222" y="434.5" width="66.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="eet-5V-LyX">
@@ -1025,7 +1025,7 @@
                                             <constraint firstAttribute="width" secondItem="srH-Pb-ABB" secondAttribute="height" multiplier="1:1" id="TW6-tZ-hBP"/>
                                         </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222.5" y="148" width="66.5" height="67.5"/>
+                                            <rect key="frame" x="222" y="148" width="66.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qkh-CE-nMC" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -1046,7 +1046,7 @@
                                             <constraint firstAttribute="width" secondItem="UW9-Lu-EFv" secondAttribute="height" multiplier="1:1" id="diH-ft-mEF"/>
                                         </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222.5" y="363.5" width="66.5" height="67.5"/>
+                                            <rect key="frame" x="222" y="363.5" width="66.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2CN-SO-Xbl" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -1055,7 +1055,7 @@
                                             <constraint firstAttribute="width" secondItem="2CN-SO-Xbl" secondAttribute="height" multiplier="1:1" id="Erg-eq-heA"/>
                                         </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222.5" y="434.5" width="66.5" height="67.5"/>
+                                            <rect key="frame" x="222" y="434.5" width="66.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xlt-4R-9YM" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -1546,12 +1546,12 @@
                             <constraint firstAttribute="centerY" secondItem="TDI-Of-WsI" secondAttribute="centerY" id="CKD-It-WqK">
                                 <variation key="widthClass=compact" constant="-5"/>
                             </constraint>
-                            <constraint firstAttribute="width" secondItem="TDI-Of-WsI" secondAttribute="width" multiplier="1.0907" id="NWr-z4-CYe"/>
+                            <constraint firstItem="TDI-Of-WsI" firstAttribute="width" secondItem="a6C-T1-dOh" secondAttribute="width" multiplier="0.916842" id="NWr-z4-CYe"/>
                             <constraint firstItem="BK4-6S-86s" firstAttribute="width" secondItem="a6C-T1-dOh" secondAttribute="width" id="O5G-zT-LjV"/>
-                            <constraint firstAttribute="height" secondItem="TDI-Of-WsI" secondAttribute="height" multiplier="1.0771" id="S8o-2o-ZMo"/>
+                            <constraint firstItem="TDI-Of-WsI" firstAttribute="height" secondItem="a6C-T1-dOh" secondAttribute="height" multiplier="0.928419" id="S8o-2o-ZMo"/>
                             <constraint firstItem="BK4-6S-86s" firstAttribute="top" secondItem="JN5-gy-qel" secondAttribute="bottom" id="XwN-44-5hL">
-                                <variation key="widthClass=compact" constant="7"/>
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="TDI-Of-WsI" secondAttribute="centerX" id="qhA-Qe-z0B"/>
                             <constraint firstAttribute="centerX" secondItem="BK4-6S-86s" secondAttribute="centerX" id="stY-ZH-0kM"/>
@@ -1560,6 +1560,9 @@
                     <tabBarItem key="tabBarItem" title="Item" id="8pb-S1-v73"/>
                     <connections>
                         <outlet property="cityLabel" destination="BK4-6S-86s" id="tps-fE-WaT"/>
+                        <outlet property="constraintCityLabelVerticalSpace" destination="XwN-44-5hL" id="TKv-nG-rtj"/>
+                        <outlet property="constraintContentViewHeight" destination="S8o-2o-ZMo" id="RuO-Uc-WbF"/>
+                        <outlet property="constraintContentViewWidth" destination="NWr-z4-CYe" id="R8o-jy-GYl"/>
                         <outlet property="containerView" destination="a6C-T1-dOh" id="DAx-pN-GWb"/>
                         <outlet property="wrapView" destination="TDI-Of-WsI" id="3oz-r8-i68"/>
                         <outletCollection property="buttonOutlets" destination="GRt-9R-sYD" collectionClass="NSMutableArray" id="Dap-FU-1dB"/>

@@ -94,6 +94,8 @@ let allDone = "allDone"
 
 //Fonts
 
+let robotoLight14 = UIFont(name: "Roboto-Light", size: 14.0)
+let robotoLight16 = UIFont(name: "Roboto-Light", size: 16.0)
 let robotoLight18 = UIFont(name: "Roboto-Light", size: 18.0)
 let robotoLight20 = UIFont(name: "Roboto-Light", size: 20.0)
 let robotoLight22 = UIFont(name: "Roboto-Light", size: 22.0)

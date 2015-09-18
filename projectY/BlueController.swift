@@ -21,9 +21,14 @@ let userQuestionObjectsToBlock = PFUser.currentUser()?.valueForKey(questionsAnsw
 
 class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
+    @IBOutlet weak var constraintContentViewWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var constraintCityLabelVerticalSpace: NSLayoutConstraint!
+    
     let locationManager = CLLocationManager()
     var currentLocation: String = String()
-    
     
     var currentLocationObject: PFObject?
     var currentLocationObjectID: String = String()
@@ -66,6 +71,8 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
         self.containerView.backgroundColor = backgroundColor
         self.wrapView.backgroundColor = UIColor.clearColor()
         
+        self.cityLabel.textColor = UIColor.redColor()
+        
         SwiftSpinner.show("Getting your location", animated: true)
         
         self.setButtonProperties()
@@ -74,6 +81,10 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             self.cellHighlightingCall(self.currentLocationObject!, animation: false)
         }
+        
+        println(self.constraintContentViewWidth)
+        
+        self.setConstraints()
         
     }
     
@@ -541,10 +552,13 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             currentLocation = ("\(placemark.locality), \(placemark.administrativeArea)")
             
+            self.setCityLabelLayout()
             self.cityLabel.text = self.currentLocation
             self.cityLabel.textAlignment = .Center
-            self.cityLabel.font = robotoLight18
             self.cityLabel.textColor = lightColoredFont
+//            self.constraintCityLabelVerticalSpace.constant = 25
+
+            
             
             return true
             
@@ -1838,6 +1852,73 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
 
     }
 
+    
+    func setConstraints() {
+        
+        let viewHeight = self.view.frame.height
+        
+        switch(viewHeight) {
+            
+        case 480:
+            
+            self.constraintContentViewWidth.constant = -50
+            self.constraintContentViewHeight.constant = 0
+            self.cityLabel.font = robotoLight14
+            self.cityLabel.textColor = UIColor.redColor()
+            
+            
+            
+            println(11)
+            
+            
+        default:
+            
+            break
+            
+        }
+        
+        
+    }
+    
+    func setCityLabelLayout() {
+        
+        let viewHeight = self.view.frame.height
+        
+        println(viewHeight)
+        
+        switch(viewHeight) {
+            
+        case 0...500:
+            
+            self.constraintCityLabelVerticalSpace.constant = 2
+            self.cityLabel.font = robotoLight14
+            
+            println(23)
+            
+        case 501...568:
+            self.constraintCityLabelVerticalSpace.constant = 6
+            self.cityLabel.font = robotoLight16
+            
+            println(44)
+            
+        case 600...667:
+            self.constraintCityLabelVerticalSpace.constant = 10
+            self.cityLabel.font = robotoLight18
+            
+        case 668...736:
+            self.constraintCityLabelVerticalSpace.constant = 15
+            self.cityLabel.font = robotoLight20
+            
+            println(88)
+            
+        default:
+            
+            break
+            
+        }
+        
+        
+    }
     
     
     func delay(delay:Double, closure:()->()) {
