@@ -82,7 +82,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.categoryChartCategoryLabel.hidden = true
         self.categoryChartNumberLabel.hidden = true
-        
     
     }
     
@@ -129,7 +128,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 self.queryForPlacesPlayed({ (locationObjects, playedAreasDict) -> Void in
                     
                     PPChart().makeWhereChart(playedAreasDict, contentView: self.childView, parentView: self.view, locationObjects: locationObjects, completion: { () -> Void in
-                        
+                                                
                         SwiftSpinner.hide(completion: nil)
                         
                         
@@ -147,11 +146,12 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self.scrollView, action: "handleRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self.scrollView, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         
         
         return refreshControl
         }()
+    
     
     
     func handleRefresh(refreshControl: UIRefreshControl) {
@@ -200,7 +200,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         SwiftSpinner.show("Gathering your things", animated: true)
         
-        let user = PFUser.currentUser()
+        let user = userObject
         let userName = user?.valueForKey(displayName) as? String
         self.userNameLabel.text = userName?.lowercaseString
         self.userNameLabel.textColor = lightColoredFont
@@ -272,7 +272,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             self.profilePicture.setBackgroundImage(pickedImage, forState: .Normal)
             self.profilePicture.contentMode = .ScaleAspectFit
             
-            let user = PFUser.currentUser()
+            let user = userObject
             let image = UIImagePNGRepresentation(pickedImage)
             let imageFile = PFFile(name: "profilePic.png", data: image)
             user?.setValue(imageFile, forKey: profilePic)
@@ -293,10 +293,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     func queryForUser(completion: () -> Void) {
         
-        let currentUser = PFUser.currentUser()
-        let userID = currentUser?.objectId as String!
-        let query = PFUser.query()
-        query?.getObjectInBackgroundWithId(userID, block: { (user, error) -> Void in
+        PFUser.currentUser()?.fetchInBackgroundWithBlock({ (user, error) -> Void in
             
             if error == nil {
                 
@@ -309,7 +306,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 println(error!.localizedDescription)
                 
             }
-        
+            
         })
         
     }
@@ -538,24 +535,51 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
         }
         
+        for label in answerCountLabels {
+            
+            label.layer.cornerRadius = 0.0
+            label.layer.borderColor = UIColor.clearColor().CGColor
+            label.layer.borderWidth = 0.0
+            
+        }
+        
         var button: UIButton = sender
         button.layer.cornerRadius = 3.0
         button.layer.borderColor = UIColor.whiteColor().CGColor
         button.layer.borderWidth = 2.0
-        
+                
         let labelText: String = whereChartLocationNames[button.tag]
         
-        let xCord: CGFloat = 3.0
+        let viewHeight = self.view.frame.height
+        let viewWidth = self.view.frame.width
+        let viewHeightPercentage = viewHeight/100
+        let viewWidthPercentage = viewWidth/100
+        
+        let xCord: CGFloat = 0.0
         let height: CGFloat = 29.0
-        let yCord: CGFloat = button.frame.origin.y + 4.0 - height
-        let width: CGFloat = 302.0
+        let yCord: CGFloat = viewHeight + (viewHeightPercentage * 85)
+        let width: CGFloat = self.view.frame.width
         
         var label: UILabel = locationLabels[button.tag]
         label.frame = CGRectMake(xCord, yCord, width, height)
-        label.textAlignment = .Left
+        label.textAlignment = .Center
         label.textColor = lightColoredFont
-        label.font = UIFont(name: "Roboto-Light", size: 16.0)
+        label.font = robotoLight24
         label.text = labelText.lowercaseString
+        
+        percentileRankingLabel.text = String(userRankingPercentile[button.tag])
+        percentileRankingLabel.textColor = lightColoredFont
+        percentileRankingLabel.font = robotoRegular24
+        percentileRankingLabel.textAlignment = .Center
+        percentileRankingLabel.frame = CGRectMake((label.center.x - viewWidthPercentage * 25), (label.frame.origin.y + label.frame.height + 10), 60.0, 41.0)
+                
+        overallRankingLabel.text = String(userRankingsOverall[button.tag])
+        overallRankingLabel.textColor = lightColoredFont
+        overallRankingLabel.font = robotoRegular24
+        overallRankingLabel.textAlignment = .Center
+        overallRankingLabel.frame = CGRectMake(label.center.x + viewWidthPercentage * 15, (label.frame.origin.y + label.frame.height + 10), 60.0, 41.0)
+        overallRankingLabel.backgroundColor = UIColor.blueColor()
+        
         
         label.hidden = false
     
@@ -565,7 +589,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     func queryForPlacesPlayed(completion: (locationObjects: [PFObject], playedAreasDict: [String:Int]) -> Void) {
         
-        let user = PFUser.currentUser()
+        let user = userObject
         var locationArray = user?.valueForKey(whereUserAnswered) as! NSArray
         
         var locationArrayCount = NSMutableArray()

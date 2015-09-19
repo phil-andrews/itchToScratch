@@ -140,9 +140,6 @@ func makeBackground() -> UIView {
 
 func animateWhereChartBar(chartBar: UIButton, barLabel: SpringButton, delay: NSTimeInterval) {
     
-    barLabel.alpha = 1.0
-
-    
     if chartBar.alpha == 1.0 {
         
         return

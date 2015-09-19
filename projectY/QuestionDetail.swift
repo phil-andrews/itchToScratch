@@ -680,11 +680,11 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                 println("object should be saving")
                 object.incrementKey("ans\(self.objectPlace!)")
                 object.saveInBackground()
+                self.locationObject = object
+                self.addObjectIDToUser()
             }
             
         })
-        
-        self.addObjectIDToUser()
         
     }
     
@@ -723,6 +723,8 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         
         let userAnsweredAreas = user?.valueForKey(whereUserAnswered) as! [NSMutableArray]
         
+        var count = 0
+        
         outerLoop: for item in userAnsweredAreas {
             
             if item[0] as? String == locationID {
@@ -730,22 +732,149 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                 item.insertObject(locationID!, atIndex: 0)
                 
                 break outerLoop
-            } else {
-                
-                user?.addObject([locationID!], forKey: whereUserAnswered)
-
                 
             }
             
+            println(userAnsweredAreas.count)
+            
+            if count == (userAnsweredAreas.count - 1) {
+                
+                println("new object was added to whereUserAnswered array")
+                
+                user?.addObject([locationID!], forKey: whereUserAnswered)
+                
+            }
+            
+            ++count
+
+            
         }
         
+        if userAnsweredAreas.count == 0 {
+            
+            println("new object was added to whereUserAnswered array")
+            
+            
+            user?.addObject([locationID!], forKey: whereUserAnswered)
+            
+        }
         
         userQuestionObjectsToBlock.addObject(questionObjectID!)
         
         user?.addObject(questionObjectID!, forKey: questionsAnswered)
         user?.saveInBackground()
+        self.updateScoreRankings()
         
     }
+    
+    
+    
+    func updateScoreRankings() {
+        
+        let user = PFUser.currentUser()
+        var scoreRankings = self.locationObject?.valueForKey(scoreRankingsKey) as! NSMutableArray
+        var whereAnswered = user?.valueForKey(whereUserAnswered) as! [NSArray]
+        var totalAnswersAtCurrentLocation = Int()
+        
+        var count = 1
+        
+        for item in whereAnswered {
+            
+            let objectID = item[0] as! String
+            
+            if objectID == self.locationObject?.objectId {
+                
+                println("object ID's matched")
+                
+                totalAnswersAtCurrentLocation = item.count
+                
+                break
+                
+            }
+            
+            if count >= (whereAnswered.count) {
+                
+                println("new location for user")
+                
+                totalAnswersAtCurrentLocation = 1
+                
+                scoreRankings.addObject(totalAnswersAtCurrentLocation)
+                
+                self.locationObject?.setValue(scoreRankings, forKey: scoreRankingsKey)
+                
+                self.saveLocationObject(scoreRankings, key: scoreRankingsKey)
+                
+                return
+                
+            }
+            
+            ++count
+
+        }
+        
+    
+        for index in 0..<scoreRankings.count {
+            
+            println("indexing ran")
+                
+            var itemValue = scoreRankings[index] as! Int
+            
+            println(itemValue)
+            println(totalAnswersAtCurrentLocation)
+
+            
+            if (itemValue + 1) == totalAnswersAtCurrentLocation {
+                
+                scoreRankings[index] = totalAnswersAtCurrentLocation
+                
+                self.locationObject?.setValue(scoreRankings, forKey: scoreRankingsKey)
+                
+                self.saveLocationObject(scoreRankings, key: scoreRankingsKey)
+                
+                break
+                
+            }
+        
+        }
+        
+        if scoreRankings.count == 0 {
+            
+            scoreRankings.addObject(totalAnswersAtCurrentLocation)
+            
+            self.locationObject?.setValue(scoreRankings, forKey: scoreRankingsKey)
+            
+            self.saveLocationObject(scoreRankings, key: scoreRankingsKey)
+            
+        }
+            
+    }
+    
+    
+    
+    func saveLocationObject(value: AnyObject, key: String) {
+        
+        let query = PFQuery(className: LocationClass)
+        let locationObjectID = self.locationObject?.objectId
+        query.getObjectInBackgroundWithId(locationObjectID!, block: { (object: PFObject?, error) -> Void in
+            
+            if error != nil {
+                
+                println(error!.localizedDescription)
+                
+            } else {
+                
+                object?.setValue(value, forKey: key)
+                object?.saveInBackground()
+                
+            }
+            
+            
+        })
+        
+        
+        
+    }
+        
     
     
     

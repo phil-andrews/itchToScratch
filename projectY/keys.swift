@@ -37,6 +37,7 @@ let usersLoggedInAtLocation = "currentUsersAtLocation"
 let allVisitedUsers = "allVisitedUsers"
 let defaultLocationObject = "G1ZjIWqVmp"
 let usedQuestionObjects = "usedQuestionObjects"
+let scoreRankingsKey = "scoreRankings"
 
 
 //UserClass Keys
