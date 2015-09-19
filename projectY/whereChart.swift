@@ -42,7 +42,7 @@ var answerCount5 = SpringButton()
 
 let locationBars = [bar1, bar2, bar3, bar4, bar5]
 let locationLabels = [locationLabel1, locationLabel2, locationLabel3, locationLabel4, locationLabel5]
-let answerCountLabels = [answerCount1, answerCount2, answerCount3, answerCount4, answerCount5]
+let answerCountLabels: [SpringButton] = [answerCount1, answerCount2, answerCount3, answerCount4, answerCount5]
 
 public class PPChart {
     
@@ -156,7 +156,7 @@ public class PPChart {
         
             let parentViewHeightPercentage = parentView.frame.height/100
         
-            let parentFrameHeightPercentageOffset: CGFloat = parentViewHeightPercentage * 17.5
+            let parentFrameHeightPercentageOffset: CGFloat = parentViewHeightPercentage * 12.5
         
             let height: CGFloat = parentViewHeightPercentage * 12.5
             var width = CGFloat()
@@ -181,21 +181,31 @@ public class PPChart {
              
                 contentView.addSubview(bar)
        
-                var numberLabelXCord = width + 6.0
-                var numberLabelYCord = yCord + 12.5
-                var numberLabelWidth = CGFloat(28.0)
-                var numberLabelHeight = CGFloat(29.0)
-            
-                answerCountLabels[count].frame = CGRectMake(numberLabelXCord, numberLabelYCord, numberLabelWidth, numberLabelHeight)
+                var numberLabelXCord = width - 10.0
+                var numberLabelWidth: CGFloat = 55.0
+                var numberLabelHeight = height
+                var numberLabelYCord = bar.center.y - (numberLabelHeight/2)
+                
+                answerCountLabels[count].frame = CGRectMake(numberLabelXCord, numberLabelYCord, numberLabelWidth, height)
                 answerCountLabels[count].setTitle(String(item), forState: .Normal)
-                answerCountLabels[count].titleLabel?.font = robotoLight24
-                answerCountLabels[count].titleLabel?.text = String(item)
-                answerCountLabels[count].titleLabel?.textColor = lightColoredFont
+                answerCountLabels[count].setTitleColor(lightColoredFont, forState: .Normal)
+                answerCountLabels[count].setTitle(String(item), forState: .Normal)
+                answerCountLabels[count].setTitleColor(backgroundColor, forState: UIControlState.Selected)
+                answerCountLabels[count].setTitle(String(item), forState: UIControlState.Highlighted)
+                answerCountLabels[count].setTitleColor(backgroundColor, forState: UIControlState.Highlighted)
+                answerCountLabels[count].titleLabel?.font = font3
+                answerCountLabels[count].titleLabel?.textAlignment = .Right
+                
                 answerCountLabels[count].addTarget(Accounts().childView, action: "whereChartBarPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+                
+                answerCountLabels[count].userInteractionEnabled = true
+                
+                answerCountLabels[count].tag = count
                 
                 answerCountLabels[count].titleLabel!.alpha = 0.0
                 
                 contentView.addSubview(answerCountLabels[count])
+                contentView.sendSubviewToBack(answerCountLabels[count])
                 
                 yCord = yCord + height + (parentViewHeightPercentage)
                 

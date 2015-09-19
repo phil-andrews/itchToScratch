@@ -56,8 +56,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getFrameSize(self.view)
         
         self.scrollView.directionalLockEnabled = true
         self.scrollView.pagingEnabled = true
@@ -72,6 +70,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.childView.frame = CGRectMake(0.0, 0.0, self.view.frame.width, (self.view.frame.height * 3))
         
         self.setConstraints()
+        setFonts(self.view)
         
         self.view.backgroundColor = backgroundColor
         
@@ -88,9 +87,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
-        self.tabBarController?.tabBar.hidden = false
-        
+                
         self.checkForUser()
         
         
@@ -204,7 +201,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let userName = user?.valueForKey(displayName) as? String
         self.userNameLabel.text = userName?.lowercaseString
         self.userNameLabel.textColor = lightColoredFont
-        self.userNameLabel.font = robotoLight22
+        self.userNameLabel.font = font1
         self.userNameLabel.textAlignment = .Right
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
         self.profilePicture.clipsToBounds = true
@@ -351,7 +348,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.totalAnswerLabel.text = String(totalNumber)
         self.totalAnswerLabel.textColor = lightColoredFont
-        self.totalAnswerLabel.font = robotoMedium26
+        self.totalAnswerLabel.font = font3
         self.totalAnswerLabel.textAlignment = .Center
         
         let countArray = [geoCount, musicCount, scienceCount, tvCount, historyCount, moneyCount, productsCount, peopleCount, sportsCount]
@@ -368,9 +365,9 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
 
         self.questionCategoryChart.valueFormatter.maximumFractionDigits = 0
         
-        self.questionCategoryChart.descriptionFont = robotoLight18
+        self.questionCategoryChart.descriptionFont = font1
         self.questionCategoryChart.descriptionText = ""
-        self.questionCategoryChart.infoFont = robotoLight24
+        self.questionCategoryChart.infoFont = font2
         self.questionCategoryChart.infoTextColor = lightColoredFont
                 self.questionCategoryChart.noDataText = "We can't draw your chart until you answer _____ more quesitons"
 
@@ -445,7 +442,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         categoryChartNumberLabel.text = String(numberToDisplay)
         categoryChartNumberLabel.textColor = lightColoredFont
         categoryChartNumberLabel.textAlignment = .Center
-        categoryChartNumberLabel.font = robotoMedium26
+        categoryChartNumberLabel.font = font3
         categoryChartNumberLabel.hidden = false
         
         let titleArray = ["GEOGRAPHY", "MUSIC", "SCIENCE", "TV", "HISTORY", "MONEY", "PRODUCTS", "PEOPLE", "SPORTS"]
@@ -453,7 +450,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let categoryToDisplay = titleArray[entry.xIndex]
         categoryChartCategoryLabel.text = categoryToDisplay
         categoryChartCategoryLabel.textColor = lightColoredFont
-        categoryChartCategoryLabel.font = robotoRegular22
+        categoryChartCategoryLabel.font = font3
         categoryChartCategoryLabel.textAlignment = .Center
         categoryChartCategoryLabel.hidden = false
         
@@ -509,6 +506,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.totalAnswerLabel.text = String(totalNumber)
         
+        
     }
 
     
@@ -520,6 +518,16 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
 
     func whereChartBarPressed(sender: UIButton) {
+        
+        for answerCount in answerCountLabels {
+            
+            answerCount.setTitleColor(lightColoredFont, forState: .Normal)
+            answerCount.layer.cornerRadius = 4.0
+            answerCount.layer.borderColor = UIColor.clearColor().CGColor
+            answerCount.layer.borderWidth = 0.0
+            answerCount.backgroundColor = UIColor.clearColor()
+            
+        }
         
         for item in locationLabels {
             
@@ -535,20 +543,16 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
         }
         
-        for label in answerCountLabels {
-            
-            label.layer.cornerRadius = 0.0
-            label.layer.borderColor = UIColor.clearColor().CGColor
-            label.layer.borderWidth = 0.0
-            
-        }
+        var bar: UIButton = locationBars[sender.tag]
+        bar.layer.cornerRadius = 3.0
+        bar.layer.borderColor = lightColoredFont.CGColor
+        bar.layer.borderWidth = 2.0
         
-        var button: UIButton = sender
-        button.layer.cornerRadius = 3.0
-        button.layer.borderColor = UIColor.whiteColor().CGColor
-        button.layer.borderWidth = 2.0
-                
-        let labelText: String = whereChartLocationNames[button.tag]
+        var countLabel = answerCountLabels[sender.tag]
+        countLabel.layer.cornerRadius = 4.0
+        countLabel.backgroundColor = lightColoredFont
+        countLabel.setTitleColor(backgroundColor, forState: .Normal)
+
         
         let viewHeight = self.view.frame.height
         let viewWidth = self.view.frame.width
@@ -557,29 +561,34 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         let xCord: CGFloat = 0.0
         let height: CGFloat = 29.0
-        let yCord: CGFloat = viewHeight + (viewHeightPercentage * 85)
+        let yCord: CGFloat = bar5.frame.maxY + 15.0
         let width: CGFloat = self.view.frame.width
         
-        var label: UILabel = locationLabels[button.tag]
+    
+        var label: UILabel = locationLabels[sender.tag]
         label.frame = CGRectMake(xCord, yCord, width, height)
         label.textAlignment = .Center
+        let labelText: String = whereChartLocationNames[sender.tag]
         label.textColor = lightColoredFont
-        label.font = robotoLight24
+        label.font = font3
         label.text = labelText.lowercaseString
         
-        percentileRankingLabel.text = String(userRankingPercentile[button.tag])
-        percentileRankingLabel.textColor = lightColoredFont
-        percentileRankingLabel.font = robotoRegular24
-        percentileRankingLabel.textAlignment = .Center
-        percentileRankingLabel.frame = CGRectMake((label.center.x - viewWidthPercentage * 25), (label.frame.origin.y + label.frame.height + 10), 60.0, 41.0)
-                
-        overallRankingLabel.text = String(userRankingsOverall[button.tag])
-        overallRankingLabel.textColor = lightColoredFont
-        overallRankingLabel.font = robotoRegular24
-        overallRankingLabel.textAlignment = .Center
-        overallRankingLabel.frame = CGRectMake(label.center.x + viewWidthPercentage * 15, (label.frame.origin.y + label.frame.height + 10), 60.0, 41.0)
-        overallRankingLabel.backgroundColor = UIColor.blueColor()
+        let rankingLabelsWidth: CGFloat = 50.0
+        let rankingLabelHeight: CGFloat = 42.0
+        let rightLabelX = (viewWidth / 3) - rankingLabelsWidth / 2
+        let leftLabelX = (((viewWidth / 3) * 2) - rankingLabelsWidth / 2)
         
+        percentileRankingLabel.text = String(userRankingPercentile[sender.tag])
+        percentileRankingLabel.textColor = lightColoredFont
+        percentileRankingLabel.font = font3
+        percentileRankingLabel.textAlignment = .Center
+        percentileRankingLabel.frame = CGRectMake(leftLabelX, (label.frame.origin.y + label.frame.height + 10), rankingLabelsWidth, rankingLabelHeight)
+                
+        overallRankingLabel.text = String(userRankingsOverall[sender.tag])
+        overallRankingLabel.textColor = lightColoredFont
+        overallRankingLabel.font = font3
+        overallRankingLabel.textAlignment = .Center
+        overallRankingLabel.frame = CGRectMake(rightLabelX , (label.frame.origin.y + label.frame.height + 10), rankingLabelsWidth, rankingLabelHeight)
         
         label.hidden = false
     

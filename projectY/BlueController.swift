@@ -14,7 +14,6 @@ import ParseUI
 import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
-import PureLayout
 
 let userQuestionObjectsToBlock = PFUser.currentUser()?.valueForKey(questionsAnswered) as! NSMutableArray
 
@@ -93,7 +92,6 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.tabBarController?.tabBar.hidden = false
         
     }
     
@@ -611,31 +609,36 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        var upcoming: QuestionDetail = segue.destinationViewController as! QuestionDetail
         
-        self.providesPresentationContextTransitionStyle = true
-        self.definesPresentationContext = true
-        self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        if segue.identifier == "loadDetailViewWithImage" {
         
-        let objectPlace = sender!.tag as Int
-        println(objectPlace)
-        
-        for item in self.pfQuestionObjects {
+            var upcoming: QuestionDetail = segue.destinationViewController as! QuestionDetail
             
-            let questionObject = self.currentLocationObject?.valueForKey("Q\(objectPlace)") as! String
+            self.providesPresentationContextTransitionStyle = true
+            self.definesPresentationContext = true
+            self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
             
-            if item.valueForKey(objectId) as! String == questionObject {
+            let objectPlace = sender!.tag as Int
+            println(objectPlace)
+            
+            for item in self.pfQuestionObjects {
                 
-                upcoming.parseObject = item as PFObject
+                let questionObject = self.currentLocationObject?.valueForKey("Q\(objectPlace)") as! String
                 
-                break
+                if item.valueForKey(objectId) as! String == questionObject {
+                    
+                    upcoming.parseObject = item as PFObject
+                    
+                    break
+                    
+                }
                 
             }
             
+            upcoming.locationObject = currentLocationObject!
+            upcoming.objectPlace = objectPlace
+            
         }
-        
-        upcoming.locationObject = currentLocationObject!
-        upcoming.objectPlace = objectPlace
         
     }
     
@@ -1863,7 +1866,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             self.constraintContentViewWidth.constant = -50
             self.constraintContentViewHeight.constant = 0
-            self.cityLabel.font = robotoLight14
+            self.cityLabel.font = font1
             self.cityLabel.textColor = UIColor.redColor()
             
             

@@ -102,18 +102,35 @@ let robotoLight20 = UIFont(name: "Roboto-Light", size: 20.0)
 let robotoLight22 = UIFont(name: "Roboto-Light", size: 22.0)
 let robotoLight24 = UIFont(name: "Roboto-Light", size: 24.0)
 let robotoLight26 = UIFont(name: "Roboto-Light", size: 26.0)
+let robotoLight28 = UIFont(name: "Roboto-Light", size: 28.0)
+let robotoLight30 = UIFont(name: "Roboto-Light", size: 30.0)
+let robotoLight32 = UIFont(name: "Roboto-Light", size: 32.0)
+
 
 let robotoRegular18 = UIFont(name: "Roboto-Regular", size: 18.0)
 let robotoRegular20 = UIFont(name: "Roboto-Regular", size: 20.0)
 let robotoRegular22 = UIFont(name: "Roboto-Regular", size: 22.0)
 let robotoRegular24 = UIFont(name: "Roboto-Regular", size: 24.0)
 let robotoRegular26 = UIFont(name: "Roboto-Regular", size: 26.0)
+let robotoRegular28 = UIFont(name: "Roboto-Regular", size: 28.0)
+let robotoRegular30 = UIFont(name: "Roboto-Regular", size: 30.0)
+let robotoRegular32 = UIFont(name: "Roboto-Regular", size: 32.0)
 
 let robotoMedium18 = UIFont(name: "Roboto-Medium", size: 18.0)
 let robotoMedium20 = UIFont(name: "Roboto-Medium", size: 20.0)
 let robotoMedium22 = UIFont(name: "Roboto-Medium", size: 22.0)
 let robotoMedium24 = UIFont(name: "Roboto-Medium", size: 24.0)
 let robotoMedium26 = UIFont(name: "Roboto-Medium", size: 26.0)
+
+var font1 = UIFont()
+var font2 = UIFont()
+var font3 = UIFont()
+var font4 = UIFont()
+
+var font1Regular = UIFont()
+var font2Regular = UIFont()
+var font3Regular = UIFont()
+var font4Regular = UIFont()
 
 
 
