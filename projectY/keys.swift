@@ -94,7 +94,9 @@ let highestCountOverlay = "highestCountOverlay"
 let allDone = "allDone"
 
 //Fonts
-
+let robotoLight8 = UIFont(name: "Roboto-Light", size: 8.0)
+let robotoLight10 = UIFont(name: "Roboto-Light", size: 10.0)
+let robotoLight12 = UIFont(name: "Roboto-Light", size: 12.0)
 let robotoLight14 = UIFont(name: "Roboto-Light", size: 14.0)
 let robotoLight16 = UIFont(name: "Roboto-Light", size: 16.0)
 let robotoLight18 = UIFont(name: "Roboto-Light", size: 18.0)
@@ -103,6 +105,7 @@ let robotoLight22 = UIFont(name: "Roboto-Light", size: 22.0)
 let robotoLight24 = UIFont(name: "Roboto-Light", size: 24.0)
 let robotoLight26 = UIFont(name: "Roboto-Light", size: 26.0)
 let robotoLight28 = UIFont(name: "Roboto-Light", size: 28.0)
+let robotoLight29 = UIFont(name: "Roboto-Light", size: 29.0)
 let robotoLight30 = UIFont(name: "Roboto-Light", size: 30.0)
 let robotoLight32 = UIFont(name: "Roboto-Light", size: 32.0)
 

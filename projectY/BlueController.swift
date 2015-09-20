@@ -83,6 +83,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
         
         println(self.constraintContentViewWidth)
         
+        setFonts(self.view)
         self.setConstraints()
         
     }
@@ -1864,15 +1865,9 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
         case 480:
             
-            self.constraintContentViewWidth.constant = -50
+            self.constraintContentViewWidth.constant = -35
             self.constraintContentViewHeight.constant = 0
             self.cityLabel.font = font1
-            self.cityLabel.textColor = UIColor.redColor()
-            
-            
-            
-            println(11)
-            
             
         default:
             

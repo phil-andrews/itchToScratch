@@ -34,11 +34,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CWR-g4-wk0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a6C-T1-dOh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDI-Of-WsI">
-                                <rect key="frame" x="25" y="19" width="550" height="512"/>
+                                <rect key="frame" x="25" y="21" width="550" height="557"/>
                                 <subviews>
                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRt-9R-sYD">
                                         <rect key="frame" x="14" y="5" width="100.5" height="100.5"/>
@@ -448,9 +448,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="4.5" width="67.5" height="67.5"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="8" y="4" width="67" height="66.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="Esw-Cc-SAX">
                                         <rect key="frame" x="13" y="111" width="101" height="100.5"/>
@@ -459,9 +456,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="76" width="67.5" height="66.5"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="76.5" width="67.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="eQH-N2-qBh">
@@ -472,9 +466,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="147" width="67.5" height="68"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="148" width="67.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="6WY-yb-TYA">
                                         <rect key="frame" x="13" y="322" width="101" height="100.5"/>
@@ -483,9 +474,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="219.5" width="67.5" height="67"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="220.5" width="67.5" height="67"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="Dh1-b2-9VZ">
@@ -496,9 +484,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="291" width="67.5" height="67"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="5" y="292.5" width="67.5" height="66.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="DeB-wJ-mGB">
                                         <rect key="frame" x="13" y="534" width="101" height="100.5"/>
@@ -507,9 +492,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="363" width="67.5" height="67"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="364" width="67.5" height="66.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="qd8-gm-8uX">
@@ -520,9 +502,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="434.5" width="67.5" height="68"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6" y="434" width="67.5" height="68"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="mmH-Be-pAP">
                                         <rect key="frame" x="13" y="745" width="101" height="100.5"/>
@@ -532,9 +511,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="507" width="67.5" height="66.5"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="506.5" width="67.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="EvN-fM-rcG">
                                         <rect key="frame" x="119" y="5" width="100.5" height="101"/>
@@ -543,9 +519,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="79" y="4.5" width="66.5" height="67.5"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="4" width="66.5" height="66.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="Ciu-v2-VwG">
@@ -559,9 +532,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fYN-pT-13c" secondAttribute="height" multiplier="1:1" id="XuE-dT-fcj"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="148" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="Zs7-b4-CuB">
                                         <rect key="frame" x="119" y="322" width="100.5" height="100.5"/>
@@ -574,27 +544,18 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uut-SR-MIF" secondAttribute="height" multiplier="1:1" id="9d1-Qb-l1N"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="77" y="292" width="67" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="qkJ-ie-O7n">
                                         <rect key="frame" x="119" y="534" width="100.5" height="100.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qkJ-ie-O7n" secondAttribute="height" multiplier="1:1" id="Jq8-7k-gHg"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="363.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="Y1J-ax-YSK">
                                         <rect key="frame" x="119" y="639" width="100.5" height="101"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Y1J-ax-YSK" secondAttribute="height" multiplier="1:1" id="scd-5B-yO9"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="434.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="OGW-FJ-dQd">
                                         <rect key="frame" x="119" y="745" width="100.5" height="100.5"/>
@@ -673,9 +634,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="baB-7t-vhG" secondAttribute="height" multiplier="1:1" id="wZb-28-zSg"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222" y="148" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="fZn-9C-H1J">
                                         <rect key="frame" x="331" y="322" width="100.5" height="100.5"/>
@@ -694,18 +652,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jb0-7k-I0W" secondAttribute="height" multiplier="1:1" id="3vZ-5I-xwj"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222" y="363.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="bzg-q1-gzM">
                                         <rect key="frame" x="331" y="639" width="100.5" height="101"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bzg-q1-gzM" secondAttribute="height" multiplier="1:1" id="GYN-8K-9Zy"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222" y="434.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="eet-5V-LyX">
                                         <rect key="frame" x="331" y="745" width="100.5" height="100.5"/>
@@ -730,9 +682,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="76" width="67.5" height="66.5"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="76.5" width="67.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="rmK-Ik-diL">
                                         <rect key="frame" x="436" y="216" width="101" height="101"/>
@@ -741,9 +690,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="147" width="67.5" height="68"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="148" width="67.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="6WZ-C9-oaf">
@@ -754,9 +700,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="219.5" width="67.5" height="67"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="220.5" width="67.5" height="67"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="mOh-Y7-eNC">
                                         <rect key="frame" x="436" y="428" width="101" height="101"/>
@@ -765,9 +708,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="291" width="67.5" height="67"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="292.5" width="67.5" height="66.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="8nZ-ai-kI8">
@@ -778,9 +718,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="363" width="67.5" height="67"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="364" width="67.5" height="66.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="ZBF-Qv-jVe">
                                         <rect key="frame" x="436" y="639" width="101" height="101"/>
@@ -789,9 +726,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="434.5" width="67.5" height="68"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="434" width="67.5" height="68"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="Qxk-Q4-2Wc">
@@ -802,9 +736,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="507" width="67.5" height="66.5"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="506.5" width="67.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oy8-pt-oAE" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="13" y="5" width="101" height="101"/>
@@ -813,9 +744,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="4.5" width="67.5" height="67.5"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="8" y="4" width="67" height="66.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2kY-Mt-xBO" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -826,9 +754,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="76" width="67.5" height="66.5"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="76.5" width="67.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CGM-wI-hw6" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="13" y="216" width="101" height="101"/>
@@ -837,9 +762,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="147" width="67.5" height="68"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="148" width="67.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pKQ-38-87C" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -850,9 +772,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="219.5" width="67.5" height="67"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="220.5" width="67.5" height="67"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-rC-Lkw" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="13" y="428" width="101" height="101"/>
@@ -861,9 +780,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="291" width="67.5" height="67"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="5" y="292.5" width="67.5" height="66.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qyU-CO-zVa" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -874,9 +790,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="363" width="67.5" height="67"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="364" width="67.5" height="66.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-90-zUi" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="13" y="639" width="101" height="101"/>
@@ -885,9 +798,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="434.5" width="67.5" height="68"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6" y="434" width="67.5" height="68"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7hD-Ab-xMO" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -898,9 +808,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="7" y="507" width="67.5" height="66.5"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="6.5" y="506.5" width="67.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Moa-hS-INR" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="119" y="5" width="100.5" height="101"/>
@@ -909,9 +816,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="79" y="4.5" width="66.5" height="67.5"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="4" width="66.5" height="66.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-a2-VZu" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -925,9 +829,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="9qp-Rz-GeB" secondAttribute="height" multiplier="1:1" id="FNx-6w-Amj"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="148" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XgI-uv-yto" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="119" y="322" width="100.5" height="100.5"/>
@@ -940,27 +841,18 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FYq-E1-2on" secondAttribute="height" multiplier="1:1" id="G9o-Qk-oOM"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="77" y="292" width="67" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W75-rN-hRr" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="119" y="534" width="100.5" height="100.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="W75-rN-hRr" secondAttribute="height" multiplier="1:1" id="ETx-tB-oSK"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="363.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hw3-q6-Sft" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="119" y="639" width="100.5" height="101"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hw3-q6-Sft" secondAttribute="height" multiplier="1:1" id="hIg-BO-8Ic"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="79" y="434.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-SU-fMC" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="119" y="745" width="100.5" height="100.5"/>
@@ -1033,9 +925,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="srH-Pb-ABB" secondAttribute="height" multiplier="1:1" id="TW6-tZ-hBP"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222" y="148" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qkh-CE-nMC" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="331" y="322" width="100.5" height="100.5"/>
@@ -1054,18 +943,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UW9-Lu-EFv" secondAttribute="height" multiplier="1:1" id="diH-ft-mEF"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222" y="363.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2CN-SO-Xbl" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="331" y="639" width="100.5" height="101"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2CN-SO-Xbl" secondAttribute="height" multiplier="1:1" id="Erg-eq-heA"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="222" y="434.5" width="66.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xlt-4R-9YM" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="331" y="745" width="100.5" height="100.5"/>
@@ -1090,9 +973,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="76" width="67.5" height="66.5"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="76.5" width="67.5" height="67.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QVa-le-c7X" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="436" y="216" width="101" height="101"/>
@@ -1101,9 +981,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="147" width="67.5" height="68"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="148" width="67.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Wb-Dr-PCC" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -1114,9 +991,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="219.5" width="67.5" height="67"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="220.5" width="67.5" height="67"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2mX-Hs-9S4" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="436" y="428" width="101" height="101"/>
@@ -1125,9 +999,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="291" width="67.5" height="67"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="292.5" width="67.5" height="66.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sW9-kL-2Eg" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -1138,9 +1009,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="363" width="67.5" height="67"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="364" width="67.5" height="66.5"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h1Q-Tz-yaf" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="436" y="639" width="101" height="101"/>
@@ -1150,9 +1018,6 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="434.5" width="67.5" height="68"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="434" width="67.5" height="68"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-0B-W3s" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
                                         <rect key="frame" x="436" y="745" width="101" height="100.5"/>
@@ -1161,9 +1026,6 @@
                                         </constraints>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="294" y="507" width="67.5" height="66.5"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="294" y="506.5" width="67.5" height="67.5"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PZF-LV-wek" customClass="SpringImageView" customModule="projectY" customModuleProvider="target">
@@ -1571,9 +1433,9 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="BK4-6S-86s" id="tps-fE-WaT"/>
-                        <outlet property="constraintCityLabelVerticalSpace" destination="XwN-44-5hL" id="TKv-nG-rtj"/>
-                        <outlet property="constraintContentViewHeight" destination="S8o-2o-ZMo" id="RuO-Uc-WbF"/>
-                        <outlet property="constraintContentViewWidth" destination="NWr-z4-CYe" id="R8o-jy-GYl"/>
+                        <outlet property="constraintCityLabelVerticalSpace" destination="XwN-44-5hL" id="lk1-bY-QLh"/>
+                        <outlet property="constraintContentViewHeight" destination="S8o-2o-ZMo" id="9Je-Ep-VQV"/>
+                        <outlet property="constraintContentViewWidth" destination="NWr-z4-CYe" id="hnp-5l-HUX"/>
                         <outlet property="containerView" destination="a6C-T1-dOh" id="DAx-pN-GWb"/>
                         <outlet property="wrapView" destination="TDI-Of-WsI" id="3oz-r8-i68"/>
                         <outletCollection property="buttonOutlets" destination="GRt-9R-sYD" collectionClass="NSMutableArray" id="Dap-FU-1dB"/>
@@ -1713,20 +1575,66 @@
             </objects>
             <point key="canvasLocation" x="2287.5" y="-232.39436619718307"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Standing Screen-->
         <scene sceneID="UUR-vB-2nf">
             <objects>
-                <viewController id="VUd-Fb-tvi" sceneMemberID="viewController">
+                <viewController title="Location Standing Screen" id="VUd-Fb-tvi" customClass="LocationStanding" customModule="projectY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eea-vr-3qa"/>
                         <viewControllerLayoutGuide type="bottom" id="RYq-bO-zgd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6jN-t4-DPq">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vre-2j-q7J">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Vre-2j-q7J" firstAttribute="width" secondItem="6jN-t4-DPq" secondAttribute="width" id="6s2-3m-tVh"/>
+                            <constraint firstAttribute="centerY" secondItem="Vre-2j-q7J" secondAttribute="centerY" id="geQ-5P-7Du"/>
+                            <constraint firstAttribute="centerX" secondItem="Vre-2j-q7J" secondAttribute="centerX" id="maF-UN-4Zb"/>
+                            <constraint firstItem="Vre-2j-q7J" firstAttribute="height" secondItem="6jN-t4-DPq" secondAttribute="height" id="usq-nG-kTS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Vre-2j-q7J"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6s2-3m-tVh"/>
+                                <exclude reference="geQ-5P-7Du"/>
+                                <exclude reference="maF-UN-4Zb"/>
+                                <exclude reference="usq-nG-kTS"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Vre-2j-q7J"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6s2-3m-tVh"/>
+                                <include reference="geQ-5P-7Du"/>
+                                <include reference="maF-UN-4Zb"/>
+                                <include reference="usq-nG-kTS"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eNJ-rk-Evi" appends="YES" id="Zhf-ko-maB"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="Vre-2j-q7J" id="q5W-hf-ARb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndF-sq-xUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="eNJ-rk-Evi">
+                    <connections>
+                        <segue destination="V9u-Ak-cat" kind="presentation" identifier="swipeRightToMain" modalTransitionStyle="flipHorizontal" id="nIU-7H-83B"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3160.5" y="-232.5"/>
         </scene>
@@ -1739,11 +1647,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CLC-Bw-eQ3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MSu-Sf-4ja">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNW-Gp-gUv">
-                                <rect key="frame" x="0.0" y="-8" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="-8" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BpP-4L-loU">
                                         <rect key="frame" x="0.0" y="8" width="600" height="1200"/>
@@ -2180,4 +2088,7 @@
         <image name="guessesRectangle" width="47" height="34"/>
         <image name="redBG" width="162" height="162"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nIU-7H-83B"/>
+    </inferredMetricsTieBreakers>
 </document>
