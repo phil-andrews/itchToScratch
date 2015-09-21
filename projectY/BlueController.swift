@@ -117,6 +117,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(true)
         
+        self.refreshTimer.invalidate()
         
     }
     
@@ -189,8 +190,6 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             let signupViewController = PFSignUpViewController()
             signupViewController.fields = PFSignUpFields.Default
-            signupViewController.signUpView?.additionalField?.placeholder = "confirm password"
-            signupViewController.signUpView?.additionalField?.secureTextEntry = true
             
             signupViewController.signUpView?.backgroundColor = backgroundColor
             signupViewController.preferredContentSize.height = self.view.bounds.height
@@ -597,6 +596,8 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             self.locationTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("startLocation"), userInfo: nil, repeats: true)
             self.locationTimer.fire()
+            
+            println("timer should run again")
             
         })
         
@@ -1093,19 +1094,19 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             self.goalToHit = 5
             self.ghost = true
-            self.ghostVelocity = 1.0
+            self.ghostVelocity = 0.25
 
         case 3, 4:
             
             self.goalToHit = 5
             self.ghost = true
-            self.ghostVelocity = 0.5
+            self.ghostVelocity = 0.1
             
         case 5:
             
             self.goalToHit = 5
             self.ghost = true
-            self.ghostVelocity = 0.25
+            self.ghostVelocity = 0.05
             
         case 6...10000 :
             

@@ -578,7 +578,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let rightLabelX = (viewWidth / 3) - rankingLabelsWidth / 2
         let leftLabelX = (((viewWidth / 3) * 2) - rankingLabelsWidth / 2)
         
-        percentileRankingLabel.text = String(userRankingPercentile[sender.tag])
+        percentileRankingLabel.text = "\((userRankingPercentile[sender.tag]))%"
         percentileRankingLabel.textColor = lightColoredFont
         percentileRankingLabel.font = font3
         percentileRankingLabel.textAlignment = .Center
