@@ -348,7 +348,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.totalAnswerLabel.text = String(totalNumber)
         self.totalAnswerLabel.textColor = lightColoredFont
-        self.totalAnswerLabel.font = font3
+        self.totalAnswerLabel.font = font4
         self.totalAnswerLabel.textAlignment = .Center
         
         let countArray = [geoCount, musicCount, scienceCount, tvCount, historyCount, moneyCount, productsCount, peopleCount, sportsCount]

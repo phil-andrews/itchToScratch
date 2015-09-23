@@ -25,12 +25,12 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var topCell: UITableViewCell!
     @IBOutlet weak var bottomCell: UITableViewCell!
+    @IBOutlet weak var topContentView: UIView!
     
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var questionLabelNOImage: UILabel!
-    @IBOutlet weak var userGuesesLeft: UILabel!
     
     @IBOutlet weak var correctAnswerLabelOne: UILabel!
     @IBOutlet weak var correctAnswerLabelTwo: UILabel!
@@ -57,7 +57,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     
     
     @IBAction func goBack(sender: UISwipeGestureRecognizer) {
-//        self.dismissViewControllerAnimated(true, completion: nil)
+
         
         self.goBackUnwind()
     }
@@ -90,6 +90,8 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         super.viewWillAppear(true)
         
         self.formatScreen()
+
+        
     }
     
     
@@ -100,9 +102,66 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        
+        let viewHeight = self.view.frame.height
+        let viewWidth = self.view.frame.width
+        let bottomCellHeight: CGFloat = 34
+        var cellHeight: CGFloat?
+        var keyBoardHeight: CGFloat?
+        
+        println(viewHeight)
+        println(viewWidth)
+        
+        switch(viewHeight) {
+            
+        case 736:
+            
+            keyBoardHeight = 271
+            
+        case 667:
+            
+            keyBoardHeight = 258
+
+        case 568:
+            
+            keyBoardHeight = 253
+
+        case 480:
+            
+            keyBoardHeight = 253
+            detailImageView.contentMode = UIViewContentMode.ScaleAspectFit
+            questionLabel.adjustsFontSizeToFitWidth = true
+            
+        default:
+            
+            keyBoardHeight = 275
+            
+        }
+        
+        if indexPath.row == 0 {
+            
+            cellHeight = ((viewHeight - bottomCellHeight) - keyBoardHeight!)
+            
+        }
+        
+        if indexPath.row == 1 {
+            
+            cellHeight = bottomCellHeight
+
+        }
+        
+        return cellHeight!
+        
+    }
 
 
     func formatScreen() {
+        
+        self.bottomCell.backgroundColor = backgroundColor
+        self.topContentView.backgroundColor = backgroundColor
+        self.topCell.backgroundColor = backgroundColor
         
         correctBar1.hidden = true
         correctBar2.hidden = true
@@ -153,9 +212,6 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
             
         }
         
-        var userGuesses = PFUser.currentUser()?.valueForKey("guesses") as! Int
-        println(userGuesses)
-        self.userGuesesLeft.text = "\(userGuesses)"
         
     }
     
@@ -886,10 +942,6 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         user?.incrementKey(userGuesses, byAmount: -1)
         
         user?.saveInBackground()
-        
-        let guessesLeft = user?.valueForKey("guesses") as! Int
-        
-        self.userGuesesLeft.text = "\(guessesLeft)"
         
     }
     

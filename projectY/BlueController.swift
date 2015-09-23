@@ -282,7 +282,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             if ((error) != nil)
             {
                 // Process error
-                println("Error: \(error)")
+                println("Error in graph request: \(error!.localizedDescription)")
             }
             else
             {
@@ -554,10 +554,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             self.cityLabel.text = self.currentLocation
             self.cityLabel.textAlignment = .Center
             self.cityLabel.textColor = lightColoredFont
-//            self.constraintCityLabelVerticalSpace.constant = 25
-
-            
-            
+        
             return true
             
         } else {
@@ -972,7 +969,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
                 
             } else if error != nil {
                 
-                println(error)
+                println(error!.localizedDescription)
                 println("error in saveNewLocationObject")
                 
             }

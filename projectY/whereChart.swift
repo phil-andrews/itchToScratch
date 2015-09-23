@@ -212,7 +212,7 @@ public class PPChart {
                 ++count
                 
             }
-                
+                        
                 contentView.addSubview(locationLabel1)
                 contentView.addSubview(locationLabel2)
                 contentView.addSubview(locationLabel3)
