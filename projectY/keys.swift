@@ -125,15 +125,19 @@ let robotoMedium22 = UIFont(name: "Roboto-Medium", size: 22.0)
 let robotoMedium24 = UIFont(name: "Roboto-Medium", size: 24.0)
 let robotoMedium26 = UIFont(name: "Roboto-Medium", size: 26.0)
 
-var font1 = UIFont()
-var font2 = UIFont()
-var font3 = UIFont()
-var font4 = UIFont()
+var fontBottom = UIFont()
+var fontTiny = UIFont()
+var fontSmallest = UIFont()
+var fontSmaller = UIFont()
+var fontSmall = UIFont()
+var fontMedium = UIFont()
+var fontLarge = UIFont()
+var fontExtraLarge = UIFont()
 
-var font1Regular = UIFont()
-var font2Regular = UIFont()
-var font3Regular = UIFont()
-var font4Regular = UIFont()
+var fontSmallRegular = UIFont()
+var fontMediumRegular = UIFont()
+var fontLargeRegular = UIFont()
+var fontExtraLargeRegular = UIFont()
 
 
 

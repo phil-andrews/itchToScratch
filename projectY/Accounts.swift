@@ -62,7 +62,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         
         self.scrollView.addSubview(self.refreshControl)
-        self.scrollView.backgroundColor = backgroundColor
+        self.scrollView.backgroundColor = UIColor.clearColor()
         
         self.scrollView.delegate = self
         
@@ -174,7 +174,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     
-    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         animateWhereChartBar(bar1, answerCount1, 0.0)
@@ -184,6 +183,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         animateWhereChartBar(bar5, answerCount5, 0.4)
         
     }
+    
     
     
     
@@ -201,7 +201,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let userName = user?.valueForKey(displayName) as? String
         self.userNameLabel.text = userName?.lowercaseString
         self.userNameLabel.textColor = lightColoredFont
-        self.userNameLabel.font = font1
+        self.userNameLabel.font = fontSmall
         self.userNameLabel.textAlignment = .Right
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
         self.profilePicture.clipsToBounds = true
@@ -348,7 +348,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.totalAnswerLabel.text = String(totalNumber)
         self.totalAnswerLabel.textColor = lightColoredFont
-        self.totalAnswerLabel.font = font4
+        self.totalAnswerLabel.font = fontExtraLarge
         self.totalAnswerLabel.textAlignment = .Center
         
         let countArray = [geoCount, musicCount, scienceCount, tvCount, historyCount, moneyCount, productsCount, peopleCount, sportsCount]
@@ -365,9 +365,9 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
 
         self.questionCategoryChart.valueFormatter.maximumFractionDigits = 0
         
-        self.questionCategoryChart.descriptionFont = font1
+        self.questionCategoryChart.descriptionFont = fontSmall
         self.questionCategoryChart.descriptionText = ""
-        self.questionCategoryChart.infoFont = font2
+        self.questionCategoryChart.infoFont = fontMedium
         self.questionCategoryChart.infoTextColor = lightColoredFont
                 self.questionCategoryChart.noDataText = "We can't draw your chart until you answer _____ more quesitons"
 
@@ -442,7 +442,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         categoryChartNumberLabel.text = String(numberToDisplay)
         categoryChartNumberLabel.textColor = lightColoredFont
         categoryChartNumberLabel.textAlignment = .Center
-        categoryChartNumberLabel.font = font3
+        categoryChartNumberLabel.font = fontLarge
         categoryChartNumberLabel.hidden = false
         
         let titleArray = ["GEOGRAPHY", "MUSIC", "SCIENCE", "TV", "HISTORY", "MONEY", "PRODUCTS", "PEOPLE", "SPORTS"]
@@ -450,7 +450,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let categoryToDisplay = titleArray[entry.xIndex]
         categoryChartCategoryLabel.text = categoryToDisplay
         categoryChartCategoryLabel.textColor = lightColoredFont
-        categoryChartCategoryLabel.font = font3
+        categoryChartCategoryLabel.font = fontLarge
         categoryChartCategoryLabel.textAlignment = .Center
         categoryChartCategoryLabel.hidden = false
         
@@ -561,7 +561,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         let xCord: CGFloat = 0.0
         let height: CGFloat = 29.0
-        let yCord: CGFloat = bar5.frame.maxY + 15.0
+        let yCord: CGFloat = (viewHeight * 2) - (bottomBackGround.frame.height / 2)
         let width: CGFloat = self.view.frame.width
         
     
@@ -569,28 +569,68 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         label.frame = CGRectMake(xCord, yCord, width, height)
         label.textAlignment = .Center
         let labelText: String = whereChartLocationNames[sender.tag]
-        label.textColor = lightColoredFont
-        label.font = font3
+        label.textColor = backgroundColor
+        label.font = fontLargeRegular
         label.text = labelText.lowercaseString
         
-        let rankingLabelsWidth: CGFloat = 50.0
-        let rankingLabelHeight: CGFloat = 42.0
-        let rightLabelX = (viewWidth / 3) - rankingLabelsWidth / 2
-        let leftLabelX = (((viewWidth / 3) * 2) - rankingLabelsWidth / 2)
+        let viewWidthFourths = viewWidth/4
+        
+        let rankingLabelsWidth: CGFloat = 60
+        let rankingLabelHeight: CGFloat = 30.0
+        let rankingLabelsY = bottomBackGround.frame.minY - rankingLabelHeight - 5.0
+        let leftLabelX = viewWidthFourths - (viewWidthFourths/3) - 20.0
+        let centerLabelX = (viewWidthFourths * 2) - (viewWidthFourths/3)
+        let rightLabelX = (viewWidthFourths * 3) - (viewWidthFourths/3) + 20.0
+        let overLabelsY = rankingLabelsY - rankingLabelHeight + 4.5
+        
+        bottomBackGround.backgroundColor = locationBars[sender.tag].backgroundColor
+        
+        println(bottomBackGround.frame.height + 10.0)
         
         percentileRankingLabel.text = "\((userRankingPercentile[sender.tag]))%"
         percentileRankingLabel.textColor = lightColoredFont
-        percentileRankingLabel.font = font3
+        percentileRankingLabel.font = fontMedium
         percentileRankingLabel.textAlignment = .Center
-        percentileRankingLabel.frame = CGRectMake(leftLabelX, (label.frame.origin.y + label.frame.height + 10), rankingLabelsWidth, rankingLabelHeight)
-                
+        percentileRankingLabel.frame = CGRectMake(leftLabelX, rankingLabelsY, rankingLabelsWidth, rankingLabelHeight)
+        
+        percentileRankingOverLabel.text = "percentile"
+        percentileRankingOverLabel.textColor = lightColoredFont
+        percentileRankingOverLabel.font = fontTiny
+        percentileRankingOverLabel.textAlignment = .Center
+        percentileRankingOverLabel.frame = CGRectMake(leftLabelX - 10.0, overLabelsY, rankingLabelsWidth + 15.0, rankingLabelHeight)
+        
         overallRankingLabel.text = String(userRankingsOverall[sender.tag])
         overallRankingLabel.textColor = lightColoredFont
-        overallRankingLabel.font = font3
+        overallRankingLabel.font = fontMedium
         overallRankingLabel.textAlignment = .Center
-        overallRankingLabel.frame = CGRectMake(rightLabelX , (label.frame.origin.y + label.frame.height + 10), rankingLabelsWidth, rankingLabelHeight)
+        overallRankingLabel.frame = CGRectMake(centerLabelX , rankingLabelsY, rankingLabelsWidth, rankingLabelHeight)
+        
+        overallRankingOverLabel.text = "ranking"
+        overallRankingOverLabel.textColor = lightColoredFont
+        overallRankingOverLabel.font = fontTiny
+        overallRankingOverLabel.textAlignment = .Center
+        overallRankingOverLabel.frame = CGRectMake(centerLabelX , overLabelsY, rankingLabelsWidth, rankingLabelHeight)
+        
+        statusLabel.text = "citizen"
+        statusLabel.textColor = lightColoredFont
+        statusLabel.font = fontSmaller
+        statusLabel.textAlignment = .Center
+        statusLabel.frame = CGRectMake(rightLabelX, rankingLabelsY - 1.0, rankingLabelsWidth, rankingLabelHeight)
+        
+        statusOverLabel.text = "status"
+        statusOverLabel.textColor = lightColoredFont
+        statusOverLabel.font = fontTiny
+        statusOverLabel.textAlignment = .Center
+        statusOverLabel.frame = CGRectMake(rightLabelX, overLabelsY, rankingLabelsWidth, rankingLabelHeight)
+        
+        
         
         label.hidden = false
+        statusLabel.hidden = false
+        overallRankingLabel.hidden = false
+        percentileRankingLabel.hidden = false
+        bottomBackGround.hidden = false
+
     
     }
     

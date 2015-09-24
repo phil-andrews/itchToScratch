@@ -19,65 +19,85 @@ func setFonts(view: UIView) {
         
         case 480:
         
-        font1 = robotoLight18!
-        font2 = robotoLight20!
-        font3 = robotoLight22!
-        font4 = robotoLight26!
+        fontBottom = robotoLight10!
+        fontTiny = robotoLight12!
+        fontSmallest = robotoLight14!
+        fontSmaller = robotoLight16!
+        fontSmall = robotoLight18!
+        fontMedium = robotoLight20!
+        fontLarge = robotoLight22!
+        fontExtraLarge = robotoLight26!
         
-        font1Regular = robotoRegular20!
-        font2Regular = robotoRegular22!
-        font3Regular = robotoRegular24!
-        font4Regular = robotoRegular26!
+        fontSmallRegular = robotoRegular20!
+        fontMediumRegular = robotoRegular22!
+        fontLargeRegular = robotoRegular24!
+        fontExtraLargeRegular = robotoRegular26!
         
         case 568:
         
-        font1 = robotoLight22!
-        font2 = robotoLight24!
-        font3 = robotoLight26!
-        font4 = robotoLight28!
+        fontBottom = robotoLight14!
+        fontTiny = robotoLight16!
+        fontSmallest = robotoLight18!
+        fontSmaller = robotoLight20!
+        fontSmall = robotoLight22!
+        fontMedium = robotoLight24!
+        fontLarge = robotoLight26!
+        fontExtraLarge = robotoLight28!
         
-        font1Regular = robotoRegular22!
-        font2Regular = robotoRegular24!
-        font3Regular = robotoRegular26!
-        font4Regular = robotoRegular28!
+        fontSmallRegular = robotoRegular22!
+        fontMediumRegular = robotoRegular24!
+        fontLargeRegular = robotoRegular26!
+        fontExtraLargeRegular = robotoRegular28!
 
         
         case 667:
         
-        font1 = robotoLight24!
-        font2 = robotoLight26!
-        font3 = robotoLight28!
-        font4 = robotoLight30!
+        fontBottom = robotoLight16!
+        fontTiny = robotoLight18!
+        fontSmallest = robotoLight20!
+        fontSmaller = robotoLight22!
+        fontSmall = robotoLight24!
+        fontMedium = robotoLight26!
+        fontLarge = robotoLight28!
+        fontExtraLarge = robotoLight30!
         
-        font1Regular = robotoRegular24!
-        font2Regular = robotoRegular26!
-        font3Regular = robotoRegular28!
-        font4Regular = robotoRegular30!
+        fontSmallRegular = robotoRegular24!
+        fontMediumRegular = robotoRegular26!
+        fontLargeRegular = robotoRegular28!
+        fontExtraLargeRegular = robotoRegular30!
 
         
         case 736:
         
-        font1 = robotoLight26!
-        font2 = robotoLight28!
-        font3 = robotoLight30!
-        font4 = robotoLight32!
+        fontBottom = robotoLight18!
+        fontTiny = robotoLight20!
+        fontSmallest = robotoLight22!
+        fontSmaller = robotoLight24!
+        fontSmall = robotoLight26!
+        fontMedium = robotoLight28!
+        fontLarge = robotoLight30!
+        fontExtraLarge = robotoLight32!
         
-        font1Regular = robotoRegular26!
-        font2Regular = robotoRegular28!
-        font3Regular = robotoRegular30!
-        font4Regular = robotoRegular32!
+        fontSmallRegular = robotoRegular26!
+        fontMediumRegular = robotoRegular28!
+        fontLargeRegular = robotoRegular30!
+        fontExtraLargeRegular = robotoRegular32!
     
     default:
     
-        font1 = robotoLight24!
-        font2 = robotoLight26!
-        font3 = robotoLight28!
-        font4 = robotoLight30!
+        fontBottom = robotoLight14!
+        fontTiny = robotoLight16!
+        fontSmallest = robotoLight18!
+        fontSmaller = robotoLight20!
+        fontSmall = robotoLight22!
+        fontMedium = robotoLight24!
+        fontLarge = robotoLight26!
+        fontExtraLarge = robotoLight28!
         
-        font1Regular = robotoRegular24!
-        font2Regular = robotoRegular26!
-        font3Regular = robotoRegular28!
-        font4Regular = robotoRegular30!
+        fontSmallRegular = robotoRegular24!
+        fontMediumRegular = robotoRegular26!
+        fontLargeRegular = robotoRegular28!
+        fontExtraLargeRegular = robotoRegular30!
         
     }
     

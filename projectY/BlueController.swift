@@ -1865,7 +1865,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             self.constraintContentViewWidth.constant = -35
             self.constraintContentViewHeight.constant = 0
-            self.cityLabel.font = font1
+            self.cityLabel.font = fontSmall
             
         default:
             

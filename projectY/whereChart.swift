@@ -19,7 +19,16 @@ var userRankingsOverall = [Int]()
 var userRankingPercentile = [Int]()
 
 var percentileRankingLabel = UILabel()
+var percentileRankingOverLabel = UILabel()
+
 var overallRankingLabel = UILabel()
+var overallRankingOverLabel = UILabel()
+
+var statusLabel = UILabel()
+var statusOverLabel = UILabel()
+
+
+var bottomBackGround = UIView()
 
 var locationLabel1 = UILabel()
 var locationLabel2 = UILabel()
@@ -152,7 +161,7 @@ public class PPChart {
             
             whereChartValues = values
             
-            let colors = [lowestColor, lowColor, midColor, highColor, highestColor]
+            let colors = [lowestColor, lowColor, midColor, highColor, orangeColor]
         
             let parentViewHeightPercentage = parentView.frame.height/100
         
@@ -193,7 +202,7 @@ public class PPChart {
                 answerCountLabels[count].setTitleColor(backgroundColor, forState: UIControlState.Selected)
                 answerCountLabels[count].setTitle(String(item), forState: UIControlState.Highlighted)
                 answerCountLabels[count].setTitleColor(backgroundColor, forState: UIControlState.Highlighted)
-                answerCountLabels[count].titleLabel?.font = font3
+                answerCountLabels[count].titleLabel?.font = fontLarge
                 answerCountLabels[count].titleLabel?.textAlignment = .Right
                 
                 answerCountLabels[count].addTarget(Accounts().childView, action: "whereChartBarPressed:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -212,7 +221,21 @@ public class PPChart {
                 ++count
                 
             }
-                        
+        
+            println(parentViewHeightPercentage)
+            println(contentView.frame.height)
+        
+            bottomBackGround.frame = CGRectMake(0.0, parentViewHeightPercentage * 190, parentView.frame.width, parentViewHeightPercentage * 15)
+            bottomBackGround.layer.borderWidth = 1.0
+            bottomBackGround.layer.borderColor = UIColor.whiteColor().CGColor
+        
+            bottomBackGround.hidden = true
+        
+            contentView.addSubview(bottomBackGround)
+            contentView.sendSubviewToBack(bottomBackGround)
+        
+        
+        
                 contentView.addSubview(locationLabel1)
                 contentView.addSubview(locationLabel2)
                 contentView.addSubview(locationLabel3)
@@ -220,6 +243,11 @@ public class PPChart {
                 contentView.addSubview(locationLabel5)
                 contentView.addSubview(percentileRankingLabel)
                 contentView.addSubview(overallRankingLabel)
+                contentView.addSubview(statusLabel)
+                contentView.addSubview(statusOverLabel)
+                contentView.addSubview(percentileRankingOverLabel)
+                contentView.addSubview(overallRankingOverLabel)
+        
         
             findUserRanking(playedAreasDict)
 
