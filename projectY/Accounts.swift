@@ -174,6 +174,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     
+    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         animateWhereChartBar(bar1, answerCount1, 0.0)
@@ -519,6 +520,12 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
 
     func whereChartBarPressed(sender: UIButton) {
         
+        if checkmarkImage.hidden == false {
+            
+            checkmarkImage.removeFromSuperview()
+            
+        }
+        
         for answerCount in answerCountLabels {
             
             answerCount.setTitleColor(lightColoredFont, forState: .Normal)
@@ -526,6 +533,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             answerCount.layer.borderColor = UIColor.clearColor().CGColor
             answerCount.layer.borderWidth = 0.0
             answerCount.backgroundColor = UIColor.clearColor()
+            answerCount.contentVerticalAlignment = .Center
             
         }
         
@@ -552,6 +560,8 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         countLabel.layer.cornerRadius = 4.0
         countLabel.backgroundColor = lightColoredFont
         countLabel.setTitleColor(backgroundColor, forState: .Normal)
+        countLabel.contentEdgeInsets = UIEdgeInsetsMake(7.0, 7.0, 7.0, 7.0)
+        countLabel.contentVerticalAlignment = UIControlContentVerticalAlignment.Top
 
         
         let viewHeight = self.view.frame.height
@@ -573,6 +583,12 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         label.font = fontLargeRegular
         label.text = labelText.lowercaseString
         
+        checkmarkImage.frame = CGRectMake(0.0, 0.0, 15.0, 15.0)
+        checkmarkImage.frame.origin = CGPointMake((countLabel.frame.maxX - 34.0), (countLabel.frame.midY + 10.0))
+        checkmarkImage.layer.cornerRadius = 2.0
+        let image = UIImage(named: "checkmarkPNG1X")
+        checkmarkImage.backgroundColor = UIColor(patternImage: image!)
+        
         let viewWidthFourths = viewWidth/4
         
         let rankingLabelsWidth: CGFloat = 60
@@ -584,8 +600,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let overLabelsY = rankingLabelsY - rankingLabelHeight + 4.5
         
         bottomBackGround.backgroundColor = locationBars[sender.tag].backgroundColor
-        
-        println(bottomBackGround.frame.height + 10.0)
         
         percentileRankingLabel.text = "\((userRankingPercentile[sender.tag]))%"
         percentileRankingLabel.textColor = lightColoredFont
@@ -605,7 +619,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         overallRankingLabel.textAlignment = .Center
         overallRankingLabel.frame = CGRectMake(centerLabelX , rankingLabelsY, rankingLabelsWidth, rankingLabelHeight)
         
-        overallRankingOverLabel.text = "ranking"
+        overallRankingOverLabel.text = "rank"
         overallRankingOverLabel.textColor = lightColoredFont
         overallRankingOverLabel.font = fontTiny
         overallRankingOverLabel.textAlignment = .Center
@@ -623,13 +637,17 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         statusOverLabel.textAlignment = .Center
         statusOverLabel.frame = CGRectMake(rightLabelX, overLabelsY, rankingLabelsWidth, rankingLabelHeight)
         
-        
+        self.childView.addSubview(checkmarkImage)
+        self.childView.bringSubviewToFront(checkmarkImage)
+        println(checkmarkImage.frame.origin.x)
+        println(checkmarkImage.frame.origin.y)
         
         label.hidden = false
         statusLabel.hidden = false
         overallRankingLabel.hidden = false
         percentileRankingLabel.hidden = false
         bottomBackGround.hidden = false
+        checkmarkImage.hidden = false
 
     
     }

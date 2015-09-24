@@ -27,6 +27,8 @@ var overallRankingOverLabel = UILabel()
 var statusLabel = UILabel()
 var statusOverLabel = UILabel()
 
+var checkmarkImage = UIView()
+
 
 var bottomBackGround = UIView()
 
@@ -230,6 +232,7 @@ public class PPChart {
             bottomBackGround.layer.borderColor = UIColor.whiteColor().CGColor
         
             bottomBackGround.hidden = true
+            checkmarkImage.hidden = true
         
             contentView.addSubview(bottomBackGround)
             contentView.sendSubviewToBack(bottomBackGround)
