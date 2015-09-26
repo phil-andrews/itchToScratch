@@ -6,6 +6,8 @@ pod 'ObjectMapper', '~> 0.12'
 
 pod 'PureLayout'
 
+pod 'Mapbox-iOS-SDK'
+
 end
 
 target 'projectYTests' do

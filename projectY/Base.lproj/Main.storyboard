@@ -1568,7 +1568,7 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="18R-eW-zDi">
                     <connections>
-                        <segue destination="VUd-Fb-tvi" kind="presentation" id="fji-sS-Zft"/>
+                        <segue destination="VUd-Fb-tvi" kind="show" id="fji-sS-Zft"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -1577,56 +1577,19 @@
         <!--Location Standing Screen-->
         <scene sceneID="UUR-vB-2nf">
             <objects>
-                <viewController title="Location Standing Screen" id="VUd-Fb-tvi" customClass="LocationStanding" customModule="projectY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Location Standing Screen" id="VUd-Fb-tvi" customClass="BlackController" customModule="projectY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eea-vr-3qa"/>
                         <viewControllerLayoutGuide type="bottom" id="RYq-bO-zgd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6jN-t4-DPq">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vre-2j-q7J">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="Vre-2j-q7J" firstAttribute="width" secondItem="6jN-t4-DPq" secondAttribute="width" id="6s2-3m-tVh"/>
-                            <constraint firstAttribute="centerY" secondItem="Vre-2j-q7J" secondAttribute="centerY" id="geQ-5P-7Du"/>
-                            <constraint firstAttribute="centerX" secondItem="Vre-2j-q7J" secondAttribute="centerX" id="maF-UN-4Zb"/>
-                            <constraint firstItem="Vre-2j-q7J" firstAttribute="height" secondItem="6jN-t4-DPq" secondAttribute="height" id="usq-nG-kTS"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Vre-2j-q7J"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="6s2-3m-tVh"/>
-                                <exclude reference="geQ-5P-7Du"/>
-                                <exclude reference="maF-UN-4Zb"/>
-                                <exclude reference="usq-nG-kTS"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Vre-2j-q7J"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="6s2-3m-tVh"/>
-                                <include reference="geQ-5P-7Du"/>
-                                <include reference="maF-UN-4Zb"/>
-                                <include reference="usq-nG-kTS"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="eNJ-rk-Evi" appends="YES" id="Zhf-ko-maB"/>
                         </connections>
                     </view>
-                    <connections>
-                        <outlet property="contentView" destination="Vre-2j-q7J" id="q5W-hf-ARb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndF-sq-xUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="eNJ-rk-Evi">
@@ -1635,7 +1598,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3160.5" y="-232.5"/>
+            <point key="canvasLocation" x="3160.5" y="-216"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="V1P-Kf-yI1">
@@ -1927,50 +1890,47 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="uLD-qm-xIx" userLabel="Correct Bar 1">
                                                     <rect key="frame" x="302" y="142" width="18" height="11"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="383" y="142" width="18" height="11"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="8"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="bxj-GO-7L4" userLabel="Correct Bar 2">
                                                     <rect key="frame" x="302" y="157" width="18" height="11"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="383" y="157" width="18" height="11"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="8"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="tNH-cO-Dje" userLabel="Correct Bar 3">
                                                     <rect key="frame" x="302" y="172" width="18" height="11"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="383" y="172" width="18" height="11"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="8"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="cAd-QR-sqW" userLabel="Correct Bar 4">
                                                     <rect key="frame" x="302" y="187" width="18" height="11"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="383" y="187" width="18" height="11"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="8"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="Ky5-IJ-cjV" userLabel="Correct Bar 5">
                                                     <rect key="frame" x="302" y="202" width="18" height="11"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="383" y="202" width="18" height="11"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="8"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-Ee-4At" userLabel="Correct Bar 6">
                                                     <rect key="frame" x="302" y="217" width="18" height="11"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="383" y="217" width="18" height="11"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="8"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="xrA-jk-Ovm" userLabel="Correct Bar 7">
                                                     <rect key="frame" x="302" y="232" width="18" height="11"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="383" y="232" width="18" height="11"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="8"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Rectangle 300" translatesAutoresizingMaskIntoConstraints="NO" id="aOw-UC-NTn">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="568"/>
-                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -1995,6 +1955,7 @@
                                                 <constraint firstItem="bkc-jh-mvb" firstAttribute="trailing" secondItem="zie-Vh-9Y9" secondAttribute="trailingMargin" id="UWC-Ic-Xs4"/>
                                                 <constraint firstItem="GLs-hS-1EV" firstAttribute="leading" secondItem="zie-Vh-9Y9" secondAttribute="leadingMargin" constant="11" id="XBG-pS-qFe"/>
                                                 <constraint firstItem="bkc-jh-mvb" firstAttribute="top" secondItem="N0Z-Jd-KAs" secondAttribute="bottom" constant="8" id="XZ9-aC-Kmr"/>
+                                                <constraint firstAttribute="centerY" secondItem="aOw-UC-NTn" secondAttribute="centerY" constant="-144.5" id="cBy-JQ-YR8"/>
                                                 <constraint firstItem="N0Z-Jd-KAs" firstAttribute="leading" secondItem="zie-Vh-9Y9" secondAttribute="leadingMargin" id="euC-cj-3Mp"/>
                                                 <constraint firstItem="bkc-jh-mvb" firstAttribute="leading" secondItem="zie-Vh-9Y9" secondAttribute="leadingMargin" constant="2" id="hG0-CR-56p"/>
                                                 <constraint firstItem="bkc-jh-mvb" firstAttribute="top" secondItem="zie-Vh-9Y9" secondAttribute="topMargin" constant="99" id="naO-j0-oPv">
@@ -2015,6 +1976,7 @@
                                                     <exclude reference="RXh-tJ-ja1"/>
                                                     <exclude reference="SWx-o7-jIr"/>
                                                     <exclude reference="TVn-iR-LMq"/>
+                                                    <exclude reference="cBy-JQ-YR8"/>
                                                     <exclude reference="5RV-QG-bIK"/>
                                                     <exclude reference="6f7-lY-oyA"/>
                                                     <exclude reference="S3w-hR-Jfg"/>
@@ -2045,6 +2007,7 @@
                                                     <exclude reference="RXh-tJ-ja1"/>
                                                     <exclude reference="SWx-o7-jIr"/>
                                                     <exclude reference="TVn-iR-LMq"/>
+                                                    <include reference="cBy-JQ-YR8"/>
                                                     <include reference="5RV-QG-bIK"/>
                                                     <exclude reference="6f7-lY-oyA"/>
                                                     <exclude reference="S3w-hR-Jfg"/>

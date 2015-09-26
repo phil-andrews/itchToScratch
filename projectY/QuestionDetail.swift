@@ -693,19 +693,20 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                 
                 let user = PFUser.currentUser()
                 
-                //userQuestionObjectsToBlock.addObject(objectID!)
-                
-                user?.addObject(objectID!, forKey: questionsAnswered)
-                
-                user?.saveInBackground()
-                
-                upcoming.checkUsersAnsweredQuestions(upcoming.buttonOutlets[objectPlace!], objectID: objectID!)
-                
                 let newAnswerNumber = upcoming.currentLocationObject?.valueForKey("ans\(self.objectPlace!)") as! Int + 1
                 
                 println("this is the answerNUmber: \(newAnswerNumber)")
                 
-                upcoming.cellHighlighting(newAnswerNumber, cell: upcoming.buttonOutlets[objectPlace!], animation: true)
+                delay(0.5, { () -> () in
+                    
+                    upcoming.checkUsersAnsweredQuestions(upcoming.buttonOutlets[self.objectPlace!], objectID: objectID!)
+                    
+                    delay(0.25, { () -> () in
+                        
+                        upcoming.cellHighlighting(newAnswerNumber, cell: upcoming.buttonOutlets[self.objectPlace!], animation: true)
+                    })
+                    
+                })
                 
                 
             }
@@ -735,6 +736,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
             } else if let object = object {
                 println("object should be saving")
                 object.incrementKey("ans\(self.objectPlace!)")
+                object[geoPoint] = PFGeoPoint(location: usersCurrentLocationData)
                 object.saveInBackground()
                 self.locationObject = object
                 self.addObjectIDToUser()

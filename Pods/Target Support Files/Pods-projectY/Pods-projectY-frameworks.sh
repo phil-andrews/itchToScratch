@@ -52,10 +52,12 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-projectY/Mapbox.framework'
   install_framework 'Pods-projectY/ObjectMapper.framework'
   install_framework 'Pods-projectY/PureLayout.framework'
 fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-projectY/Mapbox.framework'
   install_framework 'Pods-projectY/ObjectMapper.framework'
   install_framework 'Pods-projectY/PureLayout.framework'
 fi

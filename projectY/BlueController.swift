@@ -15,7 +15,9 @@ import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-let userQuestionObjectsToBlock = PFUser.currentUser()?.valueForKey(questionsAnswered) as! NSMutableArray
+var userQuestionObjectsToBlock = PFUser.currentUser()?.valueForKey(questionsAnswered) as! NSMutableArray
+
+var usersCurrentLocationData = CLLocation()
 
 
 class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
@@ -496,10 +498,10 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     }
     
     
-    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]) {
         
         var currentLocation = locations.last as! CLLocation
+        usersCurrentLocationData = currentLocation
         locationManager.stopUpdatingLocation()
         CLGeocoder().reverseGeocodeLocation(currentLocation, completionHandler: {(placemarks, error) -> Void in
             
@@ -940,6 +942,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
         println("should be saving")
         
         let newLocationObject = PFObject(className: LocationClass)
+        newLocationObject[geoPoint] = PFGeoPoint(location: usersCurrentLocationData)
         newLocationObject[locality] = self.currentLocation
         newLocationObject[allVisitedUsers] = [""]
         newLocationObject[usersLoggedInAtLocation] = 0
@@ -1470,6 +1473,8 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     
     
     func checkForMatchingCells(numberToHit: Int, locationObject: PFObject?) {
+        
+        println("checking for matching cells")
         
         var includedIndexes = [9,10,11,12,13,14,15,18,19,20,21,22,23,26,27,28,29,30,30]
         

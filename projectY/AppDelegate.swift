@@ -12,6 +12,7 @@ import Bolts
 import ParseUI
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Mapbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let twitterConsumerKey = "uCanrRSD93IscWZ3wrx2Oz5ST"
     private let twitterConsumerSecret = "KwM8sgiBmHc64QvnUAaupjxKx9FrbFNSXWTpyNyYqcSsGLP690"
+    
+    private let mapboxKey = "pk.eyJ1IjoicGhpbG9uZHJlamFjayIsImEiOiJjaWV6dWczMngxZWtmc2VrcmZlZmJmcG5vIn0.3joKi4D-TfzkRZtIWVZY_g"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -34,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFTwitterUtils.initializeWithConsumerKey(twitterConsumerKey,  consumerSecret:twitterConsumerSecret)
         
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        MGLAccountManager.setAccessToken(mapboxKey)
         
         return true
     }
