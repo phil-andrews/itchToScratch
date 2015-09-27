@@ -94,6 +94,24 @@ let highCountOverlay = "highCountOverlay"
 let highestCountOverlay = "highestCountOverlay"
 let allDone = "allDone"
 
+//Map Markers
+
+let markerCurrentLeader = UIImage(named: "markerCurrentLeader")
+let markerCurrentRunnerUp = UIImage(named: "markerCurrentLeader")
+let markerCurrentThirdPlace = UIImage(named: "markerCurrentLeader")
+let markerNine = UIImage(named: "mapMarkerNine")
+let markerEight = UIImage(named: "mapMarkerEight")
+let markerSeven = UIImage(named: "mapMarkerEight")
+let markerSix = UIImage(named: "mapMarkerSix")
+let markerFive = UIImage(named: "mapMarkerFive")
+let markerFour = UIImage(named: "mapMarkerFive")
+let markerThree = UIImage(named: "mapMarkerFive")
+let markerTwo = UIImage(named: "mapMarkerFive")
+let markerOne = UIImage(named: "mapMarkerFive")
+let markerZero = UIImage(named: "mapMarkerFive")
+
+
+
 //Fonts
 let robotoLight8 = UIFont(name: "Roboto-Light", size: 8.0)
 let robotoLight10 = UIFont(name: "Roboto-Light", size: 10.0)
@@ -139,6 +157,9 @@ var fontSmallRegular = UIFont()
 var fontMediumRegular = UIFont()
 var fontLargeRegular = UIFont()
 var fontExtraLargeRegular = UIFont()
+
+//API Keys
+private let bingMapsAPI = "Ak8iBpYFiN2_M3vtEa2YFXiWbOJi6eypNwGnPZM_tdKjcFbZ5jJPme1jay12h46K"
 
 
 

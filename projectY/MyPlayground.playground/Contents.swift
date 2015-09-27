@@ -149,14 +149,61 @@ var blueString = "the quick brown fox jumped over the lazy dog over and over unt
 textView.text.componentsSeparatedByString("\n")
 
 
-let hi = ["ImIE4VS8CF","LWkWRGpUyW","vd5zkmFF3K","v667XU7MRx","phYYKOarj9","6DCBEZuwgB","5qfRYcwCxW","z3tZHNC4Iq","xUHqmhXuMj","IaTSYcAGEI","ts4JkJVQze","ukdWzQ6gZR","mpx1kfKD56","4xVhxjxARY","5FMg5eZvEO","w0JFBNI8nM","x81zIhYYLE","Wi18Pme5ti","QDBLbbmWgS","UNERSnxcVW","Uw0CsEwFlF","qWmdxgXkzE","rYXYqhfgwV","6H1b6HrJ07","6t4J21oNWc","MbHdCp1Uyf","MJsUmoUYF3","9HhRFxSnqm","9NXeaZzjPb","tgt53X6tEj","1AnOYcUHoQ","8Cb2kgGVMD","7VqcDFBlpj","OIWYA5L240","QLWNqyA7wR","AbMha3fy6j","9jJWSzbi9A","kka7A9bMi8","41LHfIRYp0","3zrbEV4Wqo","ImIE4VS8CF","EYBQ8QkCRS","EGDbzgdJ6o","v667XU7MRx","phYYKOarj9","6DCBEZuwgB","5qfRYcwCxW","z3tZHNC4Iq","xUHqmhXuMj","CD7mr9qt4M","CO3tEUAFGM","ukdWzQ6gZR","mpx1kfKD56","4xVhxjxARY","5FMg5eZvEO","w0JFBNI8nM","x81zIhYYLE","Wi18Pme5ti","QDBLbbmWgS","UNERSnxcVW","Uw0CsEwFlF","qWmdxgXkzE","rYXYqhfgwV","6H1b6HrJ07","6t4J21oNWc","MbHdCp1Uyf","MJsUmoUYF3","9HhRFxSnqm","9NXeaZzjPb","tgt53X6tEj","1AnOYcUHoQ","8Cb2kgGVMD","7VqcDFBlpj","OIWYA5L240","QLWNqyA7wR","AbMha3fy6j","9jJWSzbi9A","kka7A9bMi8","41LHfIRYp0","3zrbEV4Wqo","udNKIbuMJM","PrZtijrbAz","Sd37qzfN70","KT4WRSlbYj","6DCBEZuwgB","nCKv5hhkJa","JTfFghVr4Q","YybiAg6oIb","dXcgDAQYmH","RKVMiVL7o4","b0FxLBWm6e","mpKAqvI9nA","eOdIaAK1TZ","uyYYeQJe84","afbYqkIkIR","CO3tEUAFGM","IH9N6OjH1M","Wi18Pme5ti","QDBLbbmWgS","ewocukmo50","HDoiZZLpfk","VDCpiwhkeu","9jJWSzbi9A","bze3nljO9S","zH4hTdyLm1","l42VwK1o3V","zjfe3PN5o1","drh0jEPrxJ","TYt7qAp3bO","P4OA1ROYFa","MkExFLFQr4","EGDbzgdJ6o","WttwRgshCG","vdP8GhwNs1","qEsfQ3DBrI","5qfRYcwCxW","PbkZdRZL1Q","kka7A9bMi8","gNaPadiiTC","pAT70HLzIV"]
+//let hi = ["ImIE4VS8CF","LWkWRGpUyW","vd5zkmFF3K","v667XU7MRx","phYYKOarj9","6DCBEZuwgB","5qfRYcwCxW","z3tZHNC4Iq","xUHqmhXuMj","IaTSYcAGEI","ts4JkJVQze","ukdWzQ6gZR","mpx1kfKD56","4xVhxjxARY","5FMg5eZvEO","w0JFBNI8nM","x81zIhYYLE","Wi18Pme5ti","QDBLbbmWgS","UNERSnxcVW","Uw0CsEwFlF","qWmdxgXkzE","rYXYqhfgwV","6H1b6HrJ07","6t4J21oNWc","MbHdCp1Uyf","MJsUmoUYF3","9HhRFxSnqm","9NXeaZzjPb","tgt53X6tEj","1AnOYcUHoQ","8Cb2kgGVMD","7VqcDFBlpj","OIWYA5L240","QLWNqyA7wR","AbMha3fy6j","9jJWSzbi9A","kka7A9bMi8","41LHfIRYp0","3zrbEV4Wqo","ImIE4VS8CF","EYBQ8QkCRS","EGDbzgdJ6o","v667XU7MRx","phYYKOarj9","6DCBEZuwgB","5qfRYcwCxW","z3tZHNC4Iq","xUHqmhXuMj","CD7mr9qt4M","CO3tEUAFGM","ukdWzQ6gZR","mpx1kfKD56","4xVhxjxARY","5FMg5eZvEO","w0JFBNI8nM","x81zIhYYLE","Wi18Pme5ti","QDBLbbmWgS","UNERSnxcVW","Uw0CsEwFlF","qWmdxgXkzE","rYXYqhfgwV","6H1b6HrJ07","6t4J21oNWc","MbHdCp1Uyf","MJsUmoUYF3","9HhRFxSnqm","9NXeaZzjPb","tgt53X6tEj","1AnOYcUHoQ","8Cb2kgGVMD","7VqcDFBlpj","OIWYA5L240","QLWNqyA7wR","AbMha3fy6j","9jJWSzbi9A","kka7A9bMi8","41LHfIRYp0","3zrbEV4Wqo","udNKIbuMJM","PrZtijrbAz","Sd37qzfN70","KT4WRSlbYj","6DCBEZuwgB","nCKv5hhkJa","JTfFghVr4Q","YybiAg6oIb","dXcgDAQYmH","RKVMiVL7o4","b0FxLBWm6e","mpKAqvI9nA","eOdIaAK1TZ","uyYYeQJe84","afbYqkIkIR","CO3tEUAFGM","IH9N6OjH1M","Wi18Pme5ti","QDBLbbmWgS","ewocukmo50","HDoiZZLpfk","VDCpiwhkeu","9jJWSzbi9A","bze3nljO9S","zH4hTdyLm1","l42VwK1o3V","zjfe3PN5o1","drh0jEPrxJ","TYt7qAp3bO","P4OA1ROYFa","MkExFLFQr4","EGDbzgdJ6o","WttwRgshCG","vdP8GhwNs1","qEsfQ3DBrI","5qfRYcwCxW","PbkZdRZL1Q","kka7A9bMi8","gNaPadiiTC","pAT70HLzIV"]
+//
+//hi.count
+//
+//["1AnOYcUHoQ","1FhmLTjWjr","3zrbEV4Wqo","41LHfIRYp0","4xVhxjxARY","5FMg5eZvEO","5qfRYcwCxW","6DCBEZuwgB","6H1b6HrJ07","6t4J21oNWc","7VqcDFBlpj","8Cb2kgGVMD","9HhRFxSnqm","9NXeaZzjPb","9jJWSzbi9A","AbMha3fy6j","CD7mr9qt4M","CO3tEUAFGM","EGDbzgdJ6o","EYBQ8QkCRS","F3N1Samqyh","HDoiZZLpfk","IH9N6OjH1M","IaTSYcAGEI","IhZVUIitF8","ImIE4VS8CF","JTfFghVr4Q","KT4WRSlbYj","LWkWRGpUyW","MJsUmoUYF3","MbHdCp1Uyf","MkExFLFQr4"]
 
-hi.count
+let bingURL = "https://platform.bing.com/geo/spatial/v1/public/geodata?spatialFilter=GetBoundary(40.759211,-73.984638,1,%27PostCode1%27,0,0)&key=Ak8iBpYFiN2_M3vtEa2YFXiWbOJi6eypNwGnPZM_tdKjcFbZ5jJPme1jay12h46K&$format=json"
 
-["1AnOYcUHoQ","1FhmLTjWjr","3zrbEV4Wqo","41LHfIRYp0","4xVhxjxARY","5FMg5eZvEO","5qfRYcwCxW","6DCBEZuwgB","6H1b6HrJ07","6t4J21oNWc","7VqcDFBlpj","8Cb2kgGVMD","9HhRFxSnqm","9NXeaZzjPb","9jJWSzbi9A","AbMha3fy6j","CD7mr9qt4M","CO3tEUAFGM","EGDbzgdJ6o","EYBQ8QkCRS","F3N1Samqyh","HDoiZZLpfk","IH9N6OjH1M","IaTSYcAGEI","IhZVUIitF8","ImIE4VS8CF","JTfFghVr4Q","KT4WRSlbYj","LWkWRGpUyW","MJsUmoUYF3","MbHdCp1Uyf","MkExFLFQr4"]
+extension String
+{
+    public func indexOfCharacter(char: Character) -> Int? {
+        if let idx = find(self, char) {
+            return distance(self.startIndex, idx)
+        }
+        return nil
+    }
+}
+
+let data = "1,9x6hjiuuvHDFpiaj4C_2Jy3Y5yW-tX5yWF4t8Bks4B6yXk5hKrkQjn-FuqnB_3Ng69B8z_Jm-H-yD2jB8vjCioL8DkG6ouEtHB-rBtnEgdqIliC6rDm_Bw2B_Bw2B1mDo2DmvB-mE1wDzCk-J_O3rBwoBkvBYiT-Q7rB8c5JpaiP_cCC4R1z0Hx-Bo3H1tDu1Ex1F17EhMw8Y5P9uMrklB7JmT_B8B2FCCDrD0G-FuC-F7D7D9Tx-BmtB73B8RDFDziBxD0pECrvEltOpjGsj1Blv7JxuY8olFD-lF20IngHlC1tD0gY4gBqzkB9uM"
+
+let safeCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"
+
+var point = [AnyObject]()
+var pointsArray = [AnyObject]()
 
 
+for char in data {
 
+    var num = safeCharacters.indexOfCharacter(char)
+    
+    if num < 32  {
+        
+        if num != nil {
+            
+            point.append(num!)
+            pointsArray.append(point)
+            point = []
+            
+        }
+        
+    } else {
+        
+        
+        
+    }
+}
+
+
+for point in pointsArray {
+    
+    var result = Int()
+    
+    
+    
+}
 
 
 
