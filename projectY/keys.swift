@@ -97,6 +97,7 @@ let allDone = "allDone"
 //Map Markers
 
 let markerCurrentLeader = UIImage(named: "markerCurrentLeader")
+let markerCurrentLeader2 = UIImage(named: "markerCurrentLeader2")
 let markerCurrentRunnerUp = UIImage(named: "markerCurrentLeader")
 let markerCurrentThirdPlace = UIImage(named: "markerCurrentLeader")
 let markerNine = UIImage(named: "mapMarkerNine")
@@ -109,7 +110,6 @@ let markerThree = UIImage(named: "mapMarkerFive")
 let markerTwo = UIImage(named: "mapMarkerFive")
 let markerOne = UIImage(named: "mapMarkerFive")
 let markerZero = UIImage(named: "mapMarkerFive")
-
 
 
 //Fonts

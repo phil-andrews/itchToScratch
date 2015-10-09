@@ -82,9 +82,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             self.cellHighlightingCall(self.currentLocationObject!, animation: false)
         }
-        
-        println(self.constraintContentViewWidth)
-        
+                
         setFonts(self.view)
         self.setConstraints()
         
@@ -128,6 +126,14 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+                
+        return UIStatusBarStyle.LightContent
+        
     }
     
     
@@ -621,6 +627,14 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             let objectPlace = sender!.tag as Int
             println(objectPlace)
+
+            if buttonOutlets[sender.tag].backgroundImageForState(.Highlighted) != nil {
+                
+                upcoming.imageForQuestion = buttonOutlets[sender.tag].backgroundImageForState(.Highlighted)
+
+                
+            }
+            
             
             for item in self.pfQuestionObjects {
                 
@@ -635,7 +649,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
                 }
                 
             }
-            
+
             upcoming.locationObject = currentLocationObject!
             upcoming.objectPlace = objectPlace
             
@@ -805,6 +819,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
                             button.enabled = true
                             button.setBackgroundImage(UIImage(data: data!), forState: .Normal)
                             button.setBackgroundImage(UIImage(data: data!), forState: .Disabled)
+                            button.setBackgroundImage(UIImage(data: data!), forState: .Highlighted)
 
                             self.checkUsersAnsweredQuestions(button, objectID: question.objectId!)
                             self.cellHighlighting(answerNumber, cell: button, animation: animation)

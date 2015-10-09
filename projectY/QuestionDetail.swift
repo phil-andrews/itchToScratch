@@ -17,6 +17,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     var parseObject: PFObject?
     var locationObject: PFObject?
     var objectPlace: Int?
+    var imageForQuestion: UIImage?
     
     
     var arrayOfCorrect = [] as NSMutableArray
@@ -26,11 +27,12 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var topCell: UITableViewCell!
     @IBOutlet weak var bottomCell: UITableViewCell!
     @IBOutlet weak var topContentView: UIView!
+    var topCellHeight = CGFloat()
     
-    @IBOutlet weak var detailImageView: UIImageView!
-    @IBOutlet weak var answerTextField: UITextField!
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var questionLabelNOImage: UILabel!
+    var detailImageView = UIImageView()
+    @IBOutlet weak var answerInputField: UITextField!
+    var questionLabel = UILabel()
+    var questionLabelNOImage = UILabel()
     
     @IBOutlet weak var correctAnswerLabelOne: UILabel!
     @IBOutlet weak var correctAnswerLabelTwo: UILabel!
@@ -41,17 +43,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var correctAnswerLabelSeven: UILabel!
     @IBOutlet weak var correctAnswerLabelEight: UILabel!
     
-    @IBOutlet weak var correctFlash: UIImageView!
-    
-    @IBOutlet weak var correctBar1: UIImageView!
-    @IBOutlet weak var correctBar2: UIImageView!
-    @IBOutlet weak var correctBar3: UIImageView!
-    @IBOutlet weak var correctBar4: UIImageView!
-    @IBOutlet weak var correctBar5: UIImageView!
-    @IBOutlet weak var correctBar6: UIImageView!
-    @IBOutlet weak var correctBar7: UIImageView!
-    
-    @IBOutlet var correctBarCollection: [UIImageView]!
+    var correctFlash = UIImageView()
     
     let labelTextColor = "E9E8E8"
     
@@ -71,16 +63,13 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         self.bottomCell.backgroundColor = backgroundColor
         self.bottomCell.alpha = 0.5
         
-        self.detailImageView.backgroundColor = backgroundColor
-        self.detailImageView.clipsToBounds = true
-        self.detailImageView.layer.cornerRadius = 4.0
-    
-        self.answerTextField.delegate = self
-        self.answerTextField.becomeFirstResponder()
-        self.answerTextField.keyboardAppearance = UIKeyboardAppearance.Dark
-        self.answerTextField.clearsOnBeginEditing = true
-        self.answerTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
-        self.answerTextField.backgroundColor = lightColoredFont
+        self.answerInputField.delegate = self
+        self.answerInputField.becomeFirstResponder()
+        self.answerInputField.keyboardAppearance = UIKeyboardAppearance.Dark
+        self.answerInputField.clearsOnBeginEditing = true
+        self.answerInputField.clearButtonMode = UITextFieldViewMode.WhileEditing
+        self.answerInputField.backgroundColor = lightColoredFont
+        
         
     }
     
@@ -89,11 +78,18 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.formatScreen()
-
+        self.calculateTopCellSize()
+        
         
     }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        self.formatScreen()
+        
+    }
     
     
     override func viewWillDisappear(animated: Bool) {
@@ -110,9 +106,6 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         let bottomCellHeight: CGFloat = 34
         var cellHeight: CGFloat?
         var keyBoardHeight: CGFloat?
-        
-        println(viewHeight)
-        println(viewWidth)
         
         switch(viewHeight) {
             
@@ -143,6 +136,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         if indexPath.row == 0 {
             
             cellHeight = ((viewHeight - bottomCellHeight) - keyBoardHeight!)
+            topCellHeight = cellHeight!
             
         }
         
@@ -155,21 +149,49 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         return cellHeight!
         
     }
+    
+    
+    func calculateTopCellSize() {
+        
+        let viewHeight = self.view.frame.height
+        let viewWidth = self.view.frame.width
+        let bottomCellHeight: CGFloat = 34
+        var cellHeight: CGFloat?
+        var keyBoardHeight: CGFloat?
+        
+        switch(viewHeight) {
+            
+        case 736:
+            
+            keyBoardHeight = 271
+            
+        case 667:
+            
+            keyBoardHeight = 258
+            
+        case 568:
+            
+            keyBoardHeight = 253
+            
+        case 480:
+            
+            keyBoardHeight = 253
+            detailImageView.contentMode = UIViewContentMode.ScaleAspectFit
+            questionLabel.adjustsFontSizeToFitWidth = true
+            
+        default:
+            
+            keyBoardHeight = 275
+            
+        }
+            
+            cellHeight = ((viewHeight - bottomCellHeight) - keyBoardHeight!)
+            topCellHeight = cellHeight!
+        
+    }
 
 
     func formatScreen() {
-        
-        self.bottomCell.backgroundColor = backgroundColor
-        self.topContentView.backgroundColor = backgroundColor
-        self.topCell.backgroundColor = backgroundColor
-        
-        correctBar1.hidden = true
-        correctBar2.hidden = true
-        correctBar3.hidden = true
-        correctBar4.hidden = true
-        correctBar5.hidden = true
-        correctBar6.hidden = true
-        correctBar7.hidden = true
         
         self.correctAnswerLabelOne.hidden = true
         self.correctAnswerLabelTwo.hidden = true
@@ -179,36 +201,55 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         self.correctAnswerLabelSix.hidden = true
         self.correctAnswerLabelSeven.hidden = true
         self.correctAnswerLabelEight.hidden = true
+
+        drawPercentageRectOffView(self.correctFlash, self.view, 100.0, 0.0)
+        
+        self.view.addSubview(correctFlash)
         
         self.correctFlash.hidden = true
         
-        
         let imageObject = self.parseObject as PFObject?
-        let imageFile = imageObject?.objectForKey(questionImage) as? PFFile
-        println(imageFile)
         
-        
-        if imageFile == nil {
+        if imageForQuestion?.isEqual(UIImage(named: noQuestionImage)) == true {
             
-            println("image file does equal nil")
+            println("image file equals nil")
             
-            self.detailImageView.hidden = true
-            
+            drawPercentageRectOffFloat(self.questionLabelNOImage, self.topContentView, topCellHeight, 50.0, 45)
+            let yOffset = (self.topContentView.frame.height / 2) - (questionLabelNOImage.frame.height / 2)
+            self.questionLabelNOImage.frame.offset(dx: 22.5, dy: yOffset)
             self.questionLabelNOImage.text = imageObject?.valueForKey(questionAsk) as? String
+            self.questionLabelNOImage.textColor = lightColoredFont
+            self.questionLabelNOImage.lineBreakMode = .ByWordWrapping
+            self.questionLabelNOImage.numberOfLines = 0
+            
+            self.topContentView.addSubview(questionLabelNOImage)
             
             self.questionLabel.text = ""
             
-        } else if imageFile != nil {
+        } else if imageForQuestion?.isEqual(UIImage(named: noQuestionImage)) == false {
             
-            println("image file doens't equal nil")
+            println("image file does not equal nil")
             
             self.detailImageView.hidden = false
-                        
-            self.questionLabelNOImage.text = ""
             
-            self.queryQuestionImage()
-            
+            drawPercentageRectOffFloat(self.detailImageView, self.topContentView, topCellHeight, 60.0, 0)
+            self.detailImageView.clipsToBounds = true
+            self.detailImageView.image = imageForQuestion
+            self.detailImageView.contentMode = .ScaleAspectFit
+            self.topContentView.addSubview(detailImageView)
+
+            let yOffset = detailImageView.frame.maxY + (questionLabel.frame.height)
+            drawPercentageRectOffFloat(self.questionLabel, self.topContentView, topCellHeight, 40.0, 45)
+            self.questionLabel.frame.offset(dx: 22.5, dy: yOffset)
             self.questionLabel.text = imageObject?.valueForKey(questionAsk) as? String
+            self.questionLabel.textColor = lightColoredFont
+            self.questionLabel.lineBreakMode  = .ByWordWrapping
+            self.questionLabel.numberOfLines = 0
+            
+            self.topContentView.addSubview(questionLabel)
+            
+            self.questionLabelNOImage.text = ""
+
             
         }
         
@@ -270,9 +311,9 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         
-        answerTextField.clearsOnBeginEditing = true
+        answerInputField.clearsOnBeginEditing = true
         
-        answerTextField.autocorrectionType = UITextAutocorrectionType.Yes
+        answerInputField.autocorrectionType = UITextAutocorrectionType.Yes
         
     }
 
@@ -461,8 +502,6 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                 
                 if textField.text == item as! String {
                     
-                    correctBarCollection[countOfCorrectAnswers].hidden = false
-                    
                     self.countOfCorrectAnswers = self.countOfCorrectAnswers + 1
                     
                     self.arrayOfCorrect.addObject(arrayPlace)
@@ -475,9 +514,9 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                     
                     if self.countOfCorrectAnswers == numberOfRequiredAnswers {
                         
-                        self.answerTextField.hidden = true
+                        self.answerInputField.hidden = true
                         
-                        self.answerTextField.enabled = false
+                        self.answerInputField.enabled = false
                         
                         self.correctFlash.alpha = 0.0
                         
@@ -515,9 +554,9 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                 
                 count = count + 1
                 
-                self.answerTextField.hidden = true
+                self.answerInputField.hidden = true
                 
-                self.answerTextField.enabled = false
+                self.answerInputField.enabled = false
                 
                 let correctAnswer = self.parseObject?.valueForKey(questionAnswers) as! NSArray
                 

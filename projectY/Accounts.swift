@@ -17,6 +17,8 @@ import FBSDKLoginKit
 import Charts
 
 class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, ChartViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+    
+    var viewLoaded = false
 
     @IBOutlet weak var constraintProfilePicTrailingToView: NSLayoutConstraint!
     @IBOutlet weak var contraintProfilePicToTopOfView: NSLayoutConstraint!
@@ -81,6 +83,11 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.categoryChartCategoryLabel.hidden = true
         self.categoryChartNumberLabel.hidden = true
+        
+        self.profilePicture.hidden = true
+        self.profilePictureRing1.hidden = true
+        self.profilePictureRing2.hidden = true
+
     
     }
     
@@ -95,13 +102,13 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        
-        
-    }
-    
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
+            
+        if self.viewLoaded == false {
+            
+            SwiftSpinner.showWithDelay(0.5, title: "Gathering your things", animated: true)
+            
+        }
+
     }
 
     
@@ -111,10 +118,18 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        
+        return UIStatusBarStyle.LightContent
+        
+    }
+    
+    
+    /// Setup //////////////////////////////////////////////////////////
+
+    
     func loadFunc() {
         
-        
-        SwiftSpinner.show("Gathering your things", animated: true)
         
         self.queryForUser { () -> Void in
             
@@ -127,6 +142,12 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                     PPChart().makeWhereChart(playedAreasDict, contentView: self.childView, parentView: self.view, locationObjects: locationObjects, completion: { () -> Void in
                                                 
                         SwiftSpinner.hide(completion: nil)
+                        
+                        self.viewLoaded == true
+                        
+                        self.profilePicture.hidden = false
+                        self.profilePictureRing1.hidden = false
+                        self.profilePictureRing2.hidden = false
                         
                         
                     })
@@ -195,8 +216,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     
     func setProfilePictureAndName() {
-        
-        SwiftSpinner.show("Gathering your things", animated: true)
         
         let user = userObject
         let userName = user?.valueForKey(displayName) as? String
