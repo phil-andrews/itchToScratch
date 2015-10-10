@@ -228,8 +228,6 @@ public class PPChart {
             println(contentView.frame.height)
         
             bottomBackGround.frame = CGRectMake(0.0, parentViewHeightPercentage * 190, parentView.frame.width, parentViewHeightPercentage * 15)
-            bottomBackGround.layer.borderWidth = 1.0
-            bottomBackGround.layer.borderColor = UIColor.whiteColor().CGColor
         
             bottomBackGround.hidden = true
             checkmarkImage.hidden = true

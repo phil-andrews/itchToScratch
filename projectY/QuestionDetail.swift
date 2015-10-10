@@ -202,7 +202,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         self.correctAnswerLabelSeven.hidden = true
         self.correctAnswerLabelEight.hidden = true
 
-        drawPercentageRectOffView(self.correctFlash, self.view, 100.0, 0.0)
+        drawPercentageRectOffView(self.correctFlash, self.view, 100.0, 100.0)
         
         self.view.addSubview(correctFlash)
         

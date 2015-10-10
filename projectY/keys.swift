@@ -71,12 +71,13 @@ let lowColor = UIColor(hex: "75CAEF")
 let midColor = UIColor(hex:"50E3C2")
 let highColor = UIColor(hex: "02F87B")
 let highestColor = UIColor(hex: "0DE632")
-let backgroundColor = UIColor(hex: "4A4A4A")
+let backgroundColor = UIColor(hex: "29292A")
 let lightColoredFont = UIColor(hex: "E9E8E8")
 let orangeColor = UIColor(hex: "F5A623")
 let whiteColor = UIColor(hex: "FFFFFF")
 let paleGreenColor = UIColor(hex: "B8E986")
 let lightPurpleColor = UIColor(hex: "D67FE8")
+let yellowColor = UIColor(hex: "F8E71C")
 
 //Image Assets
 

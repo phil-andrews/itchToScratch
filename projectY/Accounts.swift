@@ -632,7 +632,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         percentileRankingOverLabel.textAlignment = .Center
         percentileRankingOverLabel.frame = CGRectMake(leftLabelX - 10.0, overLabelsY, rankingLabelsWidth + 15.0, rankingLabelHeight)
         
-        overallRankingLabel.text = String(userRankingsOverall[sender.tag])
+        overallRankingLabel.text = addOrdinalIndicator(userRankingsOverall[sender.tag])
         overallRankingLabel.textColor = lightColoredFont
         overallRankingLabel.font = fontMedium
         overallRankingLabel.textAlignment = .Center
