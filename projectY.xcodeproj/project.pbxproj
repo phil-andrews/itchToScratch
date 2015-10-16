@@ -13,8 +13,8 @@
 		8416A97E1B9133AE009A70DD /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84932D131B912CA80060A94B /* Charts.framework */; };
 		8416A97F1B9133AE009A70DD /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84932D131B912CA80060A94B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		841D78A21B93F955008DE7E2 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D78A11B93F955008DE7E2 /* keys.swift */; };
-		842F9FE41BAE0F3800D21DA9 /* BlackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* BlackController.swift */; };
-		843802CC1B893529004CDE6A /* BlueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843802CB1B893529004CDE6A /* BlueController.swift */; };
+		842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* MapController.swift */; };
+		843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843802CB1B893529004CDE6A /* GameBoardController.swift */; };
 		84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408B8B1B9B733A00EED2AB /* extensions.swift */; };
 		8453D3F61BA3E01B00627A59 /* loginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453D3F51BA3E01B00627A59 /* loginFunctions.swift */; };
 		84566CFE1B7E402D0012E27E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */; };
@@ -44,9 +44,10 @@
 		8484D2171B1A8E79003273BD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8484D2161B1A8E79003273BD /* libsqlite3.dylib */; };
 		8484D2191B1A8E8B003273BD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8484D2181B1A8E8B003273BD /* Accounts.framework */; };
 		8484D21B1B1A8E90003273BD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8484D21A1B1A8E90003273BD /* Social.framework */; };
+		8486A6AA1BD16C40009DB394 /* userControlClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486A6A91BD16C40009DB394 /* userControlClass.swift */; };
 		848A9B431B8FC67A00BEA22F /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A9B421B8FC67A00BEA22F /* SwiftSpinner.swift */; };
 		848B1A061BA3701D0082119A /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848B1A051BA3701D0082119A /* Roboto-Thin.ttf */; };
-		84932D191B9130C80060A94B /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932D181B9130C80060A94B /* Accounts.swift */; };
+		84932D191B9130C80060A94B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932D181B9130C80060A94B /* ProfileController.swift */; };
 		84ADA3071B5C7135002D75C2 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */; };
 		84ADA3091B5C7142002D75C2 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */; };
 		84ADA30B1B5C714C002D75C2 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA30A1B5C714C002D75C2 /* Gotham-Bold.otf */; };
@@ -132,8 +133,8 @@
 		841532EB1B2B814400118311 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		841532ED1B2B834900118311 /* Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridge-Header.h"; path = "../../Swift/projectX/projectX/Bridge-Header.h"; sourceTree = "<group>"; };
 		841D78A11B93F955008DE7E2 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
-		842F9FE31BAE0F3800D21DA9 /* BlackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackController.swift; sourceTree = "<group>"; };
-		843802CB1B893529004CDE6A /* BlueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueController.swift; sourceTree = "<group>"; };
+		842F9FE31BAE0F3800D21DA9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		843802CB1B893529004CDE6A /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
 		84408B8B1B9B733A00EED2AB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		8453D3F51BA3E01B00627A59 /* loginFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginFunctions.swift; sourceTree = "<group>"; };
 		84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -167,10 +168,11 @@
 		8484D2161B1A8E79003273BD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8484D2181B1A8E8B003273BD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8484D21A1B1A8E90003273BD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8486A6A91BD16C40009DB394 /* userControlClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userControlClass.swift; sourceTree = "<group>"; };
 		848A9B421B8FC67A00BEA22F /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		848B1A051BA3701D0082119A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		84932D0E1B912CA80060A94B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "ios-charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
-		84932D181B9130C80060A94B /* Accounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
+		84932D181B9130C80060A94B /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
 		84ADA30A1B5C714C002D75C2 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
@@ -306,14 +308,15 @@
 				8484D1D61B1A8D57003273BD /* AppDelegate.swift */,
 				841D78A11B93F955008DE7E2 /* keys.swift */,
 				8453D3F51BA3E01B00627A59 /* loginFunctions.swift */,
+				8486A6A91BD16C40009DB394 /* userControlClass.swift */,
 				84B200FE1BAB10E8003F0C59 /* sizeAdapt.swift */,
 				84408B8B1B9B733A00EED2AB /* extensions.swift */,
 				84D5D0131BAF2A550035C8F0 /* utilities.swift */,
 				84DAB8B01B9A155000C533FB /* animations.swift */,
 				84DB65FA1BA1FE57001F093F /* whereChart.swift */,
-				84932D181B9130C80060A94B /* Accounts.swift */,
-				842F9FE31BAE0F3800D21DA9 /* BlackController.swift */,
-				843802CB1B893529004CDE6A /* BlueController.swift */,
+				84932D181B9130C80060A94B /* ProfileController.swift */,
+				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
+				843802CB1B893529004CDE6A /* GameBoardController.swift */,
 				840B2E9B1B1D5A0F00EC218C /* QuestionDetail.swift */,
 				8484D1DC1B1A8D57003273BD /* Main.storyboard */,
 				8484D1DF1B1A8D57003273BD /* Images.xcassets */,
@@ -616,12 +619,13 @@
 				84ECC18B1B2D520500953FAE /* Misc.swift in Sources */,
 				84ECC17E1B2D520500953FAE /* BlurView.swift in Sources */,
 				84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */,
-				843802CC1B893529004CDE6A /* BlueController.swift in Sources */,
+				843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */,
 				84ECC1971B2D520500953FAE /* UnwindSegue.swift in Sources */,
 				84ECC1891B2D520500953FAE /* LoadingView.swift in Sources */,
-				84932D191B9130C80060A94B /* Accounts.swift in Sources */,
+				84932D191B9130C80060A94B /* ProfileController.swift in Sources */,
 				84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */,
 				84ECC1921B2D520500953FAE /* SpringTextField.swift in Sources */,
+				8486A6AA1BD16C40009DB394 /* userControlClass.swift in Sources */,
 				84ECC18D1B2D520500953FAE /* Spring.swift in Sources */,
 				84ECC18C1B2D520500953FAE /* SoundPlayer.swift in Sources */,
 				84ECC1851B2D520500953FAE /* DesignableView.swift in Sources */,
@@ -645,7 +649,7 @@
 				8453D3F61BA3E01B00627A59 /* loginFunctions.swift in Sources */,
 				84ECC18F1B2D520500953FAE /* SpringButton.swift in Sources */,
 				84ECC18E1B2D520500953FAE /* SpringAnimation.swift in Sources */,
-				842F9FE41BAE0F3800D21DA9 /* BlackController.swift in Sources */,
+				842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */,
 				84ECC1801B2D520500953FAE /* DesignableImageView.swift in Sources */,
 				840B2E9C1B1D5A0F00EC218C /* QuestionDetail.swift in Sources */,
 				84B200FF1BAB10E8003F0C59 /* sizeAdapt.swift in Sources */,

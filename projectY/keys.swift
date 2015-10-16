@@ -39,6 +39,7 @@ let defaultLocationObject = "G1ZjIWqVmp"
 let usedQuestionObjects = "usedQuestionObjects"
 let scoreRankingsKey = "scoreRankings"
 let geoPoint = "geoPoint"
+let topPlayersForArea = "topPlayersForArea"
 
 
 //UserClass Keys
@@ -71,7 +72,7 @@ let lowColor = UIColor(hex: "75CAEF")
 let midColor = UIColor(hex:"50E3C2")
 let highColor = UIColor(hex: "02F87B")
 let highestColor = UIColor(hex: "0DE632")
-let backgroundColor = UIColor(hex: "29292A")
+let backgroundColor = UIColor(hex: "363B4E")
 let lightColoredFont = UIColor(hex: "E9E8E8")
 let orangeColor = UIColor(hex: "F5A623")
 let whiteColor = UIColor(hex: "FFFFFF")
@@ -94,6 +95,9 @@ let midCountOverlay = "midCountOverlay"
 let highCountOverlay = "highCountOverlay"
 let highestCountOverlay = "highestCountOverlay"
 let allDone = "allDone"
+
+let logoutNotification = "logoutNotification"
+let defaultProfilePic = "defaultProfilePic"
 
 //Map Markers
 

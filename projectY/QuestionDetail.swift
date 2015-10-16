@@ -856,7 +856,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
             
         }
         
-        userQuestionObjectsToBlock.addObject(questionObjectID!)
+        userQuestionObjectsToBlock!.addObject(questionObjectID!)
         
         user?.addObject(questionObjectID!, forKey: questionsAnswered)
         user?.saveInBackground()
