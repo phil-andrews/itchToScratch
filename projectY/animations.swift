@@ -89,6 +89,15 @@ func animationLoop2(floatView: UIView) {
 }
 
 
+func activityIndicator() {
+    
+    
+    
+    
+    
+}
+
+
 func makeBackground() -> UIView {
     
     let backRect = UIView()

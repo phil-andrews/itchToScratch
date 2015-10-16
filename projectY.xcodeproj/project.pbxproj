@@ -45,6 +45,8 @@
 		8484D2191B1A8E8B003273BD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8484D2181B1A8E8B003273BD /* Accounts.framework */; };
 		8484D21B1B1A8E90003273BD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8484D21A1B1A8E90003273BD /* Social.framework */; };
 		8486A6AA1BD16C40009DB394 /* userControlClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486A6A91BD16C40009DB394 /* userControlClass.swift */; };
+		8486A6AC1BD1732A009DB394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486A6AB1BD1732A009DB394 /* LoginViewController.swift */; };
+		8486A6AE1BD17335009DB394 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486A6AD1BD17335009DB394 /* SignupViewController.swift */; };
 		848A9B431B8FC67A00BEA22F /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A9B421B8FC67A00BEA22F /* SwiftSpinner.swift */; };
 		848B1A061BA3701D0082119A /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848B1A051BA3701D0082119A /* Roboto-Thin.ttf */; };
 		84932D191B9130C80060A94B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932D181B9130C80060A94B /* ProfileController.swift */; };
@@ -169,6 +171,8 @@
 		8484D2181B1A8E8B003273BD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8484D21A1B1A8E90003273BD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8486A6A91BD16C40009DB394 /* userControlClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userControlClass.swift; sourceTree = "<group>"; };
+		8486A6AB1BD1732A009DB394 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8486A6AD1BD17335009DB394 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		848A9B421B8FC67A00BEA22F /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		848B1A051BA3701D0082119A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		84932D0E1B912CA80060A94B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "ios-charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
@@ -314,6 +318,8 @@
 				84D5D0131BAF2A550035C8F0 /* utilities.swift */,
 				84DAB8B01B9A155000C533FB /* animations.swift */,
 				84DB65FA1BA1FE57001F093F /* whereChart.swift */,
+				8486A6AB1BD1732A009DB394 /* LoginViewController.swift */,
+				8486A6AD1BD17335009DB394 /* SignupViewController.swift */,
 				84932D181B9130C80060A94B /* ProfileController.swift */,
 				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
 				843802CB1B893529004CDE6A /* GameBoardController.swift */,
@@ -612,6 +618,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8486A6AE1BD17335009DB394 /* SignupViewController.swift in Sources */,
+				8486A6AC1BD1732A009DB394 /* LoginViewController.swift in Sources */,
 				84ECC1811B2D520500953FAE /* DesignableLabel.swift in Sources */,
 				84ECC1901B2D520500953FAE /* SpringImageView.swift in Sources */,
 				84ECC17D1B2D520500953FAE /* AutoTextView.swift in Sources */,
