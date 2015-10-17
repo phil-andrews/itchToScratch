@@ -79,6 +79,7 @@ let whiteColor = UIColor(hex: "FFFFFF")
 let paleGreenColor = UIColor(hex: "B8E986")
 let lightPurpleColor = UIColor(hex: "D67FE8")
 let yellowColor = UIColor(hex: "F8E71C")
+let facebookColor = UIColor(hex: "3B5998")
 
 //Image Assets
 
@@ -98,6 +99,11 @@ let allDone = "allDone"
 
 let logoutNotification = "logoutNotification"
 let defaultProfilePic = "defaultProfilePic"
+
+let facebookSignInImage = "facebookSignin"
+let twitterSignInImage = "twitterSignin"
+let loginSpacerImage = "loginSpacerImage"
+let loginTextFieldBackground = "loginTextFieldBackground"
 
 //Map Markers
 

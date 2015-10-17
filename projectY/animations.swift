@@ -29,7 +29,7 @@ func animationLoop1(floatView: UIView) {
         
         UIView.animateWithDuration(2.0, delay: randomD, options: nil, animations: { () -> Void in
             
-            floatView.alpha = 0.9
+            floatView.alpha = 0.7
             
             }, completion: { (Bool) -> Void in
                 
@@ -68,7 +68,7 @@ func animationLoop2(floatView: UIView) {
         
         UIView.animateWithDuration(2.0, delay: randomD, options: nil, animations: { () -> Void in
             
-            floatView.alpha = 0.9
+            floatView.alpha = 0.7
             
             }, completion: { (Bool) -> Void in
                 
