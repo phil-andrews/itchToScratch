@@ -80,6 +80,7 @@ let paleGreenColor = UIColor(hex: "B8E986")
 let lightPurpleColor = UIColor(hex: "D67FE8")
 let yellowColor = UIColor(hex: "F8E71C")
 let facebookColor = UIColor(hex: "3B5998")
+let redColor = UIColor(hex: "E34538")
 
 //Image Assets
 
@@ -170,7 +171,10 @@ var fontLargeRegular = UIFont()
 var fontExtraLargeRegular = UIFont()
 
 //API Keys
-private let bingMapsAPI = "Ak8iBpYFiN2_M3vtEa2YFXiWbOJi6eypNwGnPZM_tdKjcFbZ5jJPme1jay12h46K"
+
+
+//Segues
+
 
 
 
