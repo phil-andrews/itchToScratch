@@ -13,6 +13,7 @@
 		8416A97E1B9133AE009A70DD /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84932D131B912CA80060A94B /* Charts.framework */; };
 		8416A97F1B9133AE009A70DD /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84932D131B912CA80060A94B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		841D78A21B93F955008DE7E2 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D78A11B93F955008DE7E2 /* keys.swift */; };
+		84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84249D2A1BDAD63200773168 /* activityIndicator.swift */; };
 		842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* MapController.swift */; };
 		843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843802CB1B893529004CDE6A /* GameBoardController.swift */; };
 		84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408B8B1B9B733A00EED2AB /* extensions.swift */; };
@@ -135,6 +136,7 @@
 		841532EB1B2B814400118311 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		841532ED1B2B834900118311 /* Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridge-Header.h"; path = "../../Swift/projectX/projectX/Bridge-Header.h"; sourceTree = "<group>"; };
 		841D78A11B93F955008DE7E2 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
+		84249D2A1BDAD63200773168 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		842F9FE31BAE0F3800D21DA9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		843802CB1B893529004CDE6A /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
 		84408B8B1B9B733A00EED2AB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				841532ED1B2B834900118311 /* Bridge-Header.h */,
 				8484D1D61B1A8D57003273BD /* AppDelegate.swift */,
 				841D78A11B93F955008DE7E2 /* keys.swift */,
+				84249D2A1BDAD63200773168 /* activityIndicator.swift */,
 				8453D3F51BA3E01B00627A59 /* loginFunctions.swift */,
 				8486A6A91BD16C40009DB394 /* userControlClass.swift */,
 				84B200FE1BAB10E8003F0C59 /* sizeAdapt.swift */,
@@ -658,6 +661,7 @@
 				84ECC18F1B2D520500953FAE /* SpringButton.swift in Sources */,
 				84ECC18E1B2D520500953FAE /* SpringAnimation.swift in Sources */,
 				842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */,
+				84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */,
 				84ECC1801B2D520500953FAE /* DesignableImageView.swift in Sources */,
 				840B2E9C1B1D5A0F00EC218C /* QuestionDetail.swift in Sources */,
 				84B200FF1BAB10E8003F0C59 /* sizeAdapt.swift in Sources */,
