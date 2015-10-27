@@ -39,7 +39,19 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBAction func logout(sender: AnyObject) {
         
-        logoutFunc(self.view, self, self, self)
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            
+            if error == nil {
+                
+                var loginStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                var loginViewController: LoginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+                
+                self.presentViewController(loginViewController, animated: true, completion: nil)
+                
+            }
+            
+        }
         
     }
     
@@ -123,8 +135,12 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func checkForUser() {
         
         if PFUser.currentUser() == nil {
-            
-            loginFunc(self.view, self, self, self)
+                
+                var loginStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                var loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+                
+                self.presentViewController(loginViewController, animated: true, completion: nil)
             
         } else if PFUser.currentUser() != nil {
             

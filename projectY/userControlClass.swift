@@ -33,47 +33,22 @@ import FBSDKLoginKit
 
 
 
-func logoutFunc(view: UIView!, loginDelegate: PFLogInViewControllerDelegate, signupDelegate: PFSignUpViewControllerDelegate, viewController: UIViewController) {
-    
-    PFUser.logOutInBackgroundWithBlock { (error) -> Void in
-        
-        if error == nil {
-            
-            let loggedOutView = UIImageView()
-            loggedOutView.hidden = true
-            drawPercentageRectOffView(loggedOutView, view, 100, 100)
-            loggedOutView.image = UIImage(named: logoutNotification)
-            view.addSubview(loggedOutView)
-            
-            loggedOutView.center.y -= view.frame.height
-            loggedOutView.hidden = false
-            
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                
-                loggedOutView.center.y += view.frame.height
-                
-                }, completion: { (Bool) -> Void in
-                    
-                    delay(2.5, { () -> () in
-                        
-                        loginFunc(view, loginDelegate, signupDelegate, viewController)
-                        
-                    })
-                    
-                    delay(2.6, { () -> () in
-                        
-                        loggedOutView.removeFromSuperview()
-                        
-                    })
-                    
-            })
-            
-        }
-        
-    }
-    
-    
-}
+//func logoutFunc(view: UIView!, loginDelegate: PFLogInViewControllerDelegate, signupDelegate: PFSignUpViewControllerDelegate, viewController: UIViewController) {
+//    
+//    PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+//        
+//        if error == nil {
+//            
+//
+//                    
+//            })
+//            
+//        }
+//        
+//    }
+//    
+//    
+//}
 
 
 func loginFunc(view: UIView, loginDelegate: PFLogInViewControllerDelegate, signupDelegate: PFSignUpViewControllerDelegate, viewController: UIViewController) -> Bool {
