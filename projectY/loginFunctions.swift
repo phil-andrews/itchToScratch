@@ -14,7 +14,6 @@ import ParseUI
 import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
-import PureLayout
 
 
 
