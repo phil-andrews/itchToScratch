@@ -439,7 +439,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     
     func locationTimerCall() {
         
-        self.delay(30.0, closure: { () -> () in
+        delay(30.0, { () -> () in
             
             self.locationTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("startLocation"), userInfo: nil, repeats: true)
             self.locationTimer.fire()
@@ -918,20 +918,19 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
         }
         
-        
     }
 
     
     
     func refreshAnswerTimerCall() {
         
-        self.delay(20.0, closure: { () -> () in
+        
+        delay(20.0, { () -> () in
             
             self.refreshTimer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: Selector("refreshAnswerNumbers"), userInfo: nil, repeats: true)
             self.refreshTimer.fire()
             
         })
-        
         
     }
     
@@ -1783,20 +1782,6 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
         
         
     }
-    
-    
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
-    }
-    
-    
-    
-
     
     
     

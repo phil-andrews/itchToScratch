@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreLocation
 import Parse
 import ParseUI
 import Bolts
@@ -16,7 +15,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     ///colors
     
@@ -31,7 +30,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
     var errorLabel = UILabel()
     var userNameField = UITextField()
     var passwordField = UITextField()
-    var forgotPasswordEntryField = UITextField()
     var loginButton = UIButton()
     var forgotPasswordButton = UIButton()
     var signupWithEmail = UIButton()
@@ -40,13 +38,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
     
     ///email signup variables
     
-    
-    var userNameSignupField = UITextField()
-    var passwordSignupField = UITextField()
     var passwordConfirmationSignupField = UITextField()
     var emailSignupField = UITextField()
     var registerButton = UIButton()
     var cancelRegisterButton = UIButton()
+    
+    
+    ///profile picture variables
+    var loginProfilePicture = UIImage()
+    var profilePictureButton = UIButton()
+    var profilePictureLabel = UILabel()
+    var profileYesButton = UIButton()
+    var profileNoButton = UIButton()
+    let imagePicker = UIImagePickerController()
 
     
     
@@ -55,10 +59,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         self.view.backgroundColor = backgroundColor
         self.view.addSubview(background)
         setFonts(self.view)
+        imagePicker.delegate = self
+    
+        self.makeSizesAddSubviews { () -> Void in
+            
+            self.loginSectionMake()
+            
+        }
         
     }
     
@@ -66,11 +77,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.makeSizesAddSubviews { () -> Void in
-            
-            self.loginSectionMake()
-            
-        }
         
     }
     
@@ -171,19 +177,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
         self.view.addSubview(cancelLoginButton)
 
         
-        drawPercentageRectOffView(userNameSignupField, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(passwordSignupField, self.view, 7.1, 78.44)
         drawPercentageRectOffView(passwordConfirmationSignupField, self.view, 7.1, 78.44)
         drawPercentageRectOffView(emailSignupField, self.view, 7.1, 78.44)
         drawPercentageRectOffView(registerButton, self.view, 7.1, 78.44)
         drawPercentageRectOffView(cancelRegisterButton, self.view, 2.81, 34.69)
+    
         
-        self.view.addSubview(userNameSignupField)
-        self.view.addSubview(passwordSignupField)
         self.view.addSubview(passwordConfirmationSignupField)
         self.view.addSubview(emailSignupField)
         self.view.addSubview(registerButton)
         self.view.addSubview(cancelRegisterButton)
+        
+        drawSquareRectOffView(profilePictureButton, self.view, 20, 20)
+        self.view.addSubview(profilePictureButton)
 
         completion()
         
@@ -344,7 +350,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
         self.registerButton.alpha = 0.0
         self.registerButton.tag = 4
 
-        
+        self.profilePictureButton.alpha = 0.0
         
     }
 
@@ -353,6 +359,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
     func facebookLogin() {
         
         errorLabel.text = ""
+        
+        SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: self.twitterButton, percentageSize: 7, borderWidth: 2.0)
         
         let permissions = ["public_profile"]
         
@@ -385,13 +393,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
                                                 
                                                 var picture = PFFile(data: data)
                                                 
+                                                var uiPicture = UIImage(data: data!)
+                                                
+                                                self.loginProfilePicture = uiPicture!
+                                                
+                                                self.profilePictureButton.setBackgroundImage(uiPicture, forState: .Normal)
+                                                
                                                 user.setValue(picture, forKey: profilePic)
                                                 
                                                 user.saveInBackgroundWithBlock({ (success, error) -> Void in
                                                     
                                                     if error == nil {
                                                         
-                                                        self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+                                                        SquaresActivityIndicator().stopIndicator(self.view)
+                                                        
+                                                            self.newUserFinishedSignup()
                                                         
                                                     }
                                                     
@@ -445,11 +461,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
         
         errorLabel.text = ""
         
+        SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: self.twitterButton, percentageSize: 7, borderWidth: 2.0)
+        
         PFTwitterUtils.logInWithBlock {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
-                
-                SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: self.twitterButton, percentageSize: 7, borderWidth: 2.0)
                 
                 if user.isNew {
                     
@@ -478,6 +494,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
                                     let imageData = NSData(contentsOfURL: twitterPhotoUrl!)
                                     let twitterImage: PFFile = PFFile(data: imageData!)
                                     
+                                    let uiPicture = UIImage(data: imageData!)
+                                    
+                                    self.profilePictureButton.setBackgroundImage(uiPicture, forState: .Normal)
+                                    
                                     user.setValue(twitterImage, forKey: profilePic)
                                     
                                     user.saveInBackgroundWithBlock({ (success, error) -> Void in
@@ -486,7 +506,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
                                             
                                             SquaresActivityIndicator().stopIndicator(self.view)
                                             
-                                            self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+                                            self.newUserFinishedSignup()
                                             
                                         } else if error != nil {
                                             
@@ -974,7 +994,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
             self.passwordConfirmationSignupField.alpha = 1.0
             
             
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
                 
                 let passwordConfirmationSignupFieldOffset = self.passwordField.frame.height + (viewHeightPercentage * 1.5)
                 
@@ -985,7 +1005,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
                 
                 self.emailSignupField.frame.origin = self.passwordConfirmationSignupField.frame.origin
                 
-                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
                     
                     self.emailSignupField.alpha = 1.0
                     
@@ -998,7 +1018,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
                     
                     self.registerButton.frame.origin = self.emailSignupField.frame.origin
                     
-                    UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    UIView.animateWithDuration(0.2, animations: { () -> Void in
                         
                         self.registerButton.alpha = 1.0
                         
@@ -1079,10 +1099,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
                 
             } else if success == true {
                 
+                var profilePicture = UIImage(named: defaultProfilePic)
+                
+                self.profilePictureButton.setBackgroundImage(profilePicture, forState: .Normal)
+                
                 SquaresActivityIndicator().stopIndicator(self.view)
                 
-                self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
-                
+                self.newUserFinishedSignup()
                 
             }
         }
@@ -1148,6 +1171,176 @@ class LoginViewController: UIViewController, UITextFieldDelegate, PFLogInViewCon
         
         
     }
+    
+    
+    /////Profile Picture Picker
+    ///////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
+    
+    
+    func newUserFinishedSignup() {
+        
+        let masterHeight = self.view.frame.height
+        let masterWidth = self.view.frame.width
+        let onePercentOfWidth = masterWidth/100
+        let onePercentOfHeight = masterHeight/100
+        
+        self.profilePictureButton.addTarget(self, action: Selector("profilePicButtonPressed:"), forControlEvents: .TouchUpInside)
+        self.profilePictureButton.contentMode = UIViewContentMode.ScaleAspectFill
+        self.profilePictureButton.layer.cornerRadius = 6.0
+        self.profilePictureButton.layer.masksToBounds = true
+        self.profilePictureButton.frame.origin.x = centerXAlignment(profilePictureButton, self.view)
+        self.profilePictureButton.frame.origin.y = onePercentOfHeight * 20
+        
+        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        var overLayView = UIView()
+        drawPercentageRectOffView(overLayView, self.view, 85, 85)
+        self.view.insertSubview(overLayView, belowSubview: self.profilePictureButton)
+        blurEffectView.frame = overLayView.bounds
+        overLayView.addSubview(blurEffectView)
+        overLayView.frame.origin.y = centerYAlignment(overLayView, self.view)
+        overLayView.frame.origin.x = centerXAlignment(overLayView, self.view)
+        overLayView.layer.cornerRadius = 10.0
+        overLayView.clipsToBounds = true
+        overLayView.alpha = 0.0
+        
+        self.profilePictureLabel.text = "change your profile picture?"
+        self.profilePictureLabel.font = fontSmallest
+        self.profilePictureLabel.textColor = lightColoredFont
+        self.profilePictureLabel.sizeToFit()
+        self.profilePictureLabel.alpha = 0.0
+        self.view.addSubview(profilePictureLabel)
+        
+        self.profilePictureLabel.frame.origin.x = centerXAlignment(profilePictureLabel, self.view)
+        self.profilePictureLabel.frame.origin.y = profilePictureButton.frame.maxY + (onePercentOfHeight * 5)
+        
+        self.profileYesButton.setTitle("yes", forState: .Normal)
+        self.profileYesButton.setTitleColor(midColor, forState: .Normal)
+        self.profileYesButton.titleLabel?.font = fontSmallRegular
+        self.profileYesButton.sizeToFit()
+        self.profileYesButton.addTarget(self, action: Selector("profilePicButtonPressed:"), forControlEvents: .TouchUpInside)
+        self.profileYesButton.alpha = 0.0
+        self.view.addSubview(profileYesButton)
+        
+        self.profileYesButton.frame.origin.x = centerXAlignment(profileYesButton, self.view)
+        self.profileYesButton.frame.origin.y = profilePictureLabel.frame.maxY + (onePercentOfHeight * 4)
+
+        
+        self.profileNoButton.setTitle("no", forState: .Normal)
+        self.profileNoButton.setTitleColor(redColor, forState: .Normal)
+        self.profileNoButton.titleLabel?.font = fontSmallRegular
+        self.profileNoButton.sizeToFit()
+        self.profileNoButton.addTarget(self, action: Selector("userOkWithProfilePicture"), forControlEvents: .TouchUpInside)
+        self.profileNoButton.alpha = 0.0
+        self.view.addSubview(profileNoButton)
+        
+        self.profileNoButton.frame.origin.x = centerXAlignment(profileNoButton, self.view)
+        self.profileNoButton.frame.origin.y = profileYesButton.frame.maxY + (onePercentOfHeight * 3)
+        
+        profilePictureButton.frame.origin.x += self.view.frame.width
+        profilePictureButton.alpha = 1.0
+        overLayView.frame.origin.x += self.view.frame.width
+        overLayView.alpha = 0.8
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            
+            self.facebookButton.frame.origin.x -= self.view.frame.width
+            self.twitterButton.frame.origin.x -= self.view.frame.width
+            self.spacerImage.frame.origin.x -= self.view.frame.width
+            self.errorLabel.frame.origin.x -= self.view.frame.width
+            self.userNameField.frame.origin.x -= self.view.frame.width
+            self.passwordField.frame.origin.x -= self.view.frame.width
+            self.loginButton.frame.origin.x -= self.view.frame.width
+            self.forgotPasswordButton.frame.origin.x -= self.view.frame.width
+            self.signupWithEmail.frame.origin.x -= self.view.frame.width
+            self.cancelLoginButton.frame.origin.x -= self.view.frame.width
+            self.passwordConfirmationSignupField.frame.origin.x -= self.view.frame.width
+            self.emailSignupField.frame.origin.x -= self.view.frame.width
+            self.registerButton.frame.origin.x -= self.view.frame.width
+            self.cancelRegisterButton.frame.origin.x -= self.view.frame.width
+            
+        }) { (Bool) -> Void in
+            
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    
+                    self.profilePictureButton.frame.origin.x -= self.view.frame.width
+                    overLayView.frame.origin.x -= self.view.frame.width
+                    
+                }, completion: { (Bool) -> Void in
+                    
+                    UIView.animateWithDuration(0.1, animations: { () -> Void in
+                        
+                        self.profileNoButton.alpha = 1.0
+                        self.profileYesButton.alpha = 1.0
+                        self.profilePictureLabel.alpha = 1.0
+                        
+                    }, completion: { (Bool) -> Void in
+                        
+                        
+                        
+                    })
+                    
+                    
+                })
+            
+            
+            
+                }
+        
+        
+        
+        
+    }
+    
+    
+    func userOkWithProfilePicture() {
+        
+        self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+        
+    }
+    
+    
+    
+    func profilePicButtonPressed(sender: AnyObject) {
+        
+        self.imagePicker.allowsEditing = false
+        self.imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(self.imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.profilePictureButton.setBackgroundImage(pickedImage, forState: .Normal)
+            self.profilePictureButton.contentMode = .ScaleAspectFit
+            
+            let user = PFUser.currentUser()
+            let image = UIImagePNGRepresentation(pickedImage)
+            let imageFile = PFFile(name: "profilePic.png", data: image)
+            user?.setValue(imageFile, forKey: profilePic)
+            user?.saveInBackground()
+        }
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
+
+    }
+    
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    
+    /////Error handling, utilities
+    ///////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
 
     
     

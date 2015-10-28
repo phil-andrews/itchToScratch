@@ -28,20 +28,6 @@ class SquaresActivityIndicator {
         let viewWidthPercentage = viewWidth/100
         
         
-        func drawSquareRectOffView(view: UIView, masterView: UIView, heightPercentage: CGFloat,  widthPercentage: CGFloat) -> UIView {
-            
-            let masterHeight = masterView.frame.height
-            let masterWidth = masterView.frame.height
-            let onePercentOfWidth = masterWidth/100
-            let onePercentOfHeight = masterHeight/100
-            
-            view.frame = CGRectMake(0.0, 0.0, onePercentOfWidth * widthPercentage, onePercentOfHeight * heightPercentage)
-            
-            return view
-            
-        }
-        
-        
         func createView(subView: UIView, mView: UIView, pSizeWidth: CGFloat, pSizeHeight: CGFloat, borderWidth: CGFloat, cornerRadiusPercentage: CGFloat) -> UIView {
             
             var sView = UIView()

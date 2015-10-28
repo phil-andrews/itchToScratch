@@ -42,6 +42,20 @@ func drawPercentageRectOffView(view: UIView, masterView: UIView, heightPercentag
 
 
 
+func drawSquareRectOffView(view: UIView, masterView: UIView, heightPercentage: CGFloat,  widthPercentage: CGFloat) -> UIView {
+    
+    let masterHeight = masterView.frame.height
+    let masterWidth = masterView.frame.height
+    let onePercentOfWidth = masterWidth/100
+    let onePercentOfHeight = masterHeight/100
+    
+    view.frame = CGRectMake(0.0, 0.0, onePercentOfWidth * widthPercentage, onePercentOfHeight * heightPercentage)
+    
+    return view
+    
+}
+
+
 func drawPercentageRectOffFloat(view: UIView, masterView: UIView, masterHeight: CGFloat, percentage: CGFloat, paddingWidth: CGFloat) -> UIView {
     
     let masterWidth = masterView.frame.width
@@ -161,6 +175,16 @@ func styleButton(button: UIButton, state: UIControlState, bgColor: UIColor, font
     button.layer.cornerRadius = cornerRadius
     
 }
+
+
+//func delay(delay:Double, closure:()->()) {
+//    dispatch_after(
+//        dispatch_time(
+//            DISPATCH_TIME_NOW,
+//            Int64(delay * Double(NSEC_PER_SEC))
+//        ),
+//        dispatch_get_main_queue(), closure)
+//}
 
 
 

@@ -85,8 +85,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.view.backgroundColor = backgroundColor
         
-        imagePicker.delegate = self
-        
         questionCategoryChart.delegate = self
         questionCategoryChart.alpha = 0
         
@@ -96,6 +94,8 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.profilePicture.hidden = true
         self.profilePictureRing1.hidden = true
         self.profilePictureRing2.hidden = true
+        
+        imagePicker.delegate = self
         
     
     }
