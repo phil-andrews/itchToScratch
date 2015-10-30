@@ -360,12 +360,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         errorLabel.text = ""
         
-        SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: self.twitterButton, percentageSize: 7, borderWidth: 2.0)
+        self.facebookButton.alpha = 0.0
+        
+        SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: self.facebookButton, percentageSize: 7, borderWidth: 2.0)
         
         let permissions = ["public_profile"]
         
         PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
             (user: PFUser?, error: NSError?) -> Void in
+            
+            if error == nil {
+            
             if let user = user {
                 
                 if user.isNew {
@@ -377,6 +382,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                             let pictureRequest = FBSDKGraphRequest(graphPath: "me/picture?type=normal&redirect=false", parameters: nil)
                             pictureRequest.startWithCompletionHandler({
                                 (connection, result, error: NSError!) -> Void in
+                                
                                 if error == nil {
 
                                     println("this is the result: \(result)")
@@ -392,19 +398,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                                             if error == nil {
                                                 
                                                 var picture = PFFile(data: data)
-                                                
                                                 var uiPicture = UIImage(data: data!)
-                                                
                                                 self.loginProfilePicture = uiPicture!
-                                                
                                                 self.profilePictureButton.setBackgroundImage(uiPicture, forState: .Normal)
-                                                
                                                 user.setValue(picture, forKey: profilePic)
                                                 
                                                 user.saveInBackgroundWithBlock({ (success, error) -> Void in
                                                     
                                                     if error == nil {
-                                                        
+
                                                         SquaresActivityIndicator().stopIndicator(self.view)
                                                         
                                                             self.newUserFinishedSignup()
@@ -417,21 +419,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                                             
                                         })
 
-                                } else {
-                                    
-                                    //confirm login, redirect to profile picture picker
+                                } else if error != nil {
                                     
                                     println("this is the error: \(error?.localizedDescription)")
+                                    SquaresActivityIndicator().stopIndicator(self.view)
+                                    self.facebookButton.alpha = 1.0
                                 }
                             })
-                            
-                        }
-                        
-                        if error != nil {
-                            
-                            self.errorLabel.text = error!.localizedDescription
-                            
-                            NSLog(error!.localizedDescription)
                             
                         }
                         
@@ -441,11 +435,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     
                 } else {
                     
+                    SquaresActivityIndicator().stopIndicator(self.view)
                     self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
-                    
-                    println("User logged in through Facebook!")
+                    println("User logged through Facebook")
                     
                 }
+                
+            if error != nil {
+                    
+                    self.errorLabel.text = error!.localizedDescription
+                    SquaresActivityIndicator().stopIndicator(self.view)
+                    self.facebookButton.alpha = 1.0
+                    NSLog(error!.localizedDescription)
+                
+            }
+                
+                }
+                
             } else {
                 
                 println("Uh oh. The user cancelled the Facebook login.")
@@ -1096,7 +1102,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 self.registerButton.backgroundColor = lowColor
                 let errorString = error.userInfo?["error"] as? NSString
                 self.errorHandlingAndLabelText(error.code)
-                
+            
             } else if success == true {
                 
                 var profilePicture = UIImage(named: defaultProfilePic)
@@ -1187,7 +1193,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         self.profilePictureButton.addTarget(self, action: Selector("profilePicButtonPressed:"), forControlEvents: .TouchUpInside)
         self.profilePictureButton.contentMode = UIViewContentMode.ScaleAspectFill
-        self.profilePictureButton.layer.cornerRadius = 6.0
+        self.profilePictureButton.layer.cornerRadius = self.profilePictureButton.frame.height/2
         self.profilePictureButton.layer.masksToBounds = true
         self.profilePictureButton.frame.origin.x = centerXAlignment(profilePictureButton, self.view)
         self.profilePictureButton.frame.origin.y = onePercentOfHeight * 20
