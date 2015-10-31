@@ -793,7 +793,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         let questionObjectID = self.parseObject?.objectId
         let locationID = self.locationObject?.objectId
         
-        let categories = [geographyCategory, sportsCategory, scienceCategory, moviesCategory, televisionCategory, musicCategory, historyCategory, moneyCategory, productsCategory]
+        let categories = [geographyCategory, sportsCategory, scienceCategory, moviesCategory, musicCategory, historyCategory, moneyCategory, productsCategory]
         let category = self.parseObject?.valueForKey(questionCategory) as! String
         
         for item in categories {

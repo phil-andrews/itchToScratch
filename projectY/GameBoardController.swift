@@ -17,9 +17,6 @@ import FBSDKLoginKit
 
 var userQuestionObjectsToBlock = PFUser.currentUser()?.valueForKey(questionsAnswered) as! NSMutableArray?
 
-var usersCurrentLocationData = CLLocation()
-
-
 class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     @IBAction func unwindToGameBoardController(segue: UIStoryboardSegue) {
@@ -223,7 +220,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
                         println("hubba")
                         user?.addUniqueObject(self.currentLocationObjectID, forKey: visitedLocations)
                         user?.setValue(self.currentLocationObjectID, forKey: usersOldLocation)
-                        locationObj.incrementKey(usersLoggedInAtLocation)
+                        locationObj.incrementKey(usersLoggedInAtLocationCount)
                         
                         
                     }
@@ -286,7 +283,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
                     
                     if let locationObj = locationObj as PFObject? {
                         
-                        locationObj.incrementKey(usersLoggedInAtLocation, byAmount: -1)
+                        locationObj.incrementKey(usersLoggedInAtLocationCount, byAmount: -1)
                         
                         user?.setValue(self.currentLocationObjectID, forKey: usersOldLocation)
                         
@@ -784,15 +781,6 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     
     
     
-    func saveLocationObject() {
-        
-        self.currentLocationObject?.setValue(self.questionObjectIDsForLocation, forKey: currentObjectsForLocation)
-        self.currentLocationObject?.saveInBackground()
-        
-    }
-    
-    
-    
     func saveNewLocationObject(defaultObjectForNewLocation: PFObject) {
         
         
@@ -802,7 +790,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
         newLocationObject[geoPoint] = PFGeoPoint(location: usersCurrentLocationData)
         newLocationObject[locality] = self.currentLocation
         newLocationObject[allVisitedUsers] = [""]
-        newLocationObject[usersLoggedInAtLocation] = 0
+        newLocationObject[usersLoggedInAtLocationCount] = 0
         newLocationObject[usedQuestionObjects] = self.questionObjectIDsForLocation
         
         var count = 0
@@ -942,7 +930,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
     
     func setGoalToHit() {
         
-        let numberOfCurrentUsers = self.currentLocationObject?.valueForKey(usersLoggedInAtLocation) as! Double
+        let numberOfCurrentUsers = self.currentLocationObject?.valueForKey(usersLoggedInAtLocationCount) as! Double
         
         switch(numberOfCurrentUsers) {
             

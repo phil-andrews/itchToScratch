@@ -14,6 +14,8 @@ import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+var userObject: PFObject?
+
 
 class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
@@ -436,7 +438,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 } else {
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
                     println("User logged through Facebook")
                     
                 }
@@ -545,7 +547,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
                     
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
                     
                     print("User logged in with Twitter!")
                     
@@ -905,7 +907,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
                     
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
                     println("case 1")
                     
                     
@@ -920,7 +922,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     NSLog(error!.localizedDescription)
                     println("case 2")
                     
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
                     
                 }
                 
@@ -1302,7 +1304,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     func userOkWithProfilePicture() {
         
-        self.performSegueWithIdentifier("unwindFromLoginToGameBoardController", sender: self)
+        self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
         
     }
     

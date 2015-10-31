@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 
 
@@ -173,6 +174,23 @@ func styleButton(button: UIButton, state: UIControlState, bgColor: UIColor, font
     button.setTitleColor(fontColor, forState: state)
     button.backgroundColor = bgColor
     button.layer.cornerRadius = cornerRadius
+    
+}
+
+
+func separateObjectIDs(parseObject: PFObject) -> [String] {
+    
+    var arrayToReturn = [String]()
+    
+    for number in 0...39 {
+        
+        var objectID = parseObject.valueForKey("Q\(number)") as! String
+        
+        arrayToReturn.append(objectID)
+        
+    }
+    
+    return arrayToReturn
     
 }
 

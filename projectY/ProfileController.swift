@@ -376,7 +376,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let music = userObject?.valueForKey(musicCategory) as! NSArray
         let movies = userObject?.valueForKey(moviesCategory) as! NSArray
         let science = userObject?.valueForKey(scienceCategory) as! NSArray
-        let television = userObject?.valueForKey(televisionCategory) as! NSArray
         let history = userObject?.valueForKey(historyCategory) as! NSArray
         let money = userObject?.valueForKey(moneyCategory) as! NSArray
         let products = userObject?.valueForKey(productsCategory) as! NSArray
@@ -387,21 +386,20 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let musicCount = Double(music.count)
         let moviesCount = Double(movies.count)
         let scienceCount = Double(science.count)
-        let tvCount = Double(television.count)
         let historyCount = Double(history.count)
         let moneyCount = Double(money.count)
         let productsCount = Double(products.count)
         let peopleCount = Double(people.count)
         let sportsCount = Double(sports.count)
         
-        let totalNumber = Int(geoCount + musicCount + moviesCount + scienceCount + tvCount + historyCount + moneyCount + productsCount + peopleCount + sportsCount)
+        let totalNumber = Int(geoCount + musicCount + moviesCount + scienceCount + historyCount + moneyCount + productsCount + peopleCount + sportsCount)
         
         self.totalAnswerLabel.text = String(totalNumber)
         self.totalAnswerLabel.textColor = lightColoredFont
         self.totalAnswerLabel.font = fontExtraLarge
         self.totalAnswerLabel.textAlignment = .Center
         
-        let countArray = [geoCount, musicCount, scienceCount, tvCount, historyCount, moneyCount, productsCount, peopleCount, sportsCount]
+        let countArray = [geoCount, musicCount, scienceCount, historyCount, moneyCount, productsCount, peopleCount, sportsCount]
         
         let titleArray = ["GEOGRAPHY", "MUSIC", "SCIENCE", "TV", "HISTORY", "MONEY", "PRODUCTS", "PEOPLE", "SPORTS"]
         
@@ -528,7 +526,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let music = userObject?.valueForKey(musicCategory) as! NSArray
         let movies = userObject?.valueForKey(moviesCategory) as! NSArray
         let science = userObject?.valueForKey(scienceCategory) as! NSArray
-        let television = userObject?.valueForKey(televisionCategory) as! NSArray
         let history = userObject?.valueForKey(historyCategory) as! NSArray
         let money = userObject?.valueForKey(moneyCategory) as! NSArray
         let products = userObject?.valueForKey(productsCategory) as! NSArray
@@ -540,7 +537,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let musicCount = Double(music.count)
         let moviesCount = Double(movies.count)
         let scienceCount = Double(science.count)
-        let tvCount = Double(television.count)
         let historyCount = Double(history.count)
         let moneyCount = Double(money.count)
         let productsCount = Double(products.count)
@@ -552,7 +548,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.categoryChartNumberLabel.hidden = true
         self.totalAnswerLabel.hidden = false
         
-        let totalNumber = Int(geoCount + musicCount + moviesCount + scienceCount + tvCount + historyCount + moneyCount + productsCount + peopleCount + sportsCount)
+        let totalNumber = Int(geoCount + musicCount + moviesCount + scienceCount + historyCount + moneyCount + productsCount + peopleCount + sportsCount)
         
         self.totalAnswerLabel.text = String(totalNumber)
         

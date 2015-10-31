@@ -17,7 +17,7 @@
 		842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* MapController.swift */; };
 		843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843802CB1B893529004CDE6A /* GameBoardController.swift */; };
 		84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408B8B1B9B733A00EED2AB /* extensions.swift */; };
-		8453D3F61BA3E01B00627A59 /* loginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453D3F51BA3E01B00627A59 /* loginFunctions.swift */; };
+		8453D3F61BA3E01B00627A59 /* queryFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453D3F51BA3E01B00627A59 /* queryFunctions.swift */; };
 		84566CFE1B7E402D0012E27E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */; };
 		84566CFF1B7E402D0012E27E /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFB1B7E402D0012E27E /* Roboto-Light.ttf */; };
 		84566D001B7E402D0012E27E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */; };
@@ -51,12 +51,14 @@
 		848A9B431B8FC67A00BEA22F /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A9B421B8FC67A00BEA22F /* SwiftSpinner.swift */; };
 		848B1A061BA3701D0082119A /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848B1A051BA3701D0082119A /* Roboto-Thin.ttf */; };
 		84932D191B9130C80060A94B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932D181B9130C80060A94B /* ProfileController.swift */; };
+		84A2C5D81BE42C1A008D9BCC /* GameBoardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */; };
 		84ADA3071B5C7135002D75C2 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */; };
 		84ADA3091B5C7142002D75C2 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */; };
 		84ADA30B1B5C714C002D75C2 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA30A1B5C714C002D75C2 /* Gotham-Bold.otf */; };
 		84ADA30D1B5C7176002D75C2 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA30C1B5C7176002D75C2 /* Gotham-Book.otf */; };
 		84B200FF1BAB10E8003F0C59 /* sizeAdapt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B200FE1BAB10E8003F0C59 /* sizeAdapt.swift */; };
 		84B332751BB60366009E3359 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B332741BB60366009E3359 /* Settings.bundle */; };
+		84BB98D61BE3D546009C0892 /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */; };
 		84D4D3A51BE000F700DDA162 /* postLoginPictureGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4D3A41BE000F700DDA162 /* postLoginPictureGet.swift */; };
 		84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5D0131BAF2A550035C8F0 /* utilities.swift */; };
 		84DAB8B11B9A155000C533FB /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAB8B01B9A155000C533FB /* animations.swift */; };
@@ -141,7 +143,7 @@
 		842F9FE31BAE0F3800D21DA9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		843802CB1B893529004CDE6A /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
 		84408B8B1B9B733A00EED2AB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		8453D3F51BA3E01B00627A59 /* loginFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginFunctions.swift; sourceTree = "<group>"; };
+		8453D3F51BA3E01B00627A59 /* queryFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queryFunctions.swift; sourceTree = "<group>"; };
 		84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		84566CFB1B7E402D0012E27E /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -180,12 +182,14 @@
 		848B1A051BA3701D0082119A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		84932D0E1B912CA80060A94B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "ios-charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		84932D181B9130C80060A94B /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardUI.swift; sourceTree = "<group>"; };
 		84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
 		84ADA30A1B5C714C002D75C2 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
 		84ADA30C1B5C7176002D75C2 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		84B200FE1BAB10E8003F0C59 /* sizeAdapt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sizeAdapt.swift; sourceTree = "<group>"; };
 		84B332741BB60366009E3359 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
 		84D4D3A41BE000F700DDA162 /* postLoginPictureGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postLoginPictureGet.swift; sourceTree = "<group>"; };
 		84D5D0131BAF2A550035C8F0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		84DAB8B01B9A155000C533FB /* animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
@@ -314,13 +318,14 @@
 				84ECC15C1B2D520500953FAE /* Spring */,
 				841532ED1B2B834900118311 /* Bridge-Header.h */,
 				8484D1D61B1A8D57003273BD /* AppDelegate.swift */,
-				841D78A11B93F955008DE7E2 /* keys.swift */,
-				84249D2A1BDAD63200773168 /* activityIndicator.swift */,
-				8453D3F51BA3E01B00627A59 /* loginFunctions.swift */,
-				8486A6A91BD16C40009DB394 /* userControlClass.swift */,
-				84B200FE1BAB10E8003F0C59 /* sizeAdapt.swift */,
 				84408B8B1B9B733A00EED2AB /* extensions.swift */,
 				84D5D0131BAF2A550035C8F0 /* utilities.swift */,
+				841D78A11B93F955008DE7E2 /* keys.swift */,
+				84249D2A1BDAD63200773168 /* activityIndicator.swift */,
+				84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */,
+				8453D3F51BA3E01B00627A59 /* queryFunctions.swift */,
+				8486A6A91BD16C40009DB394 /* userControlClass.swift */,
+				84B200FE1BAB10E8003F0C59 /* sizeAdapt.swift */,
 				84DAB8B01B9A155000C533FB /* animations.swift */,
 				84DB65FA1BA1FE57001F093F /* whereChart.swift */,
 				84D4D3A41BE000F700DDA162 /* postLoginPictureGet.swift */,
@@ -328,6 +333,7 @@
 				8486A6AD1BD17335009DB394 /* SignupViewController.swift */,
 				84932D181B9130C80060A94B /* ProfileController.swift */,
 				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
+				84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */,
 				843802CB1B893529004CDE6A /* GameBoardController.swift */,
 				840B2E9B1B1D5A0F00EC218C /* QuestionDetail.swift */,
 				8484D1DC1B1A8D57003273BD /* Main.storyboard */,
@@ -643,8 +649,10 @@
 				84ECC18D1B2D520500953FAE /* Spring.swift in Sources */,
 				84ECC18C1B2D520500953FAE /* SoundPlayer.swift in Sources */,
 				84ECC1851B2D520500953FAE /* DesignableView.swift in Sources */,
+				84BB98D61BE3D546009C0892 /* GameBoardViewController.swift in Sources */,
 				84ECC1821B2D520500953FAE /* DesignableTabBarController.swift in Sources */,
 				841D78A21B93F955008DE7E2 /* keys.swift in Sources */,
+				84A2C5D81BE42C1A008D9BCC /* GameBoardUI.swift in Sources */,
 				84ECC17F1B2D520500953FAE /* DesignableButton.swift in Sources */,
 				8484D1D71B1A8D57003273BD /* AppDelegate.swift in Sources */,
 				84ECC1961B2D520500953FAE /* TransitionZoom.swift in Sources */,
@@ -660,7 +668,7 @@
 				848A9B431B8FC67A00BEA22F /* SwiftSpinner.swift in Sources */,
 				84ECC1931B2D520500953FAE /* SpringTextView.swift in Sources */,
 				84ECC1881B2D520500953FAE /* KeyboardLayoutConstraint.swift in Sources */,
-				8453D3F61BA3E01B00627A59 /* loginFunctions.swift in Sources */,
+				8453D3F61BA3E01B00627A59 /* queryFunctions.swift in Sources */,
 				84ECC18F1B2D520500953FAE /* SpringButton.swift in Sources */,
 				84ECC18E1B2D520500953FAE /* SpringAnimation.swift in Sources */,
 				84D4D3A51BE000F700DDA162 /* postLoginPictureGet.swift in Sources */,

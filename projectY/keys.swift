@@ -30,10 +30,10 @@ let questionAnswersSeven = "questionAnswersSeven"
 let LocationClass = "Locations"
 let locality = "Locality"
 let locationObjectID = "objectId"
-let currentObjectsForLocation = "currentObjectsForLocation"
 let totalUserCount = "totalUserCount"
 let totalGuessesCount = "totalGuessesCount"
-let usersLoggedInAtLocation = "currentUsersAtLocation"
+let usersLoggedInAtLocationCount = "currentUsersAtLocation"
+let usersLoggedInAtLocationArray = "currentUsersAtLocationArray"
 let allVisitedUsers = "allVisitedUsers"
 let defaultLocationObject = "G1ZjIWqVmp"
 let usedQuestionObjects = "usedQuestionObjects"
@@ -51,12 +51,12 @@ let displayName = "displayName"
 let profilePic = "profilePicture"
 let whereUserAnswered = "locationOfAnswers"
 
+
 //Question Categories
 let geographyCategory = "geography"
 let sportsCategory = "sports"
 let scienceCategory = "science"
 let moviesCategory = "movies"
-let televisionCategory = "television"
 let musicCategory = "music"
 let historyCategory = "history"
 let moneyCategory = "money"
@@ -105,6 +105,18 @@ let facebookSignInImage = "facebookSignin"
 let twitterSignInImage = "twitterSignin"
 let loginSpacerImage = "loginSpacerImage"
 let loginTextFieldBackground = "loginTextFieldBackground"
+
+let science = UIImage(named: "microscope")
+let history = UIImage(named: "history")
+let geography = UIImage(named: "geography")
+let money = UIImage(named: "money")
+let movies = UIImage(named: "movies")
+let music = UIImage(named: "music")
+let people = UIImage(named: "people")
+let products = UIImage(named: "products")
+let sports = UIImage(named: "sports")
+
+
 
 //Map Markers
 

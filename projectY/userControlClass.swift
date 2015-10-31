@@ -46,7 +46,6 @@ func initializeUser(completion: (success: Bool?, error: NSError?) -> Void) {
     user?.setObject([], forKey: geographyCategory)
     user?.setObject([], forKey: scienceCategory)
     user?.setObject([], forKey: sportsCategory)
-    user?.setObject([], forKey: televisionCategory)
     user?.setObject([], forKey: musicCategory)
     user?.setObject([], forKey: historyCategory)
     user?.setObject([], forKey: moneyCategory)
