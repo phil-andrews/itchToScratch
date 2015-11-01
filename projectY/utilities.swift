@@ -109,6 +109,38 @@ func alignViewCenterYX(sView: UIView, mView: UIView) -> CGPoint {
 }
 
 
+func percentYFromMasterFrame(view: UIView, masterView: UIView, percent: CGFloat) -> CGFloat {
+    
+    var pointToReturn = CGFloat()
+    
+    let masterHeight = masterView.frame.height
+    let masterWidth = masterView.frame.width
+    let onePercentOfWidth = masterWidth/100
+    let onePercentOfHeight = masterHeight/100
+    
+    pointToReturn = (onePercentOfHeight * percent)
+    
+    return pointToReturn
+    
+}
+
+
+func percentYFromBottomOfView(viewToOffset: UIView, viewToOffsetFrom: UIView, masterView: UIView, percent: CGFloat) -> CGFloat {
+    
+    var pointToReturn = CGFloat()
+    
+    let masterHeight = masterView.frame.height
+    let masterWidth = masterView.frame.width
+    let onePercentOfWidth = masterWidth/100
+    let onePercentOfHeight = masterHeight/100
+    
+    pointToReturn = viewToOffsetFrom.frame.maxY + (onePercentOfHeight * percent)
+    
+    return pointToReturn
+    
+}
+
+
 
 func addOrdinalIndicator(number: Int) -> String {
     

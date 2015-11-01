@@ -15,7 +15,10 @@ let objectId: String = "objectId"
 let questionAsk: String = "questionAsk"
 let questionImage: String = "questionImage"
 let questionCategory: String = "category"
-let numberOfCorrectAnswers = "correctAnswers"
+
+let questionChoices: String = "questionChoices"
+
+let questionType: String = "questionType"
 let numberOfAnswers = "numberOfAnswers"
 let questionAnswers = "questionAnswers"
 let questionAnswersOne = "questionAnswersOne"
@@ -78,7 +81,7 @@ let orangeColor = UIColor(hex: "F5A623")
 let whiteColor = UIColor(hex: "FFFFFF")
 let paleGreenColor = UIColor(hex: "B8E986")
 let lightPurpleColor = UIColor(hex: "D67FE8")
-let yellowColor = UIColor(hex: "F8E71C")
+let yellowColor = UIColor(hex: "F2E96B")
 let facebookColor = UIColor(hex: "3B5998")
 let redColor = UIColor(hex: "E34538")
 

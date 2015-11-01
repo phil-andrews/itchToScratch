@@ -14,7 +14,7 @@ import Bolts
 
 
 
-func populateGameBoard(masterView: UIView, parseObjects: [PFObject], locationObject: PFObject) {
+func populateGameBoard(masterView: UIView, parseObjects: [PFObject], sortedObjectIDs: [String], locationObject: PFObject) {
 
     var questionObjects = parseObjects
     
@@ -23,18 +23,31 @@ func populateGameBoard(masterView: UIView, parseObjects: [PFObject], locationObj
     
     for index in 0..<40 {
         
+        var question: PFObject?
+        
+        for object in parseObjects {
+            
+            if object.objectId == sortedObjectIDs[index] {
+            
+                question = object
+                
+                break
+                
+            }
+        }
+        
+        
         let view = masterView.viewWithTag(index + 1)
         
         if let button = view as? UIButton {
             
-            let question = questionObjects[index]
-            let questionType = question.valueForKey(questionCategory) as! String
+            let questionType = question!.valueForKey(questionCategory) as! String
             let backgroundImage = UIImage(named: questionType)
             button.setBackgroundImage(backgroundImage, forState: .Normal)
             
             let numberCorrect = locationObject.valueForKey("ans\(index)") as! Double
             button.backgroundColor = buttonColoring(goalToHit, numberCorrect)
-         
+        
         }
     }
     
@@ -149,7 +162,7 @@ func buttonColoring(goalToHit: Double, correctAnswers: Double) -> UIColor {
         
     case _ where percentage >= 1:
         
-        colorToReturn = highestColor
+        colorToReturn = yellowColor
         
     default:
         
@@ -187,6 +200,9 @@ func drawCityLabel(masterView: UIView, locationObject: PFObject) {
     masterView.addSubview(cityLabel)
     
 }
+
+
+
 
 
 

@@ -16,6 +16,14 @@ import Bolts
 var usersCurrentLocationData = CLLocation()
 
 class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet var swipeToMaps: UISwipeGestureRecognizer!
+    
+    @IBOutlet var swipeToProfile: UISwipeGestureRecognizer!
+    
+    var orderingQuestionLabel1 = UILabel()
+    var orderingQuestionLabel2 = UILabel()
+    var orderingQuestionLabel3 = UILabel()
+    var orderingQuestionLabel4 = UILabel()
     
 
     override func viewDidLoad() {
@@ -49,7 +57,18 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+    var hideStatusBar = false
+    
+    override func prefersStatusBarHidden() -> Bool {
+        
+        
+        return hideStatusBar
+    }
+    
+    
     @IBAction func unwindToGameBoardViewController(segue: UIStoryboardSegue) {
+        
+
         
     }
     
@@ -218,7 +237,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                                                 
                                                 drawButtons(self.view, self, "presentQuestion", { () -> Void in
                                                     
-                                                    populateGameBoard(self.view, questionObjects, self.currentLocationObject!)
+                                                    populateGameBoard(self.view, questionObjects, questionIDs, self.currentLocationObject!)
                                                     
                                                 })
                                                 
@@ -260,9 +279,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                                     
                                     self.questionObjectsForLocation = questionObjects
                                     
-                                    drawButtons(self.view, self, "presentQuestion", { () -> Void in
+                                    drawButtons(self.view, self, "presentQuestion:", { () -> Void in
                                         
-                                        populateGameBoard(self.view, questionObjects, self.currentLocationObject!)
+                                        populateGameBoard(self.view, questionObjects, questionIDs, self.currentLocationObject!)
                                         
                                     })
                                     
@@ -301,9 +320,189 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    func presentQuestion() {
+    func presentQuestion(sender: AnyObject?) {
+        
+        let tagNumber = sender!.tag
+        let questionID = self.currentLocationObject?.valueForKey("Q\(tagNumber - 1)") as! String
+        let questionObjects = self.questionObjectsForLocation as [PFObject]!
+        var questionToPresent: PFObject?
+        
+        for item in questionObjects {
+            
+            let id: String = item.objectId!
+            
+            if id == questionID {
+                
+                questionToPresent = item
+                
+            }
+            
+        }
+                
+        let type = questionToPresent?.valueForKey(questionType) as! Int
+        let questionString = questionToPresent?.valueForKey(questionAsk) as! String
+        let category = questionToPresent?.valueForKey(questionCategory) as! String
+        let image: PFFile? = questionToPresent?.valueForKey(questionImage) as! PFFile?
+        let answersNeeded = questionToPresent?.valueForKey(numberOfAnswers) as! Int
+        var answerArray = questionToPresent?.valueForKey(questionAnswers) as! NSMutableArray
+        
+        if answersNeeded > 1 {
+            
+            for index in 0...answersNeeded {
+                
+                let answerGroupToAdd = questionToPresent?.valueForKey("qAnswers\(index + 1)") as! [String]
+                answerArray.insertObject(answerGroupToAdd, atIndex: answerArray.count)
+                
+            }
+            
+        }
         
         
+        questionObjectFromGameBoardSend = questionToPresent
+        
+        displayQuestionContainer(self, questionToPresent!, type) { (presentingContainerView: UIView) -> Void in
+            
+            switch(type) {
+                
+            case 1:
+                
+                println("single answer")
+                
+            case 2:
+                
+                println("multiple choice")
+                
+                multipleChoiceQuestion(self, presentingContainerView, questionToPresent!, { () -> Void in
+                    
+                    animateContainerView(self, presentingContainerView)
+                })
+                
+            case 3:
+                
+                println("multiple answer")
+                
+            case 4:
+                
+                println("ordering")
+                
+                self.swipeToMaps.numberOfTouchesRequired = 100
+                self.swipeToProfile.numberOfTouchesRequired = 100
+                
+                orderingQuestion(presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
+                    
+                    self.label1Origin = self.orderingQuestionLabel1.frame.origin
+                    self.label2Origin = self.orderingQuestionLabel2.frame.origin
+                    self.label3Origin = self.orderingQuestionLabel3.frame.origin
+                    
+                    animateContainerView(self, presentingContainerView)
+                    
+                })
+                
+            case 5:
+                
+                println("number range")
+                
+                
+            default:
+                
+                println("error loading question display function")
+                
+                
+            }
+            
+        }
+        
+        self.hideStatusBar = true
+        
+        setNeedsStatusBarAppearanceUpdate()
+        
+    }
+    
+    var label1Origin = CGPoint()
+    var label2Origin = CGPoint()
+    var label3Origin = CGPoint()
+    var labelToMoveOrigin = CGPoint()
+    var labelToMove = UILabel()
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+        
+        for touch in (touches as! Set<UITouch>) {
+            let location = touch.locationInView(self.view)
+            
+            for label in orderLabelArray {
+                
+                if label.frame.contains(location) {
+                    
+                    labelToMove = label
+                    labelToMoveOrigin = label.center
+                    
+                    label.center.y = location.y
+                    
+                    break
+                    
+                }
+                
+            }
+            
+            
+        }
+        
+        println("touches began")
+        
+    }
+    
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+        
+        for touch in (touches as! Set<UITouch>) {
+            let location = touch.locationInView(self.view)
+            
+            labelToMove.center.y = location.y
+            
+        }
+        
+    }
+    
+
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+        let labelToMoveCoord = labelToMove.center.y
+        
+        for index in 0..<orderLabelArray.count {
+            
+            let originLabelYCoord = orderLabelArray[index].center.y
+            
+            if labelToMoveCoord >= (originLabelYCoord + 25) || labelToMoveCoord >= (originLabelYCoord - 25) {
+                
+                orderLabelArray[index].center.y = labelToMoveOrigin.y
+                labelToMove.center.y = originLabelYCoord
+                
+            }
+            
+        }
+        
+        labelToMoveOrigin = CGPoint()
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func checkAnswerHandler() {
+        
+        checkAnswerSubmitted()
         
         
     }

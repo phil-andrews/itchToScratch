@@ -16,6 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hxy-ee-CXR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fPM-W0-Wcb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,6 +26,10 @@
                             <outletCollection property="gestureRecognizers" destination="ade-Rw-hEW" appends="YES" id="0EK-mU-2KM"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="swipeToMaps" destination="YH3-XZ-BtQ" id="Jin-9N-28T"/>
+                        <outlet property="swipeToProfile" destination="ade-Rw-hEW" id="Ago-OY-E6z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HO-Pb-1Lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="YH3-XZ-BtQ">
@@ -207,6 +212,9 @@
                                                     <constraint firstAttribute="centerX" secondItem="Gtp-aS-91Q" secondAttribute="centerX" constant="0.5" id="oww-qp-Ryf"/>
                                                     <constraint firstItem="DLm-pO-lYh" firstAttribute="width" secondItem="qMr-oC-dWN" secondAttribute="width" multiplier="0.45" id="rFL-aM-EbT"/>
                                                 </constraints>
+                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="57.5" y="230.5" width="485" height="485"/>
+                                                </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kO-QG-ufU">
                                                 <rect key="frame" x="428" y="53" width="135" height="135"/>
@@ -270,6 +278,9 @@
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="163" y="1100" width="74" height="30"/>
                                                 </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="263" y="1700" width="74" height="30"/>
+                                                </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXv-9c-G16">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -321,7 +332,8 @@
                                                 <exclude reference="S3c-7E-sn6"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="8" width="600" height="1800"/>
                                             <mask key="subviews">
                                                 <include reference="MXv-9c-G16"/>
                                             </mask>
@@ -345,6 +357,9 @@
                                     <constraint firstAttribute="trailing" secondItem="BpP-4L-loU" secondAttribute="trailing" id="lUv-35-1Se"/>
                                     <constraint firstItem="BpP-4L-loU" firstAttribute="leading" secondItem="PNW-Gp-gUv" secondAttribute="leading" id="sbE-bK-Q7F"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="-8" width="600" height="608"/>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <animations/>
