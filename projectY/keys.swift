@@ -17,6 +17,8 @@ let questionImage: String = "questionImage"
 let questionCategory: String = "category"
 
 let questionChoices: String = "questionChoices"
+let scaleLabelTop: String = "scaleLabelTop"
+let scaleLabelBottom: String = "scaleLabelBottom"
 
 let questionType: String = "questionType"
 let numberOfAnswers = "numberOfAnswers"
