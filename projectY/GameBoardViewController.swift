@@ -390,10 +390,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                 
                 orderingQuestion(presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
                     
-                    self.label1Origin = self.orderingQuestionLabel1.frame.origin
-                    self.label2Origin = self.orderingQuestionLabel2.frame.origin
-                    self.label3Origin = self.orderingQuestionLabel3.frame.origin
-                    
                     animateContainerView(self, presentingContainerView)
                     
                 })
@@ -418,85 +414,41 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    var label1Origin = CGPoint()
-    var label2Origin = CGPoint()
-    var label3Origin = CGPoint()
-    var labelToMoveOrigin = CGPoint()
-    var labelToMove = UILabel()
+    
+    
+    var labelThatIsBeingDraggedOrigin = CGPoint()
+    var labelThatIsBeingDragged = UILabel()
+
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         
         let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
         
-        for touch in (touches as! Set<UITouch>) {
-            let location = touch.locationInView(self.view)
-            
-            for label in orderLabelArray {
-                
-                if label.frame.contains(location) {
-                    
-                    labelToMove = label
-                    labelToMoveOrigin = label.center
-                    
-                    label.center.y = location.y
-                    
-                    break
-                    
-                }
-                
-            }
-            
-            
-        }
+        touchesBeganForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
         
-        println("touches began")
         
     }
+    
     
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    
         
-        let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+        touchesMovedForOrderingQuestion(self.view, &labelThatIsBeingDragged, touches)
         
-        for touch in (touches as! Set<UITouch>) {
-            let location = touch.locationInView(self.view)
-            
-            labelToMove.center.y = location.y
-            
-        }
         
     }
     
-
+    
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         
         let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
-        let labelToMoveCoord = labelToMove.center.y
+    
+        touchesEndedForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
         
-        for index in 0..<orderLabelArray.count {
-            
-            let originLabelYCoord = orderLabelArray[index].center.y
-            
-            if labelToMoveCoord >= (originLabelYCoord + 25) || labelToMoveCoord >= (originLabelYCoord - 25) {
-                
-                orderLabelArray[index].center.y = labelToMoveOrigin.y
-                labelToMove.center.y = originLabelYCoord
-                
-            }
-            
-        }
-        
-        labelToMoveOrigin = CGPoint()
-        
+    
     }
-    
-    
-    
-    
-    
-    
-    
     
     
     
