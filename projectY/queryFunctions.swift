@@ -206,6 +206,22 @@ func queryForMultipleObjectsInBackgroundWithBlock(className: String, keyType: St
 
 
 
+func queryForImage(file: PFFile, completion: (UIImage) -> Void){
+    
+    file.getDataInBackgroundWithBlock { (data, error) -> Void in
+        
+        if error == nil {
+            
+            let imageData = data
+            var image = UIImage(data: imageData!)
+            completion(image!)
+            
+        }
+        
+    }
+    
+}
+
 
 
 

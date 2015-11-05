@@ -362,6 +362,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
         
         displayQuestionContainer(self, questionToPresent!, type) { (presentingContainerView: UIView) -> Void in
             
+//            self.swipeToMaps.numberOfTouchesRequired = 100
+//            self.swipeToProfile.numberOfTouchesRequired = 100
+            
             switch(type) {
                 
             case 1:
@@ -379,14 +382,17 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                 
             case 3:
                 
+                multipleChoiceQuestionWithImage(self, presentingContainerView, questionToPresent!, { () -> Void in
+                    
+                    animateContainerView(self, presentingContainerView)
+                    
+                })
+                
                 println("multiple answer")
                 
             case 4:
                 
                 println("ordering")
-                
-                self.swipeToMaps.numberOfTouchesRequired = 100
-                self.swipeToProfile.numberOfTouchesRequired = 100
                 
                 orderingQuestion(presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
                     
@@ -425,7 +431,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
         let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
         
         touchesBeganForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
-        
         
     }
     

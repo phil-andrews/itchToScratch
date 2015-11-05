@@ -50,6 +50,7 @@
 		848A9B431B8FC67A00BEA22F /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A9B421B8FC67A00BEA22F /* SwiftSpinner.swift */; };
 		848B1A061BA3701D0082119A /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848B1A051BA3701D0082119A /* Roboto-Thin.ttf */; };
 		84932D191B9130C80060A94B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932D181B9130C80060A94B /* ProfileController.swift */; };
+		849978C41BEA812A001CE745 /* MultipleChoiceQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */; };
 		84A2C5D81BE42C1A008D9BCC /* GameBoardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */; };
 		84ADA3071B5C7135002D75C2 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */; };
 		84ADA3091B5C7142002D75C2 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */; };
@@ -182,6 +183,7 @@
 		848B1A051BA3701D0082119A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		84932D0E1B912CA80060A94B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "ios-charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		84932D181B9130C80060A94B /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionHandlers.swift; sourceTree = "<group>"; };
 		84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardUI.swift; sourceTree = "<group>"; };
 		84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
 				84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */,
 				84FB87E31BE5744900048760 /* QuestionDetailUI.swift */,
+				849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */,
 				84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */,
 				84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */,
 				843802CB1B893529004CDE6A /* GameBoardController.swift */,
@@ -391,6 +394,7 @@
 		84E6A37B1BE864AA00056845 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8453D3F51BA3E01B00627A59 /* queryFunctions.swift */,
 				84249D2A1BDAD63200773168 /* activityIndicator.swift */,
 				84408B8B1B9B733A00EED2AB /* extensions.swift */,
 				84B200FE1BAB10E8003F0C59 /* sizeAdapt.swift */,
@@ -414,7 +418,6 @@
 		84E6A37D1BE8653700056845 /* ProfileAndCharts */ = {
 			isa = PBXGroup;
 			children = (
-				8453D3F51BA3E01B00627A59 /* queryFunctions.swift */,
 				84DB65FA1BA1FE57001F093F /* whereChart.swift */,
 				84932D181B9130C80060A94B /* ProfileController.swift */,
 			);
@@ -659,6 +662,7 @@
 			files = (
 				8486A6AC1BD1732A009DB394 /* LoginViewController.swift in Sources */,
 				84ECC1811B2D520500953FAE /* DesignableLabel.swift in Sources */,
+				849978C41BEA812A001CE745 /* MultipleChoiceQuestionHandlers.swift in Sources */,
 				84ECC1901B2D520500953FAE /* SpringImageView.swift in Sources */,
 				84ECC17D1B2D520500953FAE /* AutoTextView.swift in Sources */,
 				84ECC1861B2D520500953FAE /* ImageLoader.swift in Sources */,

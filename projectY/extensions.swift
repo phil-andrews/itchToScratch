@@ -38,3 +38,23 @@ extension Dictionary {
     
 }
 
+
+extension UIView
+{
+    func colorOfPoint (point: CGPoint) -> UIColor
+    {
+        var pixel = UnsafeMutablePointer<CUnsignedChar>.alloc(4)
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue)
+        let context = CGBitmapContextCreate(pixel, 1, 1, 8, 4, colorSpace, bitmapInfo)
+        
+        CGContextTranslateCTM(context, -point.x, -point.y)
+        
+        self.layer.renderInContext(context)
+        
+        let colorToReturn = UIColor(red: CGFloat(pixel [0]) / 255.0, green: CGFloat(pixel [1]) / 255.0, blue: CGFloat(pixel [2]) / 255.0 , alpha: CGFloat(pixel [3]) / 255.0)
+        
+        return colorToReturn
+    }
+}
+

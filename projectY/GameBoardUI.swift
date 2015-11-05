@@ -41,12 +41,31 @@ func populateGameBoard(masterView: UIView, parseObjects: [PFObject], sortedObjec
         
         if let button = view as? UIButton {
             
+            button.alpha = 0.0
+            
             let questionType = question!.valueForKey(questionCategory) as! String
             let backgroundImage = UIImage(named: questionType)
             button.setBackgroundImage(backgroundImage, forState: .Normal)
             
             let numberCorrect = locationObject.valueForKey("ans\(index)") as! Double
-            button.backgroundColor = buttonColoring(goalToHit, numberCorrect)
+            button.backgroundColor = lightColoredFont
+            
+            let randomNumber = arc4random_uniform(UInt32(4))
+            let randomDuration = Double(randomNumber) * 0.1
+            
+            UIView.animateWithDuration(randomDuration, animations: { () -> Void in
+                
+                button.alpha = 1.0
+                
+            }, completion: { (Bool) -> Void in
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    
+                    button.backgroundColor = buttonColoring(goalToHit, numberCorrect)
+                    
+                })
+                
+            })
         
         }
     }
@@ -111,6 +130,12 @@ func buttonColoring(goalToHit: Double, correctAnswers: Double) -> UIColor {
     var colorToReturn = UIColor()
     var numberOfCorrect = correctAnswers
     
+    if numberOfCorrect == 0 {
+        
+        numberOfCorrect = 0.01
+        
+    }
+    
     var minimum: Double = 1.0
     var workingGoal = Double()
     
@@ -124,15 +149,8 @@ func buttonColoring(goalToHit: Double, correctAnswers: Double) -> UIColor {
         
     }
     
-    if numberOfCorrect == 0.0 {
-        
-        numberOfCorrect = 0.05
-        
-    }
     
-    
-    let percentage = (workingGoal/numberOfCorrect)
-    
+    let percentage = (numberOfCorrect / workingGoal)
     
     switch(percentage) {
         
@@ -158,11 +176,11 @@ func buttonColoring(goalToHit: Double, correctAnswers: Double) -> UIColor {
         
     case _ where percentage <= 1:
         
-        colorToReturn = yellowColor
+        colorToReturn = highestColor
         
     case _ where percentage >= 1:
         
-        colorToReturn = yellowColor
+        colorToReturn = highestColor
         
     default:
         
@@ -202,7 +220,16 @@ func drawCityLabel(masterView: UIView, locationObject: PFObject) {
 }
 
 
-
+func animateButtonColors(goalToHit: Double, correctAnswers: Double, startColor: UIColor) {
+    
+    let colors = [lightColoredFont, lowColor, lowestColor, midColor, highColor, highestColor]
+    
+    var endColor = buttonColoring(goalToHit, correctAnswers)
+    
+    
+    
+    
+}
 
 
 

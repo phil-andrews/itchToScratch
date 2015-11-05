@@ -64,7 +64,8 @@ func orderingQuestion(masterView: UIView, label1: UILabel, label2: UILabel, labe
     
     let masterWidth = masterView.frame.width
     let onePercentOfWidth = masterWidth/100
-    
+    let masterHeight = masterView.frame.height
+    let onePercentOfHeight = masterHeight/100
     var count = 401
     
     for index in 0..<choices.count {
@@ -76,14 +77,17 @@ func orderingQuestion(masterView: UIView, label1: UILabel, label2: UILabel, labe
         let labelText = choices.removeAtIndex(int)
         label.text = labelText
         
+        
         label.textColor = yellowColor
-        label.font = fontMedium
-        label.numberOfLines = 2
+        label.font = fontAdjuster(label.text!, fontSmallestRegular, fontSmallerRegular, fontMediumRegular)
+        label.frame.size.width = (onePercentOfWidth * 70)
+        label.numberOfLines = 3
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        label.minimumScaleFactor = 0.7
+        label.baselineAdjustment = .AlignBaselines
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         label.sizeToFit()
-        label.frame = CGRectMake(label.frame.origin.x, label.frame.origin.y, (onePercentOfWidth * 70), label.frame.height)
-        label.textAlignment = .Left
+        label.frame.size.width = (onePercentOfWidth * 70)
         label.tag = count
         
         if count == 401 {
@@ -128,7 +132,8 @@ func touchesBeganForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
                 draggedLabelCoordinates = label.center
                 
                 label.center.y = location.y
-                label.font = fontMediumRegular
+                label.font = fontAdjuster(label.text!, fontSmallRegular, fontMediumRegular, fontLargeRegular)
+                label.textColor = highestColor
                 
                 break
                 
@@ -157,11 +162,17 @@ func touchesMovedForOrderingQuestion(masterView: UIView, inout draggedLabel: UIL
 
 func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoordinates: CGPoint, inout draggedLabel: UILabel, touches: Set<NSObject>, labelArray: [UILabel]) {
     
+    if draggedLabelCoordinates == CGPoint(x: 0.0, y: 0.0) {
+        
+        return
+        
+    }
+    
     var labelWithinBounds = false
     
     for touch in (touches as! Set<UITouch>) {
         let location = touch.locationInView(masterView)
-        
+                
         for label in labelArray {
             
             if label.tag != draggedLabel.tag && label.frame.contains(location) {
@@ -172,7 +183,8 @@ func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
                     
                     label.center = draggedLabelCoordinates
                     
-                    draggedLabel.font = fontMedium
+                    draggedLabel.font = fontAdjuster(draggedLabel.text!, fontSmallestRegular, fontSmallerRegular, fontMediumRegular)
+                    draggedLabel.textColor = yellowColor
                     
                 })
                 
@@ -182,11 +194,11 @@ func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
             } else if labelWithinBounds == false {
                 
                 UIView.animateWithDuration(0.2, animations: { () -> Void in
-                    
+                                        
                     draggedLabel.center = draggedLabelCoordinates
                     
-                    draggedLabel.font = fontMedium
-
+                    draggedLabel.font = fontAdjuster(draggedLabel.text!, fontSmallestRegular, fontSmallerRegular, fontMediumRegular)
+                    draggedLabel.textColor = yellowColor
                 })
                 
             }
@@ -243,26 +255,14 @@ func drawVerticalScaleLine(masterView: UIView, topYCoord: CGFloat!, bottomYCoord
     bottomLabel.textColor = color
     bottomLabel.font = fontTiny
     bottomLabel.sizeToFit()
-    bottomLabel.frame.origin.y = lineView.frame.origin.y + lineView.frame.height// + (bottomLabel.frame.height * 1.25)
+    bottomLabel.frame.origin.y = lineView.frame.origin.y + lineView.frame.height
     bottomLabel.frame.origin.x = lineView.center.x - (bottomLabel.frame.width * 0.75)
     masterView.addSubview(bottomLabel)
     
     
-    
-    
-//    line.moveToPoint(lineStartPoint)
-//    line.addLineToPoint(lineEndPoint)
-//    line.closePath()
-//    line.lineCapStyle = kCGLineCapRound
-//    line.lineWidth = width * onePercentOfWidth
-//    color.setStroke()
-//    masterView.setNeedsDisplay()
-//    line.stroke()
-    
 }
     
-    
-    
-    
+
+
 
 
