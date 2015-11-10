@@ -112,7 +112,7 @@ func orderingQuestion(masterView: UIView, label1: UILabel, label2: UILabel, labe
     let scaleLineTopY = label1.frame.minY
     let scaleLineBottomY = label4.frame.maxY
     
-    drawVerticalScaleLine(masterView, scaleLineTopY, scaleLineBottomY, 1.0, lowColor)
+    drawVerticalScaleLine(masterView, scaleLineTopY, scaleLineBottomY, 92, 1.0, lowColor, fontTiny)
     
     completion()
     
@@ -214,7 +214,7 @@ func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
 
 
 
-func drawVerticalScaleLine(masterView: UIView, topYCoord: CGFloat!, bottomYCoord: CGFloat!, width: CGFloat, color: UIColor) {
+func drawVerticalScaleLine(masterView: UIView, topYCoord: CGFloat!, bottomYCoord: CGFloat!, xPositionPercent: CGFloat, width: CGFloat, color: UIColor, labelFontSize: UIFont) {
     
     let question = questionObjectFromGameBoardSend
     
@@ -225,10 +225,7 @@ func drawVerticalScaleLine(masterView: UIView, topYCoord: CGFloat!, bottomYCoord
     
     println(topYCoord)
     
-    let line = UIBezierPath()
-    let lineXCoord = (onePercentOfWidth * 92)
-    let lineStartPoint = CGPoint(x: lineXCoord, y: topYCoord)
-    let lineEndPoint = CGPoint(x: lineXCoord, y: bottomYCoord)
+    let lineXCoord = (onePercentOfWidth * xPositionPercent)
     
     let lineHeight = topYCoord - bottomYCoord
     
@@ -243,7 +240,7 @@ func drawVerticalScaleLine(masterView: UIView, topYCoord: CGFloat!, bottomYCoord
     let topLabelText = question?.valueForKey(scaleLabelTop) as! String
     topLabel.text = topLabelText
     topLabel.textColor = color
-    topLabel.font = fontTiny
+    topLabel.font = labelFontSize
     topLabel.sizeToFit()
     topLabel.frame.origin.y = lineView.frame.origin.y - (topLabel.frame.height)
     topLabel.frame.origin.x = lineView.center.x - (topLabel.frame.width * 0.75)
@@ -253,7 +250,7 @@ func drawVerticalScaleLine(masterView: UIView, topYCoord: CGFloat!, bottomYCoord
     let bottomLabelText = question?.valueForKey(scaleLabelBottom) as! String
     bottomLabel.text = bottomLabelText
     bottomLabel.textColor = color
-    bottomLabel.font = fontTiny
+    bottomLabel.font = labelFontSize
     bottomLabel.sizeToFit()
     bottomLabel.frame.origin.y = lineView.frame.origin.y + lineView.frame.height
     bottomLabel.frame.origin.x = lineView.center.x - (bottomLabel.frame.width * 0.75)

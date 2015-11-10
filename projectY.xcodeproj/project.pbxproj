@@ -63,6 +63,7 @@
 		84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5D0131BAF2A550035C8F0 /* utilities.swift */; };
 		84DAB8B11B9A155000C533FB /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAB8B01B9A155000C533FB /* animations.swift */; };
 		84DB65FB1BA1FE57001F093F /* whereChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB65FA1BA1FE57001F093F /* whereChart.swift */; };
+		84DC630C1BEBC8DE00D56895 /* RangeQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */; };
 		84E6A3801BE8667800056845 /* OrderingQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */; };
 		84ECC17B1B2D520500953FAE /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC15D1B2D520500953FAE /* AsyncButton.swift */; };
 		84ECC17C1B2D520500953FAE /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC15E1B2D520500953FAE /* AsyncImageView.swift */; };
@@ -196,6 +197,7 @@
 		84D5D0131BAF2A550035C8F0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		84DAB8B01B9A155000C533FB /* animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
 		84DB65FA1BA1FE57001F093F /* whereChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = whereChart.swift; sourceTree = "<group>"; };
+		84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeQuestionHandlers.swift; sourceTree = "<group>"; };
 		84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderingQuestionHandlers.swift; sourceTree = "<group>"; };
 		84ECC15D1B2D520500953FAE /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		84ECC15E1B2D520500953FAE /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -325,13 +327,12 @@
 				84E6A37C1BE864E300056845 /* UserControl */,
 				84E6A37D1BE8653700056845 /* ProfileAndCharts */,
 				84E6A37B1BE864AA00056845 /* Utilities */,
-				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
-				84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */,
+				84DC630A1BEBC8A300D56895 /* QuestionTypeHandlers */,
 				84FB87E31BE5744900048760 /* QuestionDetailUI.swift */,
-				849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */,
 				84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */,
 				84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */,
 				843802CB1B893529004CDE6A /* GameBoardController.swift */,
+				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
 				840B2E9B1B1D5A0F00EC218C /* QuestionDetail.swift */,
 				8484D1DC1B1A8D57003273BD /* Main.storyboard */,
 				8484D1DF1B1A8D57003273BD /* Images.xcassets */,
@@ -389,6 +390,16 @@
 				84932D131B912CA80060A94B /* Charts.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84DC630A1BEBC8A300D56895 /* QuestionTypeHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */,
+				84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */,
+				849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */,
+			);
+			name = QuestionTypeHandlers;
 			sourceTree = "<group>";
 		};
 		84E6A37B1BE864AA00056845 /* Utilities */ = {
@@ -690,6 +701,7 @@
 				84ECC1831B2D520500953FAE /* DesignableTextField.swift in Sources */,
 				84ECC1951B2D520500953FAE /* TransitionManager.swift in Sources */,
 				84ECC1911B2D520500953FAE /* SpringLabel.swift in Sources */,
+				84DC630C1BEBC8DE00D56895 /* RangeQuestionHandlers.swift in Sources */,
 				84ECC17B1B2D520500953FAE /* AsyncButton.swift in Sources */,
 				84DB65FB1BA1FE57001F093F /* whereChart.swift in Sources */,
 				84ECC17C1B2D520500953FAE /* AsyncImageView.swift in Sources */,

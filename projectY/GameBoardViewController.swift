@@ -25,6 +25,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
     var orderingQuestionLabel3 = UILabel()
     var orderingQuestionLabel4 = UILabel()
     
+    var rangeButtonViewOverlay = UIView()
+    var rangeHorizonalBar = UIView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -394,6 +397,8 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                 
                 println("ordering")
                 
+                self.typeForHandler = 4
+                
                 orderingQuestion(presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
                     
                     animateContainerView(self, presentingContainerView)
@@ -403,6 +408,17 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
             case 5:
                 
                 println("number range")
+                
+                self.typeForHandler = 5
+                
+                rangeQuestion(presentingContainerView, self.rangeButtonViewOverlay, self.rangeHorizonalBar, { (verticalLine: UIView) -> Void in
+                    
+                    animateContainerView(self, presentingContainerView)
+
+                    self.verticalScaleLine = verticalLine
+                    
+                })
+                
                 
                 
             default:
@@ -421,25 +437,64 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+    //Ordering
     
+    var typeForHandler = Int()
     var labelThatIsBeingDraggedOrigin = CGPoint()
     var labelThatIsBeingDragged = UILabel()
+
+    //Range
+    
+    var verticalScaleLine = UIView()
+    
 
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         
-        let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+        switch(self.typeForHandler) {
+            
+        case 4:
+            
+            let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+            
+            touchesBeganForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
+            
+        case 5:
+                        
+            touchesBeganForRangeQuestion(self.view, touches, rangeButtonViewOverlay)
+                        
+        default:
+            
+            break
+            
+        }
         
-        touchesBeganForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
         
     }
     
     
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        switch(self.typeForHandler) {
+            
+        case 4:
+            
+            touchesMovedForOrderingQuestion(self.view, &labelThatIsBeingDragged, touches)
+            
+        case 5:
+            
+            touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizonalBar, verticalScaleLine)
+            
+            
+            
+        default:
+            
+            break
+            
+        }
     
         
-        touchesMovedForOrderingQuestion(self.view, &labelThatIsBeingDragged, touches)
         
         
     }
@@ -448,9 +503,22 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         
-        let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
-    
-        touchesEndedForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
+        switch(self.typeForHandler) {
+            
+        case 4:
+            
+            let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+            
+            touchesEndedForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
+            
+            
+            
+        default:
+            
+            break
+            
+        }
+        
         
     
     }
