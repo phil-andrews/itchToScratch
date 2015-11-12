@@ -20,13 +20,25 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var swipeToProfile: UISwipeGestureRecognizer!
     
+    //Ordering
+    
     var orderingQuestionLabel1 = UILabel()
     var orderingQuestionLabel2 = UILabel()
     var orderingQuestionLabel3 = UILabel()
     var orderingQuestionLabel4 = UILabel()
     
+    //Range
+    
     var rangeButtonViewOverlay = UIView()
-    var rangeHorizonalBar = UIView()
+    var rangeHorizontalBar = UIView()
+    var rangeLabel = UILabel()
+    
+    
+    
+    /////////////////////////    /////////////////////////    /////////////////////////    /////////////////////////
+
+
+
     
 
     override func viewDidLoad() {
@@ -411,14 +423,14 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                 
                 self.typeForHandler = 5
                 
-                rangeQuestion(presentingContainerView, self.rangeButtonViewOverlay, self.rangeHorizonalBar, { (verticalLine: UIView) -> Void in
+                rangeQuestion(presentingContainerView, self.rangeButtonViewOverlay, self.rangeHorizontalBar, self.rangeLabel, { (verticalLine) -> Void in
                     
                     animateContainerView(self, presentingContainerView)
-
+                    
                     self.verticalScaleLine = verticalLine
                     
+                    
                 })
-                
                 
                 
             default:
@@ -446,8 +458,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
     //Range
     
     var verticalScaleLine = UIView()
-    
-
+    var previousRangeBarLocation = CGPoint()
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         
@@ -461,7 +472,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
             
         case 5:
                         
-            touchesBeganForRangeQuestion(self.view, touches, rangeButtonViewOverlay)
+            touchesBeganForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, &previousRangeBarLocation)
                         
         default:
             
@@ -484,8 +495,8 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
             
         case 5:
             
-            touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizonalBar, verticalScaleLine)
-            
+            touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel, verticalScaleLine, &previousRangeBarLocation)
+
             
             
         default:

@@ -11,7 +11,7 @@ import UIKit
 import Parse
 
 
-func rangeQuestion(masterView: UIView, rangeButtonOverlay: UIView, rangeBar: UIView, completion: (UIView) -> Void) {
+func rangeQuestion(masterView: UIView, rangeButtonOverlay: UIView, rangeBar: UIView, rangeLabel: UILabel, completion: (UIView) -> Void) {
     
     let question = questionObjectFromGameBoardSend
     let questionString = question?.valueForKey(questionAsk) as! String
@@ -42,9 +42,14 @@ func rangeQuestion(masterView: UIView, rangeButtonOverlay: UIView, rangeBar: UIV
     
     drawVerticalScaleLineForRangeQuestion(masterView, scaleLabelTopY, scaleLabelBottomY, 85, 7.0, lowColor, fontSmaller) { (verticalLine: UIView) -> Void in
         
-        drawHorizontalDragBar(masterView, verticalLine, lowColor, rangeButtonOverlay, rangeBar)
-        
-        completion(verticalLine)
+        drawHorizontalDragBar(masterView, verticalLine, lowColor, rangeButtonOverlay, rangeBar, rangeLabel, { () -> Void in
+          
+            drawRangeLabel(masterView, rangeBar, verticalLine, rangeLabel)
+            
+            completion(verticalLine)
+
+        })
+
         
     }
     
@@ -101,7 +106,7 @@ func drawVerticalScaleLineForRangeQuestion(masterView: UIView, topYCoord: CGFloa
 
 
 
-func drawHorizontalDragBar(masterView: UIView, scaleBarLine: UIView, color: UIColor, rangeHandle: UIView, rangeHandleBar: UIView) {
+func drawHorizontalDragBar(masterView: UIView, scaleBarLine: UIView, color: UIColor, rangeHandle: UIView, rangeHandleBar: UIView, rangeLabel: UILabel, completion: () -> Void) {
     
     rangeHandleBar.layer.cornerRadius = 1.0
     rangeHandleBar.backgroundColor = color
@@ -119,7 +124,7 @@ func drawHorizontalDragBar(masterView: UIView, scaleBarLine: UIView, color: UICo
     let onePercentOfHeight = masterHeight/100
     
     let dragBarX = scaleBarLine.center.x - rangeHandleBar.frame.width
-    let dragBarY = scaleBarLine.frame.maxY - (rangeHandleBar.frame.height)
+    let dragBarY = scaleBarLine.frame.maxY - (rangeHandleBar.frame.height/2)
     rangeHandleBar.frame.origin = CGPoint(x: dragBarX, y: dragBarY)
     
     drawSquareRectOffView(rangeHandle, masterView, 8, 8)
@@ -134,11 +139,51 @@ func drawHorizontalDragBar(masterView: UIView, scaleBarLine: UIView, color: UICo
     rangeHandle.center.y = rangeHandleBar.center.y
     rangeHandle.center.x = rangeHandleBar.frame.minX - (rangeHandle.frame.size.width/2.03)
     
+    completion()
+    
 }
 
 
 
-func touchesBeganForRangeQuestion(masterView: UIView, touches: Set<NSObject>, buttonOverlay: UIView) {
+func drawRangeLabel(masterView: UIView, rangeHorizontalBar: UIView, rangeVerticalScaleLine: UIView, rangeLabel: UILabel) {
+    
+    println("drawing label")
+    
+    
+    let rangeTopString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelTop) as! String
+    let rangeBottomString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelBottom) as! String
+    
+    let rangeTopRegex = listMatches("\\d+", inString: rangeTopString)
+    let rangeTopInt = rangeTopRegex[0].toInt()
+    
+    let rangeBottomRegex = listMatches("\\d+", inString: rangeBottomString)
+    let rangeBottomInt = rangeBottomRegex[0].toInt()
+    
+    let range = rangeTopInt! - rangeBottomInt!
+    let rangeIntervals = range / Int(rangeVerticalScaleLine.frame.height)
+    
+    rangeLabel.text = String(rangeBottomInt!)
+    rangeLabel.textColor = UIColor.whiteColor()
+    rangeLabel.font = fontMediumRegular
+    rangeLabel.textAlignment = .Left
+    rangeLabel.sizeToFit()
+    
+    masterView.addSubview(rangeLabel)
+    
+    let labelWidth = rangeHorizontalBar.frame.width
+    let labelHeight = rangeLabel.frame.height
+    
+    rangeLabel.frame = CGRectMake(0, 0, labelWidth, labelHeight)
+    
+    rangeLabel.frame.origin.x = rangeHorizontalBar.frame.minX + 10.0
+    rangeLabel.frame.origin.y = rangeHorizontalBar.frame.minY - labelHeight
+    
+    
+}
+
+
+
+func touchesBeganForRangeQuestion(masterView: UIView, touches: Set<NSObject>, buttonOverlay: UIView, horizontalRangeBar: UIView, inout previousRangeBarLocation: CGPoint) {
     
     let handle: UIView = buttonOverlay
     
@@ -149,6 +194,8 @@ func touchesBeganForRangeQuestion(masterView: UIView, touches: Set<NSObject>, bu
         let location = touch.locationInView(masterView)
         
             if handle.frame.contains(location) == true {
+                
+                let previousRangeBarLocation = horizontalRangeBar.center
                 
                 UIView.animateWithDuration(0.1, animations: { () -> Void in
                     
@@ -179,37 +226,81 @@ func touchesBeganForRangeQuestion(masterView: UIView, touches: Set<NSObject>, bu
 }
 
 
-func touchesMovedForRangeQuestion(masterView: UIView, touches: Set<NSObject>, buttonOverlay: UIView, rangeBarHandle: UIView, verticalScaleLine: UIView) {
+func touchesMovedForRangeQuestion(masterView: UIView, touches: Set<NSObject>, buttonOverlay: UIView, rangeBarHandle: UIView, rangeLabel: UILabel, verticalScaleLine: UIView, inout previousRangeBarLocation: CGPoint) {
     
     for touch in (touches as! Set<UITouch>) {
         let location = touch.locationInView(masterView)
         
-        let upperScaleLimit = verticalScaleLine.frame.minY + (rangeBarHandle.frame.size.height/2)
-        let lowerScaleLimit = verticalScaleLine.frame.maxY - (rangeBarHandle.frame.size.height/2)
+        if buttonOverlay.frame.contains(location) {
         
-        rangeBarHandle.center.y = location.y
-        buttonOverlay.center.y = rangeBarHandle.center.y
-        
-        if location.y <= upperScaleLimit {
+            let upperScaleLimit = verticalScaleLine.frame.minY + (rangeBarHandle.frame.size.height/2)
+            let lowerScaleLimit = verticalScaleLine.frame.maxY - (rangeBarHandle.frame.size.height/2)
             
-            rangeBarHandle.center.y = upperScaleLimit
+            rangeBarHandle.center.y = location.y
             buttonOverlay.center.y = rangeBarHandle.center.y
+            rangeLabel.frame.origin.y = rangeBarHandle.frame.minY - rangeLabel.frame.height
+
+            
+            if location.y <= upperScaleLimit {
+                
+                rangeBarHandle.center.y = upperScaleLimit
+                buttonOverlay.center.y = rangeBarHandle.center.y
+                rangeLabel.frame.origin.y = rangeBarHandle.frame.minY - rangeLabel.frame.height
+
+                
+            }
+            
+            if location.y >= lowerScaleLimit {
+                
+                rangeBarHandle.center.y = lowerScaleLimit
+                buttonOverlay.center.y = rangeBarHandle.center.y
+                rangeLabel.frame.origin.y = rangeBarHandle.frame.minY - (rangeLabel.frame.height)
+
+                
+            }
+    
+            changeRangeLabelTextForTouchesMoved(masterView, touch, rangeBarHandle, verticalScaleLine, rangeLabel, &previousRangeBarLocation)
             
         }
-        
-        if location.y >= lowerScaleLimit {
-            
-            rangeBarHandle.center.y = lowerScaleLimit
-            buttonOverlay.center.y = rangeBarHandle.center.y
-            
-        }
-        
-        
         
     }
     
 }
 
 
+
+func changeRangeLabelTextForTouchesMoved(masterView: UIView, touch: UITouch, rangeHorizontalBar: UIView, rangeVerticalScaleLine: UIView, rangeLabel: UILabel, inout previousRangeBarLocation: CGPoint) {
+    
+    let rangeTopString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelTop) as! String
+    let rangeBottomString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelBottom) as! String
+    
+    let rangeTopRegex = listMatches("\\d+", inString: rangeTopString)
+    let rangeTopInt = rangeTopRegex[0].toInt()
+    
+    let rangeBottomRegex = listMatches("\\d+", inString: rangeBottomString)
+    let rangeBottomInt = rangeBottomRegex[0].toInt()
+    
+    let range = rangeTopInt! - rangeBottomInt!
+    
+    let rangeStartPoint = rangeVerticalScaleLine.frame.maxY
+    let rangeEndPoint = rangeVerticalScaleLine.frame.minY
+    let yRange = rangeEndPoint - rangeStartPoint
+    
+    let location = rangeHorizontalBar.frame.minY
+    
+    let percent = ((location - rangeStartPoint) / (yRange)) * 100
+    let finalNumber = Double(percent) * (Double(rangeBottomInt!) - Double(rangeTopInt!))
+    let labelText = Int(finalNumber)
+    
+    rangeLabel.text = String(labelText)
+    
+    previousRangeBarLocation = rangeHorizontalBar.center
+
+    
+}
+
+func boundValue(value: Double, toLowerValue lowerValue: Double, upperValue: Double) -> Double {
+    return min(max(value, lowerValue), upperValue)
+}
 
 
