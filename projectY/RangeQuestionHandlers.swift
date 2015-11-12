@@ -289,7 +289,7 @@ func changeRangeLabelTextForTouchesMoved(masterView: UIView, touch: UITouch, ran
     let location = rangeHorizontalBar.frame.minY
     
     let percent = ((location - rangeStartPoint) / (yRange)) * 100
-    let finalNumber = Double(percent) * (Double(rangeBottomInt!) - Double(rangeTopInt!))
+    let finalNumber = (Double(percent * 0.01) * (Double(rangeTopInt!) - Double(rangeBottomInt!))) + Double(rangeBottomInt!)
     let labelText = Int(finalNumber)
     
     rangeLabel.text = String(labelText)
