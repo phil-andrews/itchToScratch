@@ -47,27 +47,6 @@ func displayQuestionContainer(masterView: UIViewController, question: PFObject, 
 
 
 
-
-func singleAnswerQuestionNoImage() {
-    
-    
-    
-    
-    
-}
-
-
-
-func singleAnswerQuestionWithImage() {
-    
-    
-    
-    
-    
-}
-
-
-
 func multipleAnswerQuestionWithImage() {
     
     
@@ -78,11 +57,6 @@ func multipleAnswerQuestionWithImage() {
 
 
 
-
-
-
-
-
 func multipleAnswerQuestionNoImage() {
     
     
@@ -90,16 +64,6 @@ func multipleAnswerQuestionNoImage() {
     
 }
 
-
-
-
-func numberRangeQuestion() {
-    
-    
-    
-    
-    
-}
 
 
 
@@ -116,10 +80,10 @@ func checkAnswerSubmitted() {
     
     let question = questionObjectFromGameBoardSend
     let type = question!.valueForKey(questionType) as! Int
-    let questionString = question!.valueForKey(questionAsk) as! String
-    let category = question!.valueForKey(questionCategory) as! String
-    let answersNeeded = question!.valueForKey(numberOfAnswers) as! Int
-    var answerArray = question!.valueForKey(questionAnswers) as! NSMutableArray
+    let questionString = question!.valueForKey(questionAskKey) as! String
+    let category = question!.valueForKey(questionCategoryKey) as! String
+    let answersNeeded = question!.valueForKey(numberOfAnswersKey) as! Int
+    var answerArray = question!.valueForKey(questionAnswersKey) as! NSMutableArray
     
     
     println("func ran")
@@ -130,13 +94,19 @@ func checkAnswerSubmitted() {
 }
 
 
-func animateContainerView(masterView: UIViewController, containerView: UIView) {
+func animateContainerView(masterView: UIViewController, containerView: UIView, completion: () -> Void) {
+
     
     UIView.animateWithDuration(0.4, animations: { () -> Void in
         
         containerView.frame.origin.y -= masterView.view.frame.height
+
         
-    })
+    }) { (Bool) -> Void in
+        
+        completion()
+        
+    }
     
     
     

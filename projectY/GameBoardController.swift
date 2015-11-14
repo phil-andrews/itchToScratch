@@ -646,7 +646,7 @@ class BlueController: UIViewController, CLLocationManagerDelegate, PFLogInViewCo
             
             if question.objectId == questionObjectID {
                 
-                let imageFile = question.valueForKey(questionImage) as? PFFile
+                let imageFile = question.valueForKey(questionImageKey) as? PFFile
                 let answerNumber = self.currentLocationObject?.valueForKey("ans\(button.tag)") as! Int
                 
                 if imageFile != nil {

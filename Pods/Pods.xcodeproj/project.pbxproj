@@ -69,78 +69,59 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08326C0CDE2D21B1DF9B6A369C7A6FE3 /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = ObjectMapper/Transforms/URLTransform.swift; sourceTree = "<group>"; };
 		0DBAE41ECECD7A3ED27BF7BF4E08501C /* Mapbox-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
 		15B6E4875DF58737239A07EA6FBAEEC2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		1D15D0A17FE73349233DE628C17AEC33 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		1DE8917184345F2A26CDADE99CF0DDC9 /* api_mapbox_com-digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-digicert.der"; path = "Mapbox.bundle/api_mapbox_com-digicert.der"; sourceTree = "<group>"; };
-		295778561858B7A1DDDF3229A898F558 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = ObjectMapper/Core/FromJSON.swift; sourceTree = "<group>"; };
 		2B03A878D3DBFE4918EA69B39EC85C8D /* MGLMapView+IBAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MGLMapView+IBAdditions.h"; path = "Headers/MGLMapView+IBAdditions.h"; sourceTree = "<group>"; };
 		2EE1B0E6038BD09A610E99B97686BF41 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		2F1C16B5ADAA56F2AE4FC1FB3874B11B /* MGLOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLOverlay.h; path = Headers/MGLOverlay.h; sourceTree = "<group>"; };
 		32806B7E28041951EC9B161FC160F201 /* Pods-projectY-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-projectY-dummy.m"; sourceTree = "<group>"; };
-		341D85B13630A85F887F2AC0C62EEB2A /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
-		34DB188C5CC1D9049ED97B5E85E0CCA2 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		36720EC03DBF117758D3B2D8F3ABCFE7 /* MGLUserLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLUserLocation.h; path = Headers/MGLUserLocation.h; sourceTree = "<group>"; };
-		3DDCC2331879B89C08BD83C90772554D /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = ObjectMapper/Transforms/TransformType.swift; sourceTree = "<group>"; };
 		42AA4133550B76C79EE2F143E4D0CF9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439E2F2F7DD8BBE6FDF00210AD8EEB79 /* Compass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@3x.png"; path = "Mapbox.bundle/Compass@3x.png"; sourceTree = "<group>"; };
 		46F8A85BE6B010D9768D631880E85EFE /* mapbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@2x.png"; path = "Mapbox.bundle/mapbox@2x.png"; sourceTree = "<group>"; };
 		489CE33E93177AE45A0B518AE1AD48BD /* Pods-projectY-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-projectY-acknowledgements.plist"; sourceTree = "<group>"; };
 		4BA9B277EEBB593683FD099B5D6C112E /* Pods-projectY-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-projectY-umbrella.h"; sourceTree = "<group>"; };
 		4D6C96C57BE909E0F499A4C1170F1D66 /* MGLShape.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLShape.h; path = Headers/MGLShape.h; sourceTree = "<group>"; };
-		515FCE4FBF89BC50C22D0536B057DAC2 /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = ObjectMapper/Core/Mapper.swift; sourceTree = "<group>"; };
 		592729E0A8FB69A09A2C5679AC6D8D9D /* MGLDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MGLDummy.m; sourceTree = "<group>"; };
 		5D7D3D6A7085E27CDF2C961C461F29C2 /* Mapbox-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Mapbox-iOS-SDK.modulemap"; sourceTree = "<group>"; };
-		5F17EC514566F3899786CA82CEC40884 /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
 		67AF7F28932361AF6D3FADF015A3A215 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69BDA0D7AEF279442FA16B1924AD2E9E /* MGLMapCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapCamera.h; path = Headers/MGLMapCamera.h; sourceTree = "<group>"; };
-		6BD8472A6D60E2573F21496DAD93D7DA /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		701BE39C899033C7FC0E55B723D0EBB3 /* MGLTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLTypes.h; path = Headers/MGLTypes.h; sourceTree = "<group>"; };
-		7536854BABCD136ED6E54AA47EE55F5B /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = ObjectMapper/Transforms/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
 		77ED757CD05D9C91C6D665CC15FAD7AE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		7A774A81E4E09FC0AFAC267D3AC0887B /* MGLAccountManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAccountManager.h; path = Headers/MGLAccountManager.h; sourceTree = "<group>"; };
 		7C3E39E2CC8392DDEAD198C9166F42B7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		7C8D0F027B1CE933DE63CC4C6F739135 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = ObjectMapper/Core/ToJSON.swift; sourceTree = "<group>"; };
 		7DAEC394EE299C73EB132FE26005EF2F /* MGLPolyline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolyline.h; path = Headers/MGLPolyline.h; sourceTree = "<group>"; };
 		7E8B57219F48A6584D6F3CD1ADEC255B /* MGLGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLGeometry.h; path = Headers/MGLGeometry.h; sourceTree = "<group>"; };
 		7E9C16A1B7D283D366DFD8BC4AE8351C /* Mapbox-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
 		80D81ACFFB662F5D2BEBCB8EA4812AFA /* MGLAnnotationImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotationImage.h; path = Headers/MGLAnnotationImage.h; sourceTree = "<group>"; };
 		80E02D255BC2E040F730B63D5054E050 /* Mapbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mapbox.h; path = Headers/Mapbox.h; sourceTree = "<group>"; };
-		8481486CE99B8BDEE3EB6B7C3FE569AF /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
 		85CF6FCBEA4D6C0064362A8E157C37D2 /* api_mapbox_com-geotrust.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-geotrust.der"; path = "Mapbox.bundle/api_mapbox_com-geotrust.der"; sourceTree = "<group>"; };
 		877FF7D19DA41819C25454D106780392 /* mapbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mapbox.png; path = Mapbox.bundle/mapbox.png; sourceTree = "<group>"; };
 		887D8475C7A7362F01F3406C76D74584 /* MGLPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolygon.h; path = Headers/MGLPolygon.h; sourceTree = "<group>"; };
-		8B363E4AB864937516508A9B7A7032C0 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = ObjectMapper/Transforms/DateTransform.swift; sourceTree = "<group>"; };
 		8C083DD5E09051220DDB9C6E9040FAF7 /* Mapbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mapbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED43C17CF4A864EE4030A07427FF97D /* star_tilestream_net.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = star_tilestream_net.der; path = Mapbox.bundle/star_tilestream_net.der; sourceTree = "<group>"; };
 		9011C520EFA96D78421817354D237D35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		91CBF180E1E9C194069CAD6FDEFCE701 /* MGLMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMultiPoint.h; path = Headers/MGLMultiPoint.h; sourceTree = "<group>"; };
 		9BF19E2BE5C74828FAD7E643043030F2 /* Pods-projectY.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-projectY.modulemap"; sourceTree = "<group>"; };
-		9D5EDC1BE44C7B5905FC82CD40A85767 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A361314F25E0FD67C8111132093B62EB /* Pods_projectY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55326718234A29B0D1EFA2BC4851FFB /* Pods-projectY-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-projectY-frameworks.sh"; sourceTree = "<group>"; };
 		A8ECD76CDA3316C3DC548C26117558C1 /* mapbox@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@3x.png"; path = "Mapbox.bundle/mapbox@3x.png"; sourceTree = "<group>"; };
 		AFAB1113AA84B7907255B56DD715F9AC /* README */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README; path = Mapbox.bundle/README; sourceTree = "<group>"; };
-		B01AF75769E8BE4A1B5CAD305E6E05FA /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = ObjectMapper/Transforms/TransformOf.swift; sourceTree = "<group>"; };
 		BA386BA606D6C85B32FA9C410E879B99 /* libMapbox.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BC19B41DE38A62BFBA090FD3C9105A04 /* ObjectMapper-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ObjectMapper-Private.xcconfig"; sourceTree = "<group>"; };
 		BD8FB34BC2B6764C0ECDEEA81751C13F /* Mapbox-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mapbox-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
 		BDF6FCAB88ADB0262286722E83254974 /* Compass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@2x.png"; path = "Mapbox.bundle/Compass@2x.png"; sourceTree = "<group>"; };
 		BE4C088CC289C2A0D1B41A839FE0EF78 /* Mapbox-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
-		C24F21C1C722F5203910B4BD0C9BAE5F /* DateFormaterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormaterTransform.swift; path = ObjectMapper/Transforms/DateFormaterTransform.swift; sourceTree = "<group>"; };
 		C2DF64E89DAEFC522393744AF839BE16 /* MGLMapView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapView.h; path = Headers/MGLMapView.h; sourceTree = "<group>"; };
-		C50785BC1C7F71B21191BFE0F025B51A /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = ObjectMapper/Transforms/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		CCCA0AD420F2E6F8696E63DD96F19C63 /* Compass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Compass.png; path = Mapbox.bundle/Compass.png; sourceTree = "<group>"; };
 		CE07FDB475E2CA569F63E2539C8CB198 /* Pods-projectY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.debug.xcconfig"; sourceTree = "<group>"; };
-		D25B616A1A447C2308D91582F6E29FE0 /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = ObjectMapper/Transforms/EnumTransform.swift; sourceTree = "<group>"; };
 		D4F2D07D64EDA9B970A1E3122F9604C7 /* Mapbox-iOS-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK-Private.xcconfig"; sourceTree = "<group>"; };
 		D60E4C394DDC0C79202A2531DC3248CD /* MGLAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotation.h; path = Headers/MGLAnnotation.h; sourceTree = "<group>"; };
 		DDF423195706F5B3116AAD308154AD52 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		E25308B63E21BDDFBB23BEC4DFC75894 /* Mapbox.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapbox.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39DB76C61B19CBC8F17B78258582244 /* Pods-projectY-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-projectY-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EE50AC897A976F38AC908CD04E65625E /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = ObjectMapper/Core/Operators.swift; sourceTree = "<group>"; };
 		EFBB6DEE502F05DDF9CB2078A1EAD8D5 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
 		F81D42D1570BF87D52B9480A1B3F0463 /* Pods-projectY-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-projectY-resources.sh"; sourceTree = "<group>"; };
 		FA809150AE1162B52DB617D107694E98 /* Pods-projectY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,47 +223,12 @@
 			path = "Target Support Files/Pods-projectY";
 			sourceTree = "<group>";
 		};
-		A8B1D8A5BBA946E98D0F300FEA550416 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9D5EDC1BE44C7B5905FC82CD40A85767 /* Info.plist */,
-				8481486CE99B8BDEE3EB6B7C3FE569AF /* ObjectMapper.modulemap */,
-				5F17EC514566F3899786CA82CEC40884 /* ObjectMapper.xcconfig */,
-				BC19B41DE38A62BFBA090FD3C9105A04 /* ObjectMapper-Private.xcconfig */,
-				34DB188C5CC1D9049ED97B5E85E0CCA2 /* ObjectMapper-dummy.m */,
-				341D85B13630A85F887F2AC0C62EEB2A /* ObjectMapper-prefix.pch */,
-				6BD8472A6D60E2573F21496DAD93D7DA /* ObjectMapper-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ObjectMapper";
-			sourceTree = "<group>";
-		};
 		B42FDC86332BE1D10CF52295D8549CFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BA386BA606D6C85B32FA9C410E879B99 /* libMapbox.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C2109BBAEA28C93CE97578D97DBE288B /* ObjectMapper */ = {
-			isa = PBXGroup;
-			children = (
-				7536854BABCD136ED6E54AA47EE55F5B /* CustomDateFormatTransform.swift */,
-				C24F21C1C722F5203910B4BD0C9BAE5F /* DateFormaterTransform.swift */,
-				8B363E4AB864937516508A9B7A7032C0 /* DateTransform.swift */,
-				D25B616A1A447C2308D91582F6E29FE0 /* EnumTransform.swift */,
-				295778561858B7A1DDDF3229A898F558 /* FromJSON.swift */,
-				C50785BC1C7F71B21191BFE0F025B51A /* ISO8601DateTransform.swift */,
-				515FCE4FBF89BC50C22D0536B057DAC2 /* Mapper.swift */,
-				EE50AC897A976F38AC908CD04E65625E /* Operators.swift */,
-				7C8D0F027B1CE933DE63CC4C6F739135 /* ToJSON.swift */,
-				B01AF75769E8BE4A1B5CAD305E6E05FA /* TransformOf.swift */,
-				3DDCC2331879B89C08BD83C90772554D /* TransformType.swift */,
-				08326C0CDE2D21B1DF9B6A369C7A6FE3 /* URLTransform.swift */,
-				A8B1D8A5BBA946E98D0F300FEA550416 /* Support Files */,
-			);
-			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
 		C371514A3DD510863439F2B53CC2D4AB /* iOS */ = {
@@ -332,7 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				EE14F899ED36E292D75928DB2FC8A258 /* Mapbox-iOS-SDK */,
-				C2109BBAEA28C93CE97578D97DBE288B /* ObjectMapper */,
 			);
 			name = Pods;
 			sourceTree = "<group>";

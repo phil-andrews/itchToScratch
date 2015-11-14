@@ -14,10 +14,10 @@ import Parse
 
 func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, question: PFObject, completion: () -> Void) {
     
-    let questionString = question.valueForKey(questionAsk) as! String
-    let questionAnswer = question.valueForKey(questionAnswers) as! NSArray
+    let questionString = question.valueForKey(questionAskKey) as! String
+    let questionAnswer = question.valueForKey(questionAnswersKey) as! NSArray
     let answer = questionAnswer[0] as! String
-    let choices = question.valueForKey(questionChoices) as! NSArray
+    let choices = question.valueForKey(questionChoicesKey) as! NSArray
     
     let questionLabel = UILabel()
     drawPercentageRectOffView(questionLabel, masterView.view, 22, 85)
@@ -103,11 +103,11 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
 
 func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView, question: PFObject, completion: () -> Void) {
     
-    let imageFile = question.valueForKey(questionImage) as! PFFile
-    let questionString = question.valueForKey(questionAsk) as! String
-    let questionAnswer = question.valueForKey(questionAnswers) as! NSArray
+    let imageFile = question.valueForKey(questionImageKey) as! PFFile
+    let questionString = question.valueForKey(questionAskKey) as! String
+    let questionAnswer = question.valueForKey(questionAnswersKey) as! NSArray
     let answer = questionAnswer[0] as! String
-    let choices = question.valueForKey(questionChoices) as! NSArray
+    let choices = question.valueForKey(questionChoicesKey) as! NSArray
     
     let imageView = UIImageView()
     drawPercentageRectOffView(imageView, sView, 35.05, 100)

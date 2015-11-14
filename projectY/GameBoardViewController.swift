@@ -15,7 +15,7 @@ import Bolts
 
 var usersCurrentLocationData = CLLocation()
 
-class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
+class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     @IBOutlet var swipeToMaps: UISwipeGestureRecognizer!
     
     @IBOutlet var swipeToProfile: UISwipeGestureRecognizer!
@@ -355,23 +355,12 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
         }
                 
         let type = questionToPresent?.valueForKey(questionType) as! Int
-        let questionString = questionToPresent?.valueForKey(questionAsk) as! String
-        let category = questionToPresent?.valueForKey(questionCategory) as! String
-        let image: PFFile? = questionToPresent?.valueForKey(questionImage) as! PFFile?
-        let answersNeeded = questionToPresent?.valueForKey(numberOfAnswers) as! Int
-        var answerArray = questionToPresent?.valueForKey(questionAnswers) as! NSMutableArray
-        
-        if answersNeeded > 1 {
-            
-            for index in 0...answersNeeded {
-                
-                let answerGroupToAdd = questionToPresent?.valueForKey("qAnswers\(index + 1)") as! [String]
-                answerArray.insertObject(answerGroupToAdd, atIndex: answerArray.count)
-                
-            }
-            
-        }
-        
+        let questionString = questionToPresent?.valueForKey(questionAskKey) as! String
+        let category = questionToPresent?.valueForKey(questionCategoryKey) as! String
+        let image: PFFile? = questionToPresent?.valueForKey(questionImageKey) as! PFFile?
+        let answersNeeded = questionToPresent?.valueForKey(numberOfAnswersKey) as! Int
+        var answerArray = questionToPresent?.valueForKey(questionAnswersKey) as! NSMutableArray
+
         
         questionObjectFromGameBoardSend = questionToPresent
         
@@ -386,21 +375,32 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                 
                 println("single answer")
                 
+                singleAnswerQuestion(presentingContainerView, { (answerInputField: UITextField) -> Void in
+                    
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                        
+                        answerInputField.becomeFirstResponder()
+                        
+                    })
+                })
+                
             case 2:
                 
                 println("multiple choice")
                 
                 multipleChoiceQuestion(self, presentingContainerView, questionToPresent!, { () -> Void in
                     
-                    animateContainerView(self, presentingContainerView)
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                    })
+                    
                 })
                 
             case 3:
                 
                 multipleChoiceQuestionWithImage(self, presentingContainerView, questionToPresent!, { () -> Void in
                     
-                    animateContainerView(self, presentingContainerView)
-                    
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                    })
                 })
                 
                 println("multiple answer")
@@ -413,8 +413,8 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                 
                 orderingQuestion(presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
                     
-                    animateContainerView(self, presentingContainerView)
-                    
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                    })
                 })
                 
             case 5:
@@ -425,13 +425,52 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
                 
                 rangeQuestion(presentingContainerView, self.rangeButtonViewOverlay, self.rangeHorizontalBar, self.rangeLabel, { (verticalLine) -> Void in
                     
-                    animateContainerView(self, presentingContainerView)
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                    })
                     
                     self.verticalScaleLine = verticalLine
                     
                     
                 })
                 
+            case 6:
+                
+                singleAnswerQuestionWithImage(presentingContainerView, { (answerInputField: UITextField) -> Void in
+                    
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                        
+                        answerInputField.becomeFirstResponder()
+                        
+                    })
+                    
+                })
+                
+            case 7:
+                
+                println("multiple answer question no image")
+
+                
+                multipleAnswerQuestionNoImage(presentingContainerView, { (answerInputField: UITextField) -> Void in
+                    
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                        
+                        answerInputField.becomeFirstResponder()
+                        
+                    })
+                    
+                })
+                
+            case 8:
+                
+                multipleAnswerQuestionWithImage(self, presentingContainerView, { (answerInputField: UITextField) -> Void in
+                    
+                    animateContainerView(self, presentingContainerView, { () -> Void in
+                        
+                        
+                        
+                    })
+                    
+                })
                 
             default:
                 
@@ -540,6 +579,13 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate {
         
         checkAnswerSubmitted()
         
+        
+    }
+    
+    
+    func makeTextFieldFirstResponder(sender: AnyObject?) {
+        
+            println("called keyboard")
         
     }
     

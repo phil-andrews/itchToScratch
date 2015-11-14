@@ -43,7 +43,7 @@ func populateGameBoard(masterView: UIView, parseObjects: [PFObject], sortedObjec
             
             button.alpha = 0.0
             
-            let questionType = question!.valueForKey(questionCategory) as! String
+            let questionType = question!.valueForKey(questionCategoryKey) as! String
             let backgroundImage = UIImage(named: questionType)
             button.setBackgroundImage(backgroundImage, forState: .Normal)
             

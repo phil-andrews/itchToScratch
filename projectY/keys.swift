@@ -12,17 +12,17 @@ import Foundation
 //QuestionClass Keys
 let QuestionClass: String = "QuestionMaster"
 let objectId: String = "objectId"
-let questionAsk: String = "questionAsk"
-let questionImage: String = "questionImage"
-let questionCategory: String = "category"
+let questionAskKey: String = "questionAsk"
+let questionImageKey: String = "questionImage"
+let questionCategoryKey: String = "category"
 
-let questionChoices: String = "questionChoices"
+let questionChoicesKey: String = "questionChoices"
 let scaleLabelTop: String = "scaleLabelTop"
 let scaleLabelBottom: String = "scaleLabelBottom"
 
 let questionType: String = "questionType"
-let numberOfAnswers = "numberOfAnswers"
-let questionAnswers = "questionAnswers"
+let numberOfAnswersKey = "numberOfAnswers"
+let questionAnswersKey = "questionAnswers"
 let questionAnswersOne = "questionAnswersOne"
 let questionAnswersTwo = "questionAnswersTwo"
 let questionAnswersThree = "questionAnswersThree"
@@ -76,7 +76,7 @@ let lowestColor = UIColor(hex: "4A90E2")
 let lowColor = UIColor(hex: "75CAEF")
 let midColor = UIColor(hex:"50E3C2")
 let highColor = UIColor(hex: "02F87B")
-let highestColor = UIColor(hex: "F3E64C")
+let highestColor = UIColor(hex: "09E136")
 let backgroundColor = UIColor(hex: "282B35")
 let lightColoredFont = UIColor(hex: "E9E8E8")
 let orangeColor = UIColor(hex: "F5A623")

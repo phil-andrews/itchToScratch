@@ -217,7 +217,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
             drawPercentageRectOffFloat(self.questionLabelNOImage, self.topContentView, topCellHeight, 50.0, 45)
             let yOffset = (self.topContentView.frame.height / 2) - (questionLabelNOImage.frame.height / 2)
             self.questionLabelNOImage.frame.offset(dx: 22.5, dy: yOffset)
-            self.questionLabelNOImage.text = imageObject?.valueForKey(questionAsk) as? String
+            self.questionLabelNOImage.text = imageObject?.valueForKey(questionAskKey) as? String
             self.questionLabelNOImage.textColor = lightColoredFont
             self.questionLabelNOImage.lineBreakMode = .ByWordWrapping
             self.questionLabelNOImage.numberOfLines = 0
@@ -241,7 +241,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
             let yOffset = detailImageView.frame.maxY + (questionLabel.frame.height)
             drawPercentageRectOffFloat(self.questionLabel, self.topContentView, topCellHeight, 40.0, 45)
             self.questionLabel.frame.offset(dx: 22.5, dy: yOffset)
-            self.questionLabel.text = imageObject?.valueForKey(questionAsk) as? String
+            self.questionLabel.text = imageObject?.valueForKey(questionAskKey) as? String
             self.questionLabel.textColor = lightColoredFont
             self.questionLabel.lineBreakMode  = .ByWordWrapping
             self.questionLabel.numberOfLines = 0
@@ -261,7 +261,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     func queryQuestionImage() {
         
         let imageObject = self.parseObject as PFObject?
-        let imageFile = imageObject?.objectForKey(questionImage) as? PFFile
+        let imageFile = imageObject?.objectForKey(questionImageKey) as? PFFile
         
         imageFile?.getDataInBackgroundWithBlock({ (data, error) -> Void in
             
@@ -330,9 +330,9 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     
     func checkMultipleAnswer(textField: UITextField) {
         
-        let numberOfAnswersRequired = self.parseObject?.valueForKey(numberOfAnswers) as! Int
+        let numberOfAnswersRequired = self.parseObject?.valueForKey(numberOfAnswersKey) as! Int
         
-        var answers1: NSMutableArray? = self.parseObject?.valueForKey(questionAnswers) as? NSMutableArray
+        var answers1: NSMutableArray? = self.parseObject?.valueForKey(questionAnswersKey) as? NSMutableArray
         var answers2: NSMutableArray? = self.parseObject?.valueForKey(questionAnswersOne) as? NSMutableArray
         var answers3: NSMutableArray? = self.parseObject?.valueForKey(questionAnswersTwo) as? NSMutableArray
         var answers4: NSMutableArray? = self.parseObject?.valueForKey(questionAnswersThree) as? NSMutableArray
@@ -510,7 +510,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                     
                     runningCount = runningCount + 1
                     
-                    var numberOfRequiredAnswers = self.parseObject?.valueForKey(numberOfAnswers) as! Int
+                    var numberOfRequiredAnswers = self.parseObject?.valueForKey(numberOfAnswersKey) as! Int
                     
                     if self.countOfCorrectAnswers == numberOfRequiredAnswers {
                         
@@ -543,7 +543,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     
     func singleAnswer(textField: UITextField) {
         
-        var answers = parseObject?.valueForKey(questionAnswers) as! [String]
+        var answers = parseObject?.valueForKey(questionAnswersKey) as! [String]
         var count = 0
         
         for item in answers  {
@@ -558,7 +558,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
                 
                 self.answerInputField.enabled = false
                 
-                let correctAnswer = self.parseObject?.valueForKey(questionAnswers) as! NSArray
+                let correctAnswer = self.parseObject?.valueForKey(questionAnswersKey) as! NSArray
                 
                 self.correctAnswerLabelOne.text = correctAnswer[0] as? String
                 
@@ -597,7 +597,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
     
     func correctAnswerLabelReveal(numberOfAnswers: Int) {
         
-        let answerLabelOne = self.parseObject?.valueForKey(questionAnswers) as? NSMutableArray
+        let answerLabelOne = self.parseObject?.valueForKey(questionAnswersKey) as? NSMutableArray
         let answerLabelTwo = self.parseObject?.valueForKey(questionAnswersOne) as? NSMutableArray
         let answerLabelThree = self.parseObject?.valueForKey(questionAnswersTwo) as? NSMutableArray
         let answerLabelFour = self.parseObject?.valueForKey(questionAnswersThree) as? NSMutableArray
@@ -794,7 +794,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
         let locationID = self.locationObject?.objectId
         
         let categories = [geographyCategory, sportsCategory, scienceCategory, moviesCategory, musicCategory, historyCategory, moneyCategory, productsCategory]
-        let category = self.parseObject?.valueForKey(questionCategory) as! String
+        let category = self.parseObject?.valueForKey(questionCategoryKey) as! String
         
         for item in categories {
             
@@ -806,7 +806,7 @@ class QuestionDetail: UITableViewController, UITextFieldDelegate {
             
         }
         
-        let image = self.parseObject?.valueForKey(questionImage) as? PFFile
+        let image = self.parseObject?.valueForKey(questionImageKey) as? PFFile
         
         if image == nil {
             

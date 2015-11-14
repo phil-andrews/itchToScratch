@@ -14,15 +14,15 @@ import Parse
 func orderingQuestion(masterView: UIView, label1: UILabel, label2: UILabel, label3: UILabel, label4: UILabel, completion: () -> Void) {
     
     let question = questionObjectFromGameBoardSend
-    let questionString = question?.valueForKey(questionAsk) as! String
-    var choices = question?.valueForKey(questionChoices) as! [String]
-    let answers = question?.valueForKey(questionAnswers) as! [String]
+    let questionString = question?.valueForKey(questionAskKey) as! String
+    var choices = question?.valueForKey(questionChoicesKey) as! [String]
+    let answers = question?.valueForKey(questionAnswersKey) as! [String]
     
     let questionLabel = UILabel()
     drawPercentageRectOffView(questionLabel, masterView, 22, 85)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
-    questionLabel.font = fontSmaller
+    questionLabel.font = fontSmallerRegular
     questionLabel.numberOfLines = 0
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true
