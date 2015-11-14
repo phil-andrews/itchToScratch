@@ -42,7 +42,7 @@ func rangeQuestion(masterView: UIView, rangeButtonOverlay: UIView, rangeBar: UIV
     
     drawVerticalScaleLineForRangeQuestion(masterView, scaleLabelTopY, scaleLabelBottomY, 85, 12.0, lowColor, fontSmaller) { (verticalLine: UIView) -> Void in
         
-        drawHorizontalDragBar(masterView, verticalLine, highestColor, rangeButtonOverlay, rangeBar, rangeLabel, { () -> Void in
+        drawHorizontalDragBar(masterView, verticalLine, lowColor, rangeButtonOverlay, rangeBar, rangeLabel, { () -> Void in
           
             drawRangeLabel(masterView, rangeBar, verticalLine, rangeLabel)
             

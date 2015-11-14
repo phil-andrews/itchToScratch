@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-func singleAnswerQuestion(masterView: UIView, completion: (UITextField) -> Void) {
+func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDelegate, completion: (UITextField) -> Void) {
     
     let questionString = questionObjectFromGameBoardSend?.valueForKey(questionAskKey) as! String
     
@@ -38,6 +38,9 @@ func singleAnswerQuestion(masterView: UIView, completion: (UITextField) -> Void)
     textField.textColor = UIColor.whiteColor()
     textField.textAlignment = .Left
     textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+    textField.tag = 1001
+    textField.delegate = textFieldDelegate
+
     
     masterView.addSubview(textField)
     
@@ -57,7 +60,7 @@ func singleAnswerQuestion(masterView: UIView, completion: (UITextField) -> Void)
 
 
 
-func singleAnswerQuestionWithImage(masterView: UIView, completion: (UITextField) -> Void) {
+func singleAnswerQuestionWithImage(masterView: UIView, textFieldDelegate: UITextFieldDelegate, completion: (UITextField) -> Void) {
     
     let question: PFObject = questionObjectFromGameBoardSend!
     let imageFile = question.valueForKey(questionImageKey) as! PFFile
@@ -93,6 +96,9 @@ func singleAnswerQuestionWithImage(masterView: UIView, completion: (UITextField)
     textField.textColor = UIColor.whiteColor()
     textField.textAlignment = .Left
     textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+    textField.tag = 1001
+    textField.delegate = textFieldDelegate
+
     
     masterView.addSubview(textField)
     
