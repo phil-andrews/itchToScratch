@@ -23,6 +23,7 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true
     questionLabel.minimumScaleFactor = 0.8
+    questionLabel.tag = 101
     
     masterView.addSubview(questionLabel)
     
@@ -45,7 +46,7 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     masterView.addSubview(textField)
     
     textField.frame.origin.x = centerXAlignment(textField, masterView)
-    textField.frame.origin.y = percentYFromMasterFrame(textField, masterView, 45.0)
+    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
     
     let textFieldPadding = UIView()
     textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
@@ -55,12 +56,18 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     textField.keyboardType = UIKeyboardType.Default
     textField.returnKeyType = .Go
     
+    if masterView.frame.height <= 480 {
+        
+        questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView, 5.0)
+        
+    }
+    
     completion(textField)
 }
 
 
 
-func singleAnswerQuestionWithImage(masterView: UIView, textFieldDelegate: UITextFieldDelegate, completion: (UITextField) -> Void) {
+func singleAnswerQuestionWithImage(viewController: UIViewController, masterView: UIView, textFieldDelegate: UITextFieldDelegate, completion: (UITextField) -> Void) {
     
     let question: PFObject = questionObjectFromGameBoardSend!
     let imageFile = question.valueForKey(questionImageKey) as! PFFile
@@ -81,6 +88,7 @@ func singleAnswerQuestionWithImage(masterView: UIView, textFieldDelegate: UIText
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true
     questionLabel.minimumScaleFactor = 0.7
+    questionLabel.tag = 101
     
     masterView.addSubview(questionLabel)
     
@@ -102,7 +110,7 @@ func singleAnswerQuestionWithImage(masterView: UIView, textFieldDelegate: UIText
     
     masterView.addSubview(textField)
     
-    textField.frame.origin.y = questionLabel.frame.maxY + 5
+    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
     textField.frame.origin.x = centerXAlignment(textField, masterView)
     
     let textFieldPadding = UIView()
@@ -112,6 +120,27 @@ func singleAnswerQuestionWithImage(masterView: UIView, textFieldDelegate: UIText
     textField.keyboardAppearance = .Dark
     textField.keyboardType = UIKeyboardType.Default
     textField.returnKeyType = .Go
+    
+    if masterView.frame.height <= 480 {
+        
+        questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView, 55)
+        questionLabel.frame.size.height = masterView.frame.height * 0.25
+        textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
+        drawCallKeyboardButton(viewController, masterView, 1003)
+        
+        let textFieldQuestionButton = UIButton()
+        textFieldQuestionButton.setTitle("Q", forState: .Normal)
+        textFieldQuestionButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        textFieldQuestionButton.titleLabel?.font = fontSmallMedium
+        textFieldQuestionButton.backgroundColor = yellowColor
+        textFieldQuestionButton.frame = CGRectMake(0, 0, (textField.frame.width * 0.138), textField.frame.height)
+        textFieldQuestionButton.addTarget(viewController, action: Selector("dismissKeyboardShowQuestion:"), forControlEvents: .TouchUpInside)
+        textFieldQuestionButton.tag = 1002
+        textField.rightView = textFieldQuestionButton
+        textField.rightViewMode = .Always
+        
+        textField.hidden = true
+    }
     
     
     queryForImage(imageFile, { (image) -> Void in

@@ -435,11 +435,16 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                 
             case 6:
                 
-                singleAnswerQuestionWithImage(presentingContainerView, self, { (answerInputField: UITextField) -> Void in
+                singleAnswerQuestionWithImage(self, presentingContainerView, self, { (answerInputField: UITextField) -> Void in
                     
                     animateContainerView(self, presentingContainerView, { () -> Void in
                         
-                        answerInputField.becomeFirstResponder()
+                        if self.view.frame.height > 480 {
+                            
+                            answerInputField.becomeFirstResponder()
+                            
+                        }
+                        
                         
                     })
                     
@@ -462,10 +467,20 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                 
             case 8:
                 
-                multipleAnswerQuestionWithImage(self, self, presentingContainerView, { (answerInputField: UITextField) -> Void in
+                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 8001, textFieldQuestionButtonTag: 8002, answerLabelTag: 801, imageViewTag: 802, startingLightTag: 8111, callKeybardButtonTag: 8003, { (answerInputField: UITextField) -> Void in
                     
                     animateContainerView(self, presentingContainerView, { () -> Void in
+
                         
+                    })
+                
+                })
+                
+            case 9:
+                
+                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 9001, textFieldQuestionButtonTag: 9002, answerLabelTag: 901, imageViewTag: 902, startingLightTag: 9111, callKeybardButtonTag: 9003, { (textField) -> Void in
+                    
+                    animateContainerView(self, presentingContainerView, { () -> Void in
                         
                         
                     })
@@ -489,7 +504,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     func textFieldDidBeginEditing(textField: UITextField) {
         
-        println("yes'")
         
     }
     
@@ -627,12 +641,8 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     func makeTextFieldFirstResponder(sender: AnyObject?) {
         
             println("called keyboard")
-        
-        if sender!.tag == 8003 {
             
-            makeTextFieldFirstResponderForMultipleAnswerWithImage(sender, self)
-            
-        }
+            makeTextFieldFirstResponderForImageQuestion(sender, self)
         
     }
     
@@ -640,14 +650,10 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     func dismissKeyboardShowQuestion(sender: AnyObject?) {
         
-        
         println("dismissed keyboard")
         
-        if sender!.tag == 8002 {
-            
-            removeTextFieldFromFirstResponderForMultipleAnswerWithImage(self)
-            
-        }
+        removeTextFieldFromFirstResponderToShowQuestion(self, sender)
+        
         
     }
     

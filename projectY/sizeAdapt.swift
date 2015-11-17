@@ -175,3 +175,216 @@ func fontAdjuster(labelText: String, fontS: UIFont, fontM: UIFont, fontL: UIFont
     
 }
 
+
+
+func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewController: UIViewController) {
+    
+    let sender = sender as! UIButton
+    var textFieldTag = Int()
+    var questionAskTag = Int()
+    var imageViewTag = Int()
+    var firstLightTag = Int()
+    var arrayOfLights: [UIView]?
+    
+    switch(sender.tag) {
+        
+    case 1003:
+        
+        textFieldTag = 1001
+        questionAskTag = 101
+        
+    case 8003:
+        
+        textFieldTag = 8001
+        questionAskTag = 801
+        imageViewTag = 802
+        firstLightTag = 8111
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+        
+    case 9003:
+        
+        textFieldTag = 9001
+        questionAskTag = 901
+        imageViewTag = 902
+        firstLightTag = 9111
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+
+    default:
+        
+        break
+    }
+    
+    let questionAsk = viewController.view.viewWithTag(questionAskTag) as! UILabel
+    let imageView = viewController.view.viewWithTag(imageViewTag) as! UIImageView
+    let masterHeight = viewController.view.frame.height
+    
+    
+    if let answerInputField = viewController.view.viewWithTag(textFieldTag) as? UITextField {
+        
+        if sender.tag != 1003 {
+            
+            for item in arrayOfLights! {
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    
+                    answerInputField.alpha = 1.0
+                    
+                    item.frame.origin.y = answerInputField.frame.minY - 8
+                    
+                })
+                
+            }
+            
+        }
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            
+            questionAsk.frame.origin.y += viewController.view.frame.maxY
+            sender.frame.origin.y += viewController.view.frame.maxY
+            
+            }, completion: { (Bool) -> Void in
+                
+                answerInputField.becomeFirstResponder()
+                
+        })
+        
+    }
+    
+}
+
+
+
+func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewController, sender: AnyObject?) {
+    
+    let sender = sender as! UIButton
+    var textFieldTag = Int()
+    var questionAskTag = Int()
+    var imageViewTag = Int()
+    var keyboardButtonTag = Int()
+    var firstLightTag = Int()
+    var arrayOfLights: [UIView]?
+    
+    switch(sender.tag) {
+        
+    case 1002:
+        
+        textFieldTag = 1001
+        questionAskTag = 101
+        keyboardButtonTag = 1003
+        
+    case 8002:
+        
+        textFieldTag = 8001
+        questionAskTag = 801
+        imageViewTag = 802
+        keyboardButtonTag = 8003
+        firstLightTag = 8111
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+        
+    case 9002:
+        
+        textFieldTag = 9001
+        questionAskTag = 901
+        imageViewTag = 902
+        keyboardButtonTag = 9003
+        firstLightTag = 9111
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+
+    default:
+        
+        break
+        
+    }
+    
+    
+    let showKeyboardButton = viewController.view.viewWithTag(keyboardButtonTag) as! UIButton
+    let questionAsk = viewController.view.viewWithTag(questionAskTag) as! UILabel
+    let imageView = viewController.view.viewWithTag(imageViewTag) as! UIImageView
+    let masterViewHeight = viewController.view.frame.height
+    
+    if let answerInputField = viewController.view.viewWithTag(textFieldTag) as? UITextField {
+        
+        answerInputField.resignFirstResponder()
+        
+        if sender.tag != 1002 {
+            
+            for item in arrayOfLights! {
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    
+                    answerInputField.alpha = 0.0
+
+                    item.frame.origin.y = masterViewHeight * 0.363
+                    
+                })
+                
+            }
+            
+        }
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            
+            questionAsk.frame.origin.y -= viewController.view.frame.maxY
+            showKeyboardButton.frame.origin.y -= viewController.view.frame.maxY
+            
+        })
+    }
+}
+
+
+
+func returnArrayOfLights(firstLightTag: Int, viewController: UIViewController) -> [UIView] {
+    
+    let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! NSArray
+    
+    var tagNumber = firstLightTag
+    var arrayOfLights = [UIView]()
+    
+    for index in 0..<answers.count {
+        
+        let light = viewController.view.viewWithTag(tagNumber)
+        
+        arrayOfLights.append(light!)
+        
+        ++tagNumber
+    }
+    
+    return arrayOfLights
+    
+}
+
+
+
+func placeTextFieldAccordingToDeviceSize(masterView: UIView, textField: UITextField) -> CGFloat {
+
+    var yCoordToReturn = CGFloat()
+    
+    let viewHeight = masterView.frame.height
+    
+    switch(viewHeight) {
+        
+    case 480:
+        textField.autocorrectionType = UITextAutocorrectionType.No
+        yCoordToReturn = viewHeight - 224 - textField.frame.height
+        
+    case 568:
+        textField.autocorrectionType = UITextAutocorrectionType.Yes
+        yCoordToReturn = viewHeight - 253 - textField.frame.height - 5
+        
+    case 667:
+        textField.autocorrectionType = UITextAutocorrectionType.Yes
+        yCoordToReturn = viewHeight - 258 - textField.frame.height - 5
+
+    case 736:
+        textField.autocorrectionType = UITextAutocorrectionType.Yes
+        yCoordToReturn = viewHeight - 271 - textField.frame.height - 5
+        
+    default:
+        
+        yCoordToReturn = viewHeight - 253 - textField.frame.height - 5
+    }
+    
+    return yCoordToReturn
+    
+}
+
