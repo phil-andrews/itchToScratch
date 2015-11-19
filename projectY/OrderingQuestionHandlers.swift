@@ -11,7 +11,7 @@ import UIKit
 import Parse
 
 
-func orderingQuestion(masterView: UIView, label1: UILabel, label2: UILabel, label3: UILabel, label4: UILabel, completion: () -> Void) {
+func orderingQuestion(viewController: UIViewController, masterView: UIView, label1: UILabel, label2: UILabel, label3: UILabel, label4: UILabel, completion: () -> Void) {
     
     let question = questionObjectFromGameBoardSend
     let questionString = question?.valueForKey(questionAskKey) as! String
@@ -113,6 +113,20 @@ func orderingQuestion(masterView: UIView, label1: UILabel, label2: UILabel, labe
     let scaleLineBottomY = label4.frame.maxY
     
     drawVerticalScaleLine(masterView, scaleLineTopY, scaleLineBottomY, 92, 1.0, lowColor, fontTiny)
+    
+    let submitButton = UIButton()
+    submitButton.tag = 4001
+    submitButton.setTitle("go", forState: .Normal)
+    submitButton.setTitleColor(yellowColor, forState: .Normal)
+    submitButton.titleLabel?.textColor = yellowColor
+    submitButton.titleLabel?.font = fontSmall
+    submitButton.sizeToFit()
+    submitButton.addTarget(viewController, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
+    
+    masterView.addSubview(submitButton)
+    
+    submitButton.frame.origin.x = centerXAlignment(submitButton, masterView)
+    submitButton.frame.origin.y = scaleLineBottomY + 10
     
     completion()
     

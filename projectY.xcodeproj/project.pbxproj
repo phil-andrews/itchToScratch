@@ -15,6 +15,8 @@
 		8416A97E1B9133AE009A70DD /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84932D131B912CA80060A94B /* Charts.framework */; };
 		8416A97F1B9133AE009A70DD /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84932D131B912CA80060A94B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		841D78A21B93F955008DE7E2 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D78A11B93F955008DE7E2 /* keys.swift */; };
+		84215C6C1BFD2380005411E9 /* SingleAnswerCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84215C6B1BFD2380005411E9 /* SingleAnswerCheck.swift */; };
+		84215C6F1BFD4302005411E9 /* OrderingQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84215C6E1BFD4302005411E9 /* OrderingQuestionCheck.swift */; };
 		84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84249D2A1BDAD63200773168 /* activityIndicator.swift */; };
 		842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* MapController.swift */; };
 		843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843802CB1B893529004CDE6A /* GameBoardController.swift */; };
@@ -148,6 +150,8 @@
 		841532EB1B2B814400118311 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		841532ED1B2B834900118311 /* Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridge-Header.h"; path = "../../Swift/projectX/projectX/Bridge-Header.h"; sourceTree = "<group>"; };
 		841D78A11B93F955008DE7E2 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
+		84215C6B1BFD2380005411E9 /* SingleAnswerCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAnswerCheck.swift; sourceTree = "<group>"; };
+		84215C6E1BFD4302005411E9 /* OrderingQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderingQuestionCheck.swift; sourceTree = "<group>"; };
 		84249D2A1BDAD63200773168 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		842F9FE31BAE0F3800D21DA9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		843802CB1B893529004CDE6A /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
@@ -283,6 +287,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84215C6A1BFD2323005411E9 /* SingleAnswerQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				849E917F1BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift */,
+				84215C6B1BFD2380005411E9 /* SingleAnswerCheck.swift */,
+			);
+			name = SingleAnswerQuestion;
+			sourceTree = "<group>";
+		};
+		84215C6D1BFD42EB005411E9 /* OrderingQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */,
+				84215C6E1BFD4302005411E9 /* OrderingQuestionCheck.swift */,
+			);
+			name = OrderingQuestion;
+			sourceTree = "<group>";
+		};
 		8484D1C81B1A8D57003273BD = {
 			isa = PBXGroup;
 			children = (
@@ -404,8 +426,8 @@
 		84DC630A1BEBC8A300D56895 /* QuestionTypeHandlers */ = {
 			isa = PBXGroup;
 			children = (
-				84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */,
-				849E917F1BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift */,
+				84215C6A1BFD2323005411E9 /* SingleAnswerQuestion */,
+				84215C6D1BFD42EB005411E9 /* OrderingQuestion */,
 				84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */,
 				849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */,
 				84B2C5201BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift */,
@@ -689,6 +711,7 @@
 				84ECC1901B2D520500953FAE /* SpringImageView.swift in Sources */,
 				84ECC17D1B2D520500953FAE /* AutoTextView.swift in Sources */,
 				84ECC1861B2D520500953FAE /* ImageLoader.swift in Sources */,
+				84215C6F1BFD4302005411E9 /* OrderingQuestionCheck.swift in Sources */,
 				840DE58C1BFAC97E00B812DF /* PaddedLabel.swift in Sources */,
 				84ECC18B1B2D520500953FAE /* Misc.swift in Sources */,
 				84ECC17E1B2D520500953FAE /* BlurView.swift in Sources */,
@@ -728,6 +751,7 @@
 				8453D3F61BA3E01B00627A59 /* queryFunctions.swift in Sources */,
 				84ECC18F1B2D520500953FAE /* SpringButton.swift in Sources */,
 				84ECC18E1B2D520500953FAE /* SpringAnimation.swift in Sources */,
+				84215C6C1BFD2380005411E9 /* SingleAnswerCheck.swift in Sources */,
 				84D4D3A51BE000F700DDA162 /* postLoginPictureGet.swift in Sources */,
 				842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */,
 				840DE5881BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift in Sources */,

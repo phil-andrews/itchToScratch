@@ -47,26 +47,6 @@ func displayQuestionContainer(masterView: UIViewController, question: PFObject, 
 
 
 
-func multipleAnswerQuestionWithImage() {
-    
-    
-    
-    
-    
-}
-
-
-
-func multipleAnswerQuestionNoImage() {
-    
-    
-    
-    
-}
-
-
-
-
 func surveyQuestion() {
     
     
@@ -74,24 +54,6 @@ func surveyQuestion() {
 }
 
 
-
-
-func checkAnswerSubmitted() {
-    
-    let question = questionObjectFromGameBoardSend
-    let type = question!.valueForKey(questionType) as! Int
-    let questionString = question!.valueForKey(questionAskKey) as! String
-    let category = question!.valueForKey(questionCategoryKey) as! String
-    let answersNeeded = question!.valueForKey(numberOfAnswersKey) as! Int
-    var answerArray = question!.valueForKey(questionAnswersKey) as! NSMutableArray
-    
-    
-    println("func ran")
-    
-    
-    
-    
-}
 
 
 func animateContainerView(masterView: UIViewController, containerView: UIView, completion: () -> Void) {
@@ -113,6 +75,25 @@ func animateContainerView(masterView: UIViewController, containerView: UIView, c
 }
 
 
+
+func dismissContainerView(containerView: UIView, completion: () -> Void) {
+    
+    delay(2.0, { () -> () in
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            
+            containerView.frame.origin.y += containerView.frame.height
+            
+            }, completion: { (Bool) -> Void in
+                
+                containerView.removeFromSuperview()
+                
+        })
+        
+    })
+    
+    
+}
 
 
 

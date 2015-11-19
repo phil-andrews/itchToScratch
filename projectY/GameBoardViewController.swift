@@ -411,7 +411,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                 
                 self.typeForHandler = 4
                 
-                orderingQuestion(presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
+                orderingQuestion(self, presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
                     
                     animateContainerView(self, presentingContainerView, { () -> Void in
                     })
@@ -502,6 +502,28 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
     }
     
+    
+    func makeTextFieldFirstResponder(sender: AnyObject?) {
+        
+        println("called keyboard")
+        
+        makeTextFieldFirstResponderForImageQuestion(sender, self)
+        
+    }
+    
+    
+    
+    func dismissKeyboardShowQuestion(sender: AnyObject?) {
+        
+        println("dismissed keyboard")
+        
+        removeTextFieldFromFirstResponderToShowQuestion(self, sender)
+        
+        
+    }
+    
+    
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         
         
@@ -521,6 +543,20 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
             println("single answer question")
             
+            checkSingleAnswer(self, textField, { (correct: Bool) -> Void in
+    
+                if correct {
+                    
+                    let containerView = self.view.viewWithTag(999)
+                    
+                    dismissContainerView(containerView!, { () -> Void in
+                        
+                        
+                    })
+                    
+                }
+                
+            })
             
         case 7001:
             
@@ -630,31 +666,31 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     
     
-    func checkAnswerHandler() {
-        
-        checkAnswerSubmitted()
-        
-        
-    }
     
-    
-    func makeTextFieldFirstResponder(sender: AnyObject?) {
+    func checkNonTextInputQuestion(sender: AnyObject?) {
         
-            println("called keyboard")
+        let tag = sender!.tag
+        
+        switch(tag) {
+        
+        case 4001:
             
-            makeTextFieldFirstResponderForImageQuestion(sender, self)
+            println("ordering question")
         
-    }
-    
-    
-    
-    func dismissKeyboardShowQuestion(sender: AnyObject?) {
-        
-        println("dismissed keyboard")
-        
-        removeTextFieldFromFirstResponderToShowQuestion(self, sender)
+            checkOrderingQuestion(self, { () -> Void in
+                
+                
+                
+            })
         
         
+        
+        default:
+        
+        break
+        
+            
+        }
     }
     
     

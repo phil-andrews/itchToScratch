@@ -13,22 +13,46 @@ import Parse
 func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDelegate, completion: (UITextField) -> Void) {
     
     let questionString = questionObjectFromGameBoardSend?.valueForKey(questionAskKey) as! String
+    let answer = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
+    
     
     let questionLabel = UILabel()
-    drawPercentageRectOffView(questionLabel, masterView, 30, 85)
+    questionLabel.frame.size.width = masterView.frame.width * 0.85
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
-    questionLabel.font = fontSmallerRegular
+    questionLabel.font = fontSmall
     questionLabel.numberOfLines = 0
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true
     questionLabel.minimumScaleFactor = 0.8
+    questionLabel.sizeToFit()
+    questionLabel.frame.size.width = masterView.frame.width * 0.85
     questionLabel.tag = 101
+    
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
+    questionLabel.frame.origin.y = masterView.frame.height * 0.0575
     
     masterView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
-    questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView, 10.75)
+    let answerLabel = UILabel()
+    answerLabel.hidden = true
+    answerLabel.frame.size.width = masterView.frame.width
+    answerLabel.frame.size.height = masterView.frame.height * 0.0714
+    answerLabel.text = answer[0]
+    answerLabel.font = fontMedium
+    answerLabel.textAlignment = .Center
+    answerLabel.textColor = backgroundColor
+    answerLabel.backgroundColor = UIColor.whiteColor()
+    answerLabel.tag = 102
+    
+    masterView.addSubview(answerLabel)
+    
+    answerLabel.frame.origin.x = centerXAlignment(answerLabel, masterView)
+    answerLabel.frame.origin.y = questionLabel.frame.maxY + 15.0
+    
+    let checkMark = UIImageView()
+    //checkMark.image = UIImage(named: "checkmarkImage")
+    
     
     let textField = UITextField()
     drawPercentageRectOffView(textField, masterView, 7.05, 90)
@@ -42,7 +66,6 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     textField.tag = 1001
     textField.delegate = textFieldDelegate
 
-    
     masterView.addSubview(textField)
     
     textField.frame.origin.x = centerXAlignment(textField, masterView)
@@ -55,12 +78,6 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     textField.keyboardAppearance = .Dark
     textField.keyboardType = UIKeyboardType.Default
     textField.returnKeyType = .Go
-    
-    if masterView.frame.height <= 480 {
-        
-        questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView, 5.0)
-        
-    }
     
     completion(textField)
 }
