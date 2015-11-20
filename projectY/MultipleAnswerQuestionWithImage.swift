@@ -66,7 +66,7 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     drawPercentageRectOffView(questionLabel, masterView, 30, 100)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
-    questionLabel.font = fontSmaller
+    questionLabel.font = fontSmallest
     questionLabel.numberOfLines = 0
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true

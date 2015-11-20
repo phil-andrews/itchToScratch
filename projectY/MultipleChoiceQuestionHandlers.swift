@@ -62,7 +62,9 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
         
     }
     
-    var count = 101
+    var count = 2001
+    
+    var randomChoicesArray = choices as NSMutableCopying
     
     for index in choices {
         
@@ -72,15 +74,15 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
         button.setTitle(choice, forState: .Normal)
         button.setTitleColor(yellowColor, forState: .Normal)
         button.titleLabel?.font = fontAdjuster(choice, fontMediumMedium, fontLargeMedium, fontExtraLargeMedium)
-        button.addTarget(masterView, action: Selector("checkAnswerHandler"), forControlEvents: .TouchUpInside)
+        button.addTarget(masterView, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
         
-        if count == 101 {
+        if count == 2001 {
             
             button.frame.origin.y = percentYFromBottomOfView(button, questionLabel, masterView.view, yOriginPercent)
             
-        } else if count != 101 {
+        } else if count != 2001 {
             
             let previousButton = masterView.view.viewWithTag(count - 1)
             
@@ -156,7 +158,7 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
         
     }
     
-    var count = 101
+    var count = 2001
     
     for index in choices {
         
@@ -166,15 +168,15 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
         button.setTitle(choice, forState: .Normal)
         button.setTitleColor(yellowColor, forState: .Normal)
         button.titleLabel?.font = fontAdjuster(choice, fontSmallerMedium, fontSmallMedium, fontMediumMedium)
-        button.addTarget(masterView, action: Selector("checkAnswerHandler"), forControlEvents: .TouchUpInside)
+        button.addTarget(masterView, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
         
-        if count == 101 {
+        if count == 2001 {
             
             button.frame.origin.y = percentYFromBottomOfView(button, questionLabel, masterView.view, yOriginPercent)
             
-        } else if count != 101 {
+        } else if count != 2001 {
             
             let previousButton = masterView.view.viewWithTag(count - 1)
             

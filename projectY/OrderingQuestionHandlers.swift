@@ -126,7 +126,7 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
     masterView.addSubview(submitButton)
     
     submitButton.frame.origin.x = centerXAlignment(submitButton, masterView)
-    submitButton.frame.origin.y = scaleLineBottomY + 10
+    submitButton.frame.origin.y = masterView.frame.height * 0.90
     
     completion()
     
@@ -176,6 +176,8 @@ func touchesMovedForOrderingQuestion(masterView: UIView, inout draggedLabel: UIL
 
 func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoordinates: CGPoint, inout draggedLabel: UILabel, touches: Set<NSObject>, labelArray: [UILabel]) {
     
+    let draggedLabelTag = draggedLabel.tag
+    
     if draggedLabelCoordinates == CGPoint(x: 0.0, y: 0.0) {
         
         return
@@ -201,6 +203,9 @@ func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
                     draggedLabel.textColor = yellowColor
                     
                 })
+                
+                draggedLabel.tag = label.tag
+                label.tag = draggedLabelTag
                 
                 labelWithinBounds = true
                 

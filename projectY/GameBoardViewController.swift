@@ -590,7 +590,15 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     var verticalScaleLine = UIView()
     var previousRangeBarLocation = CGPoint()
     
+    var answerSubmitted = false
+    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+       
+        if answerSubmitted == true {
+            
+            return
+            
+        }
         
         switch(self.typeForHandler) {
             
@@ -616,6 +624,12 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        if answerSubmitted == true {
+            
+            return
+            
+        }
         
         switch(self.typeForHandler) {
             
@@ -644,6 +658,12 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         
+        if answerSubmitted == true {
+            
+            return
+            
+        }
+        
         switch(self.typeForHandler) {
             
         case 4:
@@ -660,8 +680,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         }
         
-        
-    
     }
     
     
@@ -669,10 +687,21 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     func checkNonTextInputQuestion(sender: AnyObject?) {
         
+        self.answerSubmitted = true
+        
         let tag = sender!.tag
         
         switch(tag) {
         
+        case 2001, 2002, 2003, 2004, 2005:
+            
+            println("multiple choice question")
+            
+            checkMultipleChoiceQuestion(self, tag, { () -> () in
+                
+                
+            })
+            
         case 4001:
             
             println("ordering question")
