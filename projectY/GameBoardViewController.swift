@@ -530,10 +530,11 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     }
     
     
+    var submittedCount = 0
+    var unhiddenAnswerLabelTags = [Int]()
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        println("textField returned")
         
         let tag = textField.tag
         
@@ -560,7 +561,12 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 7001:
             
-            println("multiple answer no image")
+//            println("multiple answer no image")
+            
+            checkMultpleAnswerQuestion(self, textField, 702, &submittedCount, &unhiddenAnswerLabelTags, { () -> Void in
+                
+                
+            })
             
             
         case 8001:
@@ -578,6 +584,13 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         return true
     }
     
+    
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        
+        textField.text = "  "
+        
+        return true
+    }
     
     //Ordering
     
@@ -711,6 +724,11 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                 
                 
             })
+            
+            
+        case 7001:
+            
+            println("multiple answer no image question")
         
         
         

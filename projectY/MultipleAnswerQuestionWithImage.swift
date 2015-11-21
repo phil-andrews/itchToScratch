@@ -28,14 +28,17 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     let textField = UITextField()
     textField.alpha = 0.0
     drawPercentageRectOffView(textField, masterView, 6.5, 90)
-    textField.backgroundColor = UIColor.blackColor()
+    textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
     textField.font = fontSmallerMedium
-    textField.textColor = UIColor.whiteColor()
+    textField.textColor = backgroundColor
     textField.textAlignment = .Left
     textField.clearButtonMode = UITextFieldViewMode.WhileEditing
     textField.tag = fieldTag
+    textField.keyboardAppearance = .Light
+    textField.keyboardType = UIKeyboardType.Default
+    textField.returnKeyType = .Go
     textField.delegate = textFieldDelegate
     
     viewController.view.addSubview(textField)
@@ -43,24 +46,18 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     textField.frame.origin.x = centerXAlignment(textField, masterView)
     textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
     
-    let textFieldPadding = UIView()
-    textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
-    textField.leftView = textFieldPadding
-    textField.leftViewMode = UITextFieldViewMode.Always
-    textField.keyboardAppearance = .Dark
-    textField.keyboardType = UIKeyboardType.Default
-    textField.returnKeyType = .Go
-    
     let textFieldQuestionButton = UIButton()
     textFieldQuestionButton.setTitle("Q", forState: .Normal)
-    textFieldQuestionButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+    textFieldQuestionButton.setTitleColor(backgroundColor, forState: .Normal)
     textFieldQuestionButton.titleLabel?.font = fontSmallMedium
     textFieldQuestionButton.backgroundColor = yellowColor
+    textFieldQuestionButton.layer.borderWidth = 4.0
+    textFieldQuestionButton.layer.borderColor = UIColor.whiteColor().CGColor
     textFieldQuestionButton.frame = CGRectMake(0, 0, (textField.frame.width * 0.138), textField.frame.height)
     textFieldQuestionButton.addTarget(viewController, action: Selector("dismissKeyboardShowQuestion:"), forControlEvents: .TouchUpInside)
     textFieldQuestionButton.tag = buttonTag
-    textField.rightView = textFieldQuestionButton
-    textField.rightViewMode = .Always
+    textField.leftView = textFieldQuestionButton
+    textField.leftViewMode = .Always
     
     let questionLabel = PaddedLabel()
     drawPercentageRectOffView(questionLabel, masterView, 30, 100)
@@ -150,6 +147,7 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
     for answer in answers {
         
         let answerLabel = PaddedLabel()
+        answerLabel.hidden = true
         answerLabel.text = answer
         answerLabel.backgroundColor = UIColor.whiteColor()
         answerLabel.textColor = UIColor.blackColor()

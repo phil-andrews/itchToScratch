@@ -22,11 +22,14 @@
 		8437813C1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */; };
 		843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843802CB1B893529004CDE6A /* GameBoardController.swift */; };
 		84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408B8B1B9B733A00EED2AB /* extensions.swift */; };
+		844EFB7A1C010A8900BFED06 /* indicatorLightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */; };
+		844EFB7C1C010CF400BFED06 /* answerLabelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */; };
 		8453D3F61BA3E01B00627A59 /* queryFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453D3F51BA3E01B00627A59 /* queryFunctions.swift */; };
 		84566CFE1B7E402D0012E27E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */; };
 		84566CFF1B7E402D0012E27E /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFB1B7E402D0012E27E /* Roboto-Light.ttf */; };
 		84566D001B7E402D0012E27E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */; };
 		84566D011B7E402D0012E27E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */; };
+		8472CBD51BFFFF6800E2C233 /* MultipleAnswerCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472CBD41BFFFF6800E2C233 /* MultipleAnswerCheck.swift */; };
 		8484D1D71B1A8D57003273BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484D1D61B1A8D57003273BD /* AppDelegate.swift */; };
 		8484D1DE1B1A8D57003273BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484D1DC1B1A8D57003273BD /* Main.storyboard */; };
 		8484D1E01B1A8D57003273BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8484D1DF1B1A8D57003273BD /* Images.xcassets */; };
@@ -158,11 +161,14 @@
 		8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionCheck.swift; sourceTree = "<group>"; };
 		843802CB1B893529004CDE6A /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
 		84408B8B1B9B733A00EED2AB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indicatorLightHandler.swift; sourceTree = "<group>"; };
+		844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerLabelHandler.swift; sourceTree = "<group>"; };
 		8453D3F51BA3E01B00627A59 /* queryFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queryFunctions.swift; sourceTree = "<group>"; };
 		84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		84566CFB1B7E402D0012E27E /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		8472CBD41BFFFF6800E2C233 /* MultipleAnswerCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerCheck.swift; sourceTree = "<group>"; };
 		8484D1D11B1A8D57003273BD /* projectY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8484D1D51B1A8D57003273BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484D1D61B1A8D57003273BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +322,18 @@
 			name = MultipleChoiceQuestion;
 			sourceTree = "<group>";
 		};
+		8472CBD31BFFFF4700E2C233 /* MultipleAnswerQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				84B2C5201BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift */,
+				840DE5871BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift */,
+				8472CBD41BFFFF6800E2C233 /* MultipleAnswerCheck.swift */,
+				844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */,
+				844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */,
+			);
+			name = MultipleAnswerQuestion;
+			sourceTree = "<group>";
+		};
 		8484D1C81B1A8D57003273BD = {
 			isa = PBXGroup;
 			children = (
@@ -437,12 +455,11 @@
 		84DC630A1BEBC8A300D56895 /* QuestionTypeHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				8472CBD31BFFFF4700E2C233 /* MultipleAnswerQuestion */,
 				84215C6A1BFD2323005411E9 /* SingleAnswerQuestion */,
 				84215C6D1BFD42EB005411E9 /* OrderingQuestion */,
 				8437813A1BFE832300FF0790 /* MultipleChoiceQuestion */,
 				84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */,
-				84B2C5201BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift */,
-				840DE5871BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift */,
 			);
 			name = QuestionTypeHandlers;
 			sourceTree = "<group>";
@@ -720,10 +737,12 @@
 				84ECC1811B2D520500953FAE /* DesignableLabel.swift in Sources */,
 				849978C41BEA812A001CE745 /* MultipleChoiceQuestionHandlers.swift in Sources */,
 				84ECC1901B2D520500953FAE /* SpringImageView.swift in Sources */,
+				844EFB7A1C010A8900BFED06 /* indicatorLightHandler.swift in Sources */,
 				84ECC17D1B2D520500953FAE /* AutoTextView.swift in Sources */,
 				84ECC1861B2D520500953FAE /* ImageLoader.swift in Sources */,
 				84215C6F1BFD4302005411E9 /* OrderingQuestionCheck.swift in Sources */,
 				840DE58C1BFAC97E00B812DF /* PaddedLabel.swift in Sources */,
+				8472CBD51BFFFF6800E2C233 /* MultipleAnswerCheck.swift in Sources */,
 				84ECC18B1B2D520500953FAE /* Misc.swift in Sources */,
 				84ECC17E1B2D520500953FAE /* BlurView.swift in Sources */,
 				84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */,
@@ -767,6 +786,7 @@
 				84D4D3A51BE000F700DDA162 /* postLoginPictureGet.swift in Sources */,
 				842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */,
 				840DE5881BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift in Sources */,
+				844EFB7C1C010CF400BFED06 /* answerLabelHandler.swift in Sources */,
 				84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */,
 				84E6A3801BE8667800056845 /* OrderingQuestionHandlers.swift in Sources */,
 				84ECC1801B2D520500953FAE /* DesignableImageView.swift in Sources */,

@@ -27,6 +27,7 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true
     questionLabel.minimumScaleFactor = 0.7
+    questionLabel.tag = 701
     
     masterView.addSubview(questionLabel)
     
@@ -35,13 +36,14 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
     
     let textField = UITextField()
     drawPercentageRectOffView(textField, masterView, 7.04, 90)
-    textField.backgroundColor = UIColor.blackColor()
+    textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
     textField.font = fontSmallerMedium
-    textField.textColor = UIColor.whiteColor()
+    textField.textColor = backgroundColor
     textField.textAlignment = .Left
-    textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+    textField.clearButtonMode = UITextFieldViewMode.Always
+    textField.clearsOnBeginEditing = true
     textField.tag = 7001
     textField.delegate = textFieldDelegate
     
@@ -54,7 +56,7 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
     textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
     textField.leftView = textFieldPadding
     textField.leftViewMode = UITextFieldViewMode.Always
-    textField.keyboardAppearance = .Dark
+    textField.keyboardAppearance = .Light
     textField.keyboardType = UIKeyboardType.Default
     textField.returnKeyType = .Go
     
@@ -76,8 +78,8 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
     let spaceBetweenQuestionAndTextField = answerInputField.frame.minY - questionLabel.frame.maxY
     
     var answerLabelXOffset = questionLabel.frame.origin.x
-    let labelSpacing = masterView.frame.height * 0.01408
-    var labelHeight = spaceBetweenQuestionAndTextField * 0.1172
+    let labelSpacing = masterView.frame.height * 0.005
+    var labelHeight = spaceBetweenQuestionAndTextField * 0.1472
     var answerLabelYOffset = labelHeight + labelSpacing
     var topLabelYOffset = CGFloat()
 
@@ -103,12 +105,13 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
     }
     
 
-    var count = 701
+    var count = 702
     var previousLabelY = CGFloat()
     
     for item in answers {
     
-        let answerLabel = UILabel()
+        let answerLabel = PaddedLabel()
+        answerLabel.hidden = true
         answerLabel.text = item
         answerLabel.font = fontSmallest
         answerLabel.textColor = highColor
@@ -119,9 +122,7 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
         answerLabel.frame.size.width = masterView.frame.width
         answerLabel.frame.size.height = labelHeight
         
-        answerLabel.frame.origin.x = questionLabel.frame.origin.x
-        
-        if answerLabel.tag == 701 {
+        if answerLabel.tag == 702 {
             
             answerLabel.frame.origin.y = topLabelYOffset
             previousLabelY = answerLabel.frame.maxY
@@ -132,9 +133,7 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
             previousLabelY = answerLabel.frame.maxY
             
         }
-        
-        answerLabel.hidden = false
-        
+                
         ++count
         
     }
@@ -158,7 +157,7 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
         drawPercentageRectOffView(light, masterView, 0.7, 9.37)
         light.layer.borderWidth = 0.5
         light.layer.borderColor = lowColor.CGColor
-        light.tag = count
+        light.tag = answerLightCount
         masterView.addSubview(light)
         
         light.frame.origin.y = answerInputField.frame.minY - (masterView.frame.height * 0.0105) - light.frame.height
