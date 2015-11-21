@@ -12,32 +12,44 @@ import Parse
 
 
 
-func checkMultipleChoiceQuestion(viewController: UIViewController, answerTag: Int, completion: () -> ()) {
+func checkMultipleChoiceQuestion(viewController: UIViewController, senderTag: Int, completion: () -> ()) {
     
     let answerArray = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
+    let choices = questionObjectFromGameBoardSend?.valueForKey(questionChoicesKey) as! [String]
     let answer = answerArray[0]
-    let answerButton = viewController.view.viewWithTag(answerTag) as! UIButton
+    let answerButton = viewController.view.viewWithTag(senderTag) as! UIButton
     let submittedAnswer = answerButton.titleLabel?.text
-    
-    println("this is the answer: \(answer)")
-    println("this is the submit: \(submittedAnswer)")
+
+    answerButton.enabled = false
+    answerButton.setTitleColor(backgroundColor, forState: .Normal)
+    answerButton.titleLabel?.font = fontLargeMedium
+    answerButton.backgroundColor = UIColor.whiteColor()
 
     let buttonTags = [2001, 2002, 2003, 2004]
     var incorrectButtons = [UIButton]()
     var correctButton = UIButton()
+    var userAnsweredCorrectly = false
     
     for tag in buttonTags {
         
         let button = viewController.view.viewWithTag(tag) as! UIButton
-        let buttonLabel = button.titleLabel?.text
+        let buttonTitle = button.titleLabel?.text
+        button.enabled = false
         
-        if buttonLabel == answer && button.tag == answerTag {
+        if buttonTitle == answer {
             
             correctButton = button
             
-        } else if buttonLabel != answer && button.tag == answerTag {
+            if button.tag == senderTag {
+                
+                userAnsweredCorrectly == true
+            }
             
-            //animate to correct answer
+        } else if buttonTitle != answer && button.tag != senderTag {
+            
+            incorrectButtons.insert(button, atIndex: 0)
+            
+        } else if buttonTitle != answer && button.tag == senderTag {
             
             incorrectButtons.append(button)
             
@@ -45,72 +57,122 @@ func checkMultipleChoiceQuestion(viewController: UIViewController, answerTag: In
         
     }
     
-    
-    animateCorrectAnswerSubmitted(viewController, correctButton.tag, answerTag)
-}
-
-
-
-func animateCorrectAnswerSubmitted(viewController: UIViewController, correctTag: Int, senderTag: Int) {
-    
-    let buttonTags = [2001, 2002, 2003, 2004]
-    var delayAmount: NSTimeInterval = 0.0
-
-    for tag in buttonTags {
-        
-        if tag != correctTag {
-            
-            let button = viewController.view.viewWithTag(tag) as! UIButton
-            let buttonYCoord = button.center.y
-            
-                delayAmount = delayAmount + 0.15
-            
-            delay(delayAmount, { () -> () in
-                
-                UIView.transitionWithView(button, duration: 0.20, options: nil, animations: { () -> Void in
-                    
-                    button.setTitleColor(UIColor.grayColor(), forState: .Normal)
-                    
-                    }, completion: nil)
-                
-            })
-                
-            UIView.animateWithDuration(0.20, delay: delayAmount, options: nil, animations: { () -> Void in
-                
-                button.transform = CGAffineTransformMakeScale(0.75, 0.75)
-                
-            }, completion: { (Bool) -> Void in
-                
-                
-                
-            })
-                
-        }
+    animateButtonsOnSubmit(viewController, incorrectButtons, correctButton, senderTag) { () -> () in
         
     }
     
+}
+
+
+
+
+func animateButtonsOnSubmit(viewController: UIViewController, incorrectButtons: [UIButton], correctButton: UIButton, senderTag: Int, completion: () -> ()) {
+    
+    var delayAmount: NSTimeInterval = 0.15
+    
+    for button in incorrectButtons {
+    
+        delayAmount = delayAmount + 0.20
+        
+        delay(delayAmount, { () -> () in
+            
+            if button.tag == senderTag {
+                
+                let animation = CABasicAnimation(keyPath: "position")
+                animation.duration = 0.09
+                animation.repeatCount = 2
+                animation.autoreverses = true
+                animation.fromValue = NSValue(CGPoint: CGPointMake(button.center.x - 10, button.center.y))
+                animation.toValue = NSValue(CGPoint: CGPointMake(button.center.x + 10, button.center.y))
+                button.layer.addAnimation(animation, forKey: "position")
+                
+            }
+            
+            UIView.transitionWithView(button, duration: 0.20, options: nil, animations: { () -> Void in
+                
+                button.backgroundColor = UIColor.clearColor()
+                
+                button.setTitleColor(UIColor.grayColor(), forState: .Normal)
+                
+                }, completion: nil)
+            
+        })
+        
+        UIView.animateWithDuration(0.20, delay: delayAmount, options: nil, animations: { () -> Void in
+            
+            button.transform = CGAffineTransformMakeScale(0.75, 0.75)
+            
+            }, completion: { (Bool) -> Void in
+                
+        })
+        
+    }
+    
+    
     delay(delayAmount, { () -> () in
-      
-        if senderTag == correctTag {
-            
-            let button = viewController.view.viewWithTag(senderTag) as! UIButton
-            
-            button.frame.size.width = viewController.view.frame.width
-            button.center.x = viewController.view.center.x
-            
-            UIView.animateWithDuration(0.2, delay: 0.0, options: nil, animations: { () -> Void in
+        
+        correctButton.frame.size.width = viewController.view.frame.width
+        correctButton.center.x = viewController.view.center.x
+        
+        UIView.animateWithDuration(0.2, delay: 0.0, options: nil, animations: { () -> Void in
+           
+            if correctButton.tag == senderTag {
                 
-                button.backgroundColor = highColor
-                button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+                correctButton.backgroundColor = highColor
+                correctButton.setTitleColor(backgroundColor, forState: .Normal)
                 
-                }, completion: { (Bool) -> Void in
+            } else {
+                
+                correctButton.backgroundColor = UIColor.whiteColor()
+                correctButton.setTitleColor(backgroundColor, forState: .Normal)
+                correctButton.titleLabel?.font = fontLargeMedium
+                
+            }
+            
+            
+            }, completion: { (Bool) -> Void in
+                
+                if correctButton.tag == senderTag {
+                    
+                    let animation = CABasicAnimation(keyPath: "position")
+                    animation.duration = 0.09
+                    animation.repeatCount = 2
+                    animation.autoreverses = true
+                    animation.fromValue = NSValue(CGPoint: CGPointMake(correctButton.center.x, correctButton.center.y - 7))
+                    animation.toValue = NSValue(CGPoint: CGPointMake(correctButton.center.x, correctButton.center.y + 7 ))
+                    correctButton.layer.addAnimation(animation, forKey: "position")
+                    
+                    let checkMarkView = UIImageView()
+                    checkMarkView.image = UIImage(named: "checkmark")
+                    checkMarkView.frame.size.height = viewController.view.frame.height * 0.0897
+                    checkMarkView.frame.size.width = viewController.view.frame.width * 0.1875
+                    checkMarkView.frame.origin.y = viewController.view.frame.height
+                    checkMarkView.frame.origin.x = viewController.view.center.x
+                    
+                    viewController.view.addSubview(checkMarkView)
+                    
+                    UIView.animateWithDuration(2.0, delay: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                        
+                        checkMarkView.frame.origin.y = viewController.view.frame.height * 0.01
+                        checkMarkView.frame.origin.x = viewController.view.frame.maxX
+                        
+                    }, completion: { (Bool) -> Void in
+                        
+                        checkMarkView.removeFromSuperview()
+
+                    })
                     
                     
-            })
-            
-        }
+                }
+                
+        })
+        
         
     })
     
+    
 }
+
+
+
 

@@ -72,11 +72,12 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
         let button = UIButton()
         button.adjustsImageWhenHighlighted = false
         button.setTitle(choice, forState: .Normal)
-        button.setTitleColor(yellowColor, forState: .Normal)
-        button.titleLabel?.font = fontAdjuster(choice, fontMediumMedium, fontLargeMedium, fontExtraLargeMedium)
+        button.setTitleColor(lowColor, forState: .Normal)
+        button.titleLabel?.font = fontAdjuster(choice, fontMedium, fontLarge, fontExtraLarge)
         button.addTarget(masterView, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
+        button.frame.size.width = masterView.view.frame.width
         
         if count == 2001 {
             
@@ -167,10 +168,11 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
         button.adjustsImageWhenHighlighted = false
         button.setTitle(choice, forState: .Normal)
         button.setTitleColor(yellowColor, forState: .Normal)
-        button.titleLabel?.font = fontAdjuster(choice, fontSmallerMedium, fontSmallMedium, fontMediumMedium)
+        button.titleLabel?.font = fontAdjuster(choice, fontSmaller, fontSmall, fontMedium)
         button.addTarget(masterView, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
+        button.frame.size.width = masterView.view.frame.width
         
         if count == 2001 {
             

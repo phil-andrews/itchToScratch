@@ -118,6 +118,8 @@ func animateAnswerLabelsToCorrectPositions(viewController: UIViewController, lab
     
     var text = String()
     
+    var delayAmount = 0.0
+    
     for tag in labelTags {
         
         switch(tag) {
@@ -162,8 +164,9 @@ func animateAnswerLabelsToCorrectPositions(viewController: UIViewController, lab
         answerLabel.frame.size.width = viewController.view.frame.width * 0.70
         answerLabel.alpha = 1.0
         
+        delayAmount = delayAmount + 0.10
         
-        UIView.animateWithDuration(0.2, delay: 0.21, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(0.2, delay: delayAmount, options: nil, animations: { () -> Void in
             
             answerLabel.frame.origin.x += viewController.view.frame.width
 

@@ -22,11 +22,11 @@ func displayQuestionContainer(masterView: UIViewController, question: PFObject, 
     containerView.frame = masterView.view.bounds
     containerView.tag = 999
     
-    let overLay = UIImageView()
+    let overLay = UIView()
     overLay.frame = masterView.view.bounds
-    let image = UIImage(named: "blurEffect")
-    overLay.image = image
-    
+    overLay.backgroundColor = backgroundColor
+    overLay.alpha = 0.9
+
     var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
     var blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = masterView.view.bounds
