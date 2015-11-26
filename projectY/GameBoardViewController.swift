@@ -20,13 +20,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     @IBOutlet var swipeToProfile: UISwipeGestureRecognizer!
     
-    //Ordering
-    
-    var orderingQuestionLabel1 = UILabel()
-    var orderingQuestionLabel2 = UILabel()
-    var orderingQuestionLabel3 = UILabel()
-    var orderingQuestionLabel4 = UILabel()
-    
     //Range
     
     var rangeButtonViewOverlay = UIView()
@@ -48,6 +41,8 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         setFonts(self.view)
         
+        self.checkForUser()
+
         // Do any additional setup after loading the view.
     }
 
@@ -60,7 +55,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        self.checkForUser()
         
     }
     
@@ -93,6 +87,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     var userCurrentLocation: String?
     var userOldLocation: String?
+    
     
     
     func checkForUser() {
@@ -364,141 +359,240 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         questionObjectFromGameBoardSend = questionToPresent
         
-        displayQuestionContainer(self, questionToPresent!, type) { (presentingContainerView: UIView) -> Void in
+        
+        switch(type) {
             
-//            self.swipeToMaps.numberOfTouchesRequired = 100
-//            self.swipeToProfile.numberOfTouchesRequired = 100
+        case 1:
             
-            switch(type) {
-                
-            case 1:
-                
-                println("single answer")
-                
-                singleAnswerQuestion(presentingContainerView, self, { (answerInputField: UITextField) -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                        
-                        answerInputField.becomeFirstResponder()
-                        
-                    })
-                })
-                
-            case 2:
+            println("single answer")
+            
+            var singleAnswerNoImageViewController: SingleAnswerViewController = storyboard?.instantiateViewControllerWithIdentifier("singleAnswerVC") as! SingleAnswerViewController
+            
+            self.presentViewController(singleAnswerNoImageViewController, animated: true, completion: nil)
+            
+            
+        case 2:
+            
+            println("multiple choice")
+            
+            var multipleChoiceVC: MultipleChoiceViewController = storyboard?.instantiateViewControllerWithIdentifier("multipleChoiceViewController") as! MultipleChoiceViewController
+            
+            self.presentViewController(multipleChoiceVC, animated: true, completion: nil)
+          
+        case 3:
+            
+            queryForImage(image!, { (imageFile) -> Void in
                 
                 println("multiple choice")
                 
-                multipleChoiceQuestion(self, presentingContainerView, questionToPresent!, { () -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                    })
-                    
-                })
+                var multipleChoiceVC: MultipleChoiceViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleChoiceViewController") as! MultipleChoiceViewController
                 
-            case 3:
+                multipleChoiceVC.questionImageFile = imageFile
                 
-                multipleChoiceQuestionWithImage(self, presentingContainerView, questionToPresent!, { () -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                    })
-                })
+                self.presentViewController(multipleChoiceVC, animated: true, completion: nil)
                 
-                println("multiple answer")
+            })
+            
+        case 4:
+            
+            
+            var orderingVC: OrderingQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("orderingQuestionViewController") as! OrderingQuestionViewController
+            
+            self.presentViewController(orderingVC, animated: true, completion: nil)
+            
+            
+        case 5:
+            
+            var rangeVC: RangeQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("rangeViewController") as! RangeQuestionViewController
+            
+            self.presentViewController(rangeVC, animated: true, completion: nil)
+            
+            
+        case 6:
+            
+            queryForImage(image!, { (imageFile) -> Void in
                 
-            case 4:
+                println("multiple choice")
                 
-                println("ordering")
+                var singleAnswerWithImage: SingleAnswerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("singleAnswerVC") as! SingleAnswerViewController
                 
-                self.typeForHandler = 4
+                singleAnswerWithImage.questionImageFile = imageFile
                 
-                orderingQuestion(self, presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                    })
-                })
+                self.presentViewController(singleAnswerWithImage, animated: true, completion: nil)
                 
-            case 5:
+            })
+            
+        case 7:
+            
+            var multipleAnswerNoImage: MultipleAnswerNoImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerNoImageVC") as! MultipleAnswerNoImageViewController
+            
+            self.presentViewController(multipleAnswerNoImage, animated: true, completion: nil)
+            
+        case 8:
+            
+            queryForImage(image!, { (imageFile) -> Void in
                 
-                println("number range")
+                var multipleAnswerWithImage: MultipleAnswerWithImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerWithImageVC") as! MultipleAnswerWithImageViewController
                 
-                self.typeForHandler = 5
+                multipleAnswerWithImage.questionImageFile = imageFile
                 
-                rangeQuestion(presentingContainerView, self.rangeButtonViewOverlay, self.rangeHorizontalBar, self.rangeLabel, { (verticalLine) -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                    })
-                    
-                    self.verticalScaleLine = verticalLine
-                    
-                    
-                })
+                self.presentViewController(multipleAnswerWithImage, animated: true, completion: nil)
                 
-            case 6:
+            })
+            
+        case 9:
+            
+            queryForImage(image!, { (imageFile) -> Void in
                 
-                singleAnswerQuestionWithImage(self, presentingContainerView, self, { (answerInputField: UITextField) -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                        
-                        if self.view.frame.height > 480 {
-                            
-                            answerInputField.becomeFirstResponder()
-                            
-                        }
-                        
-                        
-                    })
-                    
-                })
+                var multipleAnswerWithOrder: MultipleAnswerWithOrderViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerWithOrderVC") as! MultipleAnswerWithOrderViewController
                 
-            case 7:
+                multipleAnswerWithOrder.questionImageFile = imageFile
                 
-                println("multiple answer question no image")
-
+                self.presentViewController(multipleAnswerWithOrder, animated: true, completion: nil)
                 
-                multipleAnswerQuestionNoImage(presentingContainerView, self, { (answerInputField: UITextField) -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                        
-                        answerInputField.becomeFirstResponder()
-                        
-                    })
-                    
-                })
-                
-            case 8:
-                
-                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 8001, textFieldQuestionButtonTag: 8002, answerLabelTag: 801, imageViewTag: 802, startingLightTag: 8111, callKeybardButtonTag: 8003, { (answerInputField: UITextField) -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-
-                        
-                    })
-                
-                })
-                
-            case 9:
-                
-                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 9001, textFieldQuestionButtonTag: 9002, answerLabelTag: 901, imageViewTag: 902, startingLightTag: 9111, callKeybardButtonTag: 9003, { (textField) -> Void in
-                    
-                    animateContainerView(self, presentingContainerView, { () -> Void in
-                        
-                        
-                    })
-                    
-                })
-                
-            default:
-                
-                println("error loading question display function")
-                
-                
-            }
+            })
+            
+            
+        default:
+            
+            break
             
         }
         
-        self.hideStatusBar = true
         
-        setNeedsStatusBarAppearanceUpdate()
+//        displayQuestionContainer(self, questionToPresent!, type) { (presentingContainerView: UIView) -> Void in
+//            
+////            self.swipeToMaps.numberOfTouchesRequired = 100
+////            self.swipeToProfile.numberOfTouchesRequired = 100
+//            
+//            switch(type) {
+//                
+//            case 1:
+//                
+//                println("single answer")
+//                
+//                var singleAnswerStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                
+//                var singleAnswerNoImageViewController: SingleAnswerNoImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("singleAnswerNoImage") as! SingleAnswerNoImageViewController
+//                
+//                self.presentViewController(singleAnswerNoImageViewController, animated: true, completion: nil)
+//                
+//                
+//            case 2:
+//                
+//                println("multiple choice")
+//                
+//                multipleChoiceQuestion(self, presentingContainerView, questionToPresent!, { () -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//                    })
+//                    
+//                })
+//                
+//            case 3:
+//                
+//                multipleChoiceQuestionWithImage(self, presentingContainerView, questionToPresent!, { () -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//                    })
+//                })
+//                
+//                println("multiple answer")
+//                
+//            case 4:
+//                
+//                println("ordering")
+//                
+//                self.typeForHandler = 4
+//                
+//                orderingQuestion(self, presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//                    })
+//                })
+//                
+//            case 5:
+//                
+//                println("number range")
+//                
+//                self.typeForHandler = 5
+//                
+//                rangeQuestion(presentingContainerView, self.rangeButtonViewOverlay, self.rangeHorizontalBar, self.rangeLabel, { (verticalLine) -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//                    })
+//                    
+//                    self.verticalScaleLine = verticalLine
+//                    
+//                    
+//                })
+//                
+//            case 6:
+//                
+//                singleAnswerQuestionWithImage(self, presentingContainerView, self, { (answerInputField: UITextField) -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//                        
+//                        if self.view.frame.height > 480 {
+//                            
+//                            answerInputField.becomeFirstResponder()
+//                            
+//                        }
+//                        
+//                        
+//                    })
+//                    
+//                })
+//                
+//            case 7:
+//                
+//                println("multiple answer question no image")
+//
+//                
+//                multipleAnswerQuestionNoImage(presentingContainerView, self, { (answerInputField: UITextField) -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//                        
+//                        answerInputField.becomeFirstResponder()
+//                        
+//                    })
+//                    
+//                })
+//                
+//            case 8:
+//                
+//                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 8001, textFieldQuestionButtonTag: 8002, questionLabelTag: 801, dropDownAnswerLabelTag: 802, imageViewTag: 803, startingLightTag: 8111, callKeybardButtonTag: 8003, { (answerInputField: UITextField) -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//
+//                        
+//                    })
+//                
+//                })
+//                
+//            case 9:
+//                
+//                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 9001, textFieldQuestionButtonTag: 9002, questionLabelTag: 901, dropDownAnswerLabelTag: 902, imageViewTag: 903, startingLightTag: 9111, callKeybardButtonTag: 9003, { (textField) -> Void in
+//                    
+//                    animateContainerView(self, presentingContainerView, { () -> Void in
+//                        
+//                        
+//                    })
+//                    
+//                })
+//                
+//            default:
+//                
+//                println("error loading question display function")
+//                
+//                
+//            }
+        
+//        }
+        
+//        self.hideStatusBar = true
+//        
+//        setNeedsStatusBarAppearanceUpdate()
         
     }
     
@@ -517,14 +611,30 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         println("dismissed keyboard")
         
-        removeTextFieldFromFirstResponderToShowQuestion(self, sender)
+        removeTextFieldFromFirstResponderToShowQuestion(self, sender, nil)
         
         
     }
-    
+
     
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        
+        switch(textField.tag) {
+            
+        case 8001:
+            
+            animateDropDownAnswerLabelToOriginalPosition(self, 802, 0.0, { () -> Void in
+                
+                
+            })
+            
+            
+        default:
+            
+            break
+            
+        }
         
         
     }
@@ -535,6 +645,11 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
+        if textField.text.isEmpty {
+            
+            return false
+            
+        }
         
         let tag = textField.tag
         
@@ -563,7 +678,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
 //            println("multiple answer no image")
             
-            checkMultpleAnswerQuestion(self, textField, 702, &submittedCount, &unhiddenAnswerLabelTags, { () -> Void in
+            checkMultpleAnswerNoImageQuestion(self, textField, 702, &submittedCount, &unhiddenAnswerLabelTags, { () -> Void in
                 
                 
             })
@@ -571,7 +686,14 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 8001:
             
-            println("multiple answer with image")
+            //meryl streprintln("multiple answer with image")
+            
+            checkMultpleAnswerWithImageQuestion(self, textField, 802, 8111, &submittedCount, &unhiddenAnswerLabelTags, { () -> Void in
+                
+                
+                
+            })
+            
             
             
         default:
@@ -615,11 +737,11 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         switch(self.typeForHandler) {
             
-        case 4:
+  //      case 4:
             
-            let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
-            
-            touchesBeganForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
+//            let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+//            
+//            touchesBeganForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
             
         case 5:
                         
@@ -646,9 +768,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         switch(self.typeForHandler) {
             
-        case 4:
+    //    case 4:
             
-            touchesMovedForOrderingQuestion(self.view, &labelThatIsBeingDragged, touches)
+//            touchesMovedForOrderingQuestion(self.view, &labelThatIsBeingDragged, touches)
             
         case 5:
             
@@ -679,11 +801,11 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         switch(self.typeForHandler) {
             
-        case 4:
+  //      case 4:
             
-            let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
-            
-            touchesEndedForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
+//            let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
+//            
+//            touchesEndedForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
             
             
             
@@ -705,15 +827,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         let tag = sender!.tag
         
         switch(tag) {
-        
-        case 2001, 2002, 2003, 2004, 2005:
-            
-            println("multiple choice question")
-            
-            checkMultipleChoiceQuestion(self, tag, { () -> () in
-                
-                
-            })
             
         case 4001:
             

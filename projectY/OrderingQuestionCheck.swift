@@ -54,6 +54,7 @@ func checkOrderingQuestion(viewController: UIViewController, completion: () -> V
         
         animateAnswerLabelsToCorrectPositions(viewController, incorrectLabelTags, correctAnswers)
     
+        completion()
         
     })
     
@@ -170,8 +171,10 @@ func animateAnswerLabelsToCorrectPositions(viewController: UIViewController, lab
             
             answerLabel.frame.origin.x += viewController.view.frame.width
 
+        }, completion: { (Bool) -> Void in
+          
             
-        }, completion: nil)
+        })
         
     }
     

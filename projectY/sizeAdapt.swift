@@ -197,7 +197,7 @@ func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewControl
         
         textFieldTag = 8001
         questionAskTag = 801
-        imageViewTag = 802
+        imageViewTag = 803
         firstLightTag = 8111
         arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
         
@@ -205,7 +205,7 @@ func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewControl
         
         textFieldTag = 9001
         questionAskTag = 901
-        imageViewTag = 902
+        imageViewTag = 903
         firstLightTag = 9111
         arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
 
@@ -229,7 +229,7 @@ func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewControl
                     
                     answerInputField.alpha = 1.0
                     
-                    item.frame.origin.y = answerInputField.frame.minY - 8
+                    item.frame.origin.y = answerInputField.frame.minY - 10
                     
                 })
                 
@@ -254,17 +254,31 @@ func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewControl
 
 
 
-func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewController, sender: AnyObject?) {
+func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewController, sender: AnyObject?, codeTag: Int?) {
     
-    let sender = sender as! UIButton
+    var senderTag = Int()
+    
+    if sender != nil {
+        
+        let sender = sender as! UIButton
+        senderTag = sender.tag
+        
+    } else if sender == nil {
+        
+        senderTag = codeTag!
+    }
+    
+    println(senderTag)
+    
     var textFieldTag = Int()
     var questionAskTag = Int()
+    var dropDownTag: Int?
     var imageViewTag = Int()
     var keyboardButtonTag = Int()
     var firstLightTag = Int()
     var arrayOfLights: [UIView]?
     
-    switch(sender.tag) {
+    switch(senderTag) {
         
     case 1002:
         
@@ -276,7 +290,8 @@ func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewContr
         
         textFieldTag = 8001
         questionAskTag = 801
-        imageViewTag = 802
+        dropDownTag = 802
+        imageViewTag = 803
         keyboardButtonTag = 8003
         firstLightTag = 8111
         arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
@@ -285,7 +300,7 @@ func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewContr
         
         textFieldTag = 9001
         questionAskTag = 901
-        imageViewTag = 902
+        imageViewTag = 903
         keyboardButtonTag = 9003
         firstLightTag = 9111
         arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
@@ -306,7 +321,7 @@ func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewContr
         
         answerInputField.resignFirstResponder()
         
-        if sender.tag != 1002 {
+        if senderTag != 1002 {
             
             for item in arrayOfLights! {
                 
@@ -325,7 +340,12 @@ func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewContr
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             
             questionAsk.frame.origin.y -= viewController.view.frame.maxY
-            showKeyboardButton.frame.origin.y -= viewController.view.frame.maxY
+            
+            if sender != nil {
+                
+                showKeyboardButton.frame.origin.y -= viewController.view.frame.maxY
+
+            }
             
         })
     }

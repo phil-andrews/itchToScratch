@@ -110,7 +110,7 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
     
     for item in answers {
     
-        let answerLabel = PaddedLabel()
+        let answerLabel = PaddedLabel15()
         answerLabel.hidden = true
         answerLabel.text = item
         answerLabel.font = fontSmallest

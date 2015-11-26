@@ -74,7 +74,7 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
         button.setTitle(choice, forState: .Normal)
         button.setTitleColor(lowColor, forState: .Normal)
         button.titleLabel?.font = fontAdjuster(choice, fontMedium, fontLarge, fontExtraLarge)
-        button.addTarget(masterView, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
+        button.addTarget(masterView, action: Selector("checkQuestionSubmission:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
         button.frame.size.width = masterView.view.frame.width
@@ -104,7 +104,7 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
 
 
 
-func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView, question: PFObject, completion: () -> Void) {
+func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView, question: PFObject, questionImage: UIImage, completion: () -> Void) {
     
     let imageFile = question.valueForKey(questionImageKey) as! PFFile
     let questionString = question.valueForKey(questionAskKey) as! String
@@ -113,8 +113,9 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
     let choices = question.valueForKey(questionChoicesKey) as! NSArray
     
     let imageView = UIImageView()
-    drawPercentageRectOffView(imageView, sView, 35.05, 100)
-    sView.addSubview(imageView)
+    drawPercentageRectOffView(imageView, masterView.view, 35.05, 100)
+    imageView.image = questionImage
+    masterView.view.addSubview(imageView)
     
     
     let questionLabel = UILabel()
@@ -169,7 +170,7 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
         button.setTitle(choice, forState: .Normal)
         button.setTitleColor(yellowColor, forState: .Normal)
         button.titleLabel?.font = fontAdjuster(choice, fontSmaller, fontSmall, fontMedium)
-        button.addTarget(masterView, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
+        button.addTarget(masterView, action: Selector("checkQuestionSubmission:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
         button.frame.size.width = masterView.view.frame.width
@@ -193,14 +194,6 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
         
     }
 
-    
-    queryForImage(imageFile, { (image) -> Void in
-        
-        imageView.image = image
-        
-        completion()
-        
-    })
 }
 
 

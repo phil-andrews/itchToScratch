@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PaddedLabel: UILabel {
+class PaddedLabel15: UILabel {
     
     var topInset:       CGFloat = 0
     var rightInset:     CGFloat = 15.0
@@ -25,3 +25,20 @@ class PaddedLabel: UILabel {
     
 }
 
+
+class PaddedLabel25: UILabel {
+    
+    var topInset:       CGFloat = 0
+    var rightInset:     CGFloat = 25.0
+    var bottomInset:    CGFloat = 0
+    var leftInset:      CGFloat = 25.0
+    
+    
+    override func drawTextInRect(rect: CGRect) {
+        var insets: UIEdgeInsets = UIEdgeInsets(top: self.topInset, left: self.leftInset, bottom: self.bottomInset, right: self.rightInset)
+        self.setNeedsLayout()
+        return super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
+    }
+    
+    
+}

@@ -18,6 +18,8 @@ func indicatorLightSelector() -> [Int] {
     
     let number = questionObjectFromGameBoardSend?.valueForKey(numberOfAnswersKey) as! Int
     
+    println(number)
+    
     switch(number) {
         
     case 2:
@@ -36,6 +38,14 @@ func indicatorLightSelector() -> [Int] {
         
         arrayToReturn = [4, 2, 0, 1, 3]
         
+    case 6:
+        
+        arrayToReturn = [4, 2, 0, 1, 3, 5]
+        
+    case 7:
+        
+        arrayToReturn = [6, 4, 2, 0, 1, 3, 5]
+
     default:
         
         break

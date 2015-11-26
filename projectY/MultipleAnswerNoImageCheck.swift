@@ -11,7 +11,7 @@ import Parse
 import UIKit
 
 
-func checkMultpleAnswerQuestion(viewController: UIViewController, answerInputField: UITextField, answerLabelStartTag: Int, inout submittedCount: Int, inout unhiddenAnswerLabelTags: [Int], completion: () -> Void) {
+func checkMultpleAnswerNoImageQuestion(viewController: UIViewController, answerInputField: UITextField, answerLabelStartTag: Int, inout submittedCount: Int, inout unhiddenAnswerLabelTags: [Int], completion: () -> Void) {
     
     let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     let submittedAnswer = answerInputField.text
@@ -85,6 +85,7 @@ func checkMultpleAnswerQuestion(viewController: UIViewController, answerInputFie
                 
                 
                 // do something with scoring right here
+                
                 
             })
             

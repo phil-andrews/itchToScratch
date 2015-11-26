@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-func multipleAnswerQuestionWithImage(viewController: UIViewController, textFieldDelegate: UITextFieldDelegate, masterView: UIView, textFieldTag fieldTag: Int, textFieldQuestionButtonTag buttonTag: Int, answerLabelTag answerTag: Int, imageViewTag imageTag: Int, startingLightTag lightTag: Int, callKeybardButtonTag keyboardButtonTag: Int, completion: (UITextField) -> Void) {
+func multipleAnswerQuestionWithImage(viewController: UIViewController, textFieldDelegate: UITextFieldDelegate, masterView: UIView, textFieldTag fieldTag: Int, textFieldQuestionButtonTag buttonTag: Int, questionLabelTag questionTag: Int, dropDownAnswerLabelTag dropDownTag: Int, imageViewTag imageTag: Int, startingLightTag lightTag: Int, callKeybardButtonTag keyboardButtonTag: Int, completion: (UITextField) -> Void) {
     
     let question: PFObject = questionObjectFromGameBoardSend!
     let imageFile = question.valueForKey(questionImageKey) as! PFFile
@@ -46,6 +46,22 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     textField.frame.origin.x = centerXAlignment(textField, masterView)
     textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
     
+    let dropDownAnswerLabel = UILabel()
+    dropDownAnswerLabel.textAlignment = .Center
+    dropDownAnswerLabel.font = fontLargeMedium
+    dropDownAnswerLabel.frame.size.height = masterView.frame.height * 0.064
+    dropDownAnswerLabel.frame.size.width = imageView.frame.width
+    
+    if masterView.frame.height <= 480 {
+        dropDownAnswerLabel.frame.size.width = masterView.frame.width * 0.80
+        dropDownAnswerLabel.frame.origin.x = centerXAlignment(dropDownAnswerLabel, masterView)
+    }
+    
+    dropDownAnswerLabel.tag = dropDownTag
+    masterView.insertSubview(dropDownAnswerLabel, belowSubview: masterView.viewWithTag(imageTag)!)
+    
+    dropDownAnswerLabel.frame.origin.y = imageView.frame.maxY - (dropDownAnswerLabel.frame.height * 1.25)
+    
     let textFieldQuestionButton = UIButton()
     textFieldQuestionButton.setTitle("Q", forState: .Normal)
     textFieldQuestionButton.setTitleColor(backgroundColor, forState: .Normal)
@@ -59,8 +75,8 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     textField.leftView = textFieldQuestionButton
     textField.leftViewMode = .Always
     
-    let questionLabel = PaddedLabel()
-    drawPercentageRectOffView(questionLabel, masterView, 30, 100)
+    let questionLabel = PaddedLabel15()
+    drawPercentageRectOffView(questionLabel, masterView, 25, 100)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmallest
@@ -68,15 +84,21 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true
     questionLabel.minimumScaleFactor = 0.7
-    questionLabel.tag = answerTag
+    questionLabel.tag = questionTag
+    
+    if masterView.frame.height == 568 {
+        
+        questionLabel.font = fontTiny
+        
+    }
     
     masterView.addSubview(questionLabel)
     
     questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
-    questionLabel.frame.origin.y = viewController.view.frame.height * 0.315
+    questionLabel.frame.origin.y = masterView.frame.height * 0.3453
     
     drawCallKeyboardButton(viewController, masterView, keyboardButtonTag)
-    drawAnswerLabelAndLights(masterView, imageView, textField, answerTag, lightTag)
+    drawAnswerLabelAndLights(masterView, imageView, textField, dropDownTag, lightTag)
     
     queryForImage(imageFile, { (image) -> Void in
         
@@ -133,6 +155,7 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
     var lightSpacing = (masterView.frame.width * 0.0156)
     
     var count = startingLightTag
+    
     var previousLightPositiveXCoord = CGFloat()
     var previousLightNegativeXCoord = CGFloat()
     var previousAnswerLabelYCoord = masterView.frame.height * 0.565
@@ -144,9 +167,11 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
     }
     
     
+    var answerLabelCount = answerLabelTag + 18
+    
     for answer in answers {
         
-        let answerLabel = PaddedLabel()
+        let answerLabel = PaddedLabel15()
         answerLabel.hidden = true
         answerLabel.text = answer
         answerLabel.backgroundColor = UIColor.whiteColor()
@@ -154,7 +179,7 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
         answerLabel.font = fontSmallestRegular
         answerLabel.frame.size.height = masterView.frame.height * 0.0440
         answerLabel.frame.size.width = masterView.frame.width
-        answerLabel.tag = count * 10
+        answerLabel.tag = answerLabelCount
         
         masterView.addSubview(answerLabel)
         
@@ -179,6 +204,7 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
             previousLightNegativeXCoord = light.center.x
             
             ++count
+            ++answerLabelCount
             
             continue
             
@@ -197,7 +223,8 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
         }
         
         ++count
-        
+        ++answerLabelCount
+
     }
     
 }

@@ -121,7 +121,7 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
     submitButton.titleLabel?.textColor = yellowColor
     submitButton.titleLabel?.font = fontSmall
     submitButton.sizeToFit()
-    submitButton.addTarget(viewController, action: Selector("checkNonTextInputQuestion:"), forControlEvents: .TouchUpInside)
+    submitButton.addTarget(viewController, action: Selector("checkQuestionSubmission:"), forControlEvents: .TouchUpInside)
     
     masterView.addSubview(submitButton)
     

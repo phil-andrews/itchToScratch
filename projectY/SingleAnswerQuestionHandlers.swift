@@ -16,17 +16,18 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     let answer = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     
     
-    let questionLabel = UILabel()
-    questionLabel.frame.size.width = masterView.frame.width * 0.85
+    let questionLabel = PaddedLabel25()
+    questionLabel.frame.size.width = masterView.frame.width
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
-    questionLabel.font = fontSmall
+    questionLabel.backgroundColor = backgroundColor
+    questionLabel.font = fontSmallRegular
     questionLabel.numberOfLines = 0
     questionLabel.textAlignment = .Left
     questionLabel.adjustsFontSizeToFitWidth = true
     questionLabel.minimumScaleFactor = 0.8
     questionLabel.sizeToFit()
-    questionLabel.frame.size.width = masterView.frame.width * 0.85
+    questionLabel.frame.size.width = masterView.frame.width
     questionLabel.tag = 101
     
     questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
@@ -45,7 +46,7 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     answerLabel.backgroundColor = UIColor.whiteColor()
     answerLabel.tag = 102
     
-    masterView.addSubview(answerLabel)
+    masterView.insertSubview(answerLabel, belowSubview: questionLabel)
     
     answerLabel.frame.origin.x = centerXAlignment(answerLabel, masterView)
     answerLabel.frame.origin.y = questionLabel.frame.maxY + 15.0
@@ -56,16 +57,16 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     
     let textField = UITextField()
     drawPercentageRectOffView(textField, masterView, 7.05, 90)
-    textField.backgroundColor = UIColor.blackColor()
+    textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
     textField.font = fontSmallerMedium
-    textField.textColor = UIColor.whiteColor()
+    textField.textColor = backgroundColor
     textField.textAlignment = .Left
     textField.clearButtonMode = UITextFieldViewMode.WhileEditing
     textField.tag = 1001
     textField.delegate = textFieldDelegate
-
+    
     masterView.addSubview(textField)
     
     textField.frame.origin.x = centerXAlignment(textField, masterView)
@@ -75,7 +76,7 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
     textField.leftView = textFieldPadding
     textField.leftViewMode = UITextFieldViewMode.Always
-    textField.keyboardAppearance = .Dark
+    textField.keyboardAppearance = .Light
     textField.keyboardType = UIKeyboardType.Default
     textField.returnKeyType = .Go
     
@@ -93,6 +94,7 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     let answer = questionAnswer[0] as! String
     
     let imageView = UIImageView()
+    imageView.backgroundColor = backgroundColor
     drawPercentageRectOffView(imageView, masterView, 35.05, 100)
     masterView.addSubview(imageView)
     
@@ -112,13 +114,30 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     questionLabel.frame.origin.y = imageView.frame.maxY + 3.0
     questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
     
+    let answerLabel = UILabel()
+    answerLabel.hidden = true
+    answerLabel.frame.size.width = masterView.frame.width
+    answerLabel.frame.size.height = masterView.frame.height * 0.0714
+    answerLabel.text = answer
+    answerLabel.font = fontMediumRegular
+    answerLabel.textAlignment = .Center
+    answerLabel.textColor = backgroundColor
+    answerLabel.backgroundColor = UIColor.whiteColor()
+    answerLabel.tag = 102
+    
+    masterView.insertSubview(answerLabel, belowSubview: imageView)
+    
+    answerLabel.frame.origin.x = centerXAlignment(answerLabel, masterView)
+    answerLabel.frame.origin.y = imageView.frame.maxY + 15.0
+    
+    
     let textField = UITextField()
     drawPercentageRectOffView(textField, masterView, 6.5, 90)
-    textField.backgroundColor = UIColor.blackColor()
+    textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
     textField.font = fontSmallerMedium
-    textField.textColor = UIColor.whiteColor()
+    textField.textColor = backgroundColor
     textField.textAlignment = .Left
     textField.clearButtonMode = UITextFieldViewMode.WhileEditing
     textField.tag = 1001
@@ -134,7 +153,7 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
     textField.leftView = textFieldPadding
     textField.leftViewMode = UITextFieldViewMode.Always
-    textField.keyboardAppearance = .Dark
+    textField.keyboardAppearance = .Light
     textField.keyboardType = UIKeyboardType.Default
     textField.returnKeyType = .Go
     

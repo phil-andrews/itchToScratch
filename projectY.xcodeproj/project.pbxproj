@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		840B2E9C1B1D5A0F00EC218C /* QuestionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B2E9B1B1D5A0F00EC218C /* QuestionDetail.swift */; };
 		840DE5881BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE5871BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift */; };
 		840DE58C1BFAC97E00B812DF /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE58B1BFAC97E00B812DF /* PaddedLabel.swift */; };
 		841532EA1B2B813B00118311 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841532E91B2B813B00118311 /* FBSDKCoreKit.framework */; };
@@ -20,16 +19,17 @@
 		84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84249D2A1BDAD63200773168 /* activityIndicator.swift */; };
 		842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* MapController.swift */; };
 		8437813C1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */; };
-		843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843802CB1B893529004CDE6A /* GameBoardController.swift */; };
 		84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408B8B1B9B733A00EED2AB /* extensions.swift */; };
 		844EFB7A1C010A8900BFED06 /* indicatorLightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */; };
 		844EFB7C1C010CF400BFED06 /* answerLabelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */; };
+		844EFB7E1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB7D1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift */; };
 		8453D3F61BA3E01B00627A59 /* queryFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453D3F51BA3E01B00627A59 /* queryFunctions.swift */; };
 		84566CFE1B7E402D0012E27E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */; };
 		84566CFF1B7E402D0012E27E /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFB1B7E402D0012E27E /* Roboto-Light.ttf */; };
 		84566D001B7E402D0012E27E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */; };
 		84566D011B7E402D0012E27E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */; };
-		8472CBD51BFFFF6800E2C233 /* MultipleAnswerCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472CBD41BFFFF6800E2C233 /* MultipleAnswerCheck.swift */; };
+		845ADC9D1C05091700B0004B /* MultipleAnswerNoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845ADC9C1C05091700B0004B /* MultipleAnswerNoImageViewController.swift */; };
+		8472CBD51BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */; };
 		8484D1D71B1A8D57003273BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484D1D61B1A8D57003273BD /* AppDelegate.swift */; };
 		8484D1DE1B1A8D57003273BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484D1DC1B1A8D57003273BD /* Main.storyboard */; };
 		8484D1E01B1A8D57003273BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8484D1DF1B1A8D57003273BD /* Images.xcassets */; };
@@ -69,6 +69,12 @@
 		84B2C5211BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2C5201BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift */; };
 		84B332751BB60366009E3359 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B332741BB60366009E3359 /* Settings.bundle */; };
 		84BB98D61BE3D546009C0892 /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */; };
+		84C4EA241C050A87000DE75D /* SingleAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4EA231C050A87000DE75D /* SingleAnswerViewController.swift */; };
+		84C4EA261C051AA3000DE75D /* MultipleChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4EA251C051AA3000DE75D /* MultipleChoiceViewController.swift */; };
+		84C9859C1C063819003B20AD /* OrderingQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9859B1C063819003B20AD /* OrderingQuestionViewController.swift */; };
+		84C9859F1C065EE7003B20AD /* RangeQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9859E1C065EE7003B20AD /* RangeQuestionViewController.swift */; };
+		84C985A31C06679F003B20AD /* MultipleAnswerWithImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C985A21C06679F003B20AD /* MultipleAnswerWithImageViewController.swift */; };
+		84C985A51C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C985A41C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift */; };
 		84D4D3A51BE000F700DDA162 /* postLoginPictureGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4D3A41BE000F700DDA162 /* postLoginPictureGet.swift */; };
 		84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5D0131BAF2A550035C8F0 /* utilities.swift */; };
 		84DAB8B11B9A155000C533FB /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAB8B01B9A155000C533FB /* animations.swift */; };
@@ -147,7 +153,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		840B2E9B1B1D5A0F00EC218C /* QuestionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetail.swift; sourceTree = "<group>"; };
 		840DE5871BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestionWithImage.swift; sourceTree = "<group>"; };
 		840DE58B1BFAC97E00B812DF /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		841532E91B2B813B00118311 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -159,16 +164,17 @@
 		84249D2A1BDAD63200773168 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		842F9FE31BAE0F3800D21DA9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionCheck.swift; sourceTree = "<group>"; };
-		843802CB1B893529004CDE6A /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
 		84408B8B1B9B733A00EED2AB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indicatorLightHandler.swift; sourceTree = "<group>"; };
 		844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerLabelHandler.swift; sourceTree = "<group>"; };
+		844EFB7D1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerWithImageCheck.swift; sourceTree = "<group>"; };
 		8453D3F51BA3E01B00627A59 /* queryFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queryFunctions.swift; sourceTree = "<group>"; };
 		84566CFA1B7E402D0012E27E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		84566CFB1B7E402D0012E27E /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		8472CBD41BFFFF6800E2C233 /* MultipleAnswerCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerCheck.swift; sourceTree = "<group>"; };
+		845ADC9C1C05091700B0004B /* MultipleAnswerNoImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerNoImageViewController.swift; sourceTree = "<group>"; };
+		8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerNoImageCheck.swift; sourceTree = "<group>"; };
 		8484D1D11B1A8D57003273BD /* projectY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8484D1D51B1A8D57003273BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484D1D61B1A8D57003273BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +219,12 @@
 		84B2C5201BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestionNoImage.swift; sourceTree = "<group>"; };
 		84B332741BB60366009E3359 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
+		84C4EA231C050A87000DE75D /* SingleAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAnswerViewController.swift; sourceTree = "<group>"; };
+		84C4EA251C051AA3000DE75D /* MultipleChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceViewController.swift; sourceTree = "<group>"; };
+		84C9859B1C063819003B20AD /* OrderingQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderingQuestionViewController.swift; sourceTree = "<group>"; };
+		84C9859E1C065EE7003B20AD /* RangeQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeQuestionViewController.swift; sourceTree = "<group>"; };
+		84C985A21C06679F003B20AD /* MultipleAnswerWithImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerWithImageViewController.swift; sourceTree = "<group>"; };
+		84C985A41C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestionWithOrderViewController.swift; sourceTree = "<group>"; };
 		84D4D3A41BE000F700DDA162 /* postLoginPictureGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postLoginPictureGet.swift; sourceTree = "<group>"; };
 		84D5D0131BAF2A550035C8F0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		84DAB8B01B9A155000C533FB /* animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
@@ -299,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				849E917F1BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift */,
+				84C4EA231C050A87000DE75D /* SingleAnswerViewController.swift */,
 				84215C6B1BFD2380005411E9 /* SingleAnswerCheck.swift */,
 			);
 			name = SingleAnswerQuestion;
@@ -308,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */,
+				84C9859B1C063819003B20AD /* OrderingQuestionViewController.swift */,
 				84215C6E1BFD4302005411E9 /* OrderingQuestionCheck.swift */,
 			);
 			name = OrderingQuestion;
@@ -317,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */,
+				84C4EA251C051AA3000DE75D /* MultipleChoiceViewController.swift */,
 				8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */,
 			);
 			name = MultipleChoiceQuestion;
@@ -325,9 +340,13 @@
 		8472CBD31BFFFF4700E2C233 /* MultipleAnswerQuestion */ = {
 			isa = PBXGroup;
 			children = (
+				845ADC9C1C05091700B0004B /* MultipleAnswerNoImageViewController.swift */,
+				84C985A21C06679F003B20AD /* MultipleAnswerWithImageViewController.swift */,
+				84C985A41C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift */,
 				84B2C5201BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift */,
 				840DE5871BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift */,
-				8472CBD41BFFFF6800E2C233 /* MultipleAnswerCheck.swift */,
+				8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */,
+				844EFB7D1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift */,
 				844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */,
 				844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */,
 			);
@@ -391,9 +410,7 @@
 				84FB87E31BE5744900048760 /* QuestionDetailUI.swift */,
 				84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */,
 				84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */,
-				843802CB1B893529004CDE6A /* GameBoardController.swift */,
 				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
-				840B2E9B1B1D5A0F00EC218C /* QuestionDetail.swift */,
 				8484D1DC1B1A8D57003273BD /* Main.storyboard */,
 				8484D1DF1B1A8D57003273BD /* Images.xcassets */,
 				8484D1E11B1A8D57003273BD /* LaunchScreen.xib */,
@@ -452,6 +469,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		84C9859D1C065ECD003B20AD /* RangeQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */,
+				84C9859E1C065EE7003B20AD /* RangeQuestionViewController.swift */,
+			);
+			name = RangeQuestion;
+			sourceTree = "<group>";
+		};
 		84DC630A1BEBC8A300D56895 /* QuestionTypeHandlers */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,7 +485,7 @@
 				84215C6A1BFD2323005411E9 /* SingleAnswerQuestion */,
 				84215C6D1BFD42EB005411E9 /* OrderingQuestion */,
 				8437813A1BFE832300FF0790 /* MultipleChoiceQuestion */,
-				84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */,
+				84C9859D1C065ECD003B20AD /* RangeQuestion */,
 			);
 			name = QuestionTypeHandlers;
 			sourceTree = "<group>";
@@ -737,20 +763,24 @@
 				84ECC1811B2D520500953FAE /* DesignableLabel.swift in Sources */,
 				849978C41BEA812A001CE745 /* MultipleChoiceQuestionHandlers.swift in Sources */,
 				84ECC1901B2D520500953FAE /* SpringImageView.swift in Sources */,
+				845ADC9D1C05091700B0004B /* MultipleAnswerNoImageViewController.swift in Sources */,
 				844EFB7A1C010A8900BFED06 /* indicatorLightHandler.swift in Sources */,
 				84ECC17D1B2D520500953FAE /* AutoTextView.swift in Sources */,
+				84C9859C1C063819003B20AD /* OrderingQuestionViewController.swift in Sources */,
 				84ECC1861B2D520500953FAE /* ImageLoader.swift in Sources */,
 				84215C6F1BFD4302005411E9 /* OrderingQuestionCheck.swift in Sources */,
 				840DE58C1BFAC97E00B812DF /* PaddedLabel.swift in Sources */,
-				8472CBD51BFFFF6800E2C233 /* MultipleAnswerCheck.swift in Sources */,
+				8472CBD51BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift in Sources */,
 				84ECC18B1B2D520500953FAE /* Misc.swift in Sources */,
+				84C985A31C06679F003B20AD /* MultipleAnswerWithImageViewController.swift in Sources */,
 				84ECC17E1B2D520500953FAE /* BlurView.swift in Sources */,
 				84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */,
-				843802CC1B893529004CDE6A /* GameBoardController.swift in Sources */,
+				84C985A51C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift in Sources */,
 				84ECC1971B2D520500953FAE /* UnwindSegue.swift in Sources */,
 				84ECC1891B2D520500953FAE /* LoadingView.swift in Sources */,
 				84932D191B9130C80060A94B /* ProfileController.swift in Sources */,
 				84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */,
+				84C9859F1C065EE7003B20AD /* RangeQuestionViewController.swift in Sources */,
 				84ECC1921B2D520500953FAE /* SpringTextField.swift in Sources */,
 				8486A6AA1BD16C40009DB394 /* userControlClass.swift in Sources */,
 				84ECC18D1B2D520500953FAE /* Spring.swift in Sources */,
@@ -759,9 +789,11 @@
 				84BB98D61BE3D546009C0892 /* GameBoardViewController.swift in Sources */,
 				84ECC1821B2D520500953FAE /* DesignableTabBarController.swift in Sources */,
 				841D78A21B93F955008DE7E2 /* keys.swift in Sources */,
+				84C4EA241C050A87000DE75D /* SingleAnswerViewController.swift in Sources */,
 				84A2C5D81BE42C1A008D9BCC /* GameBoardUI.swift in Sources */,
 				84ECC17F1B2D520500953FAE /* DesignableButton.swift in Sources */,
 				84B2C5211BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift in Sources */,
+				84C4EA261C051AA3000DE75D /* MultipleChoiceViewController.swift in Sources */,
 				8484D1D71B1A8D57003273BD /* AppDelegate.swift in Sources */,
 				84ECC1961B2D520500953FAE /* TransitionZoom.swift in Sources */,
 				84FB87E41BE5744900048760 /* QuestionDetailUI.swift in Sources */,
@@ -778,6 +810,7 @@
 				84ECC1941B2D520500953FAE /* SpringView.swift in Sources */,
 				848A9B431B8FC67A00BEA22F /* SwiftSpinner.swift in Sources */,
 				84ECC1931B2D520500953FAE /* SpringTextView.swift in Sources */,
+				844EFB7E1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift in Sources */,
 				84ECC1881B2D520500953FAE /* KeyboardLayoutConstraint.swift in Sources */,
 				8453D3F61BA3E01B00627A59 /* queryFunctions.swift in Sources */,
 				84ECC18F1B2D520500953FAE /* SpringButton.swift in Sources */,
@@ -791,7 +824,6 @@
 				84E6A3801BE8667800056845 /* OrderingQuestionHandlers.swift in Sources */,
 				84ECC1801B2D520500953FAE /* DesignableImageView.swift in Sources */,
 				849E91801BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift in Sources */,
-				840B2E9C1B1D5A0F00EC218C /* QuestionDetail.swift in Sources */,
 				84B200FF1BAB10E8003F0C59 /* sizeAdapt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
