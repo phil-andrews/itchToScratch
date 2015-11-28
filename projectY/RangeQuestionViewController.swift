@@ -19,6 +19,9 @@ class RangeQuestionViewController: UIViewController {
     var rangeButtonViewOverlay = UIView()
     var rangeHorizontalBar = UIView()
     var rangeLabel = UILabel()
+    let userArrow = UIImageView()
+    let opponentArrow = UIImageView()
+    let correctArrow = UIImageView()
     
     var verticalScaleLine = UIView()
     var previousRangeBarLocation = CGPoint()
@@ -28,7 +31,9 @@ class RangeQuestionViewController: UIViewController {
         
         self.view.backgroundColor = backgroundColor
         
-        rangeQuestion(self.view, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel) { (verticalLine) -> Void in
+        self.swipeUpToGoBack.enabled = false
+        
+        rangeQuestion(self, self.view, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel,userArrow, correctArrow) { (verticalLine) -> Void in
             
             self.verticalScaleLine = verticalLine
             
@@ -36,19 +41,27 @@ class RangeQuestionViewController: UIViewController {
         
     }
     
+    var userAnswer = Int()
+    var userSubmitted = false
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         
+        if userSubmitted == false {
+        
         touchesBeganForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, &previousRangeBarLocation)
-
+            
+        }
         
     }
     
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         
-        touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel, verticalScaleLine, &previousRangeBarLocation)
-        
+        if userSubmitted == false {
+            
+        touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel, userArrow, &userAnswer, verticalScaleLine, &previousRangeBarLocation)
+            
+        }
     }
     
     
@@ -59,7 +72,34 @@ class RangeQuestionViewController: UIViewController {
     
     func checkQuestionSubmission(sender: AnyObject?) {
         
+        println("answer submitted")
         
+        if let sender = sender as? UIButton {
+            
+            sender.hidden = true
+            
+        }
+        
+        self.userSubmitted = true
+        
+        animateComponentsToCenterX(self, userAnswer, verticalScaleLine, rangeHorizontalBar, rangeLabel, correctArrow, userArrow, opponentArrow) { () -> () in
+            
+            animateOpponentArrowAndLabel(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
+                
+                compareAnswersAgainstEachOtherAndActual(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
+                    
+                    
+                    
+                })
+                
+                
+            })
+            
+            
+        }
+        
+        
+        self.swipeUpToGoBack.enabled = true
         
     }
     

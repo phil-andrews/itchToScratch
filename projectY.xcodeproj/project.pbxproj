@@ -20,6 +20,7 @@
 		842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* MapController.swift */; };
 		8437813C1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */; };
 		84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408B8B1B9B733A00EED2AB /* extensions.swift */; };
+		84467E501C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84467E4F1C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift */; };
 		844EFB7A1C010A8900BFED06 /* indicatorLightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */; };
 		844EFB7C1C010CF400BFED06 /* answerLabelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */; };
 		844EFB7E1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB7D1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift */; };
@@ -30,6 +31,7 @@
 		84566D011B7E402D0012E27E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */; };
 		845ADC9D1C05091700B0004B /* MultipleAnswerNoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845ADC9C1C05091700B0004B /* MultipleAnswerNoImageViewController.swift */; };
 		8472CBD51BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */; };
+		8483BDF91C08D7550079C2AD /* RangeQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483BDF81C08D7550079C2AD /* RangeQuestionCheck.swift */; };
 		8484D1D71B1A8D57003273BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484D1D61B1A8D57003273BD /* AppDelegate.swift */; };
 		8484D1DE1B1A8D57003273BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484D1DC1B1A8D57003273BD /* Main.storyboard */; };
 		8484D1E01B1A8D57003273BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8484D1DF1B1A8D57003273BD /* Images.xcassets */; };
@@ -79,7 +81,7 @@
 		84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5D0131BAF2A550035C8F0 /* utilities.swift */; };
 		84DAB8B11B9A155000C533FB /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAB8B01B9A155000C533FB /* animations.swift */; };
 		84DB65FB1BA1FE57001F093F /* whereChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB65FA1BA1FE57001F093F /* whereChart.swift */; };
-		84DC630C1BEBC8DE00D56895 /* RangeQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */; };
+		84DC630C1BEBC8DE00D56895 /* RangeQuestionDrawUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC630B1BEBC8DE00D56895 /* RangeQuestionDrawUI.swift */; };
 		84E6A3801BE8667800056845 /* OrderingQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */; };
 		84ECC17B1B2D520500953FAE /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC15D1B2D520500953FAE /* AsyncButton.swift */; };
 		84ECC17C1B2D520500953FAE /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC15E1B2D520500953FAE /* AsyncImageView.swift */; };
@@ -165,6 +167,7 @@
 		842F9FE31BAE0F3800D21DA9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionCheck.swift; sourceTree = "<group>"; };
 		84408B8B1B9B733A00EED2AB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		84467E4F1C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchHandlersForRangeQuestion.swift; sourceTree = "<group>"; };
 		844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indicatorLightHandler.swift; sourceTree = "<group>"; };
 		844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerLabelHandler.swift; sourceTree = "<group>"; };
 		844EFB7D1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerWithImageCheck.swift; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 		84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		845ADC9C1C05091700B0004B /* MultipleAnswerNoImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerNoImageViewController.swift; sourceTree = "<group>"; };
 		8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerNoImageCheck.swift; sourceTree = "<group>"; };
+		8483BDF81C08D7550079C2AD /* RangeQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeQuestionCheck.swift; sourceTree = "<group>"; };
 		8484D1D11B1A8D57003273BD /* projectY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8484D1D51B1A8D57003273BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484D1D61B1A8D57003273BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,7 +233,7 @@
 		84D5D0131BAF2A550035C8F0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		84DAB8B01B9A155000C533FB /* animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
 		84DB65FA1BA1FE57001F093F /* whereChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = whereChart.swift; sourceTree = "<group>"; };
-		84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeQuestionHandlers.swift; sourceTree = "<group>"; };
+		84DC630B1BEBC8DE00D56895 /* RangeQuestionDrawUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeQuestionDrawUI.swift; sourceTree = "<group>"; };
 		84E6A37F1BE8667800056845 /* OrderingQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderingQuestionHandlers.swift; sourceTree = "<group>"; };
 		84ECC15D1B2D520500953FAE /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		84ECC15E1B2D520500953FAE /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -472,8 +476,10 @@
 		84C9859D1C065ECD003B20AD /* RangeQuestion */ = {
 			isa = PBXGroup;
 			children = (
-				84DC630B1BEBC8DE00D56895 /* RangeQuestionHandlers.swift */,
+				84DC630B1BEBC8DE00D56895 /* RangeQuestionDrawUI.swift */,
 				84C9859E1C065EE7003B20AD /* RangeQuestionViewController.swift */,
+				84467E4F1C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift */,
+				8483BDF81C08D7550079C2AD /* RangeQuestionCheck.swift */,
 			);
 			name = RangeQuestion;
 			sourceTree = "<group>";
@@ -777,6 +783,7 @@
 				84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */,
 				84C985A51C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift in Sources */,
 				84ECC1971B2D520500953FAE /* UnwindSegue.swift in Sources */,
+				84467E501C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift in Sources */,
 				84ECC1891B2D520500953FAE /* LoadingView.swift in Sources */,
 				84932D191B9130C80060A94B /* ProfileController.swift in Sources */,
 				84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */,
@@ -800,7 +807,7 @@
 				84ECC1831B2D520500953FAE /* DesignableTextField.swift in Sources */,
 				84ECC1951B2D520500953FAE /* TransitionManager.swift in Sources */,
 				84ECC1911B2D520500953FAE /* SpringLabel.swift in Sources */,
-				84DC630C1BEBC8DE00D56895 /* RangeQuestionHandlers.swift in Sources */,
+				84DC630C1BEBC8DE00D56895 /* RangeQuestionDrawUI.swift in Sources */,
 				84ECC17B1B2D520500953FAE /* AsyncButton.swift in Sources */,
 				84DB65FB1BA1FE57001F093F /* whereChart.swift in Sources */,
 				84ECC17C1B2D520500953FAE /* AsyncImageView.swift in Sources */,
@@ -823,6 +830,7 @@
 				84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */,
 				84E6A3801BE8667800056845 /* OrderingQuestionHandlers.swift in Sources */,
 				84ECC1801B2D520500953FAE /* DesignableImageView.swift in Sources */,
+				8483BDF91C08D7550079C2AD /* RangeQuestionCheck.swift in Sources */,
 				849E91801BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift in Sources */,
 				84B200FF1BAB10E8003F0C59 /* sizeAdapt.swift in Sources */,
 			);

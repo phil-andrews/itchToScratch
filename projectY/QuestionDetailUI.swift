@@ -14,7 +14,6 @@ import ParseUI
 import Bolts
 import SpriteKit
 
-var questionObjectFromGameBoardSend: PFObject?
 
 func displayQuestionContainer(masterView: UIViewController, question: PFObject, type: Int, completion: (UIView) -> Void) {
 

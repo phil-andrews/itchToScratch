@@ -14,6 +14,8 @@ import ParseUI
 import Bolts
 
 var usersCurrentLocationData = CLLocation()
+var questionObjectFromGameBoardSend: PFObject?
+var currentLocationObject: PFObject?
 
 class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     @IBOutlet var swipeToMaps: UISwipeGestureRecognizer!
@@ -134,7 +136,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     let locationManager = CLLocationManager()
     var currentLocation: String?
-    var currentLocationObject: PFObject?
     var questionObjectsForLocation: [PFObject]?
     var locationTimer = NSTimer()
     
@@ -226,13 +227,13 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                                     
                                     if success {
                                         
-                                        self.currentLocationObject = newObject
+                                        currentLocationObject = newObject
                                         
-                                        addAndSubtractUserFromLocationCount(self.currentLocationObject!)
+                                        addAndSubtractUserFromLocationCount(currentLocationObject!)
                                         
-                                        drawCityLabel(self.view, self.currentLocationObject!)
+                                        drawCityLabel(self.view, currentLocationObject!)
                                         
-                                        let questionIDs = separateObjectIDs(self.currentLocationObject!)
+                                        let questionIDs = separateObjectIDs(currentLocationObject!)
                                         
                                         queryForMultipleObjectsInBackgroundWithBlock(QuestionClass, objectId, questionIDs) { (questionObjects, error) -> Void in
                                             
@@ -247,7 +248,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                                                 
                                                 drawButtons(self.view, self, "presentQuestion", { () -> Void in
                                                     
-                                                    populateGameBoard(self.view, questionObjects, questionIDs, self.currentLocationObject!)
+                                                    populateGameBoard(self.view, questionObjects, questionIDs, currentLocationObject!)
                                                     
                                                 })
                                                 
@@ -270,13 +271,13 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                             
                         } else if locationObject != nil && error == nil {
                             
-                            self.currentLocationObject = locationObject
+                            currentLocationObject = locationObject
                             
-                            addAndSubtractUserFromLocationCount(self.currentLocationObject!)
+                            addAndSubtractUserFromLocationCount(currentLocationObject!)
                             
-                            drawCityLabel(self.view, self.currentLocationObject!)
+                            drawCityLabel(self.view, currentLocationObject!)
                             
-                            let questionIDs = separateObjectIDs(self.currentLocationObject!)
+                            let questionIDs = separateObjectIDs(currentLocationObject!)
                             
                             queryForMultipleObjectsInBackgroundWithBlock(QuestionClass, objectId, questionIDs) { (questionObjects, error) -> Void in
                                 
@@ -291,7 +292,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                                     
                                     drawButtons(self.view, self, "presentQuestion:", { () -> Void in
                                         
-                                        populateGameBoard(self.view, questionObjects, questionIDs, self.currentLocationObject!)
+                                        populateGameBoard(self.view, questionObjects, questionIDs, currentLocationObject!)
                                         
                                     })
                                     
@@ -333,7 +334,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     func presentQuestion(sender: AnyObject?) {
         
         let tagNumber = sender!.tag
-        let questionID = self.currentLocationObject?.valueForKey("Q\(tagNumber - 1)") as! String
+        let questionID = currentLocationObject?.valueForKey("Q\(tagNumber - 1)") as! String
         let questionObjects = self.questionObjectsForLocation as [PFObject]!
         var questionToPresent: PFObject?
         
@@ -772,9 +773,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
 //            touchesMovedForOrderingQuestion(self.view, &labelThatIsBeingDragged, touches)
             
-        case 5:
+ //       case 5:
             
-            touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel, verticalScaleLine, &previousRangeBarLocation)
+//            touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel, verticalScaleLine, &previousRangeBarLocation)
 
             
             

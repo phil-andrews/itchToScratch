@@ -45,6 +45,7 @@ let usedQuestionObjects = "usedQuestionObjects"
 let scoreRankingsKey = "scoreRankings"
 let geoPoint = "geoPoint"
 let topPlayersForArea = "topPlayersForArea"
+let opponentsQuestionsAnswered = "opponentSubmitted"
 
 
 //UserClass Keys
@@ -121,7 +122,9 @@ let people = UIImage(named: "people")
 let products = UIImage(named: "products")
 let sports = UIImage(named: "sports")
 
-
+let rangeTriangleCorrect = UIImage(named: "correctTriangle")
+let rangeTriangleUser = UIImage(named: "userTriangle")
+let rangeTriangleOpponent = UIImage(named: "opponentTriangle")
 
 //Map Markers
 
