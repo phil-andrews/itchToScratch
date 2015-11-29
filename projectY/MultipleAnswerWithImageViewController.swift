@@ -57,6 +57,28 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
         
         makeTextFieldFirstResponderForImageQuestion(sender, self)
         
+        let screenSize = self.view.frame.height
+        
+        if screenSize > 650 {
+            
+            for tag in unhiddenAnswerLabelTags {
+                
+                let label = self.view.viewWithTag(tag) as! UILabel
+                
+                UIView.animateWithDuration(0.15, delay: 0.0, options: nil, animations: { () -> Void in
+                    
+                    label.alpha = 0.0
+                    
+                    }, completion: { (Bool) -> Void in
+                        
+                        label.hidden = true
+                        
+                })
+                
+            }
+
+        }
+        
     }
     
     
@@ -83,7 +105,29 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
                 
         })
         
+        let screenSize = self.view.frame.height
         
+        if screenSize > 650 {
+        
+            for tag in unhiddenAnswerLabelTags {
+                
+                let label = self.view.viewWithTag(tag) as! UILabel
+                label.alpha = 0.0
+                
+                UIView.animateWithDuration(0.15, delay: 0.15, options: nil, animations: { () -> Void in
+                    
+                    label.hidden = false
+                    label.alpha = 1.0
+                    
+                }, completion: { (Bool) -> Void in
+                    
+                    
+                    
+                })
+                
+            }
+        
+        }
     }
     
     

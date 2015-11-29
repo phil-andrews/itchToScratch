@@ -14,6 +14,15 @@ import Parse
 
 class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelegate {
     
+    let firstColor = UIColor(hex: "8036FF")
+    let secondColor = UIColor(hex: "00B2EA")
+    let thirdColor = UIColor(hex: "E9D300")
+    let fourthColor = UIColor(hex: "FF6000")
+    let fifthColor = UIColor(hex: "F953FF")
+    let sixthColor = UIColor(hex: "B22029")
+    
+    let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
+    
     var questionImageFile: UIImage?
     
     let type = questionObjectFromGameBoardSend?.valueForKey(questionType) as! Int
@@ -23,22 +32,50 @@ class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelega
         
         self.view.backgroundColor = backgroundColor
         
-        multipleAnswerQuestionWithImage(self, self, self.view, textFieldTag: 9001, textFieldQuestionButtonTag: 9002, questionLabelTag: 901, dropDownAnswerLabelTag: 902, imageViewTag: 903, startingLightTag: 9111, callKeybardButtonTag: 9003) { (answerInputField) -> Void in
+        multipleAnswerQuestionWithOrder(self, self, self.view) { (answerInputField) -> Void in
             
-            answerInputField.becomeFirstResponder()
+            
             
         }
         
     }
     
-    
-    
-    
     var submittedCount = 0
     var unhiddenAnswerLabelTags = [Int]()
     
+    
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-
+    
+        if selectedSection == nil {
+            
+            textField.text = String("")
+            textField.placeholder = "choose a circle"
+            
+            return false
+            
+        } else if selectedSection != nil {
+            
+            checkMultipleAnswerWithOrder(self, textField, selectedSection!) { (correct) -> Void in
+                
+                self.previousButton = nil
+                self.selectedSection = nil
+                ++self.submittedCount
+                
+                if self.submittedCount == self.answers.count {
+                    
+                    delay(1.0, { () -> () in
+                        
+                        textField.resignFirstResponder()
+                        drawAnswerLabelsAfterFinalSubmit(self, textField)
+                        
+                    })
+                    
+                }
+                
+            }
+            
+        }
         
         return true
     }
@@ -48,7 +85,7 @@ class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelega
         
         println("called keyboard")
         
-        makeTextFieldFirstResponderForImageQuestion(sender, self)
+        makeTextFieldFirstResponderForImageQuestionWithOrder(sender, self)
         
     }
     
@@ -57,7 +94,33 @@ class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelega
         
         println("dismissed keyboard")
         
-        removeTextFieldFromFirstResponderToShowQuestion(self, sender, nil)
+        removeTextFieldFromFirstResponderToShowQuestionMultipleAnswerWithOrder(self, sender)
+    }
+    
+    
+    var previousButton : UIButton?
+    var selectedSection : Int?
+    
+    func userChoseSectionToAnswer(sender: AnyObject?) {
+        
+        let textField = self.view.viewWithTag(9001) as! UITextField
+        textField.enabled = true
+        textField.placeholder = nil
+        
+        if previousButton != nil {
+            
+            previousButton?.transform = CGAffineTransformIdentity
+            previousButton?.layer.borderWidth = 1.5
+            
+        }
+        
+        let sender = sender as! UIButton
+        
+        previousButton = sender
+        selectedSection = sender.tag
+        
+        sender.transform = CGAffineTransformMakeScale(1.25, 1.25)
+        sender.layer.borderWidth = 3.5
         
         
     }

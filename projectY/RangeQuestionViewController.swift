@@ -82,18 +82,27 @@ class RangeQuestionViewController: UIViewController {
         
         self.userSubmitted = true
         
+        let opponentAnswerArray = currentLocationObject?.valueForKey(opponentsQuestionsAnswered) as! NSArray
+        
         animateComponentsToCenterX(self, userAnswer, verticalScaleLine, rangeHorizontalBar, rangeLabel, correctArrow, userArrow, opponentArrow) { () -> () in
+           
             
-            animateOpponentArrowAndLabel(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
+            if opponentAnswerArray.count != 0 {
                 
-                compareAnswersAgainstEachOtherAndActual(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
-                    
+                animateOpponentArrowAndLabel(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
+                
+                    compareAnswersAgainstEachOtherAndActual(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
+                        
+                        
+                        
+                    })
                     
                     
                 })
                 
-                
-            })
+            }
+            
+            
             
             
         }

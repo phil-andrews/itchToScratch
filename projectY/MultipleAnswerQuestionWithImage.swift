@@ -160,6 +160,8 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
     var previousLightNegativeXCoord = CGFloat()
     var previousAnswerLabelYCoord = masterView.frame.height * 0.565
     
+    let screenHeight = masterView.frame.height
+    
     if answers.count % 2 == 0 {
         
         startingXCoord = startingXCoord - ((masterView.frame.width * 0.0937) / 2) - (lightSpacing / 2)
@@ -226,5 +228,200 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
         ++answerLabelCount
 
     }
+    
+}
+
+
+
+func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewController: UIViewController) {
+    
+    println(sender!.tag)
+
+    
+    let sender = sender as! UIButton
+    var textFieldTag = Int()
+    var questionAskTag = Int()
+    var imageViewTag = Int()
+    var firstLightTag = Int()
+    var arrayOfLights: [UIView]?
+    
+    switch(sender.tag) {
+        
+    case 1003:
+        
+        textFieldTag = 1001
+        questionAskTag = 101
+        
+    case 8003:
+        
+        textFieldTag = 8001
+        questionAskTag = 801
+        imageViewTag = 803
+        firstLightTag = 8111
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+        
+    case 9003:
+        
+        textFieldTag = 9001
+        questionAskTag = 901
+        imageViewTag = 903
+        
+    default:
+        
+        break
+    }
+    
+    let questionAsk = viewController.view.viewWithTag(questionAskTag) as! UILabel
+    let imageView = viewController.view.viewWithTag(imageViewTag) as! UIImageView
+    let masterHeight = viewController.view.frame.height
+    
+    
+    if let answerInputField = viewController.view.viewWithTag(textFieldTag) as? UITextField {
+        
+        if sender.tag != 1003 && sender.tag != 9003 {
+            
+            for item in arrayOfLights! {
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    
+                    answerInputField.alpha = 1.0
+                    
+                    item.frame.origin.y = answerInputField.frame.minY - 10
+                    
+                })
+                
+            }
+            
+        }
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            
+            questionAsk.frame.origin.y += viewController.view.frame.maxY
+            sender.frame.origin.y += viewController.view.frame.maxY
+            
+            }, completion: { (Bool) -> Void in
+                
+                answerInputField.becomeFirstResponder()
+                
+        })
+        
+    }
+    
+}
+
+
+
+func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewController, sender: AnyObject?, codeTag: Int?) {
+    
+    var senderTag = Int()
+    
+    if sender != nil {
+        
+        let sender = sender as! UIButton
+        senderTag = sender.tag
+        
+    } else if sender == nil {
+        
+        senderTag = codeTag!
+    }
+    
+    var textFieldTag = Int()
+    var questionAskTag = Int()
+    var dropDownTag: Int?
+    var imageViewTag = Int()
+    var keyboardButtonTag = Int()
+    var firstLightTag = Int()
+    var arrayOfLights: [UIView]?
+    
+    switch(senderTag) {
+        
+    case 1002:
+        
+        textFieldTag = 1001
+        questionAskTag = 101
+        keyboardButtonTag = 1003
+        
+    case 8002:
+        
+        textFieldTag = 8001
+        questionAskTag = 801
+        dropDownTag = 802
+        imageViewTag = 803
+        keyboardButtonTag = 8003
+        firstLightTag = 8111
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+        
+    case 9002:
+        
+        textFieldTag = 9001
+        questionAskTag = 901
+        imageViewTag = 903
+        keyboardButtonTag = 9003
+        
+    default:
+        
+        break
+        
+    }
+    
+    
+    let showKeyboardButton = viewController.view.viewWithTag(keyboardButtonTag) as! UIButton
+    let questionAsk = viewController.view.viewWithTag(questionAskTag) as! UILabel
+    let imageView = viewController.view.viewWithTag(imageViewTag) as! UIImageView
+    let masterViewHeight = viewController.view.frame.height
+    
+    if let answerInputField = viewController.view.viewWithTag(textFieldTag) as? UITextField {
+        
+        answerInputField.resignFirstResponder()
+        
+        if senderTag != 1002 && senderTag != 9002 {
+            
+            for item in arrayOfLights! {
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    
+                    answerInputField.alpha = 0.0
+                    
+                    item.frame.origin.y = masterViewHeight * 0.363
+                    
+                })
+                
+            }
+            
+        }
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            
+            questionAsk.frame.origin.y -= viewController.view.frame.maxY
+            
+            if sender != nil {
+                
+                showKeyboardButton.frame.origin.y -= viewController.view.frame.maxY
+                
+            }
+            
+        })
+    }
+}
+
+
+
+func returnArrayOfLights(firstLightTag: Int, viewController: UIViewController) -> [UIView] {
+    
+    let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! NSArray
+    
+    var tagNumber = firstLightTag
+    var arrayOfLights = [UIView]()
+    
+    for index in 0..<answers.count {
+        
+        let light = viewController.view.viewWithTag(tagNumber)
+        
+        arrayOfLights.append(light!)
+        
+        ++tagNumber
+    }
+    
+    return arrayOfLights
     
 }

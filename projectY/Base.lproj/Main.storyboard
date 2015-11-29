@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tN4-hL-PD9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JAM-WP-IVe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -26,6 +26,7 @@
                             <outletCollection property="gestureRecognizers" destination="ade-Rw-hEW" appends="YES" id="0EK-mU-2KM"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Tsm-SJ-Qga"/>
                     <connections>
                         <outlet property="swipeToMaps" destination="YH3-XZ-BtQ" id="Jin-9N-28T"/>
                         <outlet property="swipeToProfile" destination="ade-Rw-hEW" id="Ago-OY-E6z"/>
@@ -43,7 +44,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1876.5" y="-321.75"/>
+            <point key="canvasLocation" x="2794.5" y="-321.75"/>
         </scene>
         <!--Ordering VC-->
         <scene sceneID="hap-Dx-B4m">
@@ -68,9 +69,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iem-X1-OKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3YV-qn-kKN" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="9ec-bq-iE7">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="orderingToGameBoard" id="eNq-qY-QFA"/>
+                        <segue destination="3YV-qn-kKN" kind="unwind" unwindAction="unwindToGameBoardViewController:" id="0Ns-Ue-9qv"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -96,9 +98,10 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZP7-wF-Gj8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Q04-hq-RN1" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="m2D-eH-lNH">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="singleAnswerToGameBoard" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="jU5-6r-FJO"/>
+                        <segue destination="Q04-hq-RN1" kind="unwind" unwindAction="unwindToGameBoardViewController:" id="cU0-sa-VPJ"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -124,9 +127,10 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtB-Xo-gM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="J4g-ZA-DRq" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="8sc-hU-hoq">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="multipleAnswerToGameBoard" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="qad-z8-eAy"/>
+                        <segue destination="J4g-ZA-DRq" kind="unwind" unwindAction="unwindToGameBoardViewController:" id="Zt1-vG-cJY"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -141,6 +145,7 @@
                         <viewControllerLayoutGuide type="bottom" id="f6a-rV-eBD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Tk-hT-euC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,9 +156,10 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5j-oi-vx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fjj-LR-xpT" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="Zst-vg-qWJ">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="multipleAnswerImageToGameBoard" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="bGu-DG-oKG"/>
+                        <segue destination="fjj-LR-xpT" kind="unwind" unwindAction="unwindToGameBoardViewController:" id="zOP-xi-qLK"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -168,6 +174,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a6I-78-bCw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="plR-gx-Zwh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,9 +185,10 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYC-9X-FAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fsr-Uc-X9g" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="e5r-22-5Fo">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="multipleAnswerWithOrderToGameBoard" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="VQ1-dB-Wbx"/>
+                        <segue destination="fsr-Uc-X9g" kind="unwind" unwindAction="unwindToGameBoardViewController:" id="OLN-vH-jfS"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -206,9 +214,10 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wb2-vL-gaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NlC-iH-F7M" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="gS4-4v-CtM">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="multipleChoiceToGameBoard" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="usV-k2-1l0"/>
+                        <segue destination="NlC-iH-F7M" kind="unwind" unwindAction="unwindToGameBoardViewController:" id="e0t-AV-6jG"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -223,6 +232,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kRq-8g-Lhe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D7h-Uv-P4X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,9 +246,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bae-te-5YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="65e-zq-cXX" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="kNj-VX-PXq">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="rangeToGameBoard" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="RTT-rt-zm4"/>
+                        <segue destination="65e-zq-cXX" kind="unwind" unwindAction="unwindToGameBoardViewController:" id="xRu-9a-xew"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -267,11 +278,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndF-sq-xUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="eNJ-rk-Evi">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="swipeRightToMain" id="aWC-hS-54I"/>
+                        <segue destination="JAM-WP-IVe" kind="presentation" identifier="swipeRightToMain" id="aWC-hS-54I"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2647.5" y="-321.75"/>
+            <point key="canvasLocation" x="3565.5" y="-321.75"/>
         </scene>
         <!--loginViewController-->
         <scene sceneID="tq1-aJ-iXL">
@@ -411,9 +422,6 @@
                                                     <constraint firstAttribute="centerX" secondItem="Gtp-aS-91Q" secondAttribute="centerX" constant="0.5" id="oww-qp-Ryf"/>
                                                     <constraint firstItem="DLm-pO-lYh" firstAttribute="width" secondItem="qMr-oC-dWN" secondAttribute="width" multiplier="0.45" id="rFL-aM-EbT"/>
                                                 </constraints>
-                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="32" y="181" width="335" height="335"/>
-                                                </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kO-QG-ufU">
                                                 <rect key="frame" x="428" y="53" width="135" height="135"/>
@@ -599,14 +607,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vq-SY-Mkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="4tb-be-UKS">
                     <connections>
-                        <segue destination="tN4-hL-PD9" kind="presentation" identifier="swipeLeftToMain" id="uZU-8l-2gb"/>
+                        <segue destination="JAM-WP-IVe" kind="presentation" identifier="swipeLeftToMain" id="uZU-8l-2gb"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1001.25" y="-321.12676056338023"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gyK-Q5-aUt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JAM-WP-IVe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wcg-mX-nWY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tN4-hL-PD9" kind="relationship" relationship="rootViewController" id="Loo-cg-eHb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBA-oW-9RV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.5" y="-321.75"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eNq-qY-QFA"/>
+        <segue reference="uZU-8l-2gb"/>
     </inferredMetricsTieBreakers>
 </document>

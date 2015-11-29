@@ -60,6 +60,8 @@
 		848A9B431B8FC67A00BEA22F /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A9B421B8FC67A00BEA22F /* SwiftSpinner.swift */; };
 		848B1A061BA3701D0082119A /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848B1A051BA3701D0082119A /* Roboto-Thin.ttf */; };
 		84932D191B9130C80060A94B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932D181B9130C80060A94B /* ProfileController.swift */; };
+		8498A2251C0A798F00B0FB19 /* MultipleAnswerWithOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498A2241C0A798F00B0FB19 /* MultipleAnswerWithOrder.swift */; };
+		8498A2271C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498A2261C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift */; };
 		849978C41BEA812A001CE745 /* MultipleChoiceQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */; };
 		849E91801BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E917F1BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift */; };
 		84A2C5D81BE42C1A008D9BCC /* GameBoardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */; };
@@ -212,6 +214,8 @@
 		848B1A051BA3701D0082119A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		84932D0E1B912CA80060A94B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "ios-charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		84932D181B9130C80060A94B /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		8498A2241C0A798F00B0FB19 /* MultipleAnswerWithOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerWithOrder.swift; sourceTree = "<group>"; };
+		8498A2261C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerWithOrderCheck.swift; sourceTree = "<group>"; };
 		849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionHandlers.swift; sourceTree = "<group>"; };
 		849E917F1BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestionHandlers.swift; sourceTree = "<group>"; };
 		84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardUI.swift; sourceTree = "<group>"; };
@@ -349,8 +353,10 @@
 				84C985A41C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift */,
 				84B2C5201BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift */,
 				840DE5871BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift */,
+				8498A2241C0A798F00B0FB19 /* MultipleAnswerWithOrder.swift */,
 				8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */,
 				844EFB7D1C012CD100BFED06 /* MultipleAnswerWithImageCheck.swift */,
+				8498A2261C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift */,
 				844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */,
 				844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */,
 			);
@@ -778,6 +784,7 @@
 				840DE58C1BFAC97E00B812DF /* PaddedLabel.swift in Sources */,
 				8472CBD51BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift in Sources */,
 				84ECC18B1B2D520500953FAE /* Misc.swift in Sources */,
+				8498A2271C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift in Sources */,
 				84C985A31C06679F003B20AD /* MultipleAnswerWithImageViewController.swift in Sources */,
 				84ECC17E1B2D520500953FAE /* BlurView.swift in Sources */,
 				84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */,
@@ -794,6 +801,7 @@
 				84ECC18C1B2D520500953FAE /* SoundPlayer.swift in Sources */,
 				84ECC1851B2D520500953FAE /* DesignableView.swift in Sources */,
 				84BB98D61BE3D546009C0892 /* GameBoardViewController.swift in Sources */,
+				8498A2251C0A798F00B0FB19 /* MultipleAnswerWithOrder.swift in Sources */,
 				84ECC1821B2D520500953FAE /* DesignableTabBarController.swift in Sources */,
 				841D78A21B93F955008DE7E2 /* keys.swift in Sources */,
 				84C4EA241C050A87000DE75D /* SingleAnswerViewController.swift in Sources */,

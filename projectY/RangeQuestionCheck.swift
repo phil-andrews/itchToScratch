@@ -11,8 +11,6 @@ import Parse
 import UIKit
 
 
-
-
 func animateComponentsToCenterX(masterView: UIViewController, userAnswer: Int, verticalScaleLine: UIView, rangeHorizontalBar: UIView, rangeLabel: UILabel, correctArrow: UIImageView, userArrow: UIImageView, opponentArrow: UIImageView, completion: () -> ()) {
     
     let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [Int]
@@ -45,6 +43,7 @@ func animateComponentsToCenterX(masterView: UIViewController, userAnswer: Int, v
                     topLabel.center.x = masterViewCenterX
                     bottomLabel.center.x = masterViewCenterX
                     verticalScaleLine.center.x = masterViewCenterX
+                    verticalScaleLine.backgroundColor = UIColor.blackColor()
                     userArrow.frame.origin.x = verticalScaleLine.frame.maxX - userArrow.frame.width
                     rangeLabel.frame.origin.x = userArrow.frame.minX - rangeLabel.frame.width - 10.0
                     
@@ -148,20 +147,99 @@ func compareAnswersAgainstEachOtherAndActual(masterView: UIViewController, userA
     
         let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [Int]
         let opponentAnswerArray = currentLocationObject?.valueForKey(opponentsQuestionsAnswered) as! NSArray
+    
+        let distanceBetweenUserAndActual = abs(answers[0] - userAnswer)
+        let userPercentAway = (distanceBetweenUserAndActual / answers[0]) * 100
+    
+        let userFillInView = UIView()
+        let opponentFillInView = UIView()
+
+
+    
+    func userFillInViewAnimation() {
+        
+        userFillInView.frame.size.width = verticalScaleLine.frame.width
+        userFillInView.backgroundColor = lowColor
+        masterView.view.insertSubview(userFillInView, belowSubview: userArrow)
+        
+        userFillInView.center.x = verticalScaleLine.center.x
+        userFillInView.frame.origin.y = correctArrow.frame.midY
+        
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            
+            if userArrow.center.y <= correctArrow.center.y {
+                
+                userFillInView.frame.size.height = abs(correctArrow.frame.midY - userArrow.frame.midY)
+                userFillInView.frame.origin.y = userArrow.frame.midY
+                
+            } else if userArrow.center.y > correctArrow.center.y {
+                
+                userFillInView.frame.size.height = abs(correctArrow.frame.midY - userArrow.frame.midY)
+                
+            }
+            
+            }, completion: { (Bool) -> Void in
+                
+        })
+        
+    }
+    
+    
+    func opponentFillInViewAnimation() {
         
         let opponentAnswer = opponentAnswerArray[0] as! Int
         let distanceBetweenOpponentAndActual = abs(answers[0] - opponentAnswer)
-        let distanceBetweenUserAndActual = abs(answers[0] - userAnswer)
+        
+        opponentFillInView.frame.size.width = verticalScaleLine.frame.width
+        opponentFillInView.backgroundColor = lowestColor
+        
+        if distanceBetweenOpponentAndActual > distanceBetweenUserAndActual {
+            
+            masterView.view.insertSubview(opponentFillInView, belowSubview: userFillInView)
+            
+            
+        } else if distanceBetweenOpponentAndActual < distanceBetweenUserAndActual {
+            
+            masterView.view.insertSubview(opponentFillInView, aboveSubview: userFillInView)
+            
+        }
+        
+        opponentFillInView.center.x = verticalScaleLine.center.x
+        opponentFillInView.frame.origin.y = correctArrow.frame.midY
+        
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            
+            if opponentArrow.center.y <= correctArrow.center.y {
+                
+                opponentFillInView.frame.size.height = abs(correctArrow.frame.midY - opponentArrow.frame.midY)
+                opponentFillInView.frame.origin.y = opponentArrow.frame.midY
+                
+            } else if opponentArrow.center.y > correctArrow.center.y {
+                
+                opponentFillInView.frame.size.height = abs(correctArrow.frame.midY - opponentFillInView.frame.midY)
+                
+            }
+            
+            
+            }, completion: { (Bool) -> Void in
+                
+        })
 
+    }
+    
+    
         if opponentAnswerArray.count == 0 {
             
-            
-                    // current closest
-            
+            userFillInViewAnimation()
             
             
         } else if opponentAnswerArray.count != 0 {
-
+            
+            let opponentAnswer = opponentAnswerArray[0] as! Int
+            let distanceBetweenOpponentAndActual = abs(answers[0] - opponentAnswer)
+            
+            userFillInViewAnimation()
+            opponentFillInViewAnimation()
 
             if distanceBetweenUserAndActual < distanceBetweenOpponentAndActual {
                 

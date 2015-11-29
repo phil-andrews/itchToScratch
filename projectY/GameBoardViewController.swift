@@ -17,7 +17,10 @@ var usersCurrentLocationData = CLLocation()
 var questionObjectFromGameBoardSend: PFObject?
 var currentLocationObject: PFObject?
 
+var reloadGameBoard = true
+
 class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
+    
     @IBOutlet var swipeToMaps: UISwipeGestureRecognizer!
     
     @IBOutlet var swipeToProfile: UISwipeGestureRecognizer!
@@ -29,12 +32,8 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     var rangeLabel = UILabel()
     
     
-    
     /////////////////////////    /////////////////////////    /////////////////////////    /////////////////////////
 
-
-
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +41,14 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         self.view.backgroundColor = backgroundColor
         
         setFonts(self.view)
+      
+        if reloadGameBoard == true {
         
         self.checkForUser()
-
+        
+            reloadGameBoard = false
+            
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -382,7 +386,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
           
         case 3:
             
-            queryForImage(image!, { (imageFile) -> Void in
+            queryForImage(image!, { (imageFile: UIImage?) -> Void in
                 
                 println("multiple choice")
                 
@@ -390,7 +394,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                 
                 multipleChoiceVC.questionImageFile = imageFile
                 
-                self.presentViewController(multipleChoiceVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(multipleChoiceVC, animated: true)
                 
             })
             
@@ -405,6 +409,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         case 5:
             
             var rangeVC: RangeQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("rangeViewController") as! RangeQuestionViewController
+            
             
             self.presentViewController(rangeVC, animated: true, completion: nil)
             
@@ -789,7 +794,6 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         
     }
-    
     
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {

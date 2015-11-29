@@ -48,7 +48,18 @@ func checkMultpleAnswerWithImageQuestion(viewController: UIViewController, answe
                     
                     bottomAnswerLabel.backgroundColor = highColor
                     bottomAnswerLabel.textColor = backgroundColor
-                    bottomAnswerLabel.hidden = false
+                    
+                    let screenSize = viewController.view.frame.height
+                        
+                    if screenSize > 650 {
+                        
+                        bottomAnswerLabel.hidden = true
+                        
+                    } else if screenSize < 650 {
+                        
+                        bottomAnswerLabel.hidden = false
+                    }
+                    
                     
                     unhiddenAnswerLabelTags.append(bottomAnswerLabel.tag)
                     
