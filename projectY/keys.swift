@@ -31,6 +31,20 @@ let questionAnswersFive = "qAnswers5"
 let questionAnswersSix = "qAnswers6"
 let questionAnswersSeven = "qAnswers7"
 
+//MatchClass Keys
+
+let player1IdKey = "player1ID"
+let player2IdKey = "player2ID"
+let player1UserName = "player1UserName"
+let player2UserName = "player2UserName"
+let whosTurnKey = "turn"
+let player1HelpsKey = "player1Helps"
+let player2HelpsKey = "player2Helps"
+let player1CategoryWinsKey = "player1CategoryWins"
+let player2CategoryWinsKey = "player2CategoryWins"
+
+
+
 //LocationClass Keys
 let LocationClass = "Locations"
 let locality = "Locality"
@@ -125,6 +139,14 @@ let sports = UIImage(named: "sports")
 let rangeTriangleCorrect = UIImage(named: "correctTriangle")
 let rangeTriangleUser = UIImage(named: "userTriangle")
 let rangeTriangleOpponent = UIImage(named: "opponentTriangle")
+
+let opponentHelperZoom = UIImage(named: "opponentHelperZoom")
+let opponentHelperTakeTwo = UIImage(named: "opponentHelperTakeTwo")
+let opponentHelperStopper = UIImage(named: "opponentHelperStopper")
+
+let userHelperZoom = UIImage(named: "userHelperZoom")
+let userHelperTakeTwo = UIImage(named: "userHelperTakeTwo")
+let userHelperStopper = UIImage(named: "userHelperStopper")
 
 //Map Markers
 
