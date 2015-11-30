@@ -126,7 +126,7 @@ let twitterSignInImage = "twitterSignin"
 let loginSpacerImage = "loginSpacerImage"
 let loginTextFieldBackground = "loginTextFieldBackground"
 
-let science = UIImage(named: "microscope")
+let science = UIImage(named: "science")
 let history = UIImage(named: "history")
 let geography = UIImage(named: "geography")
 let money = UIImage(named: "money")

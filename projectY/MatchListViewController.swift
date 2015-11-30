@@ -21,6 +21,8 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setFonts(self.view)
+        
         matchTableView.delegate = self
         matchTableView.dataSource = self
         matchTableView.editing = false
@@ -45,7 +47,7 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         matchTableView.frame.size.height = self.view.frame.height * 0.80
         matchTableView.frame.origin.y = self.view.frame.height * 0.15
         matchTableView.frame.origin.x = centerXAlignment(matchTableView, self.view)
-        matchTableView.backgroundColor = yellowColor
+        matchTableView.backgroundColor = backgroundColor
         
         matchTableView.setNeedsDisplay()
         
@@ -90,8 +92,16 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
         
         cell.matchDetails = userMatches[indexPath.row]
-        cell.backgroundColor = UIColor.blackColor()
-        cell.opponentName.text = "gary"
+
+        if indexPath.row == 0 {
+            
+            cell.layer.shadowOpacity = 2.0
+            cell.layer.shadowRadius = 2
+            cell.layer.shadowOffset = CGSizeMake(0, 3)
+            cell.layer.shadowColor = UIColor.blackColor().CGColor
+            
+        }
+        
         
         return cell
         
