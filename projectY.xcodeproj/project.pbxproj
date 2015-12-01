@@ -30,6 +30,9 @@
 		84566D001B7E402D0012E27E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */; };
 		84566D011B7E402D0012E27E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */; };
 		845ADC9D1C05091700B0004B /* MultipleAnswerNoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845ADC9C1C05091700B0004B /* MultipleAnswerNoImageViewController.swift */; };
+		8466F8EF1C0D2905005F29DD /* matchCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466F8EE1C0D2905005F29DD /* matchCellLayout.swift */; };
+		8466F8F11C0D3E13005F29DD /* matchListQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466F8F01C0D3E13005F29DD /* matchListQueries.swift */; };
+		8466F8F31C0D4601005F29DD /* matchListGetMatchButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466F8F21C0D4601005F29DD /* matchListGetMatchButtons.swift */; };
 		8472CBD51BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */; };
 		8483BDF91C08D7550079C2AD /* RangeQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483BDF81C08D7550079C2AD /* RangeQuestionCheck.swift */; };
 		8484D1D71B1A8D57003273BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484D1D61B1A8D57003273BD /* AppDelegate.swift */; };
@@ -181,6 +184,9 @@
 		84566CFC1B7E402D0012E27E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		84566CFD1B7E402D0012E27E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		845ADC9C1C05091700B0004B /* MultipleAnswerNoImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerNoImageViewController.swift; sourceTree = "<group>"; };
+		8466F8EE1C0D2905005F29DD /* matchCellLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matchCellLayout.swift; sourceTree = "<group>"; };
+		8466F8F01C0D3E13005F29DD /* matchListQueries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matchListQueries.swift; sourceTree = "<group>"; };
+		8466F8F21C0D4601005F29DD /* matchListGetMatchButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matchListGetMatchButtons.swift; sourceTree = "<group>"; };
 		8472CBD41BFFFF6800E2C233 /* MultipleAnswerNoImageCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerNoImageCheck.swift; sourceTree = "<group>"; };
 		8483BDF81C08D7550079C2AD /* RangeQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeQuestionCheck.swift; sourceTree = "<group>"; };
 		8484D1D11B1A8D57003273BD /* projectY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectY.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,6 +355,26 @@
 			name = MultipleChoiceQuestion;
 			sourceTree = "<group>";
 		};
+		8466F8EC1C0D28C4005F29DD /* MatchTableView */ = {
+			isa = PBXGroup;
+			children = (
+				8466F8ED1C0D28DC005F29DD /* MatchTableViewCell */,
+				84C2C7371C0BB3DC006C0E1D /* MatchListViewController.swift */,
+				8466F8F21C0D4601005F29DD /* matchListGetMatchButtons.swift */,
+				8466F8F01C0D3E13005F29DD /* matchListQueries.swift */,
+			);
+			name = MatchTableView;
+			sourceTree = "<group>";
+		};
+		8466F8ED1C0D28DC005F29DD /* MatchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84C2C7391C0BD581006C0E1D /* MatchTableViewCell.swift */,
+				8466F8EE1C0D2905005F29DD /* matchCellLayout.swift */,
+			);
+			name = MatchTableViewCell;
+			sourceTree = "<group>";
+		};
 		8472CBD31BFFFF4700E2C233 /* MultipleAnswerQuestion */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,10 +447,9 @@
 				84E6A37D1BE8653700056845 /* ProfileAndCharts */,
 				84E6A37B1BE864AA00056845 /* Utilities */,
 				84DC630A1BEBC8A300D56895 /* QuestionTypeHandlers */,
-				84FB87E31BE5744900048760 /* QuestionDetailUI.swift */,
-				84C2C7371C0BB3DC006C0E1D /* MatchListViewController.swift */,
-				84C2C7391C0BD581006C0E1D /* MatchTableViewCell.swift */,
+				8466F8EC1C0D28C4005F29DD /* MatchTableView */,
 				84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */,
+				84FB87E31BE5744900048760 /* QuestionDetailUI.swift */,
 				84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */,
 				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
 				8484D1DC1B1A8D57003273BD /* Main.storyboard */,
@@ -792,6 +817,7 @@
 				84ECC18B1B2D520500953FAE /* Misc.swift in Sources */,
 				8498A2271C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift in Sources */,
 				84C985A31C06679F003B20AD /* MultipleAnswerWithImageViewController.swift in Sources */,
+				8466F8EF1C0D2905005F29DD /* matchCellLayout.swift in Sources */,
 				84ECC17E1B2D520500953FAE /* BlurView.swift in Sources */,
 				84D5D0141BAF2A550035C8F0 /* utilities.swift in Sources */,
 				84C985A51C066A80003B20AD /* MultipleAnswerQuestionWithOrderViewController.swift in Sources */,
@@ -843,11 +869,13 @@
 				840DE5881BFA5D4800B812DF /* MultipleAnswerQuestionWithImage.swift in Sources */,
 				844EFB7C1C010CF400BFED06 /* answerLabelHandler.swift in Sources */,
 				84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */,
+				8466F8F31C0D4601005F29DD /* matchListGetMatchButtons.swift in Sources */,
 				84E6A3801BE8667800056845 /* OrderingQuestionHandlers.swift in Sources */,
 				84C2C73A1C0BD581006C0E1D /* MatchTableViewCell.swift in Sources */,
 				84ECC1801B2D520500953FAE /* DesignableImageView.swift in Sources */,
 				8483BDF91C08D7550079C2AD /* RangeQuestionCheck.swift in Sources */,
 				849E91801BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift in Sources */,
+				8466F8F11C0D3E13005F29DD /* matchListQueries.swift in Sources */,
 				84B200FF1BAB10E8003F0C59 /* sizeAdapt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

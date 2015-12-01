@@ -33,6 +33,7 @@ let questionAnswersSeven = "qAnswers7"
 
 //MatchClass Keys
 
+let MatchClassKey = "LiveMatches"
 let player1IdKey = "player1ID"
 let player2IdKey = "player2ID"
 let player1UserName = "player1UserName"
@@ -102,6 +103,9 @@ let yellowColor = UIColor(hex: "F8E71C")
 let facebookColor = UIColor(hex: "3B5998")
 let redColor = UIColor(hex: "E34538")
 
+let userColor = UIColor(hex: "45F5FF")
+let opponentColor = UIColor(hex: "FF9A44")
+
 //Image Assets
 
 let answeredCorrectHighest = "correctAnswerHighest"
@@ -135,6 +139,16 @@ let music = UIImage(named: "music")
 let people = UIImage(named: "people")
 let products = UIImage(named: "products")
 let sports = UIImage(named: "sports")
+
+let leaderScience = UIImage(named: "leaderscience")
+let leaderHistory = UIImage(named: "leaderhistory")
+let leaderGeography = UIImage(named: "leadergeopgraphy")
+let leaderMoney = UIImage(named: "leadermoney")
+let leaderMovies = UIImage(named: "leadermovies")
+let leaderMusic = UIImage(named: "leadermusic")
+let leaderPeople = UIImage(named: "leaderpeople")
+let leaderProducts = UIImage(named: "leaderproducts")
+let leaderSports = UIImage(named: "leadersports")
 
 let rangeTriangleCorrect = UIImage(named: "correctTriangle")
 let rangeTriangleUser = UIImage(named: "userTriangle")

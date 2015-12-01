@@ -30,6 +30,14 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         matchTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.view.backgroundColor = backgroundColor
         
+        queryForLiveMatches({ (matches) -> () in
+            
+            self.userMatches = matches
+            self.matchTableView.reloadData()
+            self.matchTableView.setNeedsLayout()
+            
+        })
+        
     }
     
     
@@ -51,19 +59,15 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
         matchTableView.setNeedsDisplay()
         
-        queryForLiveMatches { () -> () in
-            
-            self.matchTableView.reloadData()
-            self.matchTableView.setNeedsLayout()
-        }
         
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
     }
+
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -80,27 +84,23 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         
-        return self.view.frame.height * 0.17
+        return self.view.frame.height * 0.20
         
     }
     
-    
+    var count = 1
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: MatchTableViewCell = self.matchTableView.dequeueReusableCellWithIdentifier("matchCell", forIndexPath: indexPath) as! MatchTableViewCell
         
-        
         cell.matchDetails = userMatches[indexPath.row]
 
-        if indexPath.row == 0 {
             
-            cell.layer.shadowOpacity = 2.0
-            cell.layer.shadowRadius = 2
-            cell.layer.shadowOffset = CGSizeMake(0, 3)
-            cell.layer.shadowColor = UIColor.blackColor().CGColor
-            
-        }
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.shadowRadius = 0.75
+        cell.layer.shadowOffset = CGSizeMake(0, 1)
+        cell.layer.shadowColor = UIColor.blackColor().CGColor
         
         
         return cell
@@ -108,27 +108,14 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     
-    func queryForLiveMatches(completion: () -> ()) {
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
-        let query = PFQuery(className: "LiveMatches")
-        query.findObjectsInBackgroundWithBlock { (matches, error) -> Void in
-            
-            if error == nil {
-                
-                if let matches = matches as? [PFObject] {
-                    
-                    self.userMatches = matches
-                    
-                    completion()
-                    
-                }
-                
-            }
-            
-        }
-
+        return UIStatusBarStyle.LightContent
     }
     
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
 }

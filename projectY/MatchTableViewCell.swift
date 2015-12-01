@@ -23,7 +23,7 @@ class MatchTableViewCell: UITableViewCell {
     var opponentName = UILabel()
     var opponentZoom = UIImageView()
     var opponentTakeTwo = UIImageView()
-    var opoonentStopper = UIImageView()
+    var opponentStopper = UIImageView()
     var opponentCategory1 = UIImageView()
     var opponentCategory2 = UIImageView()
     var opponentCategory3 = UIImageView()
@@ -42,14 +42,14 @@ class MatchTableViewCell: UITableViewCell {
             playerNumberOneOrTwo(m)
             opponentName.text = matchDetails!.valueForKey("player\(opponentNumber)UserName") as? String
             setCategoryIcons()
-
-            setNeedsLayout()
                 
             }
         }
         
     }
 
+    
+    
     
     
     override func awakeFromNib() {
@@ -60,14 +60,10 @@ class MatchTableViewCell: UITableViewCell {
         contentView.backgroundColor = bgColor
         backgroundColor = bgColor
         
-//        backgroundView = UIView(frame: CGRectZero)
-//        contentView.
-        
-        opponentName = UILabel(frame: CGRectZero)
         opponentName.textAlignment = .Left
-        opponentName.textColor = yellowColor
-        contentView.addSubview(opponentName)
+        opponentName.textColor = opponentColor
         opponentName.font = fontSmallerRegular
+        contentView.addSubview(opponentName)
         
         opponentZoom = UIImageView(frame: CGRectZero)
         opponentZoom.image = opponentHelperZoom
@@ -77,20 +73,24 @@ class MatchTableViewCell: UITableViewCell {
         opponentTakeTwo.image = opponentHelperTakeTwo
         contentView.addSubview(opponentTakeTwo)
 
-        opoonentStopper = UIImageView(frame: CGRectZero)
-        opoonentStopper.image = opponentHelperStopper
-        contentView.addSubview(opoonentStopper)
+        opponentStopper = UIImageView(frame: CGRectZero)
+        opponentStopper.image = opponentHelperStopper
+        contentView.addSubview(opponentStopper)
 
         opponentCategory1 = UIImageView(frame: CGRectZero)
+        opponentCategory1.hidden = true
         contentView.addSubview(opponentCategory1)
 
         opponentCategory2 = UIImageView(frame: CGRectZero)
+        opponentCategory2.hidden = true
         contentView.addSubview(opponentCategory2)
 
         opponentCategory3 = UIImageView(frame: CGRectZero)
+        opponentCategory3.hidden = true
         contentView.addSubview(opponentCategory3)
 
         opponentCategory4 = UIImageView(frame: CGRectZero)
+        opponentCategory4.hidden = true
         contentView.addSubview(opponentCategory4)
 
         userZoom = UIImageView(frame: CGRectZero)
@@ -105,19 +105,18 @@ class MatchTableViewCell: UITableViewCell {
         userStopper.image = userHelperStopper
         contentView.addSubview(userStopper)
 
-        userCategory1 = UIImageView(frame: CGRectZero)
-        userCategory1.backgroundColor = yellowColor
+        userCategory1.hidden = true
         contentView.addSubview(userCategory1)
 
-        userCategory2 = UIImageView(frame: CGRectZero)
-        userCategory2.backgroundColor = yellowColor
+        userCategory2.hidden = true
         contentView.addSubview(userCategory2)
         
-        userCategory3 = UIImageView(frame: CGRectZero)
+        userCategory3.hidden = true
         contentView.addSubview(userCategory3)
         
-        userCategory4 = UIImageView(frame: CGRectZero)
+        userCategory4.hidden = true
         contentView.addSubview(userCategory4)
+        
         
     }
     
@@ -125,30 +124,21 @@ class MatchTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        opponentName.frame.size.height = frame.size.height / 3
-        opponentName.frame.size.width = frame.size.width / 3
-        opponentName.frame.origin.x = frame.minX + 10.0
-        opponentName.frame.origin.y = frame.minY + 5.0
+        let userCategoryArray = [userCategory1, userCategory2, userCategory3, userCategory4]
+        let opponentCategoryArray = [opponentCategory1, opponentCategory2, opponentCategory3, opponentCategory4]
+        let userHelperIconArray = [userZoom, userTakeTwo, userStopper]
+        let opponentHelperIconArray = [opponentZoom, opponentTakeTwo, opponentStopper]
         
-        userCategory1.frame.size.height = 20.0
-        userCategory1.frame.size.width = 20.0
-        userCategory1.frame.origin.x = frame.minX + 10.0
-        userCategory1.frame.origin.y = frame.maxY - userCategory1.frame.height - (userCategory1.frame.height * 0.1)
+        layoutCategoryIcons(self, opponentCategoryArray, userCategoryArray)
+        layoutHelperInventoryIcons(self, opponentHelperIconArray, userHelperIconArray, opponentName)
+        layoutMiniGameboard(self)
+        turnIdentifier(self, matchDetails!)
         
-        userCategory2.frame.size.height = 20.0
-        userCategory2.frame.size.width = 20.0
-        userCategory2.frame.origin.x = userCategory1.frame.maxX + 5.0
-        userCategory2.frame.origin.y = frame.maxY - userCategory2.frame.height - (userCategory2.frame.height * 0.1)
-
-
-
-
     }
     
     
+    
     func setCategoryIcons(){
-        
-        println(matchDetails)
         
         let userCategoryWins = matchDetails?.valueForKey("player\(userNumber)CategoryWins") as! [String]
         
@@ -159,7 +149,9 @@ class MatchTableViewCell: UITableViewCell {
         for index in 0..<userCategoryWins.count {
             
             let imageView = userCategoryArray[index]
-            imageView.image = UIImage(named: "\(userCategoryWins[index])")
+            imageView.hidden = false
+            imageView.image = UIImage(named: "leader\(userCategoryWins[index])")
+            imageView.contentMode = .ScaleAspectFit
             
         }
         
@@ -168,8 +160,10 @@ class MatchTableViewCell: UITableViewCell {
         for index in 0..<opponentCategoryWins.count {
             
             let imageView = opponentCategoryArray[index]
-            imageView.image = UIImage(named: "\(opponentCategoryWins[index])")
-            
+            imageView.hidden = false
+            imageView.image = UIImage(named: "leader\(opponentCategoryWins[index])")
+            imageView.contentMode = .ScaleAspectFit
+
         }
         
     }
@@ -196,7 +190,7 @@ class MatchTableViewCell: UITableViewCell {
 
             
         }
-        
+     
     }
     
 }
