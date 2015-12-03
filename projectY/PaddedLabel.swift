@@ -17,7 +17,7 @@ class PaddedLabel15: UILabel {
     
     
     override func drawTextInRect(rect: CGRect) {
-        var insets: UIEdgeInsets = UIEdgeInsets(top: self.topInset, left: self.leftInset, bottom: self.bottomInset, right: self.rightInset)
+        let insets: UIEdgeInsets = UIEdgeInsets(top: self.topInset, left: self.leftInset, bottom: self.bottomInset, right: self.rightInset)
         self.setNeedsLayout()
         return super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
     }
@@ -35,7 +35,7 @@ class PaddedLabel25: UILabel {
     
     
     override func drawTextInRect(rect: CGRect) {
-        var insets: UIEdgeInsets = UIEdgeInsets(top: self.topInset, left: self.leftInset, bottom: self.bottomInset, right: self.rightInset)
+        let insets: UIEdgeInsets = UIEdgeInsets(top: self.topInset, left: self.leftInset, bottom: self.bottomInset, right: self.rightInset)
         self.setNeedsLayout()
         return super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
     }

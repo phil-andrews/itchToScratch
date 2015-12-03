@@ -14,12 +14,11 @@ import UIKit
 func checkOrderingQuestion(viewController: UIViewController, completion: () -> Void) {
     
     let correctAnswers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
-    let containerView = viewController.view.viewWithTag(999)
     var labelTag = 401
     var numberCorrect = 0
     var incorrectLabelTags = [Int]()
     
-    println(correctAnswers)
+    print(correctAnswers)
     
     var delayAmount = 0.00
     
@@ -30,7 +29,7 @@ func checkOrderingQuestion(viewController: UIViewController, completion: () -> V
         
         if answerLabel.text == answer {
             
-            animateAnswerLabelCorrect(answerLabel, delayAmount)
+            animateAnswerLabelCorrect(answerLabel, delayTime: delayAmount)
             
             delayAmount = delayAmount + 0.20
             ++labelTag
@@ -41,7 +40,7 @@ func checkOrderingQuestion(viewController: UIViewController, completion: () -> V
         } else if answerLabel.text != answer {
             
             incorrectLabelTags.append(answerLabel.tag)
-            animateAnswerLabelIncorrect(answerLabel, delayAmount)
+            animateAnswerLabelIncorrect(answerLabel, delayTime: delayAmount)
             delayAmount = delayAmount + 0.20
             ++labelTag
             
@@ -50,9 +49,9 @@ func checkOrderingQuestion(viewController: UIViewController, completion: () -> V
     }
     
     
-    delay(2.0, { () -> () in
+    delay(2.0, closure: { () -> () in
         
-        animateAnswerLabelsToCorrectPositions(viewController, incorrectLabelTags, correctAnswers)
+        animateAnswerLabelsToCorrectPositions(viewController, labelTags: incorrectLabelTags, answerArray: correctAnswers)
     
         completion()
         
@@ -64,7 +63,7 @@ func checkOrderingQuestion(viewController: UIViewController, completion: () -> V
 
 func animateAnswerLabelCorrect(label: UILabel, delayTime: Double) {
     
-    delay(delayTime, { () -> () in
+    delay(delayTime, closure: { () -> () in
         
         UIView.transitionWithView(label, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
             
@@ -96,7 +95,7 @@ func animateAnswerLabelCorrect(label: UILabel, delayTime: Double) {
 
 func animateAnswerLabelIncorrect(label: UILabel, delayTime: Double) {
  
-    delay(delayTime, { () -> () in
+    delay(delayTime, closure: { () -> () in
         
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.11
@@ -148,14 +147,13 @@ func animateAnswerLabelsToCorrectPositions(viewController: UIViewController, lab
         }
         
         let answerLabel = viewController.view.viewWithTag(tag) as! UILabel
-        let labelCoords = answerLabel.frame.origin
         
         answerLabel.alpha = 0.0
     
         answerLabel.frame.origin.x -= viewController.view.frame.width
         answerLabel.text = text
         answerLabel.textColor = lowColor
-        answerLabel.font = fontAdjuster(answerLabel.text!, fontSmallestRegular, fontSmallerRegular, fontMediumRegular)
+        answerLabel.font = fontAdjuster(answerLabel.text!, fontS: fontSmallestRegular, fontM: fontSmallerRegular, fontL: fontMediumRegular)
         answerLabel.frame.size.width = viewController.view.frame.width * 0.70
         answerLabel.numberOfLines = 3
         answerLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -167,7 +165,7 @@ func animateAnswerLabelsToCorrectPositions(viewController: UIViewController, lab
         
         delayAmount = delayAmount + 0.10
         
-        UIView.animateWithDuration(0.2, delay: delayAmount, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(0.2, delay: delayAmount, options: [], animations: { () -> Void in
             
             answerLabel.frame.origin.x += viewController.view.frame.width
 

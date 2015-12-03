@@ -94,15 +94,10 @@ func animateComponentsToCenterX(masterView: UIViewController, userAnswer: Int, v
 
 func animateOpponentArrowAndLabel(masterView: UIViewController, userAnswer: Int, verticalScaleLine: UIView, rangeHorizontalBar: UIView, rangeLabel: UILabel, correctArrow: UIImageView, userArrow: UIImageView, opponentArrow: UIImageView, completion: () -> ()) {
     
-    let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [Int]
     let opponentAnswerArray = currentLocationObject?.valueForKey(opponentsQuestionsAnswered) as! NSArray
     
-    let opponentAnswer = opponentAnswerArray[0] as! Int
-    let distanceBetweenOpponentAndActual = abs(answers[0] - opponentAnswer)
-    let distanceBetweenUserAndActual = abs(answers[0] - userAnswer)
-    
     let answer = opponentAnswerArray[0] as! Int
-    drawArrowLabel(masterView.view, verticalScaleLine, opponentArrow, answer)
+    drawArrowLabel(masterView.view, rangeVerticalScaleLine: verticalScaleLine, arrow: opponentArrow, answer: answer)
     
     let yCoordToAnimateTo = opponentArrow.center.y
     opponentArrow.image = rangeTriangleOpponent

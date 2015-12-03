@@ -18,25 +18,24 @@ import FBSDKLoginKit
 
 func initializeUser(completion: (success: Bool?, error: NSError?) -> Void) {
     
-    println("initialize user ran")
+    print("initialize user ran")
     
     let user = PFUser.currentUser()
     let userName: String? = user?.username as String?
     let twitToken = PFTwitterUtils.twitter()?.authToken
-    let nameToDisplay = user?.valueForKey(displayName) as! String?
     
     if PFUser.currentUser() != nil && PFTwitterUtils.twitter()?.authToken != nil {
-        println(twitToken)
-        println("user logged in with Twitter")
+        print(twitToken)
+        print("user logged in with Twitter")
         returnTwitterUserData()
         
     } else if PFUser.currentUser() != nil && (FBSDKAccessToken.currentAccessToken() != nil) {
-        println("user logged in with Facebook")
+        print("user logged in with Facebook")
         returnFacebookUserData()
         
     } else if PFUser.currentUser() != nil && (FBSDKAccessToken.currentAccessToken() == nil && PFTwitterUtils.twitter()?.authToken == nil) {
         user?.setObject(userName!, forKey: "displayName")
-        println("user logged in without social media")
+        print("user logged in without social media")
         
     }
     
@@ -56,15 +55,15 @@ func initializeUser(completion: (success: Bool?, error: NSError?) -> Void) {
     user?.setObject([], forKey: moviesCategory)
     
     let defaultProPic = UIImage(named: defaultProfilePic)
-    let image = UIImagePNGRepresentation(defaultProPic)
-    let imageFile = PFFile(name: "profilePic.png", data: image)
+    let image = UIImagePNGRepresentation(defaultProPic!)
+    let imageFile = PFFile(name: "profilePic.png", data: image!)
     user?.setValue(imageFile, forKey: profilePic)
     
     user?.saveInBackgroundWithBlock({ (bool, error) -> Void in
         
         if error != nil && bool == false {
             
-            println(error!.localizedDescription)
+            print(error!.localizedDescription)
             
             completion(success: false, error: error)
             
@@ -92,12 +91,11 @@ func returnFacebookUserData()
         if ((error) != nil)
         {
             // Process error
-            println("Error in graph request: \(error!.localizedDescription)")
+            print("Error in graph request: \(error!.localizedDescription)")
         }
         else
         {
             let userName : String? = result.valueForKey("name") as? String
-            let userEmail : String? = result.valueForKey("email") as? String
             let gender: String? = result.valueForKey("gender") as? String
             
             user?.setObject(userName!, forKey: "displayName")
@@ -124,6 +122,6 @@ func returnTwitterUserData() {
     user?.saveInBackground()
     
     
-    println(userName)
+    print(userName)
 }
     

@@ -17,10 +17,9 @@ func multipleAnswerQuestionWithOrder(viewController: UIViewController, textField
     let question: PFObject = questionObjectFromGameBoardSend!
     let imageFile = question.valueForKey(questionImageKey) as! PFFile
     let questionString = question.valueForKey(questionAskKey) as! String
-    let questionAnswers = question.valueForKey(questionAnswersKey) as! NSArray
     
     let imageView = UIImageView()
-    drawPercentageRectOffView(imageView, masterView, 35.05, 100)
+    drawPercentageRectOffView(imageView, masterView: masterView, heightPercentage: 35.05, widthPercentage: 100)
     masterView.addSubview(imageView)
     imageView.tag = 902
     
@@ -29,7 +28,7 @@ func multipleAnswerQuestionWithOrder(viewController: UIViewController, textField
     
     let textField = UITextField()
     textField.alpha = 0.0
-    drawPercentageRectOffView(textField, masterView, 6.5, 90)
+    drawPercentageRectOffView(textField, masterView: masterView, heightPercentage: 6.5, widthPercentage: 90)
     textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
@@ -45,8 +44,8 @@ func multipleAnswerQuestionWithOrder(viewController: UIViewController, textField
     
     viewController.view.addSubview(textField)
     
-    textField.frame.origin.x = centerXAlignment(textField, masterView)
-    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
+    textField.frame.origin.x = centerXAlignment(textField, masterView: masterView)
+    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField: textField)
     
     let dropDownAnswerLabel = UILabel()
     dropDownAnswerLabel.hidden = true
@@ -59,7 +58,7 @@ func multipleAnswerQuestionWithOrder(viewController: UIViewController, textField
     
     if masterView.frame.height <= 480 {
         dropDownAnswerLabel.frame.size.width = masterView.frame.width * 0.80
-        dropDownAnswerLabel.frame.origin.x = centerXAlignment(dropDownAnswerLabel, masterView)
+        dropDownAnswerLabel.frame.origin.x = centerXAlignment(dropDownAnswerLabel, masterView: masterView)
     }
     
     masterView.addSubview(dropDownAnswerLabel)
@@ -81,7 +80,7 @@ func multipleAnswerQuestionWithOrder(viewController: UIViewController, textField
     
     let questionLabel = PaddedLabel15()
     questionLabel.tag = 901
-    drawPercentageRectOffView(questionLabel, masterView, 25, 100)
+    drawPercentageRectOffView(questionLabel, masterView: masterView, heightPercentage: 25, widthPercentage: 100)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmallest
@@ -98,14 +97,14 @@ func multipleAnswerQuestionWithOrder(viewController: UIViewController, textField
     
     masterView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView)
     questionLabel.frame.origin.y = masterView.frame.height * 0.3453
     
-    drawCallKeyboardButton(viewController, masterView, 9003)
+    drawCallKeyboardButton(viewController, masterView: masterView, buttonTag: 9003)
     
-    drawSelectorButtons(viewController, imageView, textField)
+    drawSelectorButtons(viewController, imageView: imageView, answerInputField: textField)
     
-    queryForImage(imageFile, { (image) -> Void in
+    queryForImage(imageFile, completion: { (image) -> Void in
         
         imageView.image = image
         imageView.contentMode = .ScaleAspectFit
@@ -120,12 +119,12 @@ func multipleAnswerQuestionWithOrder(viewController: UIViewController, textField
 
 func drawSelectorButtons(viewController: UIViewController, imageView: UIImageView, answerInputField: UITextField) {
     
-    let firstColor = UIColor(hex: "8036FF")
-    let secondColor = UIColor(hex: "00B2EA")
-    let thirdColor = UIColor(hex: "E9D300")
-    let fourthColor = UIColor(hex: "FF6000")
-    let fifthColor = UIColor(hex: "F953FF")
-    let sixthColor = UIColor(hex: "B22029")
+    let firstColor = UIColor(red: 1.0, green: 190.0, blue: 19.0, alpha: 1.0)
+    let secondColor = UIColor(red: 1.0, green: 190.0, blue: 19.0, alpha: 1.0)
+    let thirdColor = UIColor(red: 1.0, green: 190.0, blue: 19.0, alpha: 1.0)
+    let fourthColor = UIColor(red: 1.0, green: 190.0, blue: 19.0, alpha: 1.0)
+    let fifthColor = UIColor(red: 1.0, green: 190.0, blue: 19.0, alpha: 1.0)
+    let sixthColor = UIColor(red: 1.0, green: 190.0, blue: 19.0, alpha: 1.0)
     
     let colorArray = [firstColor, secondColor, thirdColor, fourthColor, fifthColor, sixthColor]
     
@@ -135,7 +134,7 @@ func drawSelectorButtons(viewController: UIViewController, imageView: UIImageVie
     
     let yCoord = imageView.frame.maxY + ((answerInputField.frame.origin.y - imageView.frame.maxY) / 2)
     
-    for item in questionAnswers {
+    for _ in questionAnswers {
         
         ++count
         
@@ -169,8 +168,6 @@ func removeTextFieldFromFirstResponderToShowQuestionMultipleAnswerWithOrder(view
     
     let showKeyboardButton = viewController.view.viewWithTag(9003) as! UIButton
     let questionAsk = viewController.view.viewWithTag(901) as! UILabel
-    let imageView = viewController.view.viewWithTag(902) as! UIImageView
-    let masterViewHeight = viewController.view.frame.height
     
     if let answerInputField = viewController.view.viewWithTag(9001) as? UITextField {
         
@@ -213,8 +210,6 @@ func removeTextFieldFromFirstResponderToShowQuestionMultipleAnswerWithOrder(view
 func makeTextFieldFirstResponderForImageQuestionWithOrder(sender: AnyObject?, viewController: UIViewController) {
     
     let questionAsk = viewController.view.viewWithTag(901) as! UILabel
-    let imageView = viewController.view.viewWithTag(902) as! UIImageView
-    let masterHeight = viewController.view.frame.height
     
     if let answerInputField = viewController.view.viewWithTag(9001) as? UITextField {
         

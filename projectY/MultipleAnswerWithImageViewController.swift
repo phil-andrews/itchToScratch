@@ -25,7 +25,7 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
         self.view.backgroundColor = backgroundColor
 
         
-            multipleAnswerQuestionWithImage(self, self, self.view, textFieldTag: 8001, textFieldQuestionButtonTag: 8002, questionLabelTag: 801, dropDownAnswerLabelTag: 802, imageViewTag: 803, startingLightTag: 8111, callKeybardButtonTag: 8003) { (answerInputField) -> Void in
+            multipleAnswerQuestionWithImage(self, textFieldDelegate: self, masterView: self.view, textFieldTag: 8001, textFieldQuestionButtonTag: 8002, questionLabelTag: 801, dropDownAnswerLabelTag: 802, imageViewTag: 803, startingLightTag: 8111, callKeybardButtonTag: 8003) { (answerInputField) -> Void in
     
 
     
@@ -41,7 +41,7 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-            checkMultpleAnswerWithImageQuestion(self, textField, 802, 8111, &submittedCount, &unhiddenAnswerLabelTags) { () -> Void in
+            checkMultpleAnswerWithImageQuestion(self, answerInputField: textField, dropDownLabelTag: 802, indicatorLightStartingTag: 8111, submittedCount: &submittedCount, unhiddenAnswerLabelTags: &unhiddenAnswerLabelTags) { () -> Void in
                 
                 
                 
@@ -53,9 +53,9 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
     
     func makeTextFieldFirstResponder(sender: AnyObject?) {
         
-        println("called keyboard")
+        print("called keyboard")
         
-        makeTextFieldFirstResponderForImageQuestion(sender, self)
+        makeTextFieldFirstResponderForImageQuestion(sender, viewController: self)
         
         let screenSize = self.view.frame.height
         
@@ -65,7 +65,7 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
                 
                 let label = self.view.viewWithTag(tag) as! UILabel
                 
-                UIView.animateWithDuration(0.15, delay: 0.0, options: nil, animations: { () -> Void in
+                UIView.animateWithDuration(0.15, delay: 0.0, options: [], animations: { () -> Void in
                     
                     label.alpha = 0.0
                     
@@ -84,9 +84,9 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
     
     func dismissKeyboardShowQuestion(sender: AnyObject?) {
         
-        println("dismissed keyboard")
+        print("dismissed keyboard")
         
-        removeTextFieldFromFirstResponderToShowQuestion(self, sender, nil)
+        removeTextFieldFromFirstResponderToShowQuestion(self, sender: sender, codeTag: nil)
 
         
         let dropDownLabel = self.view.viewWithTag(802) as! UILabel
@@ -94,9 +94,9 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
         
         dropDownLabel.layer.removeAllAnimations()
         
-        UIView.animateKeyframesWithDuration(0.10, delay: 0.0, options: nil, animations: { () -> Void in
+        UIView.animateKeyframesWithDuration(0.10, delay: 0.0, options: [], animations: { () -> Void in
             
-            println("ran")
+            print("ran")
             
             dropDownLabel.frame.origin.y = imageView.frame.maxY - (dropDownLabel.frame.height * 1.25)
             
@@ -114,7 +114,7 @@ class MultipleAnswerWithImageViewController: UIViewController, UITextFieldDelega
                 let label = self.view.viewWithTag(tag) as! UILabel
                 label.alpha = 0.0
                 
-                UIView.animateWithDuration(0.15, delay: 0.15, options: nil, animations: { () -> Void in
+                UIView.animateWithDuration(0.15, delay: 0.15, options: [], animations: { () -> Void in
                     
                     label.hidden = false
                     label.alpha = 1.0

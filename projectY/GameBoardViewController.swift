@@ -100,16 +100,14 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         if PFUser.currentUser() == nil {
             
-            var loginStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            var loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+            let loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
             
             self.presentViewController(loginViewController, animated: true, completion: nil)
             
             
         } else if PFUser.currentUser() != nil {
             
-            println("user doesn't equal nil")
+            print("user doesn't equal nil")
             
             PFUser.currentUser()?.fetchInBackgroundWithBlock({ (user, error) -> Void in
                 
@@ -127,7 +125,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                 
             })
             
-            println("user logged in already")
+            print("user logged in already")
         }
         
     }
@@ -146,7 +144,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     func startLocation() {
         
-        println("location ran")
+        print("location ran")
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -154,11 +152,11 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             self.locationManager.requestWhenInUseAuthorization()
-            println("auth not determined")
+            print("auth not determined")
             
         } else if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             self.locationManager.startUpdatingLocation()
-            println("auth determined")
+            print("auth determined")
             
         }
         
@@ -166,7 +164,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
         if status == .AuthorizedWhenInUse {
             self.locationManager.startUpdatingLocation()
@@ -175,9 +173,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     }
     
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        var newestLocation = locations.last as! CLLocation
+        let newestLocation = locations.last as CLLocation!
         usersCurrentLocationData = newestLocation
         locationManager.stopUpdatingLocation()
         CLGeocoder().reverseGeocodeLocation(newestLocation, completionHandler: {(placemarks, error: NSError?) -> Void in
@@ -185,24 +183,23 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             if error != nil {
                 
                 NSLog(error!.localizedDescription)
-                println("error in getting placemarks")
+                print("error in getting placemarks")
                 
                 
             } else if error == nil {
                 
-                let locationPlacemarks = placemarks.last as! CLPlacemark
-                var subLocality = String()
+                let locationPlacemarks = placemarks!.last as CLPlacemark!
                 var locationString = String()
                 
-                if let subLocality = locationPlacemarks.subLocality {
+                if locationPlacemarks.subLocality != nil {
                     
                     locationString = ("\(locationPlacemarks.subLocality), \(locationPlacemarks.administrativeArea)")
-                    println("the location has a sublocality: \(locationString)")
+                    print("the location has a sublocality: \(locationString)")
                     
-                } else {
+                } else if locationPlacemarks.subLocality == nil {
                     
                     locationString = ("\(locationPlacemarks.locality), \(locationPlacemarks.administrativeArea)")
-                    println("the location does not have a sublocality: \(locationString)")
+                    print("the location does not have a sublocality: \(locationString)")
 
                     
                 }
@@ -221,13 +218,13 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                     
                     self.currentLocation = locationString
                     
-                    queryForSingleObjectInBackgroundWithBlock(LocationClass, locality, locationString, { (locationObject: PFObject?, parseError: NSError?) -> Void in
+                    queryForSingleObjectInBackgroundWithBlock(LocationClass, typeOfKey: locality, equalToValue: locationString, completion: { (locationObject: PFObject?, parseError: NSError?) -> Void in
                         
                         if parseError?.code == 101 {
                             
-                            queryForSingleObjectInBackgroundWithBlock(LocationClass, objectId, defaultLocationObject, { (defaultLocationObject: PFObject?, parseError: NSError?) -> Void in
+                            queryForSingleObjectInBackgroundWithBlock(LocationClass, typeOfKey: objectId, equalToValue: defaultLocationObject, completion: { (defaultLocationObject: PFObject?, parseError: NSError?) -> Void in
                                 
-                                saveNewLocationObject(defaultLocationObject!, locationString, { (success, newObject) -> Void in
+                                saveNewLocationObject(defaultLocationObject!, currentLocalityString: locationString, completion: { (success, newObject) -> Void in
                                     
                                     if success {
                                         
@@ -235,24 +232,24 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                                         
                                         addAndSubtractUserFromLocationCount(currentLocationObject!)
                                         
-                                        drawCityLabel(self.view, currentLocationObject!)
+                                        drawCityLabel(self.view, locationObject: currentLocationObject!)
                                         
                                         let questionIDs = separateObjectIDs(currentLocationObject!)
                                         
-                                        queryForMultipleObjectsInBackgroundWithBlock(QuestionClass, objectId, questionIDs) { (questionObjects, error) -> Void in
+                                        queryForMultipleObjectsInBackgroundWithBlock(QuestionClass, keyType: objectId, objectIdentifers: questionIDs) { (questionObjects, error) -> Void in
                                             
                                             if error != nil {
                                                 
                                                 NSLog(error!.localizedDescription)
-                                                println("error in query for question objects")
+                                                print("error in query for question objects")
                                                 
                                             } else if error == nil {
                                                 
                                                 self.questionObjectsForLocation = questionObjects
                                                 
-                                                drawButtons(self.view, self, "presentQuestion", { () -> Void in
+                                                drawButtons(self.view, vc: self, action: "presentQuestion", completion: { () -> Void in
                                                     
-                                                    populateGameBoard(self.view, questionObjects, questionIDs, currentLocationObject!)
+                                                    populateGameBoard(self.view, parseObjects: questionObjects, sortedObjectIDs: questionIDs, locationObject: currentLocationObject!)
                                                     
                                                 })
                                                 
@@ -262,14 +259,14 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                                         
                                     } else if success == false {
                                         
-                                        println("did not pass through new location object")
+                                        print("did not pass through new location object")
                                     }
                                     
                                 })
                                 
                                 //populate board -> stop spinner
 
-                                println("currentLocationObject is defaultLocationObject")
+                                print("currentLocationObject is defaultLocationObject")
                                 
                             })
                             
@@ -279,24 +276,24 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                             
                             addAndSubtractUserFromLocationCount(currentLocationObject!)
                             
-                            drawCityLabel(self.view, currentLocationObject!)
+                            drawCityLabel(self.view, locationObject: currentLocationObject!)
                             
                             let questionIDs = separateObjectIDs(currentLocationObject!)
                             
-                            queryForMultipleObjectsInBackgroundWithBlock(QuestionClass, objectId, questionIDs) { (questionObjects, error) -> Void in
+                            queryForMultipleObjectsInBackgroundWithBlock(QuestionClass, keyType: objectId, objectIdentifers: questionIDs) { (questionObjects, error) -> Void in
                                 
                                 if error != nil {
                                     
                                     NSLog(error!.localizedDescription)
-                                    println("error in query for question objects")
+                                    print("error in query for question objects")
                                     
                                 } else if error == nil {
                                     
                                     self.questionObjectsForLocation = questionObjects
                                     
-                                    drawButtons(self.view, self, "presentQuestion:", { () -> Void in
+                                    drawButtons(self.view, vc: self, action: "presentQuestion:", completion: { () -> Void in
                                         
-                                        populateGameBoard(self.view, questionObjects, questionIDs, currentLocationObject!)
+                                        populateGameBoard(self.view, parseObjects: questionObjects, sortedObjectIDs: questionIDs, locationObject: currentLocationObject!)
                                         
                                     })
                                     
@@ -304,7 +301,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                                 
                             }
                             
-                            println("currentLocationObject is not the defaultLocationObject")
+                            print("currentLocationObject is not the defaultLocationObject")
 
                         }
                         
@@ -314,7 +311,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
                     
                 } else if locationString == self.currentLocation {
                     
-                    println("location is the same")
+                    print("location is the same")
                     
                 }
 
@@ -325,10 +322,10 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     }
 
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         
-        NSLog(error!.localizedDescription)
-        println("Error" + error.localizedDescription)
+        NSLog(error.localizedDescription)
+        print("Error" + error.localizedDescription)
         
     }
     
@@ -355,12 +352,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         }
                 
         let type = questionToPresent?.valueForKey(questionType) as! Int
-        let questionString = questionToPresent?.valueForKey(questionAskKey) as! String
-        let category = questionToPresent?.valueForKey(questionCategoryKey) as! String
         let image: PFFile? = questionToPresent?.valueForKey(questionImageKey) as! PFFile?
-        let answersNeeded = questionToPresent?.valueForKey(numberOfAnswersKey) as! Int
-        var answerArray = questionToPresent?.valueForKey(questionAnswersKey) as! NSMutableArray
-
         
         questionObjectFromGameBoardSend = questionToPresent
         
@@ -369,28 +361,28 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 1:
             
-            println("single answer")
+            print("single answer")
             
-            var singleAnswerNoImageViewController: SingleAnswerViewController = storyboard?.instantiateViewControllerWithIdentifier("singleAnswerVC") as! SingleAnswerViewController
+            let singleAnswerNoImageViewController: SingleAnswerViewController = storyboard?.instantiateViewControllerWithIdentifier("singleAnswerVC") as! SingleAnswerViewController
             
             self.presentViewController(singleAnswerNoImageViewController, animated: true, completion: nil)
             
             
         case 2:
             
-            println("multiple choice")
+            print("multiple choice")
             
-            var multipleChoiceVC: MultipleChoiceViewController = storyboard?.instantiateViewControllerWithIdentifier("multipleChoiceViewController") as! MultipleChoiceViewController
+            let multipleChoiceVC: MultipleChoiceViewController = storyboard?.instantiateViewControllerWithIdentifier("multipleChoiceViewController") as! MultipleChoiceViewController
             
             self.presentViewController(multipleChoiceVC, animated: true, completion: nil)
           
         case 3:
             
-            queryForImage(image!, { (imageFile: UIImage?) -> Void in
+            queryForImage(image!, completion: { (imageFile: UIImage?) -> Void in
                 
-                println("multiple choice")
+                print("multiple choice")
                 
-                var multipleChoiceVC: MultipleChoiceViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleChoiceViewController") as! MultipleChoiceViewController
+                let multipleChoiceVC: MultipleChoiceViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleChoiceViewController") as! MultipleChoiceViewController
                 
                 multipleChoiceVC.questionImageFile = imageFile
                 
@@ -401,14 +393,14 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         case 4:
             
             
-            var orderingVC: OrderingQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("orderingQuestionViewController") as! OrderingQuestionViewController
+            let orderingVC: OrderingQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("orderingQuestionViewController") as! OrderingQuestionViewController
             
             self.presentViewController(orderingVC, animated: true, completion: nil)
             
             
         case 5:
             
-            var rangeVC: RangeQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("rangeViewController") as! RangeQuestionViewController
+            let rangeVC: RangeQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("rangeViewController") as! RangeQuestionViewController
             
             
             self.presentViewController(rangeVC, animated: true, completion: nil)
@@ -416,11 +408,11 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 6:
             
-            queryForImage(image!, { (imageFile) -> Void in
+            queryForImage(image!, completion: { (imageFile) -> Void in
                 
-                println("multiple choice")
+                print("multiple choice")
                 
-                var singleAnswerWithImage: SingleAnswerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("singleAnswerVC") as! SingleAnswerViewController
+                let singleAnswerWithImage: SingleAnswerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("singleAnswerVC") as! SingleAnswerViewController
                 
                 singleAnswerWithImage.questionImageFile = imageFile
                 
@@ -430,15 +422,15 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 7:
             
-            var multipleAnswerNoImage: MultipleAnswerNoImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerNoImageVC") as! MultipleAnswerNoImageViewController
+            let multipleAnswerNoImage: MultipleAnswerNoImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerNoImageVC") as! MultipleAnswerNoImageViewController
             
             self.presentViewController(multipleAnswerNoImage, animated: true, completion: nil)
             
         case 8:
             
-            queryForImage(image!, { (imageFile) -> Void in
+            queryForImage(image!, completion: { (imageFile) -> Void in
                 
-                var multipleAnswerWithImage: MultipleAnswerWithImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerWithImageVC") as! MultipleAnswerWithImageViewController
+                let multipleAnswerWithImage: MultipleAnswerWithImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerWithImageVC") as! MultipleAnswerWithImageViewController
                 
                 multipleAnswerWithImage.questionImageFile = imageFile
                 
@@ -448,9 +440,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 9:
             
-            queryForImage(image!, { (imageFile) -> Void in
+            queryForImage(image!, completion: { (imageFile) -> Void in
                 
-                var multipleAnswerWithOrder: MultipleAnswerWithOrderViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerWithOrderVC") as! MultipleAnswerWithOrderViewController
+                let multipleAnswerWithOrder: MultipleAnswerWithOrderViewController = self.storyboard?.instantiateViewControllerWithIdentifier("multipleAnswerWithOrderVC") as! MultipleAnswerWithOrderViewController
                 
                 multipleAnswerWithOrder.questionImageFile = imageFile
                 
@@ -466,148 +458,15 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
         }
         
         
-//        displayQuestionContainer(self, questionToPresent!, type) { (presentingContainerView: UIView) -> Void in
-//            
-////            self.swipeToMaps.numberOfTouchesRequired = 100
-////            self.swipeToProfile.numberOfTouchesRequired = 100
-//            
-//            switch(type) {
-//                
-//            case 1:
-//                
-//                println("single answer")
-//                
-//                var singleAnswerStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                
-//                var singleAnswerNoImageViewController: SingleAnswerNoImageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("singleAnswerNoImage") as! SingleAnswerNoImageViewController
-//                
-//                self.presentViewController(singleAnswerNoImageViewController, animated: true, completion: nil)
-//                
-//                
-//            case 2:
-//                
-//                println("multiple choice")
-//                
-//                multipleChoiceQuestion(self, presentingContainerView, questionToPresent!, { () -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//                    })
-//                    
-//                })
-//                
-//            case 3:
-//                
-//                multipleChoiceQuestionWithImage(self, presentingContainerView, questionToPresent!, { () -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//                    })
-//                })
-//                
-//                println("multiple answer")
-//                
-//            case 4:
-//                
-//                println("ordering")
-//                
-//                self.typeForHandler = 4
-//                
-//                orderingQuestion(self, presentingContainerView, self.orderingQuestionLabel1, self.orderingQuestionLabel2, self.orderingQuestionLabel3, self.orderingQuestionLabel4, { () -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//                    })
-//                })
-//                
-//            case 5:
-//                
-//                println("number range")
-//                
-//                self.typeForHandler = 5
-//                
-//                rangeQuestion(presentingContainerView, self.rangeButtonViewOverlay, self.rangeHorizontalBar, self.rangeLabel, { (verticalLine) -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//                    })
-//                    
-//                    self.verticalScaleLine = verticalLine
-//                    
-//                    
-//                })
-//                
-//            case 6:
-//                
-//                singleAnswerQuestionWithImage(self, presentingContainerView, self, { (answerInputField: UITextField) -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//                        
-//                        if self.view.frame.height > 480 {
-//                            
-//                            answerInputField.becomeFirstResponder()
-//                            
-//                        }
-//                        
-//                        
-//                    })
-//                    
-//                })
-//                
-//            case 7:
-//                
-//                println("multiple answer question no image")
-//
-//                
-//                multipleAnswerQuestionNoImage(presentingContainerView, self, { (answerInputField: UITextField) -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//                        
-//                        answerInputField.becomeFirstResponder()
-//                        
-//                    })
-//                    
-//                })
-//                
-//            case 8:
-//                
-//                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 8001, textFieldQuestionButtonTag: 8002, questionLabelTag: 801, dropDownAnswerLabelTag: 802, imageViewTag: 803, startingLightTag: 8111, callKeybardButtonTag: 8003, { (answerInputField: UITextField) -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//
-//                        
-//                    })
-//                
-//                })
-//                
-//            case 9:
-//                
-//                multipleAnswerQuestionWithImage(self, self, presentingContainerView, textFieldTag: 9001, textFieldQuestionButtonTag: 9002, questionLabelTag: 901, dropDownAnswerLabelTag: 902, imageViewTag: 903, startingLightTag: 9111, callKeybardButtonTag: 9003, { (textField) -> Void in
-//                    
-//                    animateContainerView(self, presentingContainerView, { () -> Void in
-//                        
-//                        
-//                    })
-//                    
-//                })
-//                
-//            default:
-//                
-//                println("error loading question display function")
-//                
-//                
-//            }
-        
-//        }
-        
-//        self.hideStatusBar = true
-//        
-//        setNeedsStatusBarAppearanceUpdate()
-        
     }
+    
     
     
     func makeTextFieldFirstResponder(sender: AnyObject?) {
         
-        println("called keyboard")
+        print("called keyboard")
         
-        makeTextFieldFirstResponderForImageQuestion(sender, self)
+        makeTextFieldFirstResponderForImageQuestion(sender, viewController: self)
         
     }
     
@@ -615,9 +474,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     func dismissKeyboardShowQuestion(sender: AnyObject?) {
         
-        println("dismissed keyboard")
+        print("dismissed keyboard")
         
-        removeTextFieldFromFirstResponderToShowQuestion(self, sender, nil)
+        removeTextFieldFromFirstResponderToShowQuestion(self, sender: sender, codeTag: nil)
         
         
     }
@@ -630,7 +489,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 8001:
             
-            animateDropDownAnswerLabelToOriginalPosition(self, 802, 0.0, { () -> Void in
+            animateDropDownAnswerLabelToOriginalPosition(self, dropDownLabelTag: 802, delayAmount: 0.0, completion: { () -> Void in
                 
                 
             })
@@ -651,7 +510,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if textField.text.isEmpty {
+        if textField.text!.isEmpty {
             
             return false
             
@@ -663,15 +522,15 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 1001:
             
-            println("single answer question")
+            print("single answer question")
             
-            checkSingleAnswer(self, textField, { (correct: Bool) -> Void in
+            checkSingleAnswer(self, answerInputField: textField, completion: { (correct: Bool) -> Void in
     
                 if correct {
                     
                     let containerView = self.view.viewWithTag(999)
                     
-                    dismissContainerView(containerView!, { () -> Void in
+                    dismissContainerView(containerView!, completion: { () -> Void in
                         
                         
                     })
@@ -684,7 +543,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
 //            println("multiple answer no image")
             
-            checkMultpleAnswerNoImageQuestion(self, textField, 702, &submittedCount, &unhiddenAnswerLabelTags, { () -> Void in
+            checkMultpleAnswerNoImageQuestion(self, answerInputField: textField, answerLabelStartTag: 702, submittedCount: &submittedCount, unhiddenAnswerLabelTags: &unhiddenAnswerLabelTags, completion: { () -> Void in
                 
                 
             })
@@ -694,7 +553,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
             //meryl streprintln("multiple answer with image")
             
-            checkMultpleAnswerWithImageQuestion(self, textField, 802, 8111, &submittedCount, &unhiddenAnswerLabelTags, { () -> Void in
+            checkMultpleAnswerWithImageQuestion(self, answerInputField: textField, dropDownLabelTag: 802, indicatorLightStartingTag: 8111, submittedCount: &submittedCount, unhiddenAnswerLabelTags: &unhiddenAnswerLabelTags, completion: { () -> Void in
                 
                 
                 
@@ -733,7 +592,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     var answerSubmitted = false
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        
         if answerSubmitted == true {
             
@@ -751,7 +610,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 5:
                         
-            touchesBeganForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, &previousRangeBarLocation)
+            touchesBeganForRangeQuestion(self.view, touches: touches, buttonOverlay: rangeButtonViewOverlay, horizontalRangeBar: rangeHorizontalBar, previousRangeBarLocation: &previousRangeBarLocation)
                         
         default:
             
@@ -764,7 +623,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     
     
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if answerSubmitted == true {
             
@@ -796,7 +655,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
     }
     
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if answerSubmitted == true {
             
@@ -835,9 +694,9 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 4001:
             
-            println("ordering question")
+            print("ordering question")
         
-            checkOrderingQuestion(self, { () -> Void in
+            checkOrderingQuestion(self, completion: { () -> Void in
                 
                 
                 
@@ -846,7 +705,7 @@ class GameBoardViewController: UIViewController, CLLocationManagerDelegate, UITe
             
         case 7001:
             
-            println("multiple answer no image question")
+            print("multiple answer no image question")
         
         
         

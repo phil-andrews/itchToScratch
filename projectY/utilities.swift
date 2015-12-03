@@ -17,9 +17,9 @@ import Parse
 ////////////
 
 func listMatches(pattern: String, inString string: String) -> [String] {
-    let regex = NSRegularExpression(pattern: pattern, options: .allZeros, error: nil)
-    let range = NSMakeRange(0, count(string))
-    let matches = regex?.matchesInString(string, options: .allZeros, range: range) as! [NSTextCheckingResult]
+    let regex = try? NSRegularExpression(pattern: pattern, options: [])
+    let range = NSMakeRange(0, string.characters.count)
+    let matches = regex?.matchesInString(string, options: [], range: range) as [NSTextCheckingResult]!
     
     return matches.map {
         let range = $0.range
@@ -61,7 +61,6 @@ func drawPercentageRectOffFloat(view: UIView, masterView: UIView, masterHeight: 
     
     let masterWidth = masterView.frame.width
     let onePercentOfHeight = masterHeight/100
-    let onePercentOfWidth = masterWidth/100
     
     view.frame = CGRectMake(0.0, 0.0, masterWidth - paddingWidth , onePercentOfHeight * percentage)
     
@@ -103,7 +102,7 @@ func alignViewCenterYX(sView: UIView, mView: UIView) -> CGPoint {
     
     var points = CGPoint()
     
-    points = CGPoint(x: centerXAlignment(sView, mView), y: centerYAlignment(sView, mView))
+    points = CGPoint(x: centerXAlignment(sView, masterView: mView), y: centerYAlignment(sView, masterView: mView))
     
     return points
 }
@@ -114,8 +113,6 @@ func percentYFromMasterFrame(view: UIView, masterView: UIView, percent: CGFloat)
     var pointToReturn = CGFloat()
     
     let masterHeight = masterView.frame.height
-    let masterWidth = masterView.frame.width
-    let onePercentOfWidth = masterWidth/100
     let onePercentOfHeight = masterHeight/100
     
     pointToReturn = (onePercentOfHeight * percent)
@@ -130,8 +127,6 @@ func percentYFromBottomOfView(viewToOffset: UIView, viewToOffsetFrom: UIView, ma
     var pointToReturn = CGFloat()
     
     let masterHeight = masterView.frame.height
-    let masterWidth = masterView.frame.width
-    let onePercentOfWidth = masterWidth/100
     let onePercentOfHeight = masterHeight/100
     
     pointToReturn = viewToOffsetFrom.frame.maxY + (onePercentOfHeight * percent)
@@ -216,7 +211,7 @@ func separateObjectIDs(parseObject: PFObject) -> [String] {
     
     for number in 0...39 {
         
-        var objectID = parseObject.valueForKey("Q\(number)") as! String
+        let objectID = parseObject.valueForKey("Q\(number)") as! String
         
         arrayToReturn.append(objectID)
         
@@ -227,14 +222,14 @@ func separateObjectIDs(parseObject: PFObject) -> [String] {
 }
 
 
-//func delay(delay:Double, closure:()->()) {
-//    dispatch_after(
-//        dispatch_time(
-//            DISPATCH_TIME_NOW,
-//            Int64(delay * Double(NSEC_PER_SEC))
-//        ),
-//        dispatch_get_main_queue(), closure)
-//}
+func delay(delay:Double, closure:()->()) {
+    dispatch_after(
+        dispatch_time(
+            DISPATCH_TIME_NOW,
+            Int64(delay * Double(NSEC_PER_SEC))
+        ),
+        dispatch_get_main_queue(), closure)
+}
 
 
 

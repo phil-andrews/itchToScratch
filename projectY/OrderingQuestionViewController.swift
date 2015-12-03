@@ -25,7 +25,7 @@ class OrderingQuestionViewController: UIViewController {
         
         self.view.backgroundColor = backgroundColor
         swipeUpToGoBack.enabled = false
-        orderingQuestion(self, self.view, orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4) { () -> Void in
+        orderingQuestion(self, masterView: self.view, label1: orderingQuestionLabel1, label2: orderingQuestionLabel2, label3: orderingQuestionLabel3, label4: orderingQuestionLabel4) { () -> Void in
             
             
         }
@@ -57,7 +57,7 @@ class OrderingQuestionViewController: UIViewController {
     
     var answerSubmitted = false
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if answerSubmitted == true {
             
@@ -66,28 +66,28 @@ class OrderingQuestionViewController: UIViewController {
         
         let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
         
-        touchesBeganForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
+        touchesBeganForOrderingQuestion(self.view, draggedLabelCoordinates: &labelThatIsBeingDraggedOrigin, draggedLabel: &labelThatIsBeingDragged, touches: touches, labelArray: orderLabelArray)
         
         
     }
     
     
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if answerSubmitted == true {
             
             return
         }
         
-        touchesMovedForOrderingQuestion(self.view, &labelThatIsBeingDragged, touches)
+        touchesMovedForOrderingQuestion(self.view, draggedLabel: &labelThatIsBeingDragged, touches: touches)
         
         
     }
     
     
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if answerSubmitted == true {
             
@@ -96,7 +96,7 @@ class OrderingQuestionViewController: UIViewController {
         
         let orderLabelArray = [orderingQuestionLabel1, orderingQuestionLabel2, orderingQuestionLabel3, orderingQuestionLabel4]
         
-        touchesEndedForOrderingQuestion(self.view, &labelThatIsBeingDraggedOrigin, &labelThatIsBeingDragged, touches, orderLabelArray)
+        touchesEndedForOrderingQuestion(self.view, draggedLabelCoordinates: &labelThatIsBeingDraggedOrigin, draggedLabel: &labelThatIsBeingDragged, touches: touches, labelArray: orderLabelArray)
         
         
     }
@@ -106,7 +106,7 @@ class OrderingQuestionViewController: UIViewController {
     
         self.answerSubmitted = true
         
-        checkOrderingQuestion(self, { () -> Void in
+        checkOrderingQuestion(self, completion: { () -> Void in
             
             self.swipeUpToGoBack.enabled = true
             

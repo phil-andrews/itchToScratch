@@ -19,7 +19,7 @@ class MultipleAnswerNoImageViewController: UIViewController, UITextFieldDelegate
         
         self.view.backgroundColor = backgroundColor
         
-        multipleAnswerQuestionNoImage(self.view, self, { (answerInputField: UITextField) -> Void in
+        multipleAnswerQuestionNoImage(self.view, textFieldDelegate: self, completion: { (answerInputField: UITextField) -> Void in
          
                 answerInputField.becomeFirstResponder()
                 
@@ -35,7 +35,7 @@ class MultipleAnswerNoImageViewController: UIViewController, UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        checkMultpleAnswerNoImageQuestion(self, textField, 702, &submittedCount, &unhiddenAnswerLabelTags, { () -> Void in
+        checkMultpleAnswerNoImageQuestion(self, answerInputField: textField, answerLabelStartTag: 702, submittedCount: &submittedCount, unhiddenAnswerLabelTags: &unhiddenAnswerLabelTags, completion: { () -> Void in
             
             
         })

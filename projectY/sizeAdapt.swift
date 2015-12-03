@@ -149,7 +149,7 @@ func fontAdjuster(labelText: String, fontS: UIFont, fontM: UIFont, fontL: UIFont
     
     var font = fontS
     
-    let textLength = labelText.length
+    let textLength = labelText.characters.count
     
     switch(textLength) {
         

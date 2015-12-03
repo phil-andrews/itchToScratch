@@ -33,7 +33,7 @@ class RangeQuestionViewController: UIViewController {
         
         self.swipeUpToGoBack.enabled = false
         
-        rangeQuestion(self, self.view, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel,userArrow, correctArrow) { (verticalLine) -> Void in
+        rangeQuestion(self, masterView: self.view, rangeButtonOverlay: rangeButtonViewOverlay, rangeBar: rangeHorizontalBar, rangeLabel: rangeLabel,userArrow: userArrow, correctArrow: correctArrow) { (verticalLine) -> Void in
             
             self.verticalScaleLine = verticalLine
             
@@ -44,35 +44,35 @@ class RangeQuestionViewController: UIViewController {
     var userAnswer = Int()
     var userSubmitted = false
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if userSubmitted == false {
         
-        touchesBeganForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, &previousRangeBarLocation)
+        touchesBeganForRangeQuestion(self.view, touches: touches, buttonOverlay: rangeButtonViewOverlay, horizontalRangeBar: rangeHorizontalBar, previousRangeBarLocation: &previousRangeBarLocation)
             
         }
         
     }
     
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if userSubmitted == false {
             
-        touchesMovedForRangeQuestion(self.view, touches, rangeButtonViewOverlay, rangeHorizontalBar, rangeLabel, userArrow, &userAnswer, verticalScaleLine, &previousRangeBarLocation)
+        touchesMovedForRangeQuestion(self.view, touches: touches, buttonOverlay: rangeButtonViewOverlay, rangeBarHandle: rangeHorizontalBar, rangeLabel: rangeLabel, userArrow: userArrow, userAnswer: &userAnswer, verticalScaleLine: verticalScaleLine, previousRangeBarLocation: &previousRangeBarLocation)
             
         }
     }
     
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
     }
     
     
     func checkQuestionSubmission(sender: AnyObject?) {
         
-        println("answer submitted")
+        print("answer submitted")
         
         if let sender = sender as? UIButton {
             
@@ -84,14 +84,14 @@ class RangeQuestionViewController: UIViewController {
         
         let opponentAnswerArray = currentLocationObject?.valueForKey(opponentsQuestionsAnswered) as! NSArray
         
-        animateComponentsToCenterX(self, userAnswer, verticalScaleLine, rangeHorizontalBar, rangeLabel, correctArrow, userArrow, opponentArrow) { () -> () in
+        animateComponentsToCenterX(self, userAnswer: userAnswer, verticalScaleLine: verticalScaleLine, rangeHorizontalBar: rangeHorizontalBar, rangeLabel: rangeLabel, correctArrow: correctArrow, userArrow: userArrow, opponentArrow: opponentArrow) { () -> () in
            
             
             if opponentAnswerArray.count != 0 {
                 
-                animateOpponentArrowAndLabel(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
+                animateOpponentArrowAndLabel(self, userAnswer: self.userAnswer, verticalScaleLine: self.verticalScaleLine, rangeHorizontalBar: self.rangeHorizontalBar, rangeLabel: self.rangeLabel, correctArrow: self.correctArrow, userArrow: self.userArrow, opponentArrow: self.opponentArrow, completion: { () -> () in
                 
-                    compareAnswersAgainstEachOtherAndActual(self, self.userAnswer, self.verticalScaleLine, self.rangeHorizontalBar, self.rangeLabel, self.correctArrow, self.userArrow, self.opponentArrow, { () -> () in
+                    compareAnswersAgainstEachOtherAndActual(self, userAnswer: self.userAnswer, verticalScaleLine: self.verticalScaleLine, rangeHorizontalBar: self.rangeHorizontalBar, rangeLabel: self.rangeLabel, correctArrow: self.correctArrow, userArrow: self.userArrow, opponentArrow: self.opponentArrow, completion: { () -> () in
                         
                         
                         

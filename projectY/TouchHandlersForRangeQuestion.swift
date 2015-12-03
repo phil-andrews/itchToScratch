@@ -22,9 +22,7 @@ func touchesBeganForRangeQuestion(masterView: UIView, touches: Set<NSObject>, bu
         let location = touch.locationInView(masterView)
         
         if handle.frame.contains(location) == true {
-            
-            let previousRangeBarLocation = horizontalRangeBar.center
-            
+                        
             UIView.animateWithDuration(0.1, animations: { () -> Void in
                 
                 handle.layer.borderWidth = (masterView.frame.size.width * 0.035)
@@ -90,7 +88,7 @@ func touchesMovedForRangeQuestion(masterView: UIView, touches: Set<NSObject>, bu
                 
             }
             
-            changeRangeLabelTextForTouchesMoved(masterView, touch, rangeBarHandle, verticalScaleLine, rangeLabel, &userAnswer, &previousRangeBarLocation)
+            changeRangeLabelTextForTouchesMoved(masterView, touch: touch, rangeHorizontalBar: rangeBarHandle, rangeVerticalScaleLine: verticalScaleLine, rangeLabel: rangeLabel, userAnswer: &userAnswer, previousRangeBarLocation: &previousRangeBarLocation)
             
         }
         
@@ -106,10 +104,10 @@ func changeRangeLabelTextForTouchesMoved(masterView: UIView, touch: UITouch, ran
     let rangeBottomString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelBottom) as! String
     
     let rangeTopRegex = listMatches("\\d+", inString: rangeTopString)
-    let rangeTopInt = rangeTopRegex[0].toInt()
+    let rangeTopInt = Int(rangeTopRegex[0])
     
     let rangeBottomRegex = listMatches("\\d+", inString: rangeBottomString)
-    let rangeBottomInt = rangeBottomRegex[0].toInt()
+    let rangeBottomInt = Int(rangeBottomRegex[0])
     
     let rangeStartPoint = rangeVerticalScaleLine.frame.maxY
     let rangeEndPoint = rangeVerticalScaleLine.frame.minY

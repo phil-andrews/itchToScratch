@@ -54,7 +54,6 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
         
-        self.mapView.delegate == nil
         self.mapView.removeFromSuperview()
         self.removeFromParentViewController()
         self.view.removeFromSuperview()
@@ -72,7 +71,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
     func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
         
         var markerToReturn = mapView.dequeueReusableAnnotationImageWithIdentifier("\(self.annoCount)")
-        var markerImage =  self.setAnnotationImage()
+        let markerImage =  self.setAnnotationImage()
         markerToReturn = MGLAnnotationImage(image: markerImage, reuseIdentifier: "\(self.annoCount)")
         
         ++annoCount
@@ -92,8 +91,8 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                 
                 self.queryForProfilePicturesData(sortedPlayerPics!, topUsers: topUsers, completion: { (pictureArray) -> Void in
                     
-                    println("queryForTopPlayersProfilePictures done")
-                    println(pictureArray)
+                    print("queryForTopPlayersProfilePictures done")
+                    print(pictureArray)
                     
                 })
                 
@@ -117,7 +116,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
             
         }
         
-        println("region did change")
+        print("region did change")
         
     }
     
@@ -132,7 +131,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
         
         let styleURL = NSURL(string: "asset://styles/dark-v8.json")
         mapView = MGLMapView(frame: self.view.bounds, styleURL: styleURL)
-        mapView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         mapView.setCenterCoordinate(usersCurrentLocationData.coordinate, zoomLevel: 0.1, animated: true)
         
         mapView.zoomEnabled = true
@@ -164,7 +163,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                 let centerGeoPoints = locationArrayGeoPoints[index]
                 point.coordinate = centerGeoPoints
                 
-                var pointTitle: String = locationArrayNames[index] as! String
+                let pointTitle: String = locationArrayNames[index] as! String
                 
                 point.title = pointTitle.lowercaseString
                 
@@ -178,7 +177,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                     
                 }
                 
-                var pointSubTitle = String(self.count)
+                let pointSubTitle = String(self.count)
                 point.subtitle = pointSubTitle
                 
                 self.mapView.addAnnotation(point)
@@ -197,8 +196,8 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
     
     func queryForAllLocation(completion: (locationAnswerCount: NSMutableArray, locationArrayNames: NSMutableArray, locationArrayGeoPoints: [CLLocationCoordinate2D], sortedLocations: [String]) -> Void) {
         
-        var locationArrayCount = NSMutableArray()
-        var locationArrayNames = NSMutableArray()
+        let locationArrayCount = NSMutableArray()
+        let locationArrayNames = NSMutableArray()
         var locationArrayGeoPoints = [CLLocationCoordinate2D]()
         var locationDict = [String: Int]()
         
@@ -227,8 +226,8 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                     
                     for index in 0..<locationArrayCount.count {
                         
-                        var locality = locationArrayNames[index] as! String
-                        var localityCount = locationArrayCount[index] as! Int
+                        let locality = locationArrayNames[index] as! String
+                        let localityCount = locationArrayCount[index] as! Int
                         
                         locationDict[locality] = localityCount
                         
@@ -255,10 +254,10 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
         
         var markerImage = UIImage()
         
-        var arrayIndex = Double(self.count)
-        var totalCitiesDouble = Double(self.totalCities)
+        let arrayIndex = Double(self.count)
+        let totalCitiesDouble = Double(self.totalCities)
         
-        var percentile = (100 * (arrayIndex - 0.5)) / totalCitiesDouble
+        let percentile = (100 * (arrayIndex - 0.5)) / totalCitiesDouble
         
 
         switch(percentile) {
@@ -305,7 +304,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
             
         default:
             
-            println("default annotation set")
+            print("default annotation set")
             
             markerImage = markerZero!
             
@@ -344,10 +343,10 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
     
     func cityNameLabelandRankCallout(annotation: MGLAnnotation) {
         
-        var city: String?? = annotation.title
-        var rank: String?? = annotation.subtitle
+        let city: String?? = annotation.title
+        let rank: String?? = annotation.subtitle
         
-        println(rank)
+        print(rank)
         
         var cityName = String()
         var cityRank = String()
@@ -361,20 +360,20 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
         if let c = rank, d = c {
             
             cityRank = d
-            println(cityRank)
+            print(cityRank)
             
         }
         
         self.view.addSubview(cityNameLabel)
         self.view.addSubview(cityRankLabel)
         
-        drawPercentageRectOffView(cityNameLabel, self.view, 8, 100)
+        drawPercentageRectOffView(cityNameLabel, masterView: self.view, heightPercentage: 8, widthPercentage: 100)
         
         let viewHeight = self.view.frame.height
         let viewWidth = self.view.frame.width
         let viewHeightPercentage = viewHeight/100
         
-        cityNameLabel.frame.offset(dx: 0.0, dy: viewHeightPercentage * 92)
+        cityNameLabel.frame.offsetInPlace(dx: 0.0, dy: viewHeightPercentage * 92)
         
         cityNameLabel.text = ("    \(self.separatedPlaceName(cityName))")
         cityNameLabel.font = robotoLight22
@@ -383,7 +382,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
         cityNameLabel.textColor = lightColoredFont
         cityNameLabel.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
         
-        var rankToInt: Int = cityRank.toInt()! + 1
+        let rankToInt: Int = Int(cityRank)! + 1
         
         cityRankLabel.text = addOrdinalIndicator(rankToInt)
         cityRankLabel.font = robotoMedium24
@@ -391,7 +390,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
         cityRankLabel.textAlignment = .Right
         cityRankLabel.frame = CGRectMake(viewWidth/2, cityNameLabel.frame.minY, (viewWidth/2 - 15), cityNameLabel.frame.height)
         
-        println("control tapped")
+        print("control tapped")
         
         cityRankLabel.hidden = false
         cityNameLabel.hidden = false
@@ -419,7 +418,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
             
         }
         
-        println(sortedPlayersPictureFiles)
+        print(sortedPlayersPictureFiles)
         
         if sortedPlayersPictureFiles.count == 0 {
             
@@ -441,7 +440,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                 
                 if error != nil {
                     
-                    println(error!.localizedDescription)
+                    print(error!.localizedDescription)
                     
                 } else if error == nil {
                     
@@ -452,7 +451,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                 
                 if count == sortedPlayersPictureFiles.count {
                     
-                    println(pictureArray)
+                    print(pictureArray)
                     
                     completion(pictureArray: pictureArray)
                 }
@@ -474,19 +473,17 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
         
         var topPlayersDict = [PFFile: Int]()
         
-        let pic = PFFile()
-        
         if topUsers == nil {
             
             completion(sortedPlayerPics: nil, topUsers: nil)
             
-            println("top users does equal nil")
+            print("top users does equal nil")
             
             return
             
         } else if topUsers != nil {
         
-            println("top users doesn't equal nil")
+            print("top users doesn't equal nil")
             
             let query = PFUser.query()
             query?.whereKey(objectId, containedIn: topUsers!)
@@ -494,7 +491,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                 
                 if error != nil {
                     
-                    println(error!.localizedDescription)
+                    print(error!.localizedDescription)
                     
                 } else if error == nil {
                     
@@ -515,7 +512,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                                     topPlayersDict[userProfilePicture] = numberOfAnsweredQuestions
                                     
                                     let dict = topPlayersDict.sortedKeysByValue(>)
-                                    println(dict)
+                                    print(dict)
                                     
                                     completion(sortedPlayerPics: dict, topUsers: topUsers)
                                     
@@ -543,7 +540,6 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
     
     func queryForTopPlayersInLocationObject(annotation: MGLAnnotation, completion: (topUsers: [String]?, locationID: String?) -> Void) {
         
-        let annoCoords = annotation.coordinate
         let pfGeoCoords = PFGeoPoint(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
         
             let query = PFQuery(className: LocationClass)
@@ -552,7 +548,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                 
                 if error != nil {
                     
-                    println(error!.localizedDescription)
+                    print(error!.localizedDescription)
                     
                 } else if error == nil {
                     
@@ -560,7 +556,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
                     let topPlayers = locationObject.valueForKey(topPlayersForArea) as! [String]
                     let locationID = locationObject.objectId as String?
                     
-                    println(topPlayers.count)
+                    print(topPlayers.count)
                     
                     if topPlayers.count == 0 {
                         
@@ -650,12 +646,12 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
         
         var colorToReturn = UIColor()
         
-        var ranking = Double(rank)
-        var totalCitiesDouble = Double(self.totalCities)
+        let ranking = Double(rank)
+        let totalCitiesDouble = Double(self.totalCities)
     
-        var percentile = (100 * (ranking - 0.5)) / totalCitiesDouble
+        let percentile = (100 * (ranking - 0.5)) / totalCitiesDouble
         
-        println(percentile)
+        print(percentile)
         
         
         switch(percentile) {
@@ -702,7 +698,7 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
             
         default:
             
-            println("default color set")
+            print("default color set")
             
             colorToReturn = lowestColor
             

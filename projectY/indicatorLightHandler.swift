@@ -18,7 +18,7 @@ func indicatorLightSelector() -> [Int] {
     
     let number = questionObjectFromGameBoardSend?.valueForKey(numberOfAnswersKey) as! Int
     
-    println(number)
+    print(number)
     
     switch(number) {
         
@@ -60,7 +60,7 @@ func indicatorLightSelector() -> [Int] {
 func animationForIndicatorLightFilledCorrect(indicatorLight: UIView, color: UIColor) {
     
     
-    UIView.animateWithDuration(0.15, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 1.0, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.15, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 1.0, options: [], animations: { () -> Void in
         
         indicatorLight.transform = CGAffineTransformMakeScale(1.1, 1.5)
         indicatorLight.backgroundColor = color
@@ -82,7 +82,7 @@ func animationForIndicatorLightFilledCorrect(indicatorLight: UIView, color: UICo
 func animateForIndicatorLightFilledIncorrect(indicatorLight: UIView, color: UIColor) {
     
     
-    UIView.animateWithDuration(0.15, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 1.0, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.15, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 1.0, options: [], animations: { () -> Void in
         
         indicatorLight.transform = CGAffineTransformMakeScale(0.1, 0.2)
         indicatorLight.backgroundColor = color

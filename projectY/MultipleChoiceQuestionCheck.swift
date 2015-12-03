@@ -15,10 +15,8 @@ import Parse
 func checkMultipleChoiceQuestion(viewController: UIViewController, senderTag: Int, completion: () -> ()) {
     
     let answerArray = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
-    let choices = questionObjectFromGameBoardSend?.valueForKey(questionChoicesKey) as! [String]
     let answer = answerArray[0]
     let answerButton = viewController.view.viewWithTag(senderTag) as! UIButton
-    let submittedAnswer = answerButton.titleLabel?.text
 
     answerButton.enabled = false
     answerButton.setTitleColor(backgroundColor, forState: .Normal)
@@ -28,7 +26,6 @@ func checkMultipleChoiceQuestion(viewController: UIViewController, senderTag: In
     let buttonTags = [2001, 2002, 2003, 2004]
     var incorrectButtons = [UIButton]()
     var correctButton = UIButton()
-    var userAnsweredCorrectly = false
     
     for tag in buttonTags {
         
@@ -42,7 +39,6 @@ func checkMultipleChoiceQuestion(viewController: UIViewController, senderTag: In
             
             if button.tag == senderTag {
                 
-                userAnsweredCorrectly == true
             }
             
         } else if buttonTitle != answer && button.tag != senderTag {
@@ -57,7 +53,7 @@ func checkMultipleChoiceQuestion(viewController: UIViewController, senderTag: In
         
     }
     
-    animateButtonsOnSubmit(viewController, incorrectButtons, correctButton, senderTag) { () -> () in
+    animateButtonsOnSubmit(viewController, incorrectButtons: incorrectButtons, correctButton: correctButton, senderTag: senderTag) { () -> () in
         
     }
     
@@ -74,7 +70,7 @@ func animateButtonsOnSubmit(viewController: UIViewController, incorrectButtons: 
     
         delayAmount = delayAmount + 0.20
         
-        delay(delayAmount, { () -> () in
+        delay(delayAmount, closure: { () -> () in
             
             if button.tag == senderTag {
                 
@@ -88,7 +84,7 @@ func animateButtonsOnSubmit(viewController: UIViewController, incorrectButtons: 
                 
             }
             
-            UIView.transitionWithView(button, duration: 0.20, options: nil, animations: { () -> Void in
+            UIView.transitionWithView(button, duration: 0.20, options: [], animations: { () -> Void in
                 
                 button.backgroundColor = UIColor.clearColor()
                 
@@ -98,7 +94,7 @@ func animateButtonsOnSubmit(viewController: UIViewController, incorrectButtons: 
             
         })
         
-        UIView.animateWithDuration(0.20, delay: delayAmount, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(0.20, delay: delayAmount, options: [], animations: { () -> Void in
             
             button.transform = CGAffineTransformMakeScale(0.75, 0.75)
             
@@ -109,12 +105,12 @@ func animateButtonsOnSubmit(viewController: UIViewController, incorrectButtons: 
     }
     
     
-    delay(delayAmount, { () -> () in
+    delay(delayAmount, closure: { () -> () in
         
         correctButton.frame.size.width = viewController.view.frame.width
         correctButton.center.x = viewController.view.center.x
         
-        UIView.animateWithDuration(0.2, delay: 0.0, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(0.2, delay: 0.0, options: [], animations: { () -> Void in
            
             if correctButton.tag == senderTag {
                 

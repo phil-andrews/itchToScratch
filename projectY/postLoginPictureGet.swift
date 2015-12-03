@@ -34,10 +34,8 @@ class PostLoginPictureGetController: UIViewController, UIImagePickerControllerDe
     func checkForUser() {
         
         if PFUser.currentUser() == nil {
-            
-            var loginStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            var loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+                        
+            let loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
             
             self.presentViewController(loginViewController, animated: true, completion: nil)
             
@@ -61,7 +59,7 @@ class PostLoginPictureGetController: UIViewController, UIImagePickerControllerDe
         
         containerView.frame = self.view.bounds
         
-        drawPercentageRectOffView(proPicImageView, containerView, 30, 30)
+        drawPercentageRectOffView(proPicImageView, masterView: containerView, heightPercentage: 30, widthPercentage: 30)
         
         containerView.addSubview(proPicImageView)
         

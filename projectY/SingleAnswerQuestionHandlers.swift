@@ -30,7 +30,7 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     questionLabel.frame.size.width = masterView.frame.width
     questionLabel.tag = 101
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView)
     questionLabel.frame.origin.y = masterView.frame.height * 0.0575
     
     masterView.addSubview(questionLabel)
@@ -48,15 +48,11 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     
     masterView.insertSubview(answerLabel, belowSubview: questionLabel)
     
-    answerLabel.frame.origin.x = centerXAlignment(answerLabel, masterView)
+    answerLabel.frame.origin.x = centerXAlignment(answerLabel, masterView: masterView)
     answerLabel.frame.origin.y = questionLabel.frame.maxY + 15.0
     
-    let checkMark = UIImageView()
-    //checkMark.image = UIImage(named: "checkmarkImage")
-    
-    
     let textField = UITextField()
-    drawPercentageRectOffView(textField, masterView, 7.05, 90)
+    drawPercentageRectOffView(textField, masterView: masterView, heightPercentage: 7.05, widthPercentage: 90)
     textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
@@ -69,8 +65,8 @@ func singleAnswerQuestion(masterView: UIView, textFieldDelegate: UITextFieldDele
     
     masterView.addSubview(textField)
     
-    textField.frame.origin.x = centerXAlignment(textField, masterView)
-    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
+    textField.frame.origin.x = centerXAlignment(textField, masterView: masterView)
+    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField: textField)
     
     let textFieldPadding = UIView()
     textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
@@ -95,11 +91,11 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     
     let imageView = UIImageView()
     imageView.backgroundColor = backgroundColor
-    drawPercentageRectOffView(imageView, masterView, 35.05, 100)
+    drawPercentageRectOffView(imageView, masterView: masterView, heightPercentage: 35.05, widthPercentage: 100)
     masterView.addSubview(imageView)
     
     let questionLabel = UILabel()
-    drawPercentageRectOffView(questionLabel, masterView, 12, 90)
+    drawPercentageRectOffView(questionLabel, masterView: masterView, heightPercentage: 12, widthPercentage: 90)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmaller
@@ -112,7 +108,7 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     masterView.addSubview(questionLabel)
     
     questionLabel.frame.origin.y = imageView.frame.maxY + 3.0
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView)
     
     let answerLabel = UILabel()
     answerLabel.hidden = true
@@ -127,12 +123,12 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     
     masterView.insertSubview(answerLabel, belowSubview: imageView)
     
-    answerLabel.frame.origin.x = centerXAlignment(answerLabel, masterView)
+    answerLabel.frame.origin.x = centerXAlignment(answerLabel, masterView: masterView)
     answerLabel.frame.origin.y = imageView.frame.maxY + 15.0
     
     
     let textField = UITextField()
-    drawPercentageRectOffView(textField, masterView, 6.5, 90)
+    drawPercentageRectOffView(textField, masterView: masterView, heightPercentage: 6.5, widthPercentage: 90)
     textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
@@ -146,8 +142,8 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     
     masterView.addSubview(textField)
     
-    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
-    textField.frame.origin.x = centerXAlignment(textField, masterView)
+    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField: textField)
+    textField.frame.origin.x = centerXAlignment(textField, masterView: masterView)
     
     let textFieldPadding = UIView()
     textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
@@ -159,10 +155,10 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     
     if masterView.frame.height <= 480 {
         
-        questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView, 55)
+        questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView: masterView, percent: 55)
         questionLabel.frame.size.height = masterView.frame.height * 0.25
-        textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
-        drawCallKeyboardButton(viewController, masterView, 1003)
+        textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField: textField)
+        drawCallKeyboardButton(viewController, masterView: masterView, buttonTag: 1003)
         
         let textFieldQuestionButton = UIButton()
         textFieldQuestionButton.setTitle("Q", forState: .Normal)
@@ -179,7 +175,7 @@ func singleAnswerQuestionWithImage(viewController: UIViewController, masterView:
     }
     
     
-    queryForImage(imageFile, { (image) -> Void in
+    queryForImage(imageFile, completion: { (image) -> Void in
         
         imageView.image = image
         imageView.contentMode = .ScaleAspectFit

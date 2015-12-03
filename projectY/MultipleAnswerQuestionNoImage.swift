@@ -15,11 +15,9 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
     
     let question = questionObjectFromGameBoardSend
     let questionString = question?.valueForKey(questionAskKey) as! String
-    let numberOfAnswers = question?.valueForKey(numberOfAnswersKey) as! Int
-    let answers = question?.valueForKey(questionAnswersKey) as! [String]
     
     let questionLabel = UILabel()
-    drawPercentageRectOffView(questionLabel, masterView, 18.48, 90)
+    drawPercentageRectOffView(questionLabel, masterView: masterView, heightPercentage: 18.48, widthPercentage: 90)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmaller
@@ -31,11 +29,11 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
     
     masterView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView)
     questionLabel.frame.origin.y = 0
     
     let textField = UITextField()
-    drawPercentageRectOffView(textField, masterView, 7.04, 90)
+    drawPercentageRectOffView(textField, masterView: masterView, heightPercentage: 7.04, widthPercentage: 90)
     textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
@@ -49,8 +47,8 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
     
     masterView.addSubview(textField)
     
-    textField.frame.origin.x = centerXAlignment(textField, masterView)
-    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
+    textField.frame.origin.x = centerXAlignment(textField, masterView: masterView)
+    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField: textField)
     
     let textFieldPadding = UIView()
     textFieldPadding.frame = CGRectMake(0, 0, 8, 40)
@@ -60,7 +58,7 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
     textField.keyboardType = UIKeyboardType.Default
     textField.returnKeyType = .Go
     
-    drawAnswerLabelsForMultipleAnswerNoImage(masterView, questionLabel, textField)
+    drawAnswerLabelsForMultipleAnswerNoImage(masterView, questionLabel: questionLabel, answerInputField: textField)
     
     completion(textField)
     
@@ -71,16 +69,13 @@ func multipleAnswerQuestionNoImage(masterView: UIView, textFieldDelegate: UIText
 func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel: UILabel, answerInputField: UITextField) {
     
     let question = questionObjectFromGameBoardSend
-    let questionString = question?.valueForKey(questionAskKey) as! String
     let numberOfAnswers = question?.valueForKey(numberOfAnswersKey) as! Int
     let answers = question?.valueForKey(questionAnswersKey) as! [String]
     
     let spaceBetweenQuestionAndTextField = answerInputField.frame.minY - questionLabel.frame.maxY
     
-    var answerLabelXOffset = questionLabel.frame.origin.x
     let labelSpacing = masterView.frame.height * 0.005
-    var labelHeight = spaceBetweenQuestionAndTextField * 0.1472
-    var answerLabelYOffset = labelHeight + labelSpacing
+    let labelHeight = spaceBetweenQuestionAndTextField * 0.1472
     var topLabelYOffset = CGFloat()
 
     
@@ -100,7 +95,7 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
         
     default:
         
-        answerLabelYOffset = 20
+        topLabelYOffset = 20
         
     }
     
@@ -139,7 +134,7 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
     }
     
     var startingXCoord = masterView.center.x
-    var lightSpacing = (masterView.frame.width * 0.0156)
+    let lightSpacing = (masterView.frame.width * 0.0156)
     
     var answerLightCount = 7111
     var previousLightPositiveXCoord = CGFloat()
@@ -151,10 +146,10 @@ func drawAnswerLabelsForMultipleAnswerNoImage(masterView: UIView, questionLabel:
         
     }
     
-    for answer in answers {
+    for _ in answers {
         
         let light = UIView()
-        drawPercentageRectOffView(light, masterView, 0.7, 9.37)
+        drawPercentageRectOffView(light, masterView: masterView, heightPercentage: 0.7, widthPercentage: 9.37)
         light.layer.borderWidth = 0.5
         light.layer.borderColor = lowColor.CGColor
         light.tag = answerLightCount

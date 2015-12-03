@@ -15,15 +15,12 @@ func checkSingleAnswer(viewController: UIViewController, answerInputField: UITex
     
     let correctAnswers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     let inputAnswer = answerInputField.text
-    let containerView = viewController.view.viewWithTag(999)
-    var complete = false
     
     for answer in correctAnswers {
         
         if answer == inputAnswer {
             
             let answerLabel = viewController.view.viewWithTag(102) as! UILabel
-            let questionLabel = viewController.view.viewWithTag(101) as! UILabel
             
             answerLabel.frame.origin.y = answerLabel.frame.origin.y - answerLabel.frame.height * 1.25
             answerLabel.backgroundColor = highColor
@@ -36,8 +33,6 @@ func checkSingleAnswer(viewController: UIViewController, answerInputField: UITex
 
                     
                 }, completion: { (Bool) -> Void in
-                    
-                    complete = true
                     
                     // save object and user
                     
@@ -63,8 +58,6 @@ func checkSingleAnswerWithImage(viewController: UIViewController, answerInputFie
     
     let correctAnswers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     let inputAnswer = answerInputField.text
-    let containerView = viewController.view.viewWithTag(999)
-    var complete = false
     
     for answer in correctAnswers {
         
@@ -87,9 +80,7 @@ func checkSingleAnswerWithImage(viewController: UIViewController, answerInputFie
                 
                 
                 }, completion: { (Bool) -> Void in
-                    
-                    complete = true
-                    
+                                        
                     // save object and user
                     
                     completion(true)

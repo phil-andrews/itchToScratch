@@ -31,31 +31,31 @@ class SquaresActivityIndicator {
         func createView(subView: UIView, mView: UIView, pSizeWidth: CGFloat, pSizeHeight: CGFloat, borderWidth: CGFloat, cornerRadiusPercentage: CGFloat) -> UIView {
             
             var sView = UIView()
-            sView = drawSquareRectOffView(subView, mView, pSizeWidth, pSizeWidth)
+            sView = drawSquareRectOffView(subView, masterView: mView, heightPercentage: pSizeWidth, widthPercentage: pSizeWidth)
             mView.addSubview(sView)
             sView.layer.borderWidth = borderWidth
             sView.layer.cornerRadius = borderWidth * cornerRadiusPercentage
             sView.alpha = 0.0
             
-            println(sView.frame.size)
+            print(sView.frame.size)
             
             return sView
             
         }
         
-        containerView = createView(containerView, masterView, percentageSize, percentageSize, activityBorderWidth, 1.0)
-        largestRect = createView(largestRect, containerView, 100, 100, (activityBorderWidth * 1.0), 1.0)
-        largeRect = createView(largeRect, containerView, 80, 80, (activityBorderWidth * 0.8), 0.8)
-        midRect = createView(midRect, containerView, 60, 60, (activityBorderWidth * 0.6), 0.6)
-        smallRect = createView(smallRect, containerView, 40, 40, (activityBorderWidth * 0.4), 0.4)
-        smallestRect = createView(smallestRect, containerView, 20, 20, (activityBorderWidth * 0.3), 0.3)
+        containerView = createView(containerView, mView: masterView, pSizeWidth: percentageSize, pSizeHeight: percentageSize, borderWidth: activityBorderWidth, cornerRadiusPercentage: 1.0)
+        largestRect = createView(largestRect, mView: containerView, pSizeWidth: 100, pSizeHeight: 100, borderWidth: (activityBorderWidth * 1.0), cornerRadiusPercentage: 1.0)
+        largeRect = createView(largeRect, mView: containerView, pSizeWidth: 80, pSizeHeight: 80, borderWidth: (activityBorderWidth * 0.8), cornerRadiusPercentage: 0.8)
+        midRect = createView(midRect, mView: containerView, pSizeWidth: 60, pSizeHeight: 60, borderWidth: (activityBorderWidth * 0.6), cornerRadiusPercentage: 0.6)
+        smallRect = createView(smallRect, mView: containerView, pSizeWidth: 40, pSizeHeight: 40, borderWidth: (activityBorderWidth * 0.4), cornerRadiusPercentage: 0.4)
+        smallestRect = createView(smallestRect, mView: containerView, pSizeWidth: 20, pSizeHeight: 20, borderWidth: (activityBorderWidth * 0.3), cornerRadiusPercentage: 0.3)
         
-        smallestRect.frame.origin = alignViewCenterYX(smallestRect, containerView)
-        smallRect.frame.origin = alignViewCenterYX(smallRect, containerView)
-        midRect.frame.origin = alignViewCenterYX(midRect, containerView)
-        largeRect.frame.origin = alignViewCenterYX(largeRect, containerView)
-        largestRect.frame.origin = alignViewCenterYX(largestRect, containerView)
-        containerView.frame.origin = alignViewCenterYX(containerView, masterView)
+        smallestRect.frame.origin = alignViewCenterYX(smallestRect, mView: containerView)
+        smallRect.frame.origin = alignViewCenterYX(smallRect, mView: containerView)
+        midRect.frame.origin = alignViewCenterYX(midRect, mView: containerView)
+        largeRect.frame.origin = alignViewCenterYX(largeRect, mView: containerView)
+        largestRect.frame.origin = alignViewCenterYX(largestRect, mView: containerView)
+        containerView.frame.origin = alignViewCenterYX(containerView, mView: masterView)
         
         
         smallestRect.layer.borderColor = highestColor.CGColor
@@ -188,14 +188,14 @@ class SquaresActivityIndicator {
         
         overlayView.alpha = 0.0
         
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = masterView.bounds
         overlayView.addSubview(blurEffectView)
         
-        var indicator = runIndicator(overlayView, percentageSize: 18, activityBorderWidth: 5)
-        indicator.frame.origin.y = centerYAlignment(indicator, overlayView) - (indicator.frame.height/2)
-        indicator.frame.origin.x = centerXAlignment(indicator, overlayView)
+        let indicator = runIndicator(overlayView, percentageSize: 18, activityBorderWidth: 5)
+        indicator.frame.origin.y = centerYAlignment(indicator, masterView: overlayView) - (indicator.frame.height/2)
+        indicator.frame.origin.x = centerXAlignment(indicator, masterView: overlayView)
         indicator.tag = 124
         overlayView.addSubview(indicator)
         
@@ -206,7 +206,7 @@ class SquaresActivityIndicator {
         label.font = fontMedium
         overlayView.addSubview(label)
         label.sizeToFit()
-        label.frame.origin.x = centerXAlignment(label, overlayView)
+        label.frame.origin.x = centerXAlignment(label, masterView: overlayView)
         label.frame.origin.y = indicator.frame.maxY + 20
         
         overlayView.transform = CGAffineTransformMakeScale(0.0, 0.0)
@@ -226,7 +226,6 @@ class SquaresActivityIndicator {
     func stopIndicator(masterView: UIView) {
         
         let viewToRemove = masterView.viewWithTag(123)
-        let indicatorView = viewToRemove?.viewWithTag(124)
         
         viewToRemove?.transform = CGAffineTransformMakeScale(1.0, 1.0)
         

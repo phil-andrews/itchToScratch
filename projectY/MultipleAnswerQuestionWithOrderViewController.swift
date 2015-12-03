@@ -14,12 +14,12 @@ import Parse
 
 class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelegate {
     
-    let firstColor = UIColor(hex: "8036FF")
-    let secondColor = UIColor(hex: "00B2EA")
-    let thirdColor = UIColor(hex: "E9D300")
-    let fourthColor = UIColor(hex: "FF6000")
-    let fifthColor = UIColor(hex: "F953FF")
-    let sixthColor = UIColor(hex: "B22029")
+    let firstColor = UIColor(red: 45.0, green: 100.0, blue: 100.0, alpha: 1.0)
+    let secondColor = UIColor(red: 45.0, green: 100.0, blue: 100.0, alpha: 1.0)
+    let thirdColor = UIColor(red: 45.0, green: 100.0, blue: 100.0, alpha: 1.0)
+    let fourthColor = UIColor(red: 45.0, green: 100.0, blue: 100.0, alpha: 1.0)
+    let fifthColor = UIColor(red: 45.0, green: 100.0, blue: 100.0, alpha: 1.0)
+    let sixthColor = UIColor(red: 45.0, green: 100.0, blue: 100.0, alpha: 1.0)
     
     let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     
@@ -32,7 +32,7 @@ class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelega
         
         self.view.backgroundColor = backgroundColor
         
-        multipleAnswerQuestionWithOrder(self, self, self.view) { (answerInputField) -> Void in
+        multipleAnswerQuestionWithOrder(self, textFieldDelegate: self, masterView: self.view) { (answerInputField) -> Void in
             
             
             
@@ -56,7 +56,7 @@ class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelega
             
         } else if selectedSection != nil {
             
-            checkMultipleAnswerWithOrder(self, textField, selectedSection!) { (correct) -> Void in
+            checkMultipleAnswerWithOrder(self, answerInputField: textField, section: selectedSection!) { (correct) -> Void in
                 
                 self.previousButton = nil
                 self.selectedSection = nil
@@ -64,10 +64,10 @@ class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelega
                 
                 if self.submittedCount == self.answers.count {
                     
-                    delay(1.0, { () -> () in
+                    delay(1.0, closure: { () -> () in
                         
                         textField.resignFirstResponder()
-                        drawAnswerLabelsAfterFinalSubmit(self, textField)
+                        drawAnswerLabelsAfterFinalSubmit(self, answerInputField: textField)
                         
                     })
                     
@@ -83,18 +83,18 @@ class MultipleAnswerWithOrderViewController: UIViewController, UITextFieldDelega
     
     func makeTextFieldFirstResponder(sender: AnyObject?) {
         
-        println("called keyboard")
+        print("called keyboard")
         
-        makeTextFieldFirstResponderForImageQuestionWithOrder(sender, self)
+        makeTextFieldFirstResponderForImageQuestionWithOrder(sender, viewController: self)
         
     }
     
     
     func dismissKeyboardShowQuestion(sender: AnyObject?) {
         
-        println("dismissed keyboard")
+        print("dismissed keyboard")
         
-        removeTextFieldFromFirstResponderToShowQuestionMultipleAnswerWithOrder(self, sender)
+        removeTextFieldFromFirstResponderToShowQuestionMultipleAnswerWithOrder(self, sender: sender)
     }
     
     

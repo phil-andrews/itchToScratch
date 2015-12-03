@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SwiftColors
 
 //QuestionClass Keys
 let QuestionClass: String = "QuestionMaster"
@@ -88,23 +88,26 @@ let questionJustTextCategory = "textType"
 
 
 //ColorPalette
-let lowestColor = UIColor(hex: "4A90E2")
-let lowColor = UIColor(hex: "75CAEF")
-let midColor = UIColor(hex:"50E3C2")
-let highColor = UIColor(hex: "02F87B")
-let highestColor = UIColor(hex: "09E136")
-let backgroundColor = UIColor(hex: "282B35")
-let lightColoredFont = UIColor(hex: "E9E8E8")
-let orangeColor = UIColor(hex: "F5A623")
-let whiteColor = UIColor(hex: "FFFFFF")
-let paleGreenColor = UIColor(hex: "B8E986")
-let lightPurpleColor = UIColor(hex: "D67FE8")
-let yellowColor = UIColor(hex: "F8E71C")
-let facebookColor = UIColor(hex: "3B5998")
-let redColor = UIColor(hex: "E34538")
 
-let userColor = UIColor(hex: "45F5FF")
-let opponentColor = UIColor(hex: "FF9A44")
+let backgroundColor = UIColor(hexString: "#282B35")//UIColor(red: 200.0, green: 43.0, blue: 54.0 , alpha: 1.0)
+
+
+let lowestColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let lowColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let midColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let highColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let highestColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let lightColoredFont = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let orangeColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let whiteColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let paleGreenColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let lightPurpleColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let yellowColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let facebookColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let redColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+
+let userColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let opponentColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
 
 //Image Assets
 

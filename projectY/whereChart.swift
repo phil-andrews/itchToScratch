@@ -44,16 +44,16 @@ var bar3 = UIButton()
 var bar4 = UIButton()
 var bar5 = UIButton()
 
-var answerCount1 = SpringButton()
-var answerCount2 = SpringButton()
-var answerCount3 = SpringButton()
-var answerCount4 = SpringButton()
-var answerCount5 = SpringButton()
+var answerCount1 = UIButton()
+var answerCount2 = UIButton()
+var answerCount3 = UIButton()
+var answerCount4 = UIButton()
+var answerCount5 = UIButton()
 
 
 let locationBars = [bar1, bar2, bar3, bar4, bar5]
 let locationLabels = [locationLabel1, locationLabel2, locationLabel3, locationLabel4, locationLabel5]
-let answerCountLabels: [SpringButton] = [answerCount1, answerCount2, answerCount3, answerCount4, answerCount5]
+let answerCountLabels: [UIButton] = [answerCount1, answerCount2, answerCount3, answerCount4, answerCount5]
 
 public class PPChart {
     
@@ -61,7 +61,7 @@ public class PPChart {
         
             var totalAnswers = 0
         
-            println(playedAreasDict.count)
+            print(playedAreasDict.count)
             
             for item in playedAreasDict.values {
                 
@@ -96,7 +96,7 @@ public class PPChart {
 
             }
         
-            var scale = setChartScale(totalAnswers, view: contentView)
+            let scale = setChartScale(totalAnswers, view: contentView)
             var keys = [String]()
             var values = [Int]()
             
@@ -180,7 +180,7 @@ public class PPChart {
                 
                 width = CGFloat(item) * CGFloat(scale)
                 
-                var bar = locationBars[count]
+                let bar = locationBars[count]
                 bar.frame = CGRectMake(xCord, yCord, width, height)
                 bar.userInteractionEnabled = true
                 bar.enabled = true
@@ -192,10 +192,10 @@ public class PPChart {
              
                 contentView.addSubview(bar)
        
-                var numberLabelXCord = width - 10.0
-                var numberLabelWidth: CGFloat = 55.0
-                var numberLabelHeight = height
-                var numberLabelYCord = bar.center.y - (numberLabelHeight/2)
+                let numberLabelXCord = width - 10.0
+                let numberLabelWidth: CGFloat = 55.0
+                let numberLabelHeight = height
+                let numberLabelYCord = bar.center.y - (numberLabelHeight/2)
                 
                 answerCountLabels[count].frame = CGRectMake(numberLabelXCord, numberLabelYCord, numberLabelWidth, height)
                 answerCountLabels[count].setTitle(String(item), forState: .Normal)
@@ -224,8 +224,8 @@ public class PPChart {
                 
             }
         
-            println(parentViewHeightPercentage)
-            println(contentView.frame.height)
+            print(parentViewHeightPercentage)
+            print(contentView.frame.height)
         
             bottomBackGround.frame = CGRectMake(0.0, parentViewHeightPercentage * 190, parentView.frame.width, parentViewHeightPercentage * 15)
         
@@ -297,7 +297,6 @@ public class PPChart {
                             
                             let i = Double(count)
                             let percentile: Double = ((100 * i) / n)
-                            round(percentile)
                             userRankingPercentile.insert(Int(percentile), atIndex: index)
                             
                         } else if n == 0 {
@@ -379,23 +378,23 @@ public class PPChart {
     func queryForPlacesPlayed(completion: (locationObjects: [PFObject], playedAreasDict: [String:Int]) -> Void) {
         
         let user = PFUser.currentUser()
-        var locationArray = user?.valueForKey(whereUserAnswered) as! NSArray
+        let locationArray = user?.valueForKey(whereUserAnswered) as! NSArray
         
-        var locationArrayCount = NSMutableArray()
-        var locationArraySingleIds = NSMutableArray()
+        let locationArrayCount = NSMutableArray()
+        let locationArraySingleIds = NSMutableArray()
         
         for item in locationArray {
             
             locationArrayCount.addObject(item.count)
-            locationArraySingleIds.addObject(item[0])
+            //locationArraySingleIds.addObject(item[0])
         }
         
         var locationDict = [String: Int]()
         
         for index in 0..<locationArray.count {
             
-            var id = locationArraySingleIds[index] as! String
-            var locationCount = locationArrayCount[index] as! Int
+            let id = locationArraySingleIds[index] as! String
+            let locationCount = locationArrayCount[index] as! Int
             
             locationDict[id] = locationCount
         }
@@ -415,7 +414,7 @@ public class PPChart {
                 }
             } else if error != nil {
                 
-                println(error!.localizedDescription)
+                print(error!.localizedDescription)
             }
             
         }

@@ -16,10 +16,9 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
     let question = questionObjectFromGameBoardSend
     let questionString = question?.valueForKey(questionAskKey) as! String
     var choices = question?.valueForKey(questionChoicesKey) as! [String]
-    let answers = question?.valueForKey(questionAnswersKey) as! [String]
     
     let questionLabel = UILabel()
-    drawPercentageRectOffView(questionLabel, masterView, 22, 85)
+    drawPercentageRectOffView(questionLabel, masterView: masterView, heightPercentage: 22, widthPercentage: 85)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmallerRegular
@@ -30,8 +29,8 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
     
     masterView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
-    questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView, 3.52)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView)
+    questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView: masterView, percent: 3.52)
     
     var yOriginPercent = CGFloat()
     var yOffsetBetween = CGFloat()
@@ -64,8 +63,6 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
     
     let masterWidth = masterView.frame.width
     let onePercentOfWidth = masterWidth/100
-    let masterHeight = masterView.frame.height
-    let onePercentOfHeight = masterHeight/100
     var count = 401
     
     for index in 0..<choices.count {
@@ -79,7 +76,7 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
         
         
         label.textColor = yellowColor
-        label.font = fontAdjuster(label.text!, fontSmallestRegular, fontSmallerRegular, fontMediumRegular)
+        label.font = fontAdjuster(label.text!, fontS: fontSmallestRegular, fontM: fontSmallerRegular, fontL: fontMediumRegular)
         label.frame.size.width = (onePercentOfWidth * 70)
         label.numberOfLines = 3
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -92,16 +89,16 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
         
         if count == 401 {
             
-            label.frame.origin.y = percentYFromBottomOfView(label, questionLabel, masterView, yOriginPercent)
+            label.frame.origin.y = percentYFromBottomOfView(label, viewToOffsetFrom: questionLabel, masterView: masterView, percent: yOriginPercent)
             
         } else if count != 401 {
             
             let previousLabel = masterView.viewWithTag(count - 1)
             
-            label.frame.origin.y = percentYFromBottomOfView(label, previousLabel!, masterView, yOffsetBetween)
+            label.frame.origin.y = percentYFromBottomOfView(label, viewToOffsetFrom: previousLabel!, masterView: masterView, percent: yOffsetBetween)
         }
         
-        label.frame.origin.x = centerXAlignment(label, masterView) - (onePercentOfWidth * 7)
+        label.frame.origin.x = centerXAlignment(label, masterView: masterView) - (onePercentOfWidth * 7)
         
         masterView.addSubview(label)
         
@@ -112,7 +109,7 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
     let scaleLineTopY = label1.frame.minY
     let scaleLineBottomY = label4.frame.maxY
     
-    drawVerticalScaleLine(masterView, scaleLineTopY, scaleLineBottomY, 92, 1.0, lowColor, fontTiny)
+    drawVerticalScaleLine(masterView, topYCoord: scaleLineTopY, bottomYCoord: scaleLineBottomY, xPositionPercent: 92, width: 1.0, color: lowColor, labelFontSize: fontTiny)
     
     let submitButton = UIButton()
     submitButton.tag = 4001
@@ -125,7 +122,7 @@ func orderingQuestion(viewController: UIViewController, masterView: UIView, labe
     
     masterView.addSubview(submitButton)
     
-    submitButton.frame.origin.x = centerXAlignment(submitButton, masterView)
+    submitButton.frame.origin.x = centerXAlignment(submitButton, masterView: masterView)
     submitButton.frame.origin.y = masterView.frame.height * 0.90
     
     completion()
@@ -146,7 +143,7 @@ func touchesBeganForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
                 draggedLabelCoordinates = label.center
                 
                 label.center.y = location.y
-                label.font = fontAdjuster(label.text!, fontSmallRegular, fontMediumRegular, fontLargeRegular)
+                label.font = fontAdjuster(label.text!, fontS: fontSmallRegular, fontM: fontMediumRegular, fontL: fontLargeRegular)
                 label.textColor = highestColor
                 
                 break
@@ -199,7 +196,7 @@ func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
                     
                     label.center = draggedLabelCoordinates
                     
-                    draggedLabel.font = fontAdjuster(draggedLabel.text!, fontSmallestRegular, fontSmallerRegular, fontMediumRegular)
+                    draggedLabel.font = fontAdjuster(draggedLabel.text!, fontS: fontSmallestRegular, fontM: fontSmallerRegular, fontL: fontMediumRegular)
                     draggedLabel.textColor = yellowColor
                     
                 })
@@ -216,7 +213,7 @@ func touchesEndedForOrderingQuestion(masterView: UIView, inout draggedLabelCoord
                                         
                     draggedLabel.center = draggedLabelCoordinates
                     
-                    draggedLabel.font = fontAdjuster(draggedLabel.text!, fontSmallestRegular, fontSmallerRegular, fontMediumRegular)
+                    draggedLabel.font = fontAdjuster(draggedLabel.text!, fontS: fontSmallestRegular, fontM: fontSmallerRegular, fontL: fontMediumRegular)
                     draggedLabel.textColor = yellowColor
                 })
                 
@@ -237,12 +234,10 @@ func drawVerticalScaleLine(masterView: UIView, topYCoord: CGFloat!, bottomYCoord
     
     let question = questionObjectFromGameBoardSend
     
-    let masterHeight = masterView.frame.height
     let masterWidth = masterView.frame.width
     let onePercentOfWidth = masterWidth/100
-    let onePercentOfHeight = masterHeight/100
     
-    println(topYCoord)
+    print(topYCoord)
     
     let lineXCoord = (onePercentOfWidth * xPositionPercent)
     

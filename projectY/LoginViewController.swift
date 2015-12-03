@@ -108,7 +108,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         
-        println("text field did return")
+        print("text field did return")
         
         if loginButton.alpha == 1.0 {
             
@@ -155,16 +155,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     func makeSizesAddSubviews(completion: () -> Void) {
         
-        drawPercentageRectOffView(facebookButton, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(twitterButton, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(spacerImage, self.view, 3.35, 88.75)
-        drawPercentageRectOffView(errorLabel, self.view, 2.81, 78.44)
-        drawPercentageRectOffView(userNameField, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(passwordField, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(loginButton, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(forgotPasswordButton, self.view, 2.81, 34.69)
-        drawPercentageRectOffView(signupWithEmail, self.view, 2.81, 34.69)
-        drawPercentageRectOffView(cancelLoginButton, self.view, 2.81, 34.69)
+        drawPercentageRectOffView(facebookButton, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(twitterButton, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(spacerImage, masterView: self.view, heightPercentage: 3.35, widthPercentage: 88.75)
+        drawPercentageRectOffView(errorLabel, masterView: self.view, heightPercentage: 2.81, widthPercentage: 78.44)
+        drawPercentageRectOffView(userNameField, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(passwordField, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(loginButton, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(forgotPasswordButton, masterView: self.view, heightPercentage: 2.81, widthPercentage: 34.69)
+        drawPercentageRectOffView(signupWithEmail, masterView: self.view, heightPercentage: 2.81, widthPercentage: 34.69)
+        drawPercentageRectOffView(cancelLoginButton, masterView: self.view, heightPercentage: 2.81, widthPercentage: 34.69)
 
         
         self.view.addSubview(facebookButton)
@@ -179,10 +179,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         self.view.addSubview(cancelLoginButton)
 
         
-        drawPercentageRectOffView(passwordConfirmationSignupField, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(emailSignupField, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(registerButton, self.view, 7.1, 78.44)
-        drawPercentageRectOffView(cancelRegisterButton, self.view, 2.81, 34.69)
+        drawPercentageRectOffView(passwordConfirmationSignupField, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(emailSignupField, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(registerButton, masterView: self.view, heightPercentage: 7.1, widthPercentage: 78.44)
+        drawPercentageRectOffView(cancelRegisterButton, masterView: self.view, heightPercentage: 2.81, widthPercentage: 34.69)
     
         
         self.view.addSubview(passwordConfirmationSignupField)
@@ -190,7 +190,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         self.view.addSubview(registerButton)
         self.view.addSubview(cancelRegisterButton)
         
-        drawSquareRectOffView(profilePictureButton, self.view, 20, 20)
+        drawSquareRectOffView(profilePictureButton, masterView: self.view, heightPercentage: 20, widthPercentage: 20)
         self.view.addSubview(profilePictureButton)
 
         completion()
@@ -202,9 +202,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     func loginSectionMake() {
         
         let viewHeight = self.view.frame.height
-        let viewWidth = self.view.frame.width
         let viewHeightPercent = viewHeight/100
-        let viewWidthPercent = viewWidth/100
         
         self.forgotPasswordButton.setTitle("forgot password?", forState: .Normal)
         self.forgotPasswordButton.titleLabel?.font = robotoLight14
@@ -223,39 +221,39 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         
         let facebookButtonYOffset = viewHeightPercent * 15.85
-        facebookButton.frame.offset(dx: centerXAlignment(facebookButton, self.view), dy: facebookButtonYOffset)
+        facebookButton.frame.offsetInPlace(dx: centerXAlignment(facebookButton, masterView: self.view), dy: facebookButtonYOffset)
         
         
         let errorLabelYOffset = self.facebookButton.frame.minY - (viewHeightPercent * 5)
-        errorLabel.frame.offset(dx: centerXAlignment(self.errorLabel, self.view), dy: errorLabelYOffset)
+        errorLabel.frame.offsetInPlace(dx: centerXAlignment(self.errorLabel, masterView: self.view), dy: errorLabelYOffset)
         
         
         let twitterButtonYOffest = self.facebookButton.frame.maxY + (viewHeightPercent * 3.5)
-        twitterButton.frame.offset(dx: centerXAlignment(twitterButton, self.view), dy: twitterButtonYOffest)
+        twitterButton.frame.offsetInPlace(dx: centerXAlignment(twitterButton, masterView: self.view), dy: twitterButtonYOffest)
         
         
         let spacerImageYOffset = self.twitterButton.frame.maxY + (viewHeightPercent * 9.5)
-        spacerImage.frame.offset(dx: centerXAlignment(spacerImage, self.view), dy: spacerImageYOffset)
+        spacerImage.frame.offsetInPlace(dx: centerXAlignment(spacerImage, masterView: self.view), dy: spacerImageYOffset)
         
         
         let userNameFieldYOffset = self.spacerImage.frame.maxY + (viewHeightPercent * 9.5)
-        userNameField.frame.offset(dx: centerXAlignment(userNameField, self.view), dy: userNameFieldYOffset)
+        userNameField.frame.offsetInPlace(dx: centerXAlignment(userNameField, masterView: self.view), dy: userNameFieldYOffset)
         
         
         let passwordFieldYOffset = userNameField.frame.maxY + (viewHeightPercent * 1.58)
-        passwordField.frame.offset(dx: centerXAlignment(passwordField, self.view), dy: passwordFieldYOffset)
+        passwordField.frame.offsetInPlace(dx: centerXAlignment(passwordField, masterView: self.view), dy: passwordFieldYOffset)
         
         
         let loginButtonYOffset = passwordField.frame.maxY + (viewHeightPercent * 1.58)
-        loginButton.frame.offset(dx: centerXAlignment(loginButton, self.view), dy: loginButtonYOffset)
+        loginButton.frame.offsetInPlace(dx: centerXAlignment(loginButton, masterView: self.view), dy: loginButtonYOffset)
         
         
         let forgotPasswordButtonYOffset = loginButton.frame.maxY + (viewHeightPercent * 1.58)
-        forgotPasswordButton.frame.offset(dx: centerXAlignment(forgotPasswordButton, self.view), dy: forgotPasswordButtonYOffset)
+        forgotPasswordButton.frame.offsetInPlace(dx: centerXAlignment(forgotPasswordButton, masterView: self.view), dy: forgotPasswordButtonYOffset)
         
         
         let signupWithEmailYOffset = forgotPasswordButton.frame.maxY
-        signupWithEmail.frame.offset(dx: centerXAlignment(signupWithEmail, self.view), dy: signupWithEmailYOffset)
+        signupWithEmail.frame.offsetInPlace(dx: centerXAlignment(signupWithEmail, masterView: self.view), dy: signupWithEmailYOffset)
         
         
         self.facebookButton.setImage(UIImage(named: facebookSignInImage), forState: .Normal)
@@ -387,20 +385,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                                 
                                 if error == nil {
 
-                                    println("this is the result: \(result)")
+                                    print("this is the result: \(result)")
                                     
                                         let data = result.objectForKey("data") as! NSDictionary
                                         let dataURL = data.objectForKey("url") as! String
                                         let pictureURL = NSURL(string: dataURL)
-                                        println(pictureURL)
+                                        print(pictureURL)
                                     
                                         let requestURL = NSURLRequest(URL: pictureURL!)
                                     
-                                        NSURLConnection.sendAsynchronousRequest(requestURL, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                                        NSURLConnection.sendAsynchronousRequest(requestURL, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
                                             if error == nil {
                                                 
-                                                var picture = PFFile(data: data)
-                                                var uiPicture = UIImage(data: data!)
+                                                let picture = PFFile(data: data!)
+                                                let uiPicture = UIImage(data: data!)
                                                 self.loginProfilePicture = uiPicture!
                                                 self.profilePictureButton.setBackgroundImage(uiPicture, forState: .Normal)
                                                 user.setValue(picture, forKey: profilePic)
@@ -423,7 +421,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
 
                                 } else if error != nil {
                                     
-                                    println("this is the error: \(error?.localizedDescription)")
+                                    print("this is the error: \(error?.localizedDescription)")
                                     SquaresActivityIndicator().stopIndicator(self.view)
                                     self.facebookButton.alpha = 1.0
                                 }
@@ -433,13 +431,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                         
                     })
                     
-                    println("User signed up and logged in through Facebook!")
+                    print("User signed up and logged in through Facebook!")
                     
                 } else {
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
-                    println("User logged through Facebook")
+
+                    let MatchListVC: MatchListViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MatchListVC") as! MatchListViewController
+                    
+                    self.presentViewController(MatchListVC, animated: true, completion: nil)
+                    print("User logged through Facebook")
                     
                 }
                 
@@ -456,7 +457,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 
             } else {
                 
-                println("Uh oh. The user cancelled the Facebook login.")
+                print("Uh oh. The user cancelled the Facebook login.")
             }
             
         }
@@ -482,17 +483,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                         if success == true {
                             
                             let verify = NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json")
-                            var request = NSMutableURLRequest(URL: verify!)
+                            let request = NSMutableURLRequest(URL: verify!)
                             PFTwitterUtils.twitter()!.signRequest(request)
                             var response: NSURLResponse?
                             var error: NSError?
-                            var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+                            var data: NSData?
+                            do {
+                                data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+                            } catch let error1 as NSError {
+                                error = error1
+                                data = nil
+                            } catch {
+                                fatalError()
+                            }
                             
                                 if error == nil {
                                     
-                                    let result = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments, error: &error) as! NSDictionary
+                                    let result = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
                                     
-                                    println(result)
+                                    print(result)
                                     
                                     let profileImageURLString = result.objectForKey("profile_image_url_https") as! String
                                     
@@ -518,7 +527,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                                             
                                         } else if error != nil {
                                             
-                                        println(error?.localizedDescription)
+                                        print(error?.localizedDescription)
                                             
                                         }
                                         
@@ -541,22 +550,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                         
                     })
                     
-                    print("User signed up and logged in with Twitter!")
+                    print("User signed up and logged in with Twitter!", terminator: "")
                     
                 } else {
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
                     
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
+                    let MatchListVC: MatchListViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MatchListVC") as! MatchListViewController
                     
-                    print("User logged in with Twitter!")
+                    self.presentViewController(MatchListVC, animated: true, completion: nil)
+                    
+                    print("User logged in with Twitter!", terminator: "")
                     
                 }
                 
             } else {
                 
                 
-                print("Uh oh. The user cancelled the Twitter login.")
+                print("Uh oh. The user cancelled the Twitter login.", terminator: "")
                 
             }
         }
@@ -579,9 +590,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         errorLabel.text = ""
         
         let viewHeight = self.view.frame.height
-        let viewWidth = self.view.frame.width
         let viewHeightPercentage = viewHeight/100
-        let viewWidthPercentage = viewWidth/100
         
         UIView.animateWithDuration(0.1, animations: { () -> Void in
             
@@ -628,14 +637,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             let errorLabelOffset = (self.userNameField.frame.minY - (viewHeightPercentage * 5))
             self.errorLabel.frame.origin = CGPoint(x: self.errorLabel.frame.origin.x, y: errorLabelOffset)
             
-            styleButton(self.cancelLoginButton, .Normal, UIColor.clearColor(), lightColoredFont, "cancel", 0.0)
+            styleButton(self.cancelLoginButton, state: .Normal, bgColor: UIColor.clearColor(), fontColor: lightColoredFont, title: "cancel", cornerRadius: 0.0)
             self.cancelLoginButton.titleLabel?.font = robotoLight14
             self.cancelLoginButton.titleLabel?.textAlignment = .Center
             self.cancelLoginButton.sizeToFit()
             self.cancelLoginButton.alpha = 0.0
             let cancelLoginButtonYOffset = self.forgotPasswordButton.frame.origin.y
             let cancelLoginButtonXOffset = self.loginButton.frame.maxX - self.cancelLoginButton.frame.width
-            self.cancelLoginButton.frame.offset(dx: cancelLoginButtonXOffset, dy: cancelLoginButtonYOffset)
+            self.cancelLoginButton.frame.offsetInPlace(dx: cancelLoginButtonXOffset, dy: cancelLoginButtonYOffset)
             self.cancelLoginButton.addTarget(self, action: Selector("cancelLoginButtonPressed"), forControlEvents: .TouchUpInside)
             
             
@@ -655,9 +664,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     func forgotPasswordPressed() {
         
         let viewHeight = self.view.frame.height
-        let viewWidth = self.view.frame.width
         let viewHeightPercentage = viewHeight/100
-        let viewWidthPercentage = viewWidth/100
         
         errorLabel.text = ""
         
@@ -721,12 +728,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 let errorLabelOffset = (self.userNameField.frame.minY - (viewHeightPercentage * 5))
                 self.errorLabel.frame.origin = CGPoint(x: self.errorLabel.frame.origin.x, y: errorLabelOffset)
                 
-                styleButton(self.cancelLoginButton, .Normal, UIColor.clearColor(), lightColoredFont, "cancel", 0.0)
+                styleButton(self.cancelLoginButton, state: .Normal, bgColor: UIColor.clearColor(), fontColor: lightColoredFont, title: "cancel", cornerRadius: 0.0)
                 self.cancelLoginButton.titleLabel?.font = robotoLight14
                 self.cancelLoginButton.titleLabel?.textAlignment = .Center
                 self.cancelLoginButton.sizeToFit()
                 let cancelForgotPasswordButtonYOffset = self.loginButton.frame.maxY + (viewHeightPercentage * 2.58)
-                let cancelForgotPasswordButtonXOffset = centerXAlignment(self.cancelLoginButton, self.view)
+                let cancelForgotPasswordButtonXOffset = centerXAlignment(self.cancelLoginButton, masterView: self.view)
                 self.cancelLoginButton.frame.origin = CGPoint(x: cancelForgotPasswordButtonXOffset, y: cancelForgotPasswordButtonYOffset)
                 self.cancelLoginButton.addTarget(self, action: Selector("cancelLoginButtonPressed"), forControlEvents: .TouchUpInside)
                 
@@ -751,7 +758,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         self.errorLabel.text = ""
         
-        println(self.loginButton.titleLabel?.text)
+        print(self.loginButton.titleLabel?.text)
         
         self.userNameField.layer.borderWidth = 0.0
         self.passwordField.layer.borderWidth = 0.0
@@ -785,7 +792,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         self.passwordField.alpha = 1.0
         
-        delay(0.2, { () -> () in
+        delay(0.2, closure: { () -> () in
             
             UIView.animateWithDuration(0.1, animations: { () -> Void in
                 
@@ -821,7 +828,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         errorLabel.text = ""
         
-        if userNameField.text.isEmpty {
+        if userNameField.text!.isEmpty {
             
             userNameField.layer.borderColor = redColor.CGColor
             userNameField.layer.borderWidth = 2.0
@@ -830,11 +837,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             
             return
             
-        } else if userNameField.text.isEmpty != true {
+        } else if userNameField.text!.isEmpty != true {
             
-            PFUser.requestPasswordResetForEmailInBackground(userNameField.text)
+            PFUser.requestPasswordResetForEmailInBackground(userNameField.text!)
             
-            PFUser.requestPasswordResetForEmailInBackground(userNameField.text, block: { (Bool, error) -> Void in
+            PFUser.requestPasswordResetForEmailInBackground(userNameField.text!, block: { (Bool, error) -> Void in
                 
                 if error != nil {
                     
@@ -842,7 +849,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     
                     self.errorHandlingAndLabelText(code!)
                     
-                    println(code)
+                    print(code)
                     
                 } else if error == nil {
                     
@@ -851,7 +858,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     self.errorLabel.textColor = highColor
                     self.errorLabel.text = "a password reset has been sent"
                     
-                    delay(0.75, { () -> () in
+                    delay(0.75, closure: { () -> () in
                         
                         self.cancelLoginButtonPressed()
                         
@@ -876,7 +883,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         let passWord = passwordField.text
         
         
-        if userNameField.text.isEmpty {
+        if userNameField.text!.isEmpty {
             
             userNameField.layer.borderColor = redColor.CGColor
             userNameField.layer.borderWidth = 2.0
@@ -886,7 +893,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             return
         }
         
-        if passwordField.text.isEmpty {
+        if passwordField.text!.isEmpty {
             
             passwordField.layer.borderColor = redColor.CGColor
             passwordField.layer.borderWidth = 2.0
@@ -901,14 +908,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: self.loginButton, percentageSize: 7, borderWidth: 2.0)
             
-            PFUser.logInWithUsernameInBackground(userName, password: passWord) { (user, error: NSError?) -> Void in
+            PFUser.logInWithUsernameInBackground(userName!, password: passWord!) { (user, error: NSError?) -> Void in
                 
                 if user != nil && error == nil {
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
+
+                    let MatchListVC: MatchListViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MatchListVC") as! MatchListViewController
                     
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
-                    println("case 1")
+                    self.presentViewController(MatchListVC, animated: true, completion: nil)
+                    print("case 1")
                     
                     
                 }
@@ -920,15 +929,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     self.loginButton.alpha = 1.0
                     
                     NSLog(error!.localizedDescription)
-                    println("case 2")
+                    print("case 2")
                     
-                    self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
+                    let MatchListVC: MatchListViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MatchListVC") as! MatchListViewController
+                    
+                    self.presentViewController(MatchListVC, animated: true, completion: nil)
                     
                 }
                 
                 if user == nil && error != nil {
                     
-                    println("case 3")
+                    print("case 3")
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
                     
@@ -951,9 +962,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         errorLabel.text = ""
         
         let viewHeight = self.view.frame.height
-        let viewWidth = self.view.frame.width
         let viewHeightPercentage = viewHeight/100
-        let viewWidthPercentage = viewWidth/100
         
         UIView.animateWithDuration(0.1, animations: { () -> Void in
             
@@ -1006,7 +1015,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 
                 let passwordConfirmationSignupFieldOffset = self.passwordField.frame.height + (viewHeightPercentage * 1.5)
                 
-                self.passwordConfirmationSignupField.frame.offset(dx: 0.0, dy: passwordConfirmationSignupFieldOffset)
+                self.passwordConfirmationSignupField.frame.offsetInPlace(dx: 0.0, dy: passwordConfirmationSignupFieldOffset)
                 
                 
             }, completion: { (Bool) -> Void in
@@ -1019,7 +1028,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     
                     let emailSignupFieldYOffset = self.passwordConfirmationSignupField.frame.height + (viewHeightPercentage * 1.5)
                     
-                    self.emailSignupField.frame.offset(dx: 0.0, dy: emailSignupFieldYOffset)
+                    self.emailSignupField.frame.offsetInPlace(dx: 0.0, dy: emailSignupFieldYOffset)
                     
                     
                 }, completion: { (Bool) -> Void in
@@ -1032,19 +1041,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                         
                         let registerButtonYOffset = self.emailSignupField.frame.height + (viewHeightPercentage * 1.5)
                         
-                        self.registerButton.frame.offset(dx: 0.0, dy: registerButtonYOffset)
+                        self.registerButton.frame.offsetInPlace(dx: 0.0, dy: registerButtonYOffset)
                         
                         
                     }, completion: { (Bool) -> Void in
                         
-                        styleButton(self.cancelRegisterButton, .Normal, UIColor.clearColor(), lightColoredFont, "cancel", 0.0)
+                        styleButton(self.cancelRegisterButton, state: .Normal, bgColor: UIColor.clearColor(), fontColor: lightColoredFont, title: "cancel", cornerRadius: 0.0)
                         self.cancelRegisterButton.titleLabel?.font = robotoLight14
                         self.cancelRegisterButton.titleLabel?.textAlignment = .Center
                         self.cancelRegisterButton.sizeToFit()
                         self.cancelRegisterButtonOrigin = self.cancelRegisterButton.frame.origin
                         let cancelRegisterButtonYOffset = self.registerButton.frame.maxY + (viewHeightPercentage * 1.35)
-                        let cancelRegisterButtonXOffset = centerXAlignment(self.cancelRegisterButton, self.view)
-                        self.cancelRegisterButton.frame.offset(dx: cancelRegisterButtonXOffset, dy: cancelRegisterButtonYOffset)
+                        let cancelRegisterButtonXOffset = centerXAlignment(self.cancelRegisterButton, masterView: self.view)
+                        self.cancelRegisterButton.frame.offsetInPlace(dx: cancelRegisterButtonXOffset, dy: cancelRegisterButtonYOffset)
                         self.cancelRegisterButton.addTarget(self, action: Selector("cancelRegisterPressed"), forControlEvents: .TouchUpInside)
                         self.cancelRegisterButton.alpha = 1.0
 
@@ -1086,7 +1095,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: registerButton, percentageSize: 7, borderWidth: 2.0)
         
-        var user = PFUser()
+        let user = PFUser()
         user.username = emailSignupField.text
         user.password = passwordConfirmationSignupField.text
         user.email = emailSignupField.text
@@ -1102,12 +1111,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 
                 self.registerButton.enabled = true
                 self.registerButton.backgroundColor = lowColor
-                let errorString = error.userInfo?["error"] as? NSString
                 self.errorHandlingAndLabelText(error.code)
             
             } else if success == true {
                 
-                var profilePicture = UIImage(named: defaultProfilePic)
+                let profilePicture = UIImage(named: defaultProfilePic)
                 
                 self.profilePictureButton.setBackgroundImage(profilePicture, forState: .Normal)
                 
@@ -1189,26 +1197,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     func newUserFinishedSignup() {
         
         let masterHeight = self.view.frame.height
-        let masterWidth = self.view.frame.width
-        let onePercentOfWidth = masterWidth/100
         let onePercentOfHeight = masterHeight/100
         
         self.profilePictureButton.addTarget(self, action: Selector("profilePicButtonPressed:"), forControlEvents: .TouchUpInside)
         self.profilePictureButton.contentMode = UIViewContentMode.ScaleAspectFill
         self.profilePictureButton.layer.cornerRadius = self.profilePictureButton.frame.height/2
         self.profilePictureButton.layer.masksToBounds = true
-        self.profilePictureButton.frame.origin.x = centerXAlignment(profilePictureButton, self.view)
+        self.profilePictureButton.frame.origin.x = centerXAlignment(profilePictureButton, masterView: self.view)
         self.profilePictureButton.frame.origin.y = onePercentOfHeight * 20
         
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
-        var overLayView = UIView()
-        drawPercentageRectOffView(overLayView, self.view, 85, 85)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let overLayView = UIView()
+        drawPercentageRectOffView(overLayView, masterView: self.view, heightPercentage: 85, widthPercentage: 85)
         self.view.insertSubview(overLayView, belowSubview: self.profilePictureButton)
         blurEffectView.frame = overLayView.bounds
         overLayView.addSubview(blurEffectView)
-        overLayView.frame.origin.y = centerYAlignment(overLayView, self.view)
-        overLayView.frame.origin.x = centerXAlignment(overLayView, self.view)
+        overLayView.frame.origin.y = centerYAlignment(overLayView, masterView: self.view)
+        overLayView.frame.origin.x = centerXAlignment(overLayView, masterView: self.view)
         overLayView.layer.cornerRadius = 10.0
         overLayView.clipsToBounds = true
         overLayView.alpha = 0.0
@@ -1220,7 +1226,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         self.profilePictureLabel.alpha = 0.0
         self.view.addSubview(profilePictureLabel)
         
-        self.profilePictureLabel.frame.origin.x = centerXAlignment(profilePictureLabel, self.view)
+        self.profilePictureLabel.frame.origin.x = centerXAlignment(profilePictureLabel, masterView: self.view)
         self.profilePictureLabel.frame.origin.y = profilePictureButton.frame.maxY + (onePercentOfHeight * 5)
         
         self.profileYesButton.setTitle("yes", forState: .Normal)
@@ -1231,7 +1237,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         self.profileYesButton.alpha = 0.0
         self.view.addSubview(profileYesButton)
         
-        self.profileYesButton.frame.origin.x = centerXAlignment(profileYesButton, self.view)
+        self.profileYesButton.frame.origin.x = centerXAlignment(profileYesButton, masterView: self.view)
         self.profileYesButton.frame.origin.y = profilePictureLabel.frame.maxY + (onePercentOfHeight * 4)
 
         
@@ -1243,7 +1249,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         self.profileNoButton.alpha = 0.0
         self.view.addSubview(profileNoButton)
         
-        self.profileNoButton.frame.origin.x = centerXAlignment(profileNoButton, self.view)
+        self.profileNoButton.frame.origin.x = centerXAlignment(profileNoButton, masterView: self.view)
         self.profileNoButton.frame.origin.y = profileYesButton.frame.maxY + (onePercentOfHeight * 3)
         
         profilePictureButton.frame.origin.x += self.view.frame.width
@@ -1304,7 +1310,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     func userOkWithProfilePicture() {
         
-        self.performSegueWithIdentifier("unwindFromLoginToGameBoardViewController", sender: self)
+        let MatchListVC: MatchListViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MatchListVC") as! MatchListViewController
+        
+        self.presentViewController(MatchListVC, animated: true, completion: nil)
         
     }
     
@@ -1320,14 +1328,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     }
     
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.profilePictureButton.setBackgroundImage(pickedImage, forState: .Normal)
             self.profilePictureButton.contentMode = .ScaleAspectFit
             
             let user = PFUser.currentUser()
             let image = UIImagePNGRepresentation(pickedImage)
-            let imageFile = PFFile(name: "profilePic.png", data: image)
+            let imageFile = PFFile(name: "profilePic.png", data: image!)
             user?.setValue(imageFile, forKey: profilePic)
             user?.saveInBackground()
         }

@@ -18,7 +18,7 @@ func rangeQuestion(viewController: UIViewController, masterView: UIView, rangeBu
     let answers = question?.valueForKey(questionAnswersKey) as! [Int]
     
     let questionLabel = UILabel()
-    drawPercentageRectOffView(questionLabel, masterView, 22, 85)
+    drawPercentageRectOffView(questionLabel, masterView: masterView, heightPercentage: 22, widthPercentage: 85)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmaller
@@ -29,8 +29,8 @@ func rangeQuestion(viewController: UIViewController, masterView: UIView, rangeBu
     
     masterView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
-    questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView, 3.52)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView)
+    questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView: masterView, percent: 3.52)
     
     let submitButton = UIButton()
     submitButton.setTitle("go", forState: .Normal)
@@ -41,25 +41,23 @@ func rangeQuestion(viewController: UIViewController, masterView: UIView, rangeBu
     masterView.addSubview(submitButton)
     
     submitButton.frame.origin.y = masterView.frame.height * 0.90
-    submitButton.frame.origin.x = centerXAlignment(submitButton, masterView)
+    submitButton.frame.origin.x = centerXAlignment(submitButton, masterView: masterView)
     
-    let masterWidth = masterView.frame.width
-    let onePercentOfWidth = masterWidth/100
     let masterHeight = masterView.frame.height
     let onePercentOfHeight = masterHeight/100
     
     let scaleLabelTopY = questionLabel.frame.maxY + (onePercentOfHeight * 8.8)
     let scaleLabelBottomY = (masterView.frame.height) - (onePercentOfHeight * 10)
     
-    drawVerticalScaleLineForRangeQuestion(masterView, scaleLabelTopY, scaleLabelBottomY, 85, 12.0, lowColor, fontSmaller) { (verticalLine: UIView) -> Void in
+    drawVerticalScaleLineForRangeQuestion(masterView, topYCoord: scaleLabelTopY, bottomYCoord: scaleLabelBottomY, xPositionPercent: 85, width: 12.0, color: lowColor, labelFontSize: fontSmaller) { (verticalLine: UIView) -> Void in
         
-        drawHorizontalDragBar(masterView, verticalLine, lowColor, rangeButtonOverlay, rangeBar, rangeLabel, userArrow, { () -> Void in
+        drawHorizontalDragBar(masterView, scaleBarLine: verticalLine, color: lowColor, rangeHandle: rangeButtonOverlay, rangeHandleBar: rangeBar, rangeLabel: rangeLabel, userArrow: userArrow, completion: { () -> Void in
           
-            drawRangeLabel(masterView, rangeBar, verticalLine, rangeLabel)
+            drawRangeLabel(masterView, rangeHorizontalBar: rangeBar, rangeVerticalScaleLine: verticalLine, rangeLabel: rangeLabel)
             
             let answer = answers[0]
             
-            drawArrowLabel(masterView, verticalLine, correctArrow, answer)
+            drawArrowLabel(masterView, rangeVerticalScaleLine: verticalLine, arrow: correctArrow, answer: answer)
             
             completion(verticalLine)
 
@@ -77,10 +75,8 @@ func drawVerticalScaleLineForRangeQuestion(masterView: UIView, topYCoord: CGFloa
     
     let question = questionObjectFromGameBoardSend
     
-    let masterHeight = masterView.frame.height
     let masterWidth = masterView.frame.width
     let onePercentOfWidth = masterWidth/100
-    let onePercentOfHeight = masterHeight/100
     
     let lineXCoord = (onePercentOfWidth * xPositionPercent)
     
@@ -123,14 +119,11 @@ func drawHorizontalDragBar(masterView: UIView, scaleBarLine: UIView, color: UICo
     
     rangeHandleBar.layer.cornerRadius = 1.0
     rangeHandleBar.backgroundColor = color
-    drawSquareRectOffView(rangeHandleBar, masterView, 2.0, 30)
+    drawSquareRectOffView(rangeHandleBar, masterView: masterView, heightPercentage: 2.0, widthPercentage: 30)
     rangeHandleBar.frame.size.height = 3.0
     masterView.addSubview(rangeHandleBar)
     
-    let masterHeight = masterView.frame.height
     let masterWidth = masterView.frame.width
-    let onePercentOfWidth = masterWidth/100
-    let onePercentOfHeight = masterHeight/100
     
     let dragBarX = scaleBarLine.frame.maxX - rangeHandleBar.frame.width
     let dragBarY = scaleBarLine.frame.maxY - rangeHandleBar.frame.size.height
@@ -142,7 +135,7 @@ func drawHorizontalDragBar(masterView: UIView, scaleBarLine: UIView, color: UICo
     userArrow.center.y = rangeHandleBar.center.y
     userArrow.frame.origin.x = rangeHandleBar.frame.maxX - userArrow.frame.width
     
-    drawSquareRectOffView(rangeHandle, masterView, 8, 8)
+    drawSquareRectOffView(rangeHandle, masterView: masterView, heightPercentage: 8, widthPercentage: 8)
     rangeHandle.layer.borderWidth = (masterWidth * 0.015)
     rangeHandle.layer.borderColor = yellowColor.CGColor
     rangeHandle.layer.cornerRadius = rangeHandle.frame.size.height/2
@@ -160,19 +153,12 @@ func drawHorizontalDragBar(masterView: UIView, scaleBarLine: UIView, color: UICo
 
 
 func drawRangeLabel(masterView: UIView, rangeHorizontalBar: UIView, rangeVerticalScaleLine: UIView, rangeLabel: UILabel) {
-    
-    let rangeTopString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelTop) as! String
+
     let rangeBottomString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelBottom) as! String
     
-    let rangeTopRegex = listMatches("\\d+", inString: rangeTopString)
-    let rangeTopInt = rangeTopRegex[0].toInt()
-    
     let rangeBottomRegex = listMatches("\\d+", inString: rangeBottomString)
-    let rangeBottomInt = rangeBottomRegex[0].toInt()
-    
-    let range = rangeTopInt! - rangeBottomInt!
-    let rangeIntervals = range / Int(rangeVerticalScaleLine.frame.height)
-    
+    let rangeBottomInt = Int(rangeBottomRegex[0])
+        
     rangeLabel.text = String(rangeBottomInt!)
     rangeLabel.textColor = UIColor.whiteColor()
     rangeLabel.font = fontMediumRegular
@@ -200,10 +186,10 @@ func drawArrowLabel(masterView: UIView, rangeVerticalScaleLine: UIView, arrow: U
     let rangeBottomString = questionObjectFromGameBoardSend?.valueForKey(scaleLabelBottom) as! String
     
     let rangeTopRegex = listMatches("\\d+", inString: rangeTopString)
-    let rangeTopInt = rangeTopRegex[0].toInt()
+    let rangeTopInt = Int(rangeTopRegex[0])
     
     let rangeBottomRegex = listMatches("\\d+", inString: rangeBottomString)
-    let rangeBottomInt = rangeBottomRegex[0].toInt()
+    let rangeBottomInt = Int(rangeBottomRegex[0])
     
     arrow.image = rangeTriangleCorrect
     arrow.hidden = true

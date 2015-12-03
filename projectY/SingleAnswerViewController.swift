@@ -23,12 +23,12 @@ class SingleAnswerViewController: UIViewController, UITextFieldDelegate {
         
         if type == 1 {
         
-            singleAnswerQuestion(self.view, self) { (answerInputField) -> Void in
+            singleAnswerQuestion(self.view, textFieldDelegate: self) { (answerInputField) -> Void in
                 
             }
         } else if type == 6 {
             
-            singleAnswerQuestionWithImage(self, self.view, self, { (answerInputField) -> Void in
+            singleAnswerQuestionWithImage(self, masterView: self.view, textFieldDelegate: self, completion: { (answerInputField) -> Void in
                 
                 
                 
@@ -45,14 +45,14 @@ class SingleAnswerViewController: UIViewController, UITextFieldDelegate {
       
         if type == 1 {
             
-        checkSingleAnswer(self, textField) { (correct) -> Void in
+        checkSingleAnswer(self, answerInputField: textField) { (correct) -> Void in
 
             
             }
             
         } else if type == 6 {
             
-            checkSingleAnswerWithImage(self, textField, { (correct) -> Void in
+            checkSingleAnswerWithImage(self, answerInputField: textField, completion: { (correct) -> Void in
                 
                 
                 

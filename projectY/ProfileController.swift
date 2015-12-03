@@ -43,9 +43,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
             if error == nil {
                 
-                var loginStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                var loginViewController: LoginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+                let loginViewController: LoginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
                 
                 self.presentViewController(loginViewController, animated: true, completion: nil)
                 
@@ -135,10 +133,8 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func checkForUser() {
         
         if PFUser.currentUser() == nil {
-                
-                var loginStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                var loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+            
+                let loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
                 
                 self.presentViewController(loginViewController, animated: true, completion: nil)
             
@@ -228,11 +224,11 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
-        animateWhereChartBar(bar1, answerCount1, 0.0)
-        animateWhereChartBar(bar2, answerCount2, 0.1)
-        animateWhereChartBar(bar3, answerCount3, 0.2)
-        animateWhereChartBar(bar4, answerCount4, 0.3)
-        animateWhereChartBar(bar5, answerCount5, 0.4)
+        animateWhereChartBar(bar1, barLabel: answerCount1, delay: 0.0)
+        animateWhereChartBar(bar2, barLabel: answerCount2, delay: 0.1)
+        animateWhereChartBar(bar3, barLabel: answerCount3, delay: 0.2)
+        animateWhereChartBar(bar4, barLabel: answerCount4, delay: 0.3)
+        animateWhereChartBar(bar5, barLabel: answerCount5, delay: 0.4)
         
     }
     
@@ -314,14 +310,14 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
 
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.profilePicture.setBackgroundImage(pickedImage, forState: .Normal)
             self.profilePicture.contentMode = .ScaleAspectFit
             
             let user = userObject
             let image = UIImagePNGRepresentation(pickedImage)
-            let imageFile = PFFile(name: "profilePic.png", data: image)
+            let imageFile = PFFile(name: "profilePic.png", data: image!)
             user?.setValue(imageFile, forKey: profilePic)
             user?.saveInBackground()
         }
@@ -350,7 +346,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 
             } else if error != nil {
                 
-                println(error!.localizedDescription)
+                print(error!.localizedDescription)
                 
             }
             
@@ -401,17 +397,11 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         let countArray = [geoCount, musicCount, scienceCount, historyCount, moneyCount, productsCount, peopleCount, sportsCount]
         
-        let titleArray = ["GEOGRAPHY", "MUSIC", "SCIENCE", "TV", "HISTORY", "MONEY", "PRODUCTS", "PEOPLE", "SPORTS"]
-        
-        let sortedArray = Array(countArray).sorted(>)
-        
         let chartColors = [highColor, lightPurpleColor,lowestColor, lowColor, midColor, orangeColor, whiteColor, highestColor, highestColor]
         
         self.questionCategoryChart.backgroundColor = backgroundColor
         self.questionCategoryChart.holeColor = backgroundColor
         self.questionCategoryChart.legend.enabled = false
-
-        self.questionCategoryChart.valueFormatter.maximumFractionDigits = 0
         
         self.questionCategoryChart.descriptionFont = fontSmall
         self.questionCategoryChart.descriptionText = ""
@@ -460,7 +450,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
             completion()
             
-            SwiftSpinner.hide(completion: nil)
             
         })
         
@@ -484,7 +473,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.categoryChartBackgroundCenterColor.layer.borderWidth = (self.view.frame.width/100)
         self.categoryChartBackgroundCenterColor.layer.borderColor = chartColors[entry.xIndex].CGColor
         
-        println("touch function ran")
+        print("touch function ran")
         
         let numberToDisplay = Int(entry.value)
         categoryChartNumberLabel.text = String(numberToDisplay)
@@ -502,14 +491,14 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         categoryChartCategoryLabel.textAlignment = .Center
         categoryChartCategoryLabel.hidden = false
         
-        println(questionCategoryChart.highlighted.count)
+        print(questionCategoryChart.highlighted.count)
         
         if questionCategoryChart.highlighted.count == 0 {
             
             let total = chartView.data?.yValueSum
             let totalInt = Int(total!)
             self.totalAnswerLabel.text = String(totalInt)
-            println(totalInt)
+            print(totalInt)
             
         }
         
@@ -596,12 +585,12 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
         }
         
-        var bar: UIButton = locationBars[sender.tag]
+        let bar: UIButton = locationBars[sender.tag]
         bar.layer.cornerRadius = 3.0
         bar.layer.borderColor = lightColoredFont.CGColor
         bar.layer.borderWidth = 2.0
         
-        var countLabel = answerCountLabels[sender.tag]
+        let countLabel = answerCountLabels[sender.tag]
         countLabel.layer.cornerRadius = 4.0
         countLabel.backgroundColor = lightColoredFont
         countLabel.setTitleColor(backgroundColor, forState: .Normal)
@@ -611,8 +600,6 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         let viewHeight = self.view.frame.height
         let viewWidth = self.view.frame.width
-        let viewHeightPercentage = viewHeight/100
-        let viewWidthPercentage = viewWidth/100
         
         let xCord: CGFloat = 0.0
         let height: CGFloat = 29.0
@@ -620,7 +607,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let width: CGFloat = self.view.frame.width
         
     
-        var label: UILabel = locationLabels[sender.tag]
+        let label: UILabel = locationLabels[sender.tag]
         label.frame = CGRectMake(xCord, yCord, width, height)
         label.textAlignment = .Center
         let labelText: String = whereChartLocationNames[sender.tag]
@@ -684,8 +671,8 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         self.childView.addSubview(checkmarkImage)
         self.childView.bringSubviewToFront(checkmarkImage)
-        println(checkmarkImage.frame.origin.x)
-        println(checkmarkImage.frame.origin.y)
+        print(checkmarkImage.frame.origin.x)
+        print(checkmarkImage.frame.origin.y)
         
         label.hidden = false
         statusLabel.hidden = false
@@ -702,23 +689,23 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func queryForPlacesPlayed(completion: (locationObjects: [PFObject], playedAreasDict: [String:Int]) -> Void) {
         
         let user = userObject
-        var locationArray = user?.valueForKey(whereUserAnswered) as! NSArray
+        let locationArray = user?.valueForKey(whereUserAnswered) as! NSArray
         
-        var locationArrayCount = NSMutableArray()
-        var locationArraySingleIds = NSMutableArray()
+        let locationArrayCount = NSMutableArray()
+        let locationArraySingleIds = NSMutableArray()
         
         for item in locationArray {
             
             locationArrayCount.addObject(item.count)
-            locationArraySingleIds.addObject(item[0])
+            //locationArraySingleIds.addObject(item[0] as! String)
         }
         
         var locationDict = [String: Int]()
         
         for index in 0..<locationArray.count {
             
-            var id = locationArraySingleIds[index] as! String
-            var locationCount = locationArrayCount[index] as! Int
+            let id = locationArraySingleIds[index] as! String
+            let locationCount = locationArrayCount[index] as! Int
             
             locationDict[id] = locationCount
         }
@@ -738,7 +725,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 }
             } else if error != nil {
                 
-                println(error!.localizedDescription)
+                print(error!.localizedDescription)
             }
             
         }
@@ -771,21 +758,19 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        println("Failed to log in...")
+        print("Failed to log in...")
 
         
     }
     
     
     func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [NSObject : AnyObject]) -> Bool {
-   
-        let signUpViewController = PFSignUpViewController()
-        
+           
         if let password = info["password"] as? String {
             
             signUpController.signUpView?.passwordField?.backgroundColor = UIColor.redColor()
             
-            return count(password.utf16) >= 8
+            return password.utf16.count >= 8
         }
         
         return false
@@ -800,12 +785,12 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        println("Failed to sign up...")
+        print("Failed to sign up...")
     }
     
     
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        println("User dismissed sign up.")
+        print("User dismissed sign up.")
     }
     
     
@@ -822,7 +807,7 @@ class Accounts: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func setConstraints() {
         
         let viewHeight = self.view.frame.height
-        println(viewHeight)
+        print(viewHeight)
 
         
         switch(viewHeight) {

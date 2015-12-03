@@ -26,8 +26,8 @@ func displayQuestionContainer(masterView: UIViewController, question: PFObject, 
     overLay.backgroundColor = backgroundColor
     overLay.alpha = 0.9
 
-    var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-    var blurEffectView = UIVisualEffectView(effect: blurEffect)
+    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = masterView.view.bounds
     blurEffectView.alpha = 1.0
     
@@ -77,7 +77,7 @@ func animateContainerView(masterView: UIViewController, containerView: UIView, c
 
 func dismissContainerView(containerView: UIView, completion: () -> Void) {
     
-    delay(2.0, { () -> () in
+    delay(2.0, closure: { () -> () in
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             

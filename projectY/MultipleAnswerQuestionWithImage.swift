@@ -15,10 +15,9 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     let question: PFObject = questionObjectFromGameBoardSend!
     let imageFile = question.valueForKey(questionImageKey) as! PFFile
     let questionString = question.valueForKey(questionAskKey) as! String
-    let questionAnswers = question.valueForKey(questionAnswersKey) as! NSArray
     
     let imageView = UIImageView()
-    drawPercentageRectOffView(imageView, masterView, 35.05, 100)
+    drawPercentageRectOffView(imageView, masterView: masterView, heightPercentage: 35.05, widthPercentage: 100)
     imageView.tag = imageTag
     masterView.addSubview(imageView)
     
@@ -27,7 +26,7 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     
     let textField = UITextField()
     textField.alpha = 0.0
-    drawPercentageRectOffView(textField, masterView, 6.5, 90)
+    drawPercentageRectOffView(textField, masterView: masterView, heightPercentage: 6.5, widthPercentage: 90)
     textField.backgroundColor = UIColor.whiteColor()
     textField.layer.borderWidth = 1.0
     textField.layer.cornerRadius = 4.0
@@ -43,8 +42,8 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     
     viewController.view.addSubview(textField)
     
-    textField.frame.origin.x = centerXAlignment(textField, masterView)
-    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField)
+    textField.frame.origin.x = centerXAlignment(textField, masterView: masterView)
+    textField.frame.origin.y = placeTextFieldAccordingToDeviceSize(masterView, textField: textField)
     
     let dropDownAnswerLabel = UILabel()
     dropDownAnswerLabel.textAlignment = .Center
@@ -54,7 +53,7 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     
     if masterView.frame.height <= 480 {
         dropDownAnswerLabel.frame.size.width = masterView.frame.width * 0.80
-        dropDownAnswerLabel.frame.origin.x = centerXAlignment(dropDownAnswerLabel, masterView)
+        dropDownAnswerLabel.frame.origin.x = centerXAlignment(dropDownAnswerLabel, masterView: masterView)
     }
     
     dropDownAnswerLabel.tag = dropDownTag
@@ -76,7 +75,7 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     textField.leftViewMode = .Always
     
     let questionLabel = PaddedLabel15()
-    drawPercentageRectOffView(questionLabel, masterView, 25, 100)
+    drawPercentageRectOffView(questionLabel, masterView: masterView, heightPercentage: 25, widthPercentage: 100)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmallest
@@ -94,13 +93,13 @@ func multipleAnswerQuestionWithImage(viewController: UIViewController, textField
     
     masterView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView)
     questionLabel.frame.origin.y = masterView.frame.height * 0.3453
     
-    drawCallKeyboardButton(viewController, masterView, keyboardButtonTag)
-    drawAnswerLabelAndLights(masterView, imageView, textField, dropDownTag, lightTag)
+    drawCallKeyboardButton(viewController, masterView: masterView, buttonTag: keyboardButtonTag)
+    drawAnswerLabelAndLights(masterView, imageView: imageView, answerInputField: textField, answerLabelTag: dropDownTag, startingLightTag: lightTag)
     
-    queryForImage(imageFile, { (image) -> Void in
+    queryForImage(imageFile, completion: { (image) -> Void in
         
         imageView.image = image
         imageView.contentMode = .ScaleAspectFit
@@ -123,8 +122,8 @@ func drawCallKeyboardButton(viewController: UIViewController, masterView: UIView
     button.contentMode = .ScaleAspectFit
     masterView.addSubview(button)
     
-    button.frame.origin.x = centerXAlignment(button, masterView)
-    button.frame.origin.y = percentYFromMasterFrame(button, masterView, 90)
+    button.frame.origin.x = centerXAlignment(button, masterView: masterView)
+    button.frame.origin.y = percentYFromMasterFrame(button, masterView: masterView, percent: 90)
     
     button.addTarget(viewController, action: Selector("makeTextFieldFirstResponder:"), forControlEvents: .TouchUpInside)
     
@@ -139,7 +138,7 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
     
     let subImageViewAnswerShow = UILabel()
     subImageViewAnswerShow.text = ""
-    drawPercentageRectOffView(subImageViewAnswerShow, masterView, 4.22, 100)
+    drawPercentageRectOffView(subImageViewAnswerShow, masterView: masterView, heightPercentage: 4.22, widthPercentage: 100)
     subImageViewAnswerShow.textAlignment = .Center
     subImageViewAnswerShow.textColor = highestColor
     subImageViewAnswerShow.font = fontSmallerRegular
@@ -147,20 +146,17 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
     
     masterView.addSubview(subImageViewAnswerShow)
     
-    subImageViewAnswerShow.frame.origin.x = centerXAlignment(subImageViewAnswerShow, masterView)
+    subImageViewAnswerShow.frame.origin.x = centerXAlignment(subImageViewAnswerShow, masterView: masterView)
     subImageViewAnswerShow.frame.origin.y = imageView!.frame.maxY
     
-    let yCoord = subImageViewAnswerShow.frame.origin.y + (masterView.frame.height * 0.0268)
     var startingXCoord = masterView.center.x
-    var lightSpacing = (masterView.frame.width * 0.0156)
+    let lightSpacing = (masterView.frame.width * 0.0156)
     
     var count = startingLightTag
     
     var previousLightPositiveXCoord = CGFloat()
     var previousLightNegativeXCoord = CGFloat()
     var previousAnswerLabelYCoord = masterView.frame.height * 0.565
-    
-    let screenHeight = masterView.frame.height
     
     if answers.count % 2 == 0 {
         
@@ -191,7 +187,7 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
         previousAnswerLabelYCoord = previousAnswerLabelYCoord + answerLabel.frame.height + 1
         
         let light = UIView()
-        drawPercentageRectOffView(light, masterView, 0.7, 9.37)
+        drawPercentageRectOffView(light, masterView: masterView, heightPercentage: 0.7, widthPercentage: 9.37)
         light.layer.borderWidth = 0.5
         light.layer.borderColor = lowColor.CGColor
         light.tag = count
@@ -235,13 +231,12 @@ func drawAnswerLabelAndLights(masterView: UIView, imageView: UIImageView?, answe
 
 func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewController: UIViewController) {
     
-    println(sender!.tag)
+    print(sender!.tag)
 
     
     let sender = sender as! UIButton
     var textFieldTag = Int()
     var questionAskTag = Int()
-    var imageViewTag = Int()
     var firstLightTag = Int()
     var arrayOfLights: [UIView]?
     
@@ -256,15 +251,13 @@ func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewControl
         
         textFieldTag = 8001
         questionAskTag = 801
-        imageViewTag = 803
         firstLightTag = 8111
-        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController: viewController)
         
     case 9003:
         
         textFieldTag = 9001
         questionAskTag = 901
-        imageViewTag = 903
         
     default:
         
@@ -272,9 +265,6 @@ func makeTextFieldFirstResponderForImageQuestion(sender: AnyObject?, viewControl
     }
     
     let questionAsk = viewController.view.viewWithTag(questionAskTag) as! UILabel
-    let imageView = viewController.view.viewWithTag(imageViewTag) as! UIImageView
-    let masterHeight = viewController.view.frame.height
-    
     
     if let answerInputField = viewController.view.viewWithTag(textFieldTag) as? UITextField {
         
@@ -327,8 +317,6 @@ func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewContr
     
     var textFieldTag = Int()
     var questionAskTag = Int()
-    var dropDownTag: Int?
-    var imageViewTag = Int()
     var keyboardButtonTag = Int()
     var firstLightTag = Int()
     var arrayOfLights: [UIView]?
@@ -345,17 +333,14 @@ func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewContr
         
         textFieldTag = 8001
         questionAskTag = 801
-        dropDownTag = 802
-        imageViewTag = 803
         keyboardButtonTag = 8003
         firstLightTag = 8111
-        arrayOfLights = returnArrayOfLights(firstLightTag, viewController)
+        arrayOfLights = returnArrayOfLights(firstLightTag, viewController: viewController)
         
     case 9002:
         
         textFieldTag = 9001
         questionAskTag = 901
-        imageViewTag = 903
         keyboardButtonTag = 9003
         
     default:
@@ -367,7 +352,6 @@ func removeTextFieldFromFirstResponderToShowQuestion(viewController: UIViewContr
     
     let showKeyboardButton = viewController.view.viewWithTag(keyboardButtonTag) as! UIButton
     let questionAsk = viewController.view.viewWithTag(questionAskTag) as! UILabel
-    let imageView = viewController.view.viewWithTag(imageViewTag) as! UIImageView
     let masterViewHeight = viewController.view.frame.height
     
     if let answerInputField = viewController.view.viewWithTag(textFieldTag) as? UITextField {
@@ -413,7 +397,7 @@ func returnArrayOfLights(firstLightTag: Int, viewController: UIViewController) -
     var tagNumber = firstLightTag
     var arrayOfLights = [UIView]()
     
-    for index in 0..<answers.count {
+    for _ in 0..<answers.count {
         
         let light = viewController.view.viewWithTag(tagNumber)
         

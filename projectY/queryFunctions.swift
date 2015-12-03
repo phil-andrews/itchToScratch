@@ -24,7 +24,7 @@ func queryForSingleObjectInBackgroundWithBlock(className: String, typeOfKey: Str
         
         if error == nil {
             
-            println("no error")
+            print("no error")
             
             objectToReturn = object!
             errorToReturn = nil
@@ -33,7 +33,7 @@ func queryForSingleObjectInBackgroundWithBlock(className: String, typeOfKey: Str
             
         } else if error?.code == 101 {
             
-            println("101 error")
+            print("101 error")
             
             errorToReturn = error
             objectToReturn = nil
@@ -44,7 +44,7 @@ func queryForSingleObjectInBackgroundWithBlock(className: String, typeOfKey: Str
         } else if error != nil && error?.code != 101 {
             
             NSLog(error!.localizedDescription)
-            println("error in getting object from queryForObjectInBackgroundWithBlock")
+            print("error in getting object from queryForObjectInBackgroundWithBlock")
             
         }
         
@@ -58,14 +58,14 @@ func queryForSingleObjectInBackgroundWithBlock(className: String, typeOfKey: Str
 
 func addAndSubtractUserFromLocationCount(currentLocationObject: PFObject) {
     
-    println("add user ran")
+    print("add user ran")
     
     let userObject: PFObject? = PFUser.currentUser()
     let oldLocation: String? = userObject?.valueForKey(usersOldLocation) as? String
     
     if oldLocation != nil {
         
-        queryForSingleObjectInBackgroundWithBlock(LocationClass, objectId, oldLocation!, { (object: PFObject?, error) -> Void in
+        queryForSingleObjectInBackgroundWithBlock(LocationClass, typeOfKey: objectId, equalToValue: oldLocation!, completion: { (object: PFObject?, error) -> Void in
             
             if let object = object as PFObject? {
                 
@@ -86,7 +86,7 @@ func addAndSubtractUserFromLocationCount(currentLocationObject: PFObject) {
                 } else if error != nil {
                     
                     NSLog(error!.localizedDescription)
-                    println("could not log user out of previous area")
+                    print("could not log user out of previous area")
                 }
                 
             }
@@ -97,7 +97,7 @@ func addAndSubtractUserFromLocationCount(currentLocationObject: PFObject) {
 
     
     let currentLocationObjectID = currentLocationObject.objectId as String!
-    queryForSingleObjectInBackgroundWithBlock(LocationClass, objectId, currentLocationObjectID) { (object: PFObject?, error: NSError?) -> Void in
+    queryForSingleObjectInBackgroundWithBlock(LocationClass, typeOfKey: objectId, equalToValue: currentLocationObjectID) { (object: PFObject?, error: NSError?) -> Void in
         
         if let object = object as PFObject? {
             
@@ -106,8 +106,8 @@ func addAndSubtractUserFromLocationCount(currentLocationObject: PFObject) {
                 let currentUsers = object.valueForKey(usersLoggedInAtLocationArray) as! NSMutableArray
                 let userID = userObject?.objectId as String!
                 
-                println(currentUsers)
-                println(userID)
+                print(currentUsers)
+                print(userID)
                 
                 if currentUsers.containsObject(userID) == false {
                     
@@ -122,7 +122,7 @@ func addAndSubtractUserFromLocationCount(currentLocationObject: PFObject) {
                 
                 NSLog(error!.localizedDescription)
                 
-                println("could not add user to currentUsersAtlocation")
+                print("could not add user to currentUsersAtlocation")
                 
             }
             
@@ -139,9 +139,9 @@ func addAndSubtractUserFromLocationCount(currentLocationObject: PFObject) {
 func saveNewLocationObject(defaultObjectForNewLocation: PFObject, currentLocalityString: String, completion: (Bool, PFObject) -> Void) {
     
     
-    println("should be saving")
+    print("should be saving")
     
-    var newLocationObject = PFObject(className: LocationClass)
+    let newLocationObject = PFObject(className: LocationClass)
     
     newLocationObject[geoPoint] = PFGeoPoint(location: usersCurrentLocationData)
     newLocationObject[locality] = currentLocalityString
@@ -166,7 +166,7 @@ func saveNewLocationObject(defaultObjectForNewLocation: PFObject, currentLocalit
             
             NSLog(error!.localizedDescription)
             
-            println("could not save new location object")
+            print("could not save new location object")
         } else if error == nil && success {
             
             completion(success, newLocationObject)
@@ -213,7 +213,7 @@ func queryForImage(file: PFFile, completion: (UIImage) -> Void){
         if error == nil {
             
             let imageData = data
-            var image = UIImage(data: imageData!)
+            let image = UIImage(data: imageData!)
             completion(image!)
             
         }

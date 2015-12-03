@@ -21,7 +21,7 @@ func animateAnswerLabelAnsweredCorrect(answerLabel: UILabel, color: UIColor, com
     answerLabel.font = fontSmallestMedium
     answerLabel.textColor = backgroundColor
     
-    UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.9, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.9, options: [], animations: { () -> Void in
         
         answerLabel.transform = CGAffineTransformIdentity
 
@@ -41,7 +41,7 @@ func animateAnswerLabelsThatWereIncorrect(viewController: UIViewController, answ
     answerLabel.textColor = textColor
     answerLabel.hidden = false
     
-    UIView.animateWithDuration(0.25, delay: delayAmount, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.25, delay: delayAmount, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: [], animations: { () -> Void in
         
         answerLabel.center.x += viewController.view.frame.width
         

@@ -28,20 +28,20 @@ func checkMultpleAnswerNoImageQuestion(viewController: UIViewController, answerI
         for item in answer {
             
             let itemLowerCase = item.lowercaseString
-            let submittedAnswerLowerCase = submittedAnswer.lowercaseString
+            let submittedAnswerLowerCase = submittedAnswer!.lowercaseString
             
             if submittedAnswerLowerCase == itemLowerCase {
                 
-                println(answerLabel.text?.lowercaseString)
-                println(answer[0])
+                print(answerLabel.text?.lowercaseString)
+                print(answer[0])
 
                 if answerLabel.text?.lowercaseString == answer[0].lowercaseString && answerLabel.hidden == true {
                    
                     let light = viewController.view.viewWithTag(7111 + lightMatrix[submittedCount]) as UIView!
 
-                    animateAnswerLabelAnsweredCorrect(answerLabel, highColor, { () -> Void in
+                    animateAnswerLabelAnsweredCorrect(answerLabel, color: highColor, completion: { () -> Void in
                         
-                        animationForIndicatorLightFilledCorrect(light, highColor)
+                        animationForIndicatorLightFilledCorrect(light, color: highColor)
 
                     })
                     
@@ -66,7 +66,7 @@ func checkMultpleAnswerNoImageQuestion(viewController: UIViewController, answerI
     if submittedWasCorrect == false && submittedCount < answers.count {
         
         let light = viewController.view.viewWithTag(7111 + lightMatrix[submittedCount]) as UIView!
-        animateForIndicatorLightFilledIncorrect(light, lowColor)
+        animateForIndicatorLightFilledIncorrect(light, color: lowColor)
         
         ++submittedCount
         
@@ -79,9 +79,9 @@ func checkMultpleAnswerNoImageQuestion(viewController: UIViewController, answerI
         
         let delayAmount = 1.0
         
-        animateAllViewsDownAfterFinalSubmit(viewController, answers, delayAmount, { () -> Void in
+        animateAllViewsDownAfterFinalSubmit(viewController, answers: answers, delay: delayAmount, completion: { () -> Void in
             
-            animateHiddenAnswerLabels(viewController, unhiddenAnswerLabelTags, answerLabelStartTag, delayAmount, { () -> Void in
+            animateHiddenAnswerLabels(viewController, unhiddenViewTags: unhiddenAnswerLabelTags, startingAnswerLabelTag: answerLabelStartTag, delayAmount: delayAmount, completion: { () -> Void in
                 
                 
                 // do something with scoring right here
@@ -104,7 +104,7 @@ func animateAllViewsDownAfterFinalSubmit(viewController: UIViewController, answe
     
     func animateDown(view: UIView) {
         
-        UIView.animateKeyframesWithDuration(0.20, delay: delay, options: nil, animations: { () -> Void in
+        UIView.animateKeyframesWithDuration(0.20, delay: delay, options: [], animations: { () -> Void in
             
             view.center.y = view.center.y + (viewController.view.frame.height * 0.15)
 
@@ -137,7 +137,7 @@ func animateAllViewsDownAfterFinalSubmit(viewController: UIViewController, answe
 
 func animateHiddenAnswerLabels(viewController: UIViewController, unhiddenViewTags: [Int], startingAnswerLabelTag: Int, delayAmount: Double, completion: () -> Void) {
     
-    println("func ran")
+    print("func ran")
     
     let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     var delayAmountCopy = delayAmount + 0.5
@@ -164,7 +164,7 @@ func animateHiddenAnswerLabels(viewController: UIViewController, unhiddenViewTag
 
                 delayAmountCopy = delayAmountCopy + 0.15
                 
-                animateAnswerLabelsThatWereIncorrect(viewController, view, UIColor.whiteColor(), backgroundColor, delayAmountCopy, { () -> Void in
+                animateAnswerLabelsThatWereIncorrect(viewController, answerLabel: view, bgColor: UIColor.whiteColor(), textColor: backgroundColor!, delayAmount: delayAmountCopy, completion: { () -> Void in
                     
                     
                 })

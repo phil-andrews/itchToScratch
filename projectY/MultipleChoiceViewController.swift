@@ -27,7 +27,7 @@ class MultipleChoiceViewController: UIViewController {
         
         if type == 2 {
             
-            multipleChoiceQuestion(self, self.view, questionObjectFromGameBoardSend!, { () -> Void in
+            multipleChoiceQuestion(self, sView: self.view, question: questionObjectFromGameBoardSend!, completion: { () -> Void in
                 
                 
                 
@@ -35,7 +35,7 @@ class MultipleChoiceViewController: UIViewController {
             
         } else if type == 3 {
             
-            multipleChoiceQuestionWithImage(self, self.view, questionObjectFromGameBoardSend!, self.questionImageFile!, { () -> Void in
+            multipleChoiceQuestionWithImage(self, sView: self.view, question: questionObjectFromGameBoardSend!, questionImage: self.questionImageFile!, completion: { () -> Void in
                 
                 
                 
@@ -62,7 +62,7 @@ class MultipleChoiceViewController: UIViewController {
         
         let button = sender as! UIButton
         
-        checkMultipleChoiceQuestion(self, button.tag) { () -> () in
+        checkMultipleChoiceQuestion(self, senderTag: button.tag) { () -> () in
             
             
             

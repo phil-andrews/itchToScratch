@@ -7,162 +7,200 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03B691263854C8B3B9C4257CD37C41E8 /* MGLPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 887D8475C7A7362F01F3406C76D74584 /* MGLPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		066420A6650492514176897151DC2759 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE1B0E6038BD09A610E99B97686BF41 /* CoreLocation.framework */; };
-		0B6C288CB07F8CA5A36FE8FF7CB56BA6 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E25308B63E21BDDFBB23BEC4DFC75894 /* Mapbox.bundle */; };
-		10B62816AD9235C4C0BF202515874180 /* MGLMapView+IBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B03A878D3DBFE4918EA69B39EC85C8D /* MGLMapView+IBAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1293B152A58817A7AFF2C92EDD42E570 /* MGLMultiPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 91CBF180E1E9C194069CAD6FDEFCE701 /* MGLMultiPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		14E0DB099CA4CF63D4F2AC7DC100BF9D /* MGLUserLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 36720EC03DBF117758D3B2D8F3ABCFE7 /* MGLUserLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1718BD05ECDA4BC6A30CBCF39191C147 /* mapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 877FF7D19DA41819C25454D106780392 /* mapbox.png */; };
-		1F11EACF7D071812A0FC3EFAF53A3162 /* Pods-projectY-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32806B7E28041951EC9B161FC160F201 /* Pods-projectY-dummy.m */; };
-		1F2A15FF57BA48CFBA1112803E54CC93 /* MGLAnnotationImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D81ACFFB662F5D2BEBCB8EA4812AFA /* MGLAnnotationImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		249D94B2BD8B2ADB3F52A581B126D443 /* mapbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ECD76CDA3316C3DC548C26117558C1 /* mapbox@3x.png */; };
-		28D13932555367F3CEF0D84D95D96B68 /* MGLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E8B57219F48A6584D6F3CD1ADEC255B /* MGLGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		382FEA77909DD6C1B94A871F6BC1EFC5 /* Mapbox-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBAE41ECECD7A3ED27BF7BF4E08501C /* Mapbox-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E6C3DA631EB4A31443992BBB0773659 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9011C520EFA96D78421817354D237D35 /* Foundation.framework */; };
-		3FAB36CA01029AB59D54E115027EA488 /* Mapbox-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8FB34BC2B6764C0ECDEEA81751C13F /* Mapbox-iOS-SDK-dummy.m */; };
-		4E845974A77B252E28BB2E53F088BB9D /* MGLAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = D60E4C394DDC0C79202A2531DC3248CD /* MGLAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		523DC2E114111DC0D86E1B8563D1DFC6 /* MGLAccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A774A81E4E09FC0AFAC267D3AC0887B /* MGLAccountManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C3D2320EB29C1CE9C28F7C7B9B20602 /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF6FCAB88ADB0262286722E83254974 /* Compass@2x.png */; };
-		5EDDF0B2C2D13377AFDB2501E113C275 /* MGLDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 592729E0A8FB69A09A2C5679AC6D8D9D /* MGLDummy.m */; };
-		6656BF60C8AECE0D9A2CB42515D88E94 /* api_mapbox_com-geotrust.der in Resources */ = {isa = PBXBuildFile; fileRef = 85CF6FCBEA4D6C0064362A8E157C37D2 /* api_mapbox_com-geotrust.der */; };
-		6DBC6110F0DF35011D6D5EEB8A68652F /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = CCCA0AD420F2E6F8696E63DD96F19C63 /* Compass.png */; };
-		70206A6F3DDA2D9EDB548A63508CC6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9011C520EFA96D78421817354D237D35 /* Foundation.framework */; };
-		73E3B2B6178A653EAF1A094A1BB336F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D15D0A17FE73349233DE628C17AEC33 /* MobileCoreServices.framework */; };
-		79EEB03B8AC77F379630DA07644472C9 /* MGLShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6C96C57BE909E0F499A4C1170F1D66 /* MGLShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		803BEABBABF222DA92B32B9EDC00BFE0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF423195706F5B3116AAD308154AD52 /* ImageIO.framework */; };
-		82A563FBB0C797A181AACE673438A6CE /* Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 80E02D255BC2E040F730B63D5054E050 /* Mapbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9410F5805DB72149DEB3B1BBD38E0D26 /* MGLPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAEC394EE299C73EB132FE26005EF2F /* MGLPolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A6098AF8CCE3FDCB83C7C0C1A9CB550 /* MGLMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF64E89DAEFC522393744AF839BE16 /* MGLMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9FA7D5E80407B8AAD580EC379BB45CD3 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = FC570BB3E5F935AF3C7E04D2DCF3A567 /* styles */; };
-		A296D945D87C5D1BA99E7699A88A86AA /* MGLPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = FDD1301A616D042B99E002DD3F2DCA4D /* MGLPointAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B133467B269F3E84D2364E6303A55436 /* mapbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F8A85BE6B010D9768D631880E85EFE /* mapbox@2x.png */; };
-		C271C31D21B77C87E14D7867DB060DEF /* api_mapbox_com-digicert.der in Resources */ = {isa = PBXBuildFile; fileRef = 1DE8917184345F2A26CDADE99CF0DDC9 /* api_mapbox_com-digicert.der */; };
-		C6876412B8ED5EB01194EF350CB7A208 /* README in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1113AA84B7907255B56DD715F9AC /* README */; };
-		CBF28F922AAF7FEA76B7B8B0C4744368 /* MGLMapCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 69BDA0D7AEF279442FA16B1924AD2E9E /* MGLMapCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDACD998278250A7CB69D54357665882 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB6DEE502F05DDF9CB2078A1EAD8D5 /* GLKit.framework */; };
-		CE64CCDB6F6BB4FCBA4DC69D82675E2D /* Compass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 439E2F2F7DD8BBE6FDF00210AD8EEB79 /* Compass@3x.png */; };
-		D13AE52569F95C428886D444E975A3BF /* star_tilestream_net.der in Resources */ = {isa = PBXBuildFile; fileRef = 8ED43C17CF4A864EE4030A07427FF97D /* star_tilestream_net.der */; };
-		D656FCF02927AA143C05CABC9D59C957 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B6E4875DF58737239A07EA6FBAEEC2 /* QuartzCore.framework */; };
-		DE836651C91632504D2B9F0DDEDDAEE0 /* MGLOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F1C16B5ADAA56F2AE4FC1FB3874B11B /* MGLOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0B5B99569DF5839B275E52E169E85A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3E39E2CC8392DDEAD198C9166F42B7 /* SystemConfiguration.framework */; };
-		E6805CBAEE514A50CAE9C8A54407858F /* Pods-projectY-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BA9B277EEBB593683FD099B5D6C112E /* Pods-projectY-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECFD636F46BBBAFD66F57743BE5A5E28 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77ED757CD05D9C91C6D665CC15FAD7AE /* CoreTelephony.framework */; };
-		FA63DD303DA284A6BD8FB191FE4ECD02 /* MGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 701BE39C899033C7FC0E55B723D0EBB3 /* MGLTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		006A8BA0230F66DBA7FD61D26AD490F7 /* star_tilestream_net.der in Resources */ = {isa = PBXBuildFile; fileRef = D25AD23E542ED4045F58DE8923D17296 /* star_tilestream_net.der */; };
+		026C929143B035C79A7B0D523436CD90 /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8951BBAEB499F2BCA9D4FDA6C6131D14 /* Compass@2x.png */; };
+		070BFFE1C31859DA82636980268E2283 /* Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C88E048305845572F1F7763F02E902 /* Mapbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D08A112FF1D3402F6427F5BBFCC8CA5 /* MGLAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E184F31F95D7938B648F47FE8C41F4 /* MGLAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1430569A48F8D76C75AB3C6439D9072B /* MGLShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F0B7E8BC137335E742ECEB1CEE6E4DD /* MGLShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14ABB9E8A12DFD66E894BA09D135903A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */; };
+		15C7723CAE93433EC26C1BB3E412E800 /* MGLMultiPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 19629F0D0B0C75CBCD19E32AE579FDE5 /* MGLMultiPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17D3B0DC8063FEA6ECFE2784D4BA93E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE6EBA7C74FBF79797E1E42AA296663 /* QuartzCore.framework */; };
+		19B96A956D435698D4E24AD4D015D45D /* Mapbox-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D611D9CB809B64D7242FC22BF5C11FEC /* Mapbox-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FD78FE2FD49A40A25C1C715AC150E9A /* MGLOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 65AA10AC6D9DC73D2DC2025256B7F56C /* MGLOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24426C465DB74BADD81F1BDED6C46359 /* Compass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 728047E59FE080F26FD9FE844264D2C2 /* Compass@3x.png */; };
+		285ECC512186F3D9D13A510DCCB0F94F /* MGLPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E62D7A49AB327CCB6EA9B8ED0BE208C /* MGLPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C662DD3D5DA458E1D568482A9724B39 /* mapbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E4FA47988A6701476BDB9F65C4AB6C /* mapbox@3x.png */; };
+		2E30A944F6F01A206149C740AC02AA54 /* mapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC7E642702EFD50640FB45AFB4349 /* mapbox.png */; };
+		2F01A78B581A5CFC6DA73694E9D75D56 /* mapbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C65EC39D79D48392BB236C46E35167C /* mapbox@2x.png */; };
+		344A7A3AAA62F794A15DEAB4E4971012 /* MGLDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D139C247312FC54724EE8E1E0082A301 /* MGLDummy.m */; };
+		3B2CEAEEDFF327B78531EA4B4602024F /* MGLPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = 08F88CB72EC056FD2D321B27B9FDF6A6 /* MGLPolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D03C5D5D9D47B1FF6AB62767638ED71 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310B47F44F9C762797CAF77676A2A8F0 /* CoreLocation.framework */; };
+		3ED0DD22B27E0C9DC4EFA232B03D4C3B /* SwiftColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C884BE0FFD66B00DC5E27D3802E9CB /* SwiftColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		466D97702032CCD0D7EC928E3A2A211B /* styles in Resources */ = {isa = PBXBuildFile; fileRef = EB57F21F3396C75D795FFD07FFB1A468 /* styles */; };
+		53ADF45301E29A5FB48E02DEC3686C4B /* MGLUserLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = EE26A6C9748FBEF34CE36BA94850CE9F /* MGLUserLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56E1E351F2449A4B5D4EA55AB67F8763 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A6BD54999EB227BBC0EB1005247F5 /* CoreTelephony.framework */; };
+		58F8D5EFE7AA740C042EE39C297E41B9 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */; };
+		5C1DE8CCE242572CA69AB599591A5317 /* MGLMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A7B96D2AB438FC8890D20C065635DC /* MGLMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		688FC8F4165FAC0E0CEEF753EB8CCEDC /* Mapbox-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D70CC96077A81E1F2101E65A3339E09 /* Mapbox-iOS-SDK-dummy.m */; };
+		6AFD118C94E2360397693277795E0DBC /* MGLAnnotationImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4866DAE641B3D7A19D3AB0E51632A4D7 /* MGLAnnotationImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EB60926E41601CF17FE723A2FB8C38B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5AEE067096DB997D3C6710F0541AC /* ImageIO.framework */; };
+		891C672ECB8C97E0D2D7EA45C0FC822C /* MGLMapView+IBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 483A2C647703ABDA06CBD28D8E0A80FE /* MGLMapView+IBAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EB78A1837EE965D6DCEDC742A80F3A5 /* MGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BFE8FE5C5E26F8FF5DB79CB049BD31A /* MGLTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A6DB1952D6285CF03DD33FA4745B82F /* MGLPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7B521EB33B8D3F68A32746D57D91700 /* MGLPointAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A19A2335465BDA57287E864A324C1159 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866AB723FD27A566F45FAA3A0D2AB1F0 /* MobileCoreServices.framework */; };
+		AE2E659A83D968171D59726C8E0D78B9 /* api_mapbox_com-geotrust.der in Resources */ = {isa = PBXBuildFile; fileRef = F8119BC02280784F141805995FFFAEE6 /* api_mapbox_com-geotrust.der */; };
+		B3DB56593C827E0F47930C687279DAC2 /* Pods-projectY-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DBEDEDF9BF32B972C702A67D019EFA8 /* Pods-projectY-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC5E2A6CC887C0010C49B71C2BB3AD0F /* SwiftColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F96CA982AB17C5D078CDA9971E92654 /* SwiftColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD35D087C7E5963C086E383DEDF9266C /* api_mapbox_com-digicert.der in Resources */ = {isa = PBXBuildFile; fileRef = 960166AB14C094FB510D2418FB3F9785 /* api_mapbox_com-digicert.der */; };
+		C05230B172211308E1123A1B0C84B70C /* MGLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = D105F383B809289B9E4853E67A3D9296 /* MGLGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA69FFE0C11EF6927CC81BD9977BD2D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */; };
+		D0557FED9E6CD473D74D6B8DEF0B538C /* Pods-projectY-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB866428F5712F5686CE631878A5525 /* Pods-projectY-dummy.m */; };
+		D5716E03E5CF6D95660909865F51D56B /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F64A185E5F6FA4267E93FBF2B7DCB5 /* Compass.png */; };
+		D57F6B147837736074B489503A3ABA0F /* SwiftColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C6368C57BBC4F2B565A8B85535EB3D /* SwiftColors-dummy.m */; };
+		D67F5CB64DFDF93DFDB9AA3A6E0E21FB /* MGLMapCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F86EF6E13D2E814F0D926BD4707AA4 /* MGLMapCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAE7E502A53D32D2379111042566B759 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF243C380F6FB6E196587E7734803B8D /* GLKit.framework */; };
+		ED0D324BF917DC9AAE69EC376E6F05A4 /* MGLAccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BDBCD045AD8EB5E7B1C1EFF78765838 /* MGLAccountManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDA18F73CD70C7FBC6EADFEAD02D20E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */; };
+		EE503A1F2AFA95FC879A9E700A3B164C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF2A03396D5540D0E9C20781E2BA75E /* SystemConfiguration.framework */; };
+		FB50A94A49AF27026EA1D5E999B19F77 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 83D0522F5B4D628EF20373704DCE0D6F /* README */; };
+		FD9A817947D346BF9217BD6FAED9171C /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE45F2253B0CAE337F00A05454F054B /* SwiftColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A43E83AEAC94A0C3383D1E82F44A4F0 /* PBXContainerItemProxy */ = {
+		086747851857C5AFB29F1590AF250C3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E4514B391A457E963CF111F5F5D822E0;
-			remoteInfo = "Mapbox-iOS-SDK-Mapbox";
-		};
-		BAC56D94168DE8DE8DBA3671FA665094 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 66007E4F57C702CB0340F65865112D5E;
+			remoteGlobalIDString = E0ECC3BD18CAEBE408E9023D3847041A;
 			remoteInfo = "Mapbox-iOS-SDK";
+		};
+		EEA5B13305E7CFD026FD79F3CE635BFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B124149C5DC979C81E9F500C97930AE;
+			remoteInfo = SwiftColors;
+		};
+		FCFC4E95C396D5E756F65DA92DD723A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A31CEA90D258DAA1C52CF9B1139C66D;
+			remoteInfo = "Mapbox-iOS-SDK-Mapbox";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DBAE41ECECD7A3ED27BF7BF4E08501C /* Mapbox-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
-		15B6E4875DF58737239A07EA6FBAEEC2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		1D15D0A17FE73349233DE628C17AEC33 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		1DE8917184345F2A26CDADE99CF0DDC9 /* api_mapbox_com-digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-digicert.der"; path = "Mapbox.bundle/api_mapbox_com-digicert.der"; sourceTree = "<group>"; };
-		2B03A878D3DBFE4918EA69B39EC85C8D /* MGLMapView+IBAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MGLMapView+IBAdditions.h"; path = "Headers/MGLMapView+IBAdditions.h"; sourceTree = "<group>"; };
-		2EE1B0E6038BD09A610E99B97686BF41 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		2F1C16B5ADAA56F2AE4FC1FB3874B11B /* MGLOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLOverlay.h; path = Headers/MGLOverlay.h; sourceTree = "<group>"; };
-		32806B7E28041951EC9B161FC160F201 /* Pods-projectY-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-projectY-dummy.m"; sourceTree = "<group>"; };
-		36720EC03DBF117758D3B2D8F3ABCFE7 /* MGLUserLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLUserLocation.h; path = Headers/MGLUserLocation.h; sourceTree = "<group>"; };
+		02C6368C57BBC4F2B565A8B85535EB3D /* SwiftColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftColors-dummy.m"; sourceTree = "<group>"; };
+		05A7B96D2AB438FC8890D20C065635DC /* MGLMapView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapView.h; path = Headers/MGLMapView.h; sourceTree = "<group>"; };
+		08F88CB72EC056FD2D321B27B9FDF6A6 /* MGLPolyline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolyline.h; path = Headers/MGLPolyline.h; sourceTree = "<group>"; };
+		0FF2A03396D5540D0E9C20781E2BA75E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		19629F0D0B0C75CBCD19E32AE579FDE5 /* MGLMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMultiPoint.h; path = Headers/MGLMultiPoint.h; sourceTree = "<group>"; };
+		1D445B57CAC5430B93BEE8C1547C8C1A /* Pods-projectY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.release.xcconfig"; sourceTree = "<group>"; };
+		24E7294D87F16B084B655B2810130661 /* Mapbox-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Mapbox-iOS-SDK.modulemap"; sourceTree = "<group>"; };
+		25F5AEE067096DB997D3C6710F0541AC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		2DBEDEDF9BF32B972C702A67D019EFA8 /* Pods-projectY-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-projectY-umbrella.h"; sourceTree = "<group>"; };
+		310B47F44F9C762797CAF77676A2A8F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		3E62D7A49AB327CCB6EA9B8ED0BE208C /* MGLPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolygon.h; path = Headers/MGLPolygon.h; sourceTree = "<group>"; };
 		42AA4133550B76C79EE2F143E4D0CF9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		439E2F2F7DD8BBE6FDF00210AD8EEB79 /* Compass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@3x.png"; path = "Mapbox.bundle/Compass@3x.png"; sourceTree = "<group>"; };
-		46F8A85BE6B010D9768D631880E85EFE /* mapbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@2x.png"; path = "Mapbox.bundle/mapbox@2x.png"; sourceTree = "<group>"; };
+		434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
+		483A2C647703ABDA06CBD28D8E0A80FE /* MGLMapView+IBAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MGLMapView+IBAdditions.h"; path = "Headers/MGLMapView+IBAdditions.h"; sourceTree = "<group>"; };
+		4866DAE641B3D7A19D3AB0E51632A4D7 /* MGLAnnotationImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotationImage.h; path = Headers/MGLAnnotationImage.h; sourceTree = "<group>"; };
 		489CE33E93177AE45A0B518AE1AD48BD /* Pods-projectY-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-projectY-acknowledgements.plist"; sourceTree = "<group>"; };
-		4BA9B277EEBB593683FD099B5D6C112E /* Pods-projectY-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-projectY-umbrella.h"; sourceTree = "<group>"; };
-		4D6C96C57BE909E0F499A4C1170F1D66 /* MGLShape.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLShape.h; path = Headers/MGLShape.h; sourceTree = "<group>"; };
-		592729E0A8FB69A09A2C5679AC6D8D9D /* MGLDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MGLDummy.m; sourceTree = "<group>"; };
-		5D7D3D6A7085E27CDF2C961C461F29C2 /* Mapbox-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Mapbox-iOS-SDK.modulemap"; sourceTree = "<group>"; };
-		67AF7F28932361AF6D3FADF015A3A215 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69BDA0D7AEF279442FA16B1924AD2E9E /* MGLMapCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapCamera.h; path = Headers/MGLMapCamera.h; sourceTree = "<group>"; };
-		701BE39C899033C7FC0E55B723D0EBB3 /* MGLTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLTypes.h; path = Headers/MGLTypes.h; sourceTree = "<group>"; };
-		77ED757CD05D9C91C6D665CC15FAD7AE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
-		7A774A81E4E09FC0AFAC267D3AC0887B /* MGLAccountManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAccountManager.h; path = Headers/MGLAccountManager.h; sourceTree = "<group>"; };
-		7C3E39E2CC8392DDEAD198C9166F42B7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		7DAEC394EE299C73EB132FE26005EF2F /* MGLPolyline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolyline.h; path = Headers/MGLPolyline.h; sourceTree = "<group>"; };
-		7E8B57219F48A6584D6F3CD1ADEC255B /* MGLGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLGeometry.h; path = Headers/MGLGeometry.h; sourceTree = "<group>"; };
-		7E9C16A1B7D283D366DFD8BC4AE8351C /* Mapbox-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
-		80D81ACFFB662F5D2BEBCB8EA4812AFA /* MGLAnnotationImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotationImage.h; path = Headers/MGLAnnotationImage.h; sourceTree = "<group>"; };
-		80E02D255BC2E040F730B63D5054E050 /* Mapbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mapbox.h; path = Headers/Mapbox.h; sourceTree = "<group>"; };
-		85CF6FCBEA4D6C0064362A8E157C37D2 /* api_mapbox_com-geotrust.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-geotrust.der"; path = "Mapbox.bundle/api_mapbox_com-geotrust.der"; sourceTree = "<group>"; };
-		877FF7D19DA41819C25454D106780392 /* mapbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mapbox.png; path = Mapbox.bundle/mapbox.png; sourceTree = "<group>"; };
-		887D8475C7A7362F01F3406C76D74584 /* MGLPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolygon.h; path = Headers/MGLPolygon.h; sourceTree = "<group>"; };
-		8C083DD5E09051220DDB9C6E9040FAF7 /* Mapbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mapbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8ED43C17CF4A864EE4030A07427FF97D /* star_tilestream_net.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = star_tilestream_net.der; path = Mapbox.bundle/star_tilestream_net.der; sourceTree = "<group>"; };
-		9011C520EFA96D78421817354D237D35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		91CBF180E1E9C194069CAD6FDEFCE701 /* MGLMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMultiPoint.h; path = Headers/MGLMultiPoint.h; sourceTree = "<group>"; };
+		4BAFC7E642702EFD50640FB45AFB4349 /* mapbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mapbox.png; path = Mapbox.bundle/mapbox.png; sourceTree = "<group>"; };
+		52E184F31F95D7938B648F47FE8C41F4 /* MGLAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotation.h; path = Headers/MGLAnnotation.h; sourceTree = "<group>"; };
+		5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapbox.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE45F2253B0CAE337F00A05454F054B /* SwiftColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftColors.swift; path = SwiftColors/SwiftColors.swift; sourceTree = "<group>"; };
+		5D70CC96077A81E1F2101E65A3339E09 /* Mapbox-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mapbox-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
+		5DB866428F5712F5686CE631878A5525 /* Pods-projectY-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-projectY-dummy.m"; sourceTree = "<group>"; };
+		5DE6EBA7C74FBF79797E1E42AA296663 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		65AA10AC6D9DC73D2DC2025256B7F56C /* MGLOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLOverlay.h; path = Headers/MGLOverlay.h; sourceTree = "<group>"; };
+		66F64A185E5F6FA4267E93FBF2B7DCB5 /* Compass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Compass.png; path = Mapbox.bundle/Compass.png; sourceTree = "<group>"; };
+		6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftColors.xcconfig; sourceTree = "<group>"; };
+		6AD87A511E7A9D961E5E19B62F47D72B /* SwiftColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftColors-prefix.pch"; sourceTree = "<group>"; };
+		6BDBCD045AD8EB5E7B1C1EFF78765838 /* MGLAccountManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAccountManager.h; path = Headers/MGLAccountManager.h; sourceTree = "<group>"; };
+		6BFE8FE5C5E26F8FF5DB79CB049BD31A /* MGLTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLTypes.h; path = Headers/MGLTypes.h; sourceTree = "<group>"; };
+		71514FB41E5AFD152F8260291CAA2049 /* Mapbox-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
+		728047E59FE080F26FD9FE844264D2C2 /* Compass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@3x.png"; path = "Mapbox.bundle/Compass@3x.png"; sourceTree = "<group>"; };
+		7B45F3886D4792D4289E75ECE55A86EE /* Pods-projectY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.debug.xcconfig"; sourceTree = "<group>"; };
+		83D0522F5B4D628EF20373704DCE0D6F /* README */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README; path = Mapbox.bundle/README; sourceTree = "<group>"; };
+		866AB723FD27A566F45FAA3A0D2AB1F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		8951BBAEB499F2BCA9D4FDA6C6131D14 /* Compass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@2x.png"; path = "Mapbox.bundle/Compass@2x.png"; sourceTree = "<group>"; };
+		960166AB14C094FB510D2418FB3F9785 /* api_mapbox_com-digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-digicert.der"; path = "Mapbox.bundle/api_mapbox_com-digicert.der"; sourceTree = "<group>"; };
 		9BF19E2BE5C74828FAD7E643043030F2 /* Pods-projectY.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-projectY.modulemap"; sourceTree = "<group>"; };
-		A361314F25E0FD67C8111132093B62EB /* Pods_projectY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C65EC39D79D48392BB236C46E35167C /* mapbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@2x.png"; path = "Mapbox.bundle/mapbox@2x.png"; sourceTree = "<group>"; };
+		9F0B7E8BC137335E742ECEB1CEE6E4DD /* MGLShape.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLShape.h; path = Headers/MGLShape.h; sourceTree = "<group>"; };
+		9F96CA982AB17C5D078CDA9971E92654 /* SwiftColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftColors.h; path = SwiftColors/SwiftColors.h; sourceTree = "<group>"; };
+		A50A6BD54999EB227BBC0EB1005247F5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		A522FE3C6BE2B335A43C353499BF4712 /* Pods_projectY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55326718234A29B0D1EFA2BC4851FFB /* Pods-projectY-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-projectY-frameworks.sh"; sourceTree = "<group>"; };
-		A8ECD76CDA3316C3DC548C26117558C1 /* mapbox@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@3x.png"; path = "Mapbox.bundle/mapbox@3x.png"; sourceTree = "<group>"; };
-		AFAB1113AA84B7907255B56DD715F9AC /* README */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README; path = Mapbox.bundle/README; sourceTree = "<group>"; };
-		BA386BA606D6C85B32FA9C410E879B99 /* libMapbox.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
+		A9C88E048305845572F1F7763F02E902 /* Mapbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mapbox.h; path = Headers/Mapbox.h; sourceTree = "<group>"; };
+		AF243C380F6FB6E196587E7734803B8D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD8FB34BC2B6764C0ECDEEA81751C13F /* Mapbox-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mapbox-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
-		BDF6FCAB88ADB0262286722E83254974 /* Compass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@2x.png"; path = "Mapbox.bundle/Compass@2x.png"; sourceTree = "<group>"; };
-		BE4C088CC289C2A0D1B41A839FE0EF78 /* Mapbox-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
-		C2DF64E89DAEFC522393744AF839BE16 /* MGLMapView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapView.h; path = Headers/MGLMapView.h; sourceTree = "<group>"; };
-		CCCA0AD420F2E6F8696E63DD96F19C63 /* Compass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Compass.png; path = Mapbox.bundle/Compass.png; sourceTree = "<group>"; };
-		CE07FDB475E2CA569F63E2539C8CB198 /* Pods-projectY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.debug.xcconfig"; sourceTree = "<group>"; };
-		D4F2D07D64EDA9B970A1E3122F9604C7 /* Mapbox-iOS-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK-Private.xcconfig"; sourceTree = "<group>"; };
-		D60E4C394DDC0C79202A2531DC3248CD /* MGLAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotation.h; path = Headers/MGLAnnotation.h; sourceTree = "<group>"; };
-		DDF423195706F5B3116AAD308154AD52 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		E25308B63E21BDDFBB23BEC4DFC75894 /* Mapbox.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapbox.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDA78E4951BB5CA2E1C194CBEF382658 /* SwiftColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftColors.modulemap; sourceTree = "<group>"; };
+		C2E4FA47988A6701476BDB9F65C4AB6C /* mapbox@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@3x.png"; path = "Mapbox.bundle/mapbox@3x.png"; sourceTree = "<group>"; };
+		C42CA3916EB4D2E0D90B994D9EEC8A7A /* libMapbox.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
+		D0C884BE0FFD66B00DC5E27D3802E9CB /* SwiftColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftColors-umbrella.h"; sourceTree = "<group>"; };
+		D105F383B809289B9E4853E67A3D9296 /* MGLGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLGeometry.h; path = Headers/MGLGeometry.h; sourceTree = "<group>"; };
+		D139C247312FC54724EE8E1E0082A301 /* MGLDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MGLDummy.m; sourceTree = "<group>"; };
+		D25AD23E542ED4045F58DE8923D17296 /* star_tilestream_net.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = star_tilestream_net.der; path = Mapbox.bundle/star_tilestream_net.der; sourceTree = "<group>"; };
+		D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D611D9CB809B64D7242FC22BF5C11FEC /* Mapbox-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
+		D668AFD4B97D2CA1D1BE127040F6A96D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD718A41F34558C9A2117D9BBAC388C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E39DB76C61B19CBC8F17B78258582244 /* Pods-projectY-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-projectY-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EFBB6DEE502F05DDF9CB2078A1EAD8D5 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		EB57F21F3396C75D795FFD07FFB1A468 /* styles */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = styles; path = Mapbox.bundle/styles; sourceTree = "<group>"; };
+		EB930577563035896B0F31F6ADBF29C9 /* SwiftColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE26A6C9748FBEF34CE36BA94850CE9F /* MGLUserLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLUserLocation.h; path = Headers/MGLUserLocation.h; sourceTree = "<group>"; };
+		F176598B975F8EC76A8F4AF3CA50B2AF /* Mapbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mapbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7B521EB33B8D3F68A32746D57D91700 /* MGLPointAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPointAnnotation.h; path = Headers/MGLPointAnnotation.h; sourceTree = "<group>"; };
+		F8119BC02280784F141805995FFFAEE6 /* api_mapbox_com-geotrust.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-geotrust.der"; path = "Mapbox.bundle/api_mapbox_com-geotrust.der"; sourceTree = "<group>"; };
 		F81D42D1570BF87D52B9480A1B3F0463 /* Pods-projectY-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-projectY-resources.sh"; sourceTree = "<group>"; };
-		FA809150AE1162B52DB617D107694E98 /* Pods-projectY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.release.xcconfig"; sourceTree = "<group>"; };
-		FC570BB3E5F935AF3C7E04D2DCF3A567 /* styles */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = styles; path = Mapbox.bundle/styles; sourceTree = "<group>"; };
-		FDD1301A616D042B99E002DD3F2DCA4D /* MGLPointAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPointAnnotation.h; path = Headers/MGLPointAnnotation.h; sourceTree = "<group>"; };
+		F9F86EF6E13D2E814F0D926BD4707AA4 /* MGLMapCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapCamera.h; path = Headers/MGLMapCamera.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4ED36292932B214DA17B143509294BE1 /* Frameworks */ = {
+		2407C5623841D0BAC792EA084FFEEB95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E6C3DA631EB4A31443992BBB0773659 /* Foundation.framework in Frameworks */,
+				3D03C5D5D9D47B1FF6AB62767638ED71 /* CoreLocation.framework in Frameworks */,
+				56E1E351F2449A4B5D4EA55AB67F8763 /* CoreTelephony.framework in Frameworks */,
+				14ABB9E8A12DFD66E894BA09D135903A /* Foundation.framework in Frameworks */,
+				EAE7E502A53D32D2379111042566B759 /* GLKit.framework in Frameworks */,
+				7EB60926E41601CF17FE723A2FB8C38B /* ImageIO.framework in Frameworks */,
+				A19A2335465BDA57287E864A324C1159 /* MobileCoreServices.framework in Frameworks */,
+				17D3B0DC8063FEA6ECFE2784D4BA93E9 /* QuartzCore.framework in Frameworks */,
+				EE503A1F2AFA95FC879A9E700A3B164C /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		720E8E0FCE8B218BD63192A11CCDF8DE /* Frameworks */ = {
+		6923FCDB4F1E58C15B79FD7B9FD1124A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA18F73CD70C7FBC6EADFEAD02D20E8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		879CEA80F1AB8842FC75E5781B2A81D3 /* Frameworks */ = {
+		97B4AE74124AB2736855E42B8DC22F84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				066420A6650492514176897151DC2759 /* CoreLocation.framework in Frameworks */,
-				ECFD636F46BBBAFD66F57743BE5A5E28 /* CoreTelephony.framework in Frameworks */,
-				70206A6F3DDA2D9EDB548A63508CC6E0 /* Foundation.framework in Frameworks */,
-				CDACD998278250A7CB69D54357665882 /* GLKit.framework in Frameworks */,
-				803BEABBABF222DA92B32B9EDC00BFE0 /* ImageIO.framework in Frameworks */,
-				73E3B2B6178A653EAF1A094A1BB336F3 /* MobileCoreServices.framework in Frameworks */,
-				D656FCF02927AA143C05CABC9D59C957 /* QuartzCore.framework in Frameworks */,
-				E0B5B99569DF5839B275E52E169E85A0 /* SystemConfiguration.framework in Frameworks */,
+				CA69FFE0C11EF6927CC81BD9977BD2D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3358A273B5EDC3B7F3240D3CB05FBC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EB5EC2D0915DAD9BF2DCAF76C461860 /* SwiftColors */ = {
+			isa = PBXGroup;
+			children = (
+				9F96CA982AB17C5D078CDA9971E92654 /* SwiftColors.h */,
+				5CE45F2253B0CAE337F00A05454F054B /* SwiftColors.swift */,
+				323A49AA5EEF0291BE59068DC5C615E5 /* Support Files */,
+			);
+			path = SwiftColors;
+			sourceTree = "<group>";
+		};
 		2827C1AB4AE3E9975402D16D77692151 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,25 +209,42 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		72CFC3AE1C9C2285092B5C80F4BF9C01 /* Support Files */ = {
+		323A49AA5EEF0291BE59068DC5C615E5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				67AF7F28932361AF6D3FADF015A3A215 /* Info.plist */,
-				5D7D3D6A7085E27CDF2C961C461F29C2 /* Mapbox-iOS-SDK.modulemap */,
-				7E9C16A1B7D283D366DFD8BC4AE8351C /* Mapbox-iOS-SDK.xcconfig */,
-				D4F2D07D64EDA9B970A1E3122F9604C7 /* Mapbox-iOS-SDK-Private.xcconfig */,
-				BD8FB34BC2B6764C0ECDEEA81751C13F /* Mapbox-iOS-SDK-dummy.m */,
-				BE4C088CC289C2A0D1B41A839FE0EF78 /* Mapbox-iOS-SDK-prefix.pch */,
-				0DBAE41ECECD7A3ED27BF7BF4E08501C /* Mapbox-iOS-SDK-umbrella.h */,
+				DDD718A41F34558C9A2117D9BBAC388C /* Info.plist */,
+				BDA78E4951BB5CA2E1C194CBEF382658 /* SwiftColors.modulemap */,
+				6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */,
+				02C6368C57BBC4F2B565A8B85535EB3D /* SwiftColors-dummy.m */,
+				6AD87A511E7A9D961E5E19B62F47D72B /* SwiftColors-prefix.pch */,
+				D0C884BE0FFD66B00DC5E27D3802E9CB /* SwiftColors-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Mapbox-iOS-SDK";
+			path = "../Target Support Files/SwiftColors";
+			sourceTree = "<group>";
+		};
+		583ABD5B134427A48CDE3426D6952541 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				960166AB14C094FB510D2418FB3F9785 /* api_mapbox_com-digicert.der */,
+				F8119BC02280784F141805995FFFAEE6 /* api_mapbox_com-geotrust.der */,
+				66F64A185E5F6FA4267E93FBF2B7DCB5 /* Compass.png */,
+				8951BBAEB499F2BCA9D4FDA6C6131D14 /* Compass@2x.png */,
+				728047E59FE080F26FD9FE844264D2C2 /* Compass@3x.png */,
+				4BAFC7E642702EFD50640FB45AFB4349 /* mapbox.png */,
+				9C65EC39D79D48392BB236C46E35167C /* mapbox@2x.png */,
+				C2E4FA47988A6701476BDB9F65C4AB6C /* mapbox@3x.png */,
+				83D0522F5B4D628EF20373704DCE0D6F /* README */,
+				D25AD23E542ED4045F58DE8923D17296 /* star_tilestream_net.der */,
+				EB57F21F3396C75D795FFD07FFB1A468 /* styles */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		785553737B06AFC3DA711DDEB7D56194 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C371514A3DD510863439F2B53CC2D4AB /* iOS */,
+				C1E0FBB50CEF1527F45D3B4CF2DC96FC /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,8 +254,8 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				785553737B06AFC3DA711DDEB7D56194 /* Frameworks */,
-				D358748E1FA2CCE8E0B6AD71A2F6E8B6 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				B8B434A1B1A01AD5149A5EEE0B640071 /* Pods */,
+				B973F407EC4FCE7F169BC434F63093B9 /* Products */,
 				2827C1AB4AE3E9975402D16D77692151 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -212,185 +267,155 @@
 				9BF19E2BE5C74828FAD7E643043030F2 /* Pods-projectY.modulemap */,
 				E39DB76C61B19CBC8F17B78258582244 /* Pods-projectY-acknowledgements.markdown */,
 				489CE33E93177AE45A0B518AE1AD48BD /* Pods-projectY-acknowledgements.plist */,
-				32806B7E28041951EC9B161FC160F201 /* Pods-projectY-dummy.m */,
+				5DB866428F5712F5686CE631878A5525 /* Pods-projectY-dummy.m */,
 				A55326718234A29B0D1EFA2BC4851FFB /* Pods-projectY-frameworks.sh */,
 				F81D42D1570BF87D52B9480A1B3F0463 /* Pods-projectY-resources.sh */,
-				4BA9B277EEBB593683FD099B5D6C112E /* Pods-projectY-umbrella.h */,
-				CE07FDB475E2CA569F63E2539C8CB198 /* Pods-projectY.debug.xcconfig */,
-				FA809150AE1162B52DB617D107694E98 /* Pods-projectY.release.xcconfig */,
+				2DBEDEDF9BF32B972C702A67D019EFA8 /* Pods-projectY-umbrella.h */,
+				7B45F3886D4792D4289E75ECE55A86EE /* Pods-projectY.debug.xcconfig */,
+				1D445B57CAC5430B93BEE8C1547C8C1A /* Pods-projectY.release.xcconfig */,
 			);
 			name = "Pods-projectY";
 			path = "Target Support Files/Pods-projectY";
 			sourceTree = "<group>";
 		};
-		B42FDC86332BE1D10CF52295D8549CFB /* Frameworks */ = {
+		9CC7388FCF91B86C20CE36F754AC073B /* Mapbox-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				BA386BA606D6C85B32FA9C410E879B99 /* libMapbox.a */,
+				A9C88E048305845572F1F7763F02E902 /* Mapbox.h */,
+				6BDBCD045AD8EB5E7B1C1EFF78765838 /* MGLAccountManager.h */,
+				52E184F31F95D7938B648F47FE8C41F4 /* MGLAnnotation.h */,
+				4866DAE641B3D7A19D3AB0E51632A4D7 /* MGLAnnotationImage.h */,
+				D139C247312FC54724EE8E1E0082A301 /* MGLDummy.m */,
+				D105F383B809289B9E4853E67A3D9296 /* MGLGeometry.h */,
+				F9F86EF6E13D2E814F0D926BD4707AA4 /* MGLMapCamera.h */,
+				05A7B96D2AB438FC8890D20C065635DC /* MGLMapView.h */,
+				483A2C647703ABDA06CBD28D8E0A80FE /* MGLMapView+IBAdditions.h */,
+				19629F0D0B0C75CBCD19E32AE579FDE5 /* MGLMultiPoint.h */,
+				65AA10AC6D9DC73D2DC2025256B7F56C /* MGLOverlay.h */,
+				F7B521EB33B8D3F68A32746D57D91700 /* MGLPointAnnotation.h */,
+				3E62D7A49AB327CCB6EA9B8ED0BE208C /* MGLPolygon.h */,
+				08F88CB72EC056FD2D321B27B9FDF6A6 /* MGLPolyline.h */,
+				9F0B7E8BC137335E742ECEB1CEE6E4DD /* MGLShape.h */,
+				6BFE8FE5C5E26F8FF5DB79CB049BD31A /* MGLTypes.h */,
+				EE26A6C9748FBEF34CE36BA94850CE9F /* MGLUserLocation.h */,
+				D66256E767CC9F79B9946D2067DA9B97 /* Frameworks */,
+				583ABD5B134427A48CDE3426D6952541 /* Resources */,
+				C07D0E491E0CEE54E3A4494FA1B76076 /* Support Files */,
 			);
-			name = Frameworks;
+			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
-		C371514A3DD510863439F2B53CC2D4AB /* iOS */ = {
+		B8B434A1B1A01AD5149A5EEE0B640071 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2EE1B0E6038BD09A610E99B97686BF41 /* CoreLocation.framework */,
-				77ED757CD05D9C91C6D665CC15FAD7AE /* CoreTelephony.framework */,
-				9011C520EFA96D78421817354D237D35 /* Foundation.framework */,
-				EFBB6DEE502F05DDF9CB2078A1EAD8D5 /* GLKit.framework */,
-				DDF423195706F5B3116AAD308154AD52 /* ImageIO.framework */,
-				1D15D0A17FE73349233DE628C17AEC33 /* MobileCoreServices.framework */,
-				15B6E4875DF58737239A07EA6FBAEEC2 /* QuartzCore.framework */,
-				7C3E39E2CC8392DDEAD198C9166F42B7 /* SystemConfiguration.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E25308B63E21BDDFBB23BEC4DFC75894 /* Mapbox.bundle */,
-				8C083DD5E09051220DDB9C6E9040FAF7 /* Mapbox.framework */,
-				A361314F25E0FD67C8111132093B62EB /* Pods_projectY.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CDAC735DCD2708935C9A4FA6531AE3B2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CCCA0AD420F2E6F8696E63DD96F19C63 /* Compass.png */,
-				BDF6FCAB88ADB0262286722E83254974 /* Compass@2x.png */,
-				439E2F2F7DD8BBE6FDF00210AD8EEB79 /* Compass@3x.png */,
-				AFAB1113AA84B7907255B56DD715F9AC /* README */,
-				1DE8917184345F2A26CDADE99CF0DDC9 /* api_mapbox_com-digicert.der */,
-				85CF6FCBEA4D6C0064362A8E157C37D2 /* api_mapbox_com-geotrust.der */,
-				877FF7D19DA41819C25454D106780392 /* mapbox.png */,
-				46F8A85BE6B010D9768D631880E85EFE /* mapbox@2x.png */,
-				A8ECD76CDA3316C3DC548C26117558C1 /* mapbox@3x.png */,
-				8ED43C17CF4A864EE4030A07427FF97D /* star_tilestream_net.der */,
-				FC570BB3E5F935AF3C7E04D2DCF3A567 /* styles */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		D358748E1FA2CCE8E0B6AD71A2F6E8B6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EE14F899ED36E292D75928DB2FC8A258 /* Mapbox-iOS-SDK */,
+				9CC7388FCF91B86C20CE36F754AC073B /* Mapbox-iOS-SDK */,
+				1EB5EC2D0915DAD9BF2DCAF76C461860 /* SwiftColors */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		EE14F899ED36E292D75928DB2FC8A258 /* Mapbox-iOS-SDK */ = {
+		B973F407EC4FCE7F169BC434F63093B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A774A81E4E09FC0AFAC267D3AC0887B /* MGLAccountManager.h */,
-				D60E4C394DDC0C79202A2531DC3248CD /* MGLAnnotation.h */,
-				80D81ACFFB662F5D2BEBCB8EA4812AFA /* MGLAnnotationImage.h */,
-				592729E0A8FB69A09A2C5679AC6D8D9D /* MGLDummy.m */,
-				7E8B57219F48A6584D6F3CD1ADEC255B /* MGLGeometry.h */,
-				69BDA0D7AEF279442FA16B1924AD2E9E /* MGLMapCamera.h */,
-				C2DF64E89DAEFC522393744AF839BE16 /* MGLMapView.h */,
-				2B03A878D3DBFE4918EA69B39EC85C8D /* MGLMapView+IBAdditions.h */,
-				91CBF180E1E9C194069CAD6FDEFCE701 /* MGLMultiPoint.h */,
-				2F1C16B5ADAA56F2AE4FC1FB3874B11B /* MGLOverlay.h */,
-				FDD1301A616D042B99E002DD3F2DCA4D /* MGLPointAnnotation.h */,
-				887D8475C7A7362F01F3406C76D74584 /* MGLPolygon.h */,
-				7DAEC394EE299C73EB132FE26005EF2F /* MGLPolyline.h */,
-				4D6C96C57BE909E0F499A4C1170F1D66 /* MGLShape.h */,
-				701BE39C899033C7FC0E55B723D0EBB3 /* MGLTypes.h */,
-				36720EC03DBF117758D3B2D8F3ABCFE7 /* MGLUserLocation.h */,
-				80E02D255BC2E040F730B63D5054E050 /* Mapbox.h */,
-				B42FDC86332BE1D10CF52295D8549CFB /* Frameworks */,
-				CDAC735DCD2708935C9A4FA6531AE3B2 /* Resources */,
-				72CFC3AE1C9C2285092B5C80F4BF9C01 /* Support Files */,
+				5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */,
+				F176598B975F8EC76A8F4AF3CA50B2AF /* Mapbox.framework */,
+				A522FE3C6BE2B335A43C353499BF4712 /* Pods_projectY.framework */,
+				EB930577563035896B0F31F6ADBF29C9 /* SwiftColors.framework */,
 			);
-			path = "Mapbox-iOS-SDK";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C07D0E491E0CEE54E3A4494FA1B76076 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D668AFD4B97D2CA1D1BE127040F6A96D /* Info.plist */,
+				24E7294D87F16B084B655B2810130661 /* Mapbox-iOS-SDK.modulemap */,
+				434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */,
+				5D70CC96077A81E1F2101E65A3339E09 /* Mapbox-iOS-SDK-dummy.m */,
+				71514FB41E5AFD152F8260291CAA2049 /* Mapbox-iOS-SDK-prefix.pch */,
+				D611D9CB809B64D7242FC22BF5C11FEC /* Mapbox-iOS-SDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Mapbox-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		C1E0FBB50CEF1527F45D3B4CF2DC96FC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				310B47F44F9C762797CAF77676A2A8F0 /* CoreLocation.framework */,
+				A50A6BD54999EB227BBC0EB1005247F5 /* CoreTelephony.framework */,
+				D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */,
+				AF243C380F6FB6E196587E7734803B8D /* GLKit.framework */,
+				25F5AEE067096DB997D3C6710F0541AC /* ImageIO.framework */,
+				866AB723FD27A566F45FAA3A0D2AB1F0 /* MobileCoreServices.framework */,
+				5DE6EBA7C74FBF79797E1E42AA296663 /* QuartzCore.framework */,
+				0FF2A03396D5540D0E9C20781E2BA75E /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D66256E767CC9F79B9946D2067DA9B97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C42CA3916EB4D2E0D90B994D9EEC8A7A /* libMapbox.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5D411B959AF4A93EDE6E02C17347EF93 /* Headers */ = {
+		0D1A6791E3B73EFF8E6417DA42A3953B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523DC2E114111DC0D86E1B8563D1DFC6 /* MGLAccountManager.h in Headers */,
-				4E845974A77B252E28BB2E53F088BB9D /* MGLAnnotation.h in Headers */,
-				1F2A15FF57BA48CFBA1112803E54CC93 /* MGLAnnotationImage.h in Headers */,
-				28D13932555367F3CEF0D84D95D96B68 /* MGLGeometry.h in Headers */,
-				CBF28F922AAF7FEA76B7B8B0C4744368 /* MGLMapCamera.h in Headers */,
-				10B62816AD9235C4C0BF202515874180 /* MGLMapView+IBAdditions.h in Headers */,
-				9A6098AF8CCE3FDCB83C7C0C1A9CB550 /* MGLMapView.h in Headers */,
-				1293B152A58817A7AFF2C92EDD42E570 /* MGLMultiPoint.h in Headers */,
-				DE836651C91632504D2B9F0DDEDDAEE0 /* MGLOverlay.h in Headers */,
-				A296D945D87C5D1BA99E7699A88A86AA /* MGLPointAnnotation.h in Headers */,
-				03B691263854C8B3B9C4257CD37C41E8 /* MGLPolygon.h in Headers */,
-				9410F5805DB72149DEB3B1BBD38E0D26 /* MGLPolyline.h in Headers */,
-				79EEB03B8AC77F379630DA07644472C9 /* MGLShape.h in Headers */,
-				FA63DD303DA284A6BD8FB191FE4ECD02 /* MGLTypes.h in Headers */,
-				14E0DB099CA4CF63D4F2AC7DC100BF9D /* MGLUserLocation.h in Headers */,
-				382FEA77909DD6C1B94A871F6BC1EFC5 /* Mapbox-iOS-SDK-umbrella.h in Headers */,
-				82A563FBB0C797A181AACE673438A6CE /* Mapbox.h in Headers */,
+				19B96A956D435698D4E24AD4D015D45D /* Mapbox-iOS-SDK-umbrella.h in Headers */,
+				070BFFE1C31859DA82636980268E2283 /* Mapbox.h in Headers */,
+				ED0D324BF917DC9AAE69EC376E6F05A4 /* MGLAccountManager.h in Headers */,
+				0D08A112FF1D3402F6427F5BBFCC8CA5 /* MGLAnnotation.h in Headers */,
+				6AFD118C94E2360397693277795E0DBC /* MGLAnnotationImage.h in Headers */,
+				C05230B172211308E1123A1B0C84B70C /* MGLGeometry.h in Headers */,
+				D67F5CB64DFDF93DFDB9AA3A6E0E21FB /* MGLMapCamera.h in Headers */,
+				891C672ECB8C97E0D2D7EA45C0FC822C /* MGLMapView+IBAdditions.h in Headers */,
+				5C1DE8CCE242572CA69AB599591A5317 /* MGLMapView.h in Headers */,
+				15C7723CAE93433EC26C1BB3E412E800 /* MGLMultiPoint.h in Headers */,
+				1FD78FE2FD49A40A25C1C715AC150E9A /* MGLOverlay.h in Headers */,
+				9A6DB1952D6285CF03DD33FA4745B82F /* MGLPointAnnotation.h in Headers */,
+				285ECC512186F3D9D13A510DCCB0F94F /* MGLPolygon.h in Headers */,
+				3B2CEAEEDFF327B78531EA4B4602024F /* MGLPolyline.h in Headers */,
+				1430569A48F8D76C75AB3C6439D9072B /* MGLShape.h in Headers */,
+				8EB78A1837EE965D6DCEDC742A80F3A5 /* MGLTypes.h in Headers */,
+				53ADF45301E29A5FB48E02DEC3686C4B /* MGLUserLocation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05A6792676667F9A0C8CC56F7DAA159 /* Headers */ = {
+		18D3904F02E949412A26DEA5962F8F4C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6805CBAEE514A50CAE9C8A54407858F /* Pods-projectY-umbrella.h in Headers */,
+				3ED0DD22B27E0C9DC4EFA232B03D4C3B /* SwiftColors-umbrella.h in Headers */,
+				BC5E2A6CC887C0010C49B71C2BB3AD0F /* SwiftColors.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40C0402AB2875BE9837F62685492579D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3DB56593C827E0F47930C687279DAC2 /* Pods-projectY-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4EC685169D63BE3752C6EB7335DDB615 /* Pods-projectY */ = {
+		4A31CEA90D258DAA1C52CF9B1139C66D /* Mapbox-iOS-SDK-Mapbox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CBF7B99A51FA0BA667C9F21E518CBE4 /* Build configuration list for PBXNativeTarget "Pods-projectY" */;
+			buildConfigurationList = DD076C06B9E3615C0DE2E2D6603AB429 /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK-Mapbox" */;
 			buildPhases = (
-				02426BF78D6BBE38F3F5CBB3FF5902BE /* Sources */,
-				4ED36292932B214DA17B143509294BE1 /* Frameworks */,
-				C05A6792676667F9A0C8CC56F7DAA159 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4A0AA20562F1E010EA126E5DA329C08 /* PBXTargetDependency */,
-			);
-			name = "Pods-projectY";
-			productName = "Pods-projectY";
-			productReference = A361314F25E0FD67C8111132093B62EB /* Pods_projectY.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		66007E4F57C702CB0340F65865112D5E /* Mapbox-iOS-SDK */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA4946948515391543FBE67F977C824F /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK" */;
-			buildPhases = (
-				90B1F8DF560BBCA964D74BD434376D34 /* Sources */,
-				879CEA80F1AB8842FC75E5781B2A81D3 /* Frameworks */,
-				BFE9A4AD41665E25C41347DBF32E1690 /* Resources */,
-				5D411B959AF4A93EDE6E02C17347EF93 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CAFEA637778A9FD52DC53165F6F251E2 /* PBXTargetDependency */,
-			);
-			name = "Mapbox-iOS-SDK";
-			productName = "Mapbox-iOS-SDK";
-			productReference = 8C083DD5E09051220DDB9C6E9040FAF7 /* Mapbox.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E4514B391A457E963CF111F5F5D822E0 /* Mapbox-iOS-SDK-Mapbox */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34571563358BFFD9C5D77EB3F86F558B /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK-Mapbox" */;
-			buildPhases = (
-				31217D22FB5458C009483EAD993BA1E5 /* Sources */,
-				720E8E0FCE8B218BD63192A11CCDF8DE /* Frameworks */,
-				AB6F6ED8A85F1FC127B4CC066526F648 /* Resources */,
+				353A00F19C72DCF0AD1D38C60144BB12 /* Sources */,
+				F3358A273B5EDC3B7F3240D3CB05FBC8 /* Frameworks */,
+				16B4D82FED86CF028DBE11DB0F8296FB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -398,8 +423,63 @@
 			);
 			name = "Mapbox-iOS-SDK-Mapbox";
 			productName = "Mapbox-iOS-SDK-Mapbox";
-			productReference = E25308B63E21BDDFBB23BEC4DFC75894 /* Mapbox.bundle */;
+			productReference = 5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		4B124149C5DC979C81E9F500C97930AE /* SwiftColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5655B91F457C59B3028C2E9FD7C64203 /* Build configuration list for PBXNativeTarget "SwiftColors" */;
+			buildPhases = (
+				FAEF462CFD800AB23495E146CBDE3DAD /* Sources */,
+				97B4AE74124AB2736855E42B8DC22F84 /* Frameworks */,
+				18D3904F02E949412A26DEA5962F8F4C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftColors;
+			productName = SwiftColors;
+			productReference = EB930577563035896B0F31F6ADBF29C9 /* SwiftColors.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		872CA2A2E578848B2A3E58B3E1B718CE /* Pods-projectY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19A4CE451C3F896B3503FD8C16D7DE95 /* Build configuration list for PBXNativeTarget "Pods-projectY" */;
+			buildPhases = (
+				3BA1D5E9E1525C43AA7272562AF89079 /* Sources */,
+				6923FCDB4F1E58C15B79FD7B9FD1124A /* Frameworks */,
+				40C0402AB2875BE9837F62685492579D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9652C43AD26892C9E70DA7E526AFDBCE /* PBXTargetDependency */,
+				5D1A7FD8CAD72126399944B8AC5BEBE3 /* PBXTargetDependency */,
+			);
+			name = "Pods-projectY";
+			productName = "Pods-projectY";
+			productReference = A522FE3C6BE2B335A43C353499BF4712 /* Pods_projectY.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E0ECC3BD18CAEBE408E9023D3847041A /* Mapbox-iOS-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0D1EF1F984272C9C624BF3C4527145A /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK" */;
+			buildPhases = (
+				D7562D48D6CE091D0D7C7A9D482EC649 /* Sources */,
+				2407C5623841D0BAC792EA084FFEEB95 /* Frameworks */,
+				8A306536DEF69625BD5E002F28E2D4E8 /* Resources */,
+				0D1A6791E3B73EFF8E6417DA42A3953B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE4F892493AD3F2D32901DA5C0F94E04 /* PBXTargetDependency */,
+			);
+			name = "Mapbox-iOS-SDK";
+			productName = "Mapbox-iOS-SDK";
+			productReference = F176598B975F8EC76A8F4AF3CA50B2AF /* Mapbox.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -418,92 +498,108 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			productRefGroup = B973F407EC4FCE7F169BC434F63093B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				66007E4F57C702CB0340F65865112D5E /* Mapbox-iOS-SDK */,
-				E4514B391A457E963CF111F5F5D822E0 /* Mapbox-iOS-SDK-Mapbox */,
-				4EC685169D63BE3752C6EB7335DDB615 /* Pods-projectY */,
+				E0ECC3BD18CAEBE408E9023D3847041A /* Mapbox-iOS-SDK */,
+				4A31CEA90D258DAA1C52CF9B1139C66D /* Mapbox-iOS-SDK-Mapbox */,
+				872CA2A2E578848B2A3E58B3E1B718CE /* Pods-projectY */,
+				4B124149C5DC979C81E9F500C97930AE /* SwiftColors */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AB6F6ED8A85F1FC127B4CC066526F648 /* Resources */ = {
+		16B4D82FED86CF028DBE11DB0F8296FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DBC6110F0DF35011D6D5EEB8A68652F /* Compass.png in Resources */,
-				5C3D2320EB29C1CE9C28F7C7B9B20602 /* Compass@2x.png in Resources */,
-				CE64CCDB6F6BB4FCBA4DC69D82675E2D /* Compass@3x.png in Resources */,
-				C6876412B8ED5EB01194EF350CB7A208 /* README in Resources */,
-				C271C31D21B77C87E14D7867DB060DEF /* api_mapbox_com-digicert.der in Resources */,
-				6656BF60C8AECE0D9A2CB42515D88E94 /* api_mapbox_com-geotrust.der in Resources */,
-				1718BD05ECDA4BC6A30CBCF39191C147 /* mapbox.png in Resources */,
-				B133467B269F3E84D2364E6303A55436 /* mapbox@2x.png in Resources */,
-				249D94B2BD8B2ADB3F52A581B126D443 /* mapbox@3x.png in Resources */,
-				D13AE52569F95C428886D444E975A3BF /* star_tilestream_net.der in Resources */,
-				9FA7D5E80407B8AAD580EC379BB45CD3 /* styles in Resources */,
+				BD35D087C7E5963C086E383DEDF9266C /* api_mapbox_com-digicert.der in Resources */,
+				AE2E659A83D968171D59726C8E0D78B9 /* api_mapbox_com-geotrust.der in Resources */,
+				D5716E03E5CF6D95660909865F51D56B /* Compass.png in Resources */,
+				026C929143B035C79A7B0D523436CD90 /* Compass@2x.png in Resources */,
+				24426C465DB74BADD81F1BDED6C46359 /* Compass@3x.png in Resources */,
+				2E30A944F6F01A206149C740AC02AA54 /* mapbox.png in Resources */,
+				2F01A78B581A5CFC6DA73694E9D75D56 /* mapbox@2x.png in Resources */,
+				2C662DD3D5DA458E1D568482A9724B39 /* mapbox@3x.png in Resources */,
+				FB50A94A49AF27026EA1D5E999B19F77 /* README in Resources */,
+				006A8BA0230F66DBA7FD61D26AD490F7 /* star_tilestream_net.der in Resources */,
+				466D97702032CCD0D7EC928E3A2A211B /* styles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFE9A4AD41665E25C41347DBF32E1690 /* Resources */ = {
+		8A306536DEF69625BD5E002F28E2D4E8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B6C288CB07F8CA5A36FE8FF7CB56BA6 /* Mapbox.bundle in Resources */,
+				58F8D5EFE7AA740C042EE39C297E41B9 /* Mapbox.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		02426BF78D6BBE38F3F5CBB3FF5902BE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1F11EACF7D071812A0FC3EFAF53A3162 /* Pods-projectY-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		31217D22FB5458C009483EAD993BA1E5 /* Sources */ = {
+		353A00F19C72DCF0AD1D38C60144BB12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		90B1F8DF560BBCA964D74BD434376D34 /* Sources */ = {
+		3BA1D5E9E1525C43AA7272562AF89079 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDDF0B2C2D13377AFDB2501E113C275 /* MGLDummy.m in Sources */,
-				3FAB36CA01029AB59D54E115027EA488 /* Mapbox-iOS-SDK-dummy.m in Sources */,
+				D0557FED9E6CD473D74D6B8DEF0B538C /* Pods-projectY-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7562D48D6CE091D0D7C7A9D482EC649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				688FC8F4165FAC0E0CEEF753EB8CCEDC /* Mapbox-iOS-SDK-dummy.m in Sources */,
+				344A7A3AAA62F794A15DEAB4E4971012 /* MGLDummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAEF462CFD800AB23495E146CBDE3DAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57F6B147837736074B489503A3ABA0F /* SwiftColors-dummy.m in Sources */,
+				FD9A817947D346BF9217BD6FAED9171C /* SwiftColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A4A0AA20562F1E010EA126E5DA329C08 /* PBXTargetDependency */ = {
+		5D1A7FD8CAD72126399944B8AC5BEBE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftColors;
+			target = 4B124149C5DC979C81E9F500C97930AE /* SwiftColors */;
+			targetProxy = EEA5B13305E7CFD026FD79F3CE635BFD /* PBXContainerItemProxy */;
+		};
+		9652C43AD26892C9E70DA7E526AFDBCE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Mapbox-iOS-SDK";
-			target = 66007E4F57C702CB0340F65865112D5E /* Mapbox-iOS-SDK */;
-			targetProxy = BAC56D94168DE8DE8DBA3671FA665094 /* PBXContainerItemProxy */;
+			target = E0ECC3BD18CAEBE408E9023D3847041A /* Mapbox-iOS-SDK */;
+			targetProxy = 086747851857C5AFB29F1590AF250C3E /* PBXContainerItemProxy */;
 		};
-		CAFEA637778A9FD52DC53165F6F251E2 /* PBXTargetDependency */ = {
+		CE4F892493AD3F2D32901DA5C0F94E04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Mapbox-iOS-SDK-Mapbox";
-			target = E4514B391A457E963CF111F5F5D822E0 /* Mapbox-iOS-SDK-Mapbox */;
-			targetProxy = 2A43E83AEAC94A0C3383D1E82F44A4F0 /* PBXContainerItemProxy */;
+			target = 4A31CEA90D258DAA1C52CF9B1139C66D /* Mapbox-iOS-SDK-Mapbox */;
+			targetProxy = FCFC4E95C396D5E756F65DA92DD723A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		6F29F80A2F79F17343324644D0890D9A /* Release */ = {
+		16C53017BDEBC038B3C6A5B2729687DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA809150AE1162B52DB617D107694E98 /* Pods-projectY.release.xcconfig */;
+			baseConfigurationReference = 6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -512,16 +608,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-projectY/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftColors/SwiftColors-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftColors/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-projectY/Pods-projectY.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SwiftColors/SwiftColors.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_projectY;
+				PRODUCT_NAME = SwiftColors;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -530,9 +624,55 @@
 			};
 			name = Release;
 		};
-		9187A67CF9D6C0776A510131F66A07EC /* Debug */ = {
+		511103F7F15A7E8F83B268EA03462CAB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE07FDB475E2CA569F63E2539C8CB198 /* Pods-projectY.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59D7A189184CCC240C2340D8F378E3B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Mapbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		780B4C2E7C281D0BF5961DAC831B734D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -541,40 +681,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-projectY/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-projectY/Pods-projectY.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_projectY;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		930F63292555788BBB7FE3E5E833863B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4F2D07D64EDA9B970A1E3122F9604C7 /* Mapbox-iOS-SDK-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.1.2;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Mapbox-iOS-SDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -587,7 +697,46 @@
 			};
 			name = Debug;
 		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+		79FEA649D2DD7A0AA7B55115E4B0F5B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Mapbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		93E0AFED6A9EBCE134B17E1E8E13EF31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Mapbox-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Mapbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -619,56 +768,66 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		AF4AD1754B74137DD6C3850947E18BBE /* Release */ = {
+		ACB106339BA5B3D3147E059F7B8865FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4F2D07D64EDA9B970A1E3122F9604C7 /* Mapbox-iOS-SDK-Private.xcconfig */;
+			baseConfigurationReference = 7B45F3886D4792D4289E75ECE55A86EE /* Pods-projectY.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Mapbox;
+				INFOPLIST_FILE = "Target Support Files/Pods-projectY/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-projectY/Pods-projectY.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_projectY;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		DFFA4C22F08606BB1BD9540C95D476CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4F2D07D64EDA9B970A1E3122F9604C7 /* Mapbox-iOS-SDK-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Mapbox;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		EF271181879AA3D594FE07E867748DBA /* Release */ = {
+		C584F3B17CFFB6E146A77585706F1E0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4F2D07D64EDA9B970A1E3122F9604C7 /* Mapbox-iOS-SDK-Private.xcconfig */;
+			baseConfigurationReference = 1D445B57CAC5430B93BEE8C1547C8C1A /* Pods-projectY.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.1.2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Mapbox-iOS-SDK/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-projectY/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-projectY/Pods-projectY.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Mapbox;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_projectY;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -677,75 +836,78 @@
 			};
 			name = Release;
 		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+		EF5C941C32281D3D941FEE5B717A75DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftColors/SwiftColors-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftColors/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftColors/SwiftColors.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftColors;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		19A4CE451C3F896B3503FD8C16D7DE95 /* Build configuration list for PBXNativeTarget "Pods-projectY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACB106339BA5B3D3147E059F7B8865FB /* Debug */,
+				C584F3B17CFFB6E146A77585706F1E0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+				AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */,
+				511103F7F15A7E8F83B268EA03462CAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		34571563358BFFD9C5D77EB3F86F558B /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK-Mapbox" */ = {
+		5655B91F457C59B3028C2E9FD7C64203 /* Build configuration list for PBXNativeTarget "SwiftColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFFA4C22F08606BB1BD9540C95D476CA /* Debug */,
-				AF4AD1754B74137DD6C3850947E18BBE /* Release */,
+				EF5C941C32281D3D941FEE5B717A75DF /* Debug */,
+				16C53017BDEBC038B3C6A5B2729687DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CBF7B99A51FA0BA667C9F21E518CBE4 /* Build configuration list for PBXNativeTarget "Pods-projectY" */ = {
+		C0D1EF1F984272C9C624BF3C4527145A /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9187A67CF9D6C0776A510131F66A07EC /* Debug */,
-				6F29F80A2F79F17343324644D0890D9A /* Release */,
+				780B4C2E7C281D0BF5961DAC831B734D /* Debug */,
+				93E0AFED6A9EBCE134B17E1E8E13EF31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA4946948515391543FBE67F977C824F /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK" */ = {
+		DD076C06B9E3615C0DE2E2D6603AB429 /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK-Mapbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				930F63292555788BBB7FE3E5E833863B /* Debug */,
-				EF271181879AA3D594FE07E867748DBA /* Release */,
+				59D7A189184CCC240C2340D8F378E3B0 /* Debug */,
+				79FEA649D2DD7A0AA7B55115E4B0F5B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

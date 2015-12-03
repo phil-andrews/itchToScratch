@@ -42,6 +42,7 @@ class MatchTableViewCell: UITableViewCell {
             playerNumberOneOrTwo(m)
             opponentName.text = matchDetails!.valueForKey("player\(opponentNumber)UserName") as? String
             setCategoryIcons()
+            print(opponentNumber)
                 
             }
         }
@@ -55,7 +56,7 @@ class MatchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        let bgColor = UIColor(hex: "282B35")
+        let bgColor = UIColor(hexString: "#282B35")
         
         contentView.backgroundColor = bgColor
         backgroundColor = bgColor
@@ -129,10 +130,10 @@ class MatchTableViewCell: UITableViewCell {
         let userHelperIconArray = [userZoom, userTakeTwo, userStopper]
         let opponentHelperIconArray = [opponentZoom, opponentTakeTwo, opponentStopper]
         
-        layoutCategoryIcons(self, opponentCategoryArray, userCategoryArray)
-        layoutHelperInventoryIcons(self, opponentHelperIconArray, userHelperIconArray, opponentName)
+        layoutCategoryIcons(self, opponentCategoryArray: opponentCategoryArray, userCategoryArray: userCategoryArray)
+        layoutHelperInventoryIcons(self, opponentHelperIconArray: opponentHelperIconArray, userHelperIconArray: userHelperIconArray, opponentNameLabel: opponentName)
         layoutMiniGameboard(self)
-        turnIdentifier(self, matchDetails!)
+        //turnIdentifier(self, matchDetails: matchDetails!)
         
     }
     
@@ -155,7 +156,7 @@ class MatchTableViewCell: UITableViewCell {
             
         }
         
-        let opponentCategoryArray = [opponentCategory1, opponentCategory2, opponentCategory3, opponentCategory4]
+        let opponentCategoryArray: [UIImageView] = [opponentCategory1, opponentCategory2, opponentCategory3, opponentCategory4]
         
         for index in 0..<opponentCategoryWins.count {
             
@@ -171,9 +172,9 @@ class MatchTableViewCell: UITableViewCell {
     
     func playerNumberOneOrTwo(matchObject: PFObject) {
         
-        var numberToReturn = Int()
-        
         let userID = PFUser.currentUser()?.objectId
+        
+        print(userID)
         
         let matchObjectPlayerOne = matchObject.valueForKey(player1IdKey) as! String
         let matchObjectPlayerTwo = matchObject.valueForKey(player2IdKey) as! String

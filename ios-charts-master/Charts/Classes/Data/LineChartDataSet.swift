@@ -26,6 +26,9 @@ public class LineChartDataSet: LineRadarChartDataSet
     public var lineDashPhase = CGFloat(0.0)
     public var lineDashLengths: [CGFloat]!
     
+    /// formatter for customizing the position of the fill-line
+    private var _fillFormatter: ChartFillFormatter = BarLineChartFillFormatter()
+    
     /// if true, drawing circles is enabled
     public var drawCirclesEnabled = true
     
@@ -34,7 +37,7 @@ public class LineChartDataSet: LineRadarChartDataSet
     
     public var drawCircleHoleEnabled = true
     
-    public override init()
+    public required init()
     {
         super.init()
         circleColors.append(UIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 1.0))
@@ -47,7 +50,8 @@ public class LineChartDataSet: LineRadarChartDataSet
     }
 
     /// intensity for cubic lines (min = 0.05, max = 1)
-    /// :default: 0.2
+    /// 
+    /// **default**: 0.2
     public var cubicIntensity: CGFloat
     {
         get
@@ -68,7 +72,7 @@ public class LineChartDataSet: LineRadarChartDataSet
         }
     }
     
-    /// Returns the color at the given index of the DataSet's circle-color array.
+    /// - returns: the color at the given index of the DataSet's circle-color array.
     /// Performs a IndexOutOfBounds check by modulus.
     public func getCircleColor(var index: Int) -> UIColor?
     {
@@ -90,7 +94,7 @@ public class LineChartDataSet: LineRadarChartDataSet
     }
     
     /// resets the circle-colors array and creates a new one
-    public func resetCircleColors(var index: Int)
+    public func resetCircleColors(index: Int)
     {
         circleColors.removeAll(keepCapacity: false)
     }
@@ -101,11 +105,31 @@ public class LineChartDataSet: LineRadarChartDataSet
     
     public var isDrawCircleHoleEnabled: Bool { return drawCircleHoleEnabled; }
     
+    /// Sets a custom FillFormatter to the chart that handles the position of the filled-line for each DataSet. Set this to null to use the default logic.
+    public var fillFormatter: ChartFillFormatter?
+    {
+        get
+        {
+            return _fillFormatter
+        }
+        set
+        {
+            if newValue == nil
+            {
+                _fillFormatter = BarLineChartFillFormatter()
+            }
+            else
+            {
+                _fillFormatter = newValue!
+            }
+        }
+    }
+    
     // MARK: NSCopying
     
     public override func copyWithZone(zone: NSZone) -> AnyObject
     {
-        var copy = super.copyWithZone(zone) as! LineChartDataSet
+        let copy = super.copyWithZone(zone) as! LineChartDataSet
         copy.circleColors = circleColors
         copy.circleRadius = circleRadius
         copy.cubicIntensity = cubicIntensity

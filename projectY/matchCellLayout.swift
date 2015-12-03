@@ -134,7 +134,7 @@ func layoutMiniGameboard(cell: UITableViewCell) {
 
 func turnIdentifier(cell: UITableViewCell, matchDetails: PFObject) {
     
-    var turnBracket = UIView()
+    let turnBracket = UIView()
     turnBracket.frame.size.height = cell.frame.height
     turnBracket.frame.size.width = cell.frame.width * 0.03
     cell.contentView.addSubview(turnBracket)

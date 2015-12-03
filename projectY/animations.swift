@@ -14,20 +14,20 @@ import UIKit
 func animationLoop1(floatView: UIView) {
     
     let colorsArray = [lowestColor, lowColor, midColor, highColor, highestColor]
-    var colorNumber = Int(arc4random_uniform(5))
-    var color = colorsArray[colorNumber]
+    let colorNumber = Int(arc4random_uniform(5))
+    let color = colorsArray[colorNumber]
     floatView.layer.borderWidth = 1.5
     floatView.layer.borderColor = color.CGColor
     floatView.alpha = 0.0
     
-    var randomY = CGFloat(arc4random_uniform(568))
+    let randomY = CGFloat(arc4random_uniform(568))
     floatView.frame.origin.y = randomY
     
-    var randomD = NSTimeInterval(arc4random_uniform(3))
+    let randomD = NSTimeInterval(arc4random_uniform(3))
     
     delay(0.5){
         
-        UIView.animateWithDuration(2.0, delay: randomD, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(2.0, delay: randomD, options: [], animations: { () -> Void in
             
             floatView.alpha = 0.7
             
@@ -53,20 +53,20 @@ func animationLoop1(floatView: UIView) {
 func animationLoop2(floatView: UIView) {
     
     let colorsArray = [lowestColor, lowColor, midColor, highColor, highestColor]
-    var colorNumber = Int(arc4random_uniform(5))
-    var color = colorsArray[colorNumber]
+    let colorNumber = Int(arc4random_uniform(5))
+    let color = colorsArray[colorNumber]
     floatView.layer.borderWidth = 1.5
     floatView.layer.borderColor = color.CGColor
     floatView.alpha = 0.0
     
-    var randomY = CGFloat(arc4random_uniform(568))
+    let randomY = CGFloat(arc4random_uniform(568))
     floatView.frame.origin.y = randomY
     
-    var randomD = NSTimeInterval(arc4random_uniform(3))
+    let randomD = NSTimeInterval(arc4random_uniform(3))
     
     delay(0.5){
         
-        UIView.animateWithDuration(2.0, delay: randomD, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(2.0, delay: randomD, options: [], animations: { () -> Void in
             
             floatView.alpha = 0.7
             
@@ -147,7 +147,7 @@ func makeBackground() -> UIView {
     return backRect
 }
 
-func animateWhereChartBar(chartBar: UIButton, barLabel: SpringButton, delay: NSTimeInterval) {
+func animateWhereChartBar(chartBar: UIButton, barLabel: UIButton, delay: NSTimeInterval) {
     
     if chartBar.alpha == 1.0 {
         
@@ -156,7 +156,7 @@ func animateWhereChartBar(chartBar: UIButton, barLabel: SpringButton, delay: NST
     
     chartBar.alpha = 1.0
     
-    UIView.animateWithDuration(0.35, delay: delay, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.35, delay: delay, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: { () -> Void in
         
         chartBar.center.x += chartBar.bounds.width
         
@@ -164,11 +164,6 @@ func animateWhereChartBar(chartBar: UIButton, barLabel: SpringButton, delay: NST
     
         barLabel.titleLabel!.alpha = 1.0
         
-        barLabel.animation = "pop"
-        barLabel.curve = "easeInOutExpo"
-        barLabel.delay = 0.15
-        barLabel.duration = 0.5
-        barLabel.animate()
         
     }
     

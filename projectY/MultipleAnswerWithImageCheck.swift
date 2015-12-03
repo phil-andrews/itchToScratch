@@ -15,8 +15,6 @@ func checkMultpleAnswerWithImageQuestion(viewController: UIViewController, answe
     
     let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     let submittedAnswer = answerInputField.text
-    let answerDropDownLabel = viewController.view.viewWithTag(dropDownLabelTag) as! UILabel
-
     
     var submittedWasCorrect = false
     var bottomAnswerLabelTag: Int = dropDownLabelTag + 18
@@ -30,15 +28,15 @@ func checkMultpleAnswerWithImageQuestion(viewController: UIViewController, answe
         for item in answer {
             
             let itemLowerCase = item.lowercaseString
-            let submittedAnswerLowerCase = submittedAnswer.lowercaseString
+            let submittedAnswerLowerCase = submittedAnswer!.lowercaseString
             
             if submittedAnswerLowerCase == itemLowerCase {
                 
                 let light = viewController.view.viewWithTag(indicatorLightStartingTag + lightMatrix[submittedCount]) as UIView!
                 
-                animateDropDownAnswerLabel(viewController, dropDownLabelTag, item, highColor, backgroundColor, { () -> Void in
+                animateDropDownAnswerLabel(viewController, dropDownLabelTag: dropDownLabelTag, answerString: item, bgColor: highColor, textColor: backgroundColor!, completion: { () -> Void in
                     
-                    animationForIndicatorLightFilledCorrect(light, highColor)
+                    animationForIndicatorLightFilledCorrect(light, color: highColor)
                     
                 })
                 
@@ -81,11 +79,11 @@ func checkMultpleAnswerWithImageQuestion(viewController: UIViewController, answe
     
     if submittedWasCorrect == false && submittedCount < answers.count {
         
-        println(indicatorLightStartingTag + lightMatrix[submittedCount])
+        print(indicatorLightStartingTag + lightMatrix[submittedCount])
 
         let light = viewController.view.viewWithTag(indicatorLightStartingTag + lightMatrix[submittedCount]) as UIView!
         
-        animateForIndicatorLightFilledIncorrect(light, lowColor)
+        animateForIndicatorLightFilledIncorrect(light, color: lowColor)
         
         ++submittedCount
         
@@ -98,17 +96,17 @@ func checkMultpleAnswerWithImageQuestion(viewController: UIViewController, answe
         
         let delayAmount = 1.0
         
-        delay(delayAmount, { () -> () in
+        delay(delayAmount, closure: { () -> () in
             
-            removeTextFieldFromFirstResponderToShowQuestion(viewController, nil, 8002)
+            removeTextFieldFromFirstResponderToShowQuestion(viewController, sender: nil, codeTag: 8002)
 
           
-            delay(0.35, { () -> () in
+            delay(0.35, closure: { () -> () in
                 
                 var startingIndex = dropDownLabelTag + 18
                 var delay = 0.0
                 
-                for index in 0..<answers.count {
+                for _ in 0..<answers.count {
                     
                     let answerLabel = viewController.view.viewWithTag(startingIndex) as! UILabel
                     
@@ -119,7 +117,7 @@ func checkMultpleAnswerWithImageQuestion(viewController: UIViewController, answe
                         answerLabel.backgroundColor = UIColor.grayColor()
                         answerLabel.textColor = whiteColor
                         
-                        UIView.animateWithDuration(0.20, delay: delay, usingSpringWithDamping: 3.0, initialSpringVelocity: 0.4, options: nil, animations: { () -> Void in
+                        UIView.animateWithDuration(0.20, delay: delay, usingSpringWithDamping: 3.0, initialSpringVelocity: 0.4, options: [], animations: { () -> Void in
                             
                             answerLabel.frame.origin.x += viewController.view.frame.width
                             
@@ -155,7 +153,7 @@ func animateDropDownAnswerLabel(viewController: UIViewController, dropDownLabelT
     dropDownLabel.textColor = textColor
     dropDownLabel.backgroundColor = bgColor
     
-    UIView.animateWithDuration(0.25, delay: 0.1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.25, delay: 0.1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: [], animations: { () -> Void in
         
         dropDownLabel.center.y = dropDownLabel.center.y + (dropDownLabel.frame.height * 1.15)
         
@@ -163,7 +161,7 @@ func animateDropDownAnswerLabel(viewController: UIViewController, dropDownLabelT
         
         completion()
         
-         animateDropDownAnswerLabelToOriginalPosition(viewController, dropDownLabelTag, 2.0, { () -> Void in
+         animateDropDownAnswerLabelToOriginalPosition(viewController, dropDownLabelTag: dropDownLabelTag, delayAmount: 2.0, completion: { () -> Void in
             
             
          })
@@ -179,11 +177,11 @@ func animateDropDownAnswerLabelToOriginalPosition(viewController: UIViewControll
     let dropDownLabel = viewController.view.viewWithTag(dropDownLabelTag) as! UILabel
     let imageView = viewController.view.viewWithTag(dropDownLabelTag + 1) as! UIImageView
     
-    println(imageView.frame.maxY)
+    print(imageView.frame.maxY)
     
-    UIView.animateKeyframesWithDuration(0.10, delay: delayAmount, options: nil, animations: { () -> Void in
+    UIView.animateKeyframesWithDuration(0.10, delay: delayAmount, options: [], animations: { () -> Void in
         
-        println("ran")
+        print("ran")
 
         
         dropDownLabel.frame.origin.y = imageView.frame.maxY - (dropDownLabel.frame.height * 1.25)

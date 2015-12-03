@@ -15,11 +15,9 @@ import Bolts
 
 
 func populateGameBoard(masterView: UIView, parseObjects: [PFObject], sortedObjectIDs: [String], locationObject: PFObject) {
-
-    var questionObjects = parseObjects
     
     let numberOfUsersAtLocation = locationObject.valueForKey(usersLoggedInAtLocationCount) as! Double
-    var goalToHit: Double = numberOfUsersAtLocation/2
+    let goalToHit: Double = numberOfUsersAtLocation/2
     
     for index in 0..<40 {
         
@@ -61,7 +59,7 @@ func populateGameBoard(masterView: UIView, parseObjects: [PFObject], sortedObjec
                 
                 UIView.animateWithDuration(0.2, animations: { () -> Void in
                     
-                    button.backgroundColor = buttonColoring(goalToHit, numberCorrect)
+                    button.backgroundColor = buttonColoring(goalToHit, correctAnswers: numberCorrect)
                     
                 })
                 
@@ -82,23 +80,21 @@ func drawButtons(masterView: UIView, vc: UIViewController, action: String, compl
     let onePercentOfHeight = masterHeight/100
     
     var count = 1
-    var buttonCount = 0
     
-    
-    var yOrigin = (onePercentOfHeight * 6.86)
-    var xOrigin = (masterWidth - (((onePercentOfHeight * 9.507) * 5) + ((onePercentOfWidth * 1.562) * 4)))/2
+    let yOrigin = (onePercentOfHeight * 6.86)
+    let xOrigin = (masterWidth - (((onePercentOfHeight * 9.507) * 5) + ((onePercentOfWidth * 1.562) * 4)))/2
     var yOffset = yOrigin
     var xOffset = xOrigin
     
     while count < 41 {
         
-        var button = UIButton()
+        let button = UIButton()
         button.tag = count
         button.setBackgroundImage(science, forState: .Normal)
         button.adjustsImageWhenHighlighted = false
         button.addTarget(vc, action: Selector(action), forControlEvents: .TouchUpInside)
         
-        drawSquareRectOffView(button, masterView, 9.507, 9.507)
+        drawSquareRectOffView(button, masterView: masterView, heightPercentage: 9.507, widthPercentage: 9.507)
         button.frame.origin.x = xOffset
         button.frame.origin.y = yOffset
         
@@ -136,7 +132,7 @@ func buttonColoring(goalToHit: Double, correctAnswers: Double) -> UIColor {
         
     }
     
-    var minimum: Double = 1.0
+    let minimum: Double = 1.0
     var workingGoal = Double()
     
     if goalToHit < minimum {
@@ -199,17 +195,15 @@ func buttonColoring(goalToHit: Double, correctAnswers: Double) -> UIColor {
 func drawCityLabel(masterView: UIView, locationObject: PFObject) {
     
     let masterHeight = masterView.frame.height
-    let masterWidth = masterView.frame.width
-    let onePercentOfWidth = masterWidth/100
     let onePercentOfHeight = masterHeight/100
     
-    var cityLabel = UILabel()
-    var cityTitle = locationObject.valueForKey(locality) as! String
+    let cityLabel = UILabel()
+    let cityTitle = locationObject.valueForKey(locality) as! String
     cityLabel.text = cityTitle
     cityLabel.textColor = lightColoredFont
     cityLabel.font = fontSmaller
     cityLabel.sizeToFit()
-    cityLabel.frame.origin.x = centerXAlignment(cityLabel, masterView)
+    cityLabel.frame.origin.x = centerXAlignment(cityLabel, masterView: masterView)
         
     let labelOffset = ((onePercentOfHeight * 9.507) * 8) + ((onePercentOfHeight * 1.562) * 9.5)
     
@@ -220,16 +214,6 @@ func drawCityLabel(masterView: UIView, locationObject: PFObject) {
 }
 
 
-func animateButtonColors(goalToHit: Double, correctAnswers: Double, startColor: UIColor) {
-    
-    let colors = [lightColoredFont, lowColor, lowestColor, midColor, highColor, highestColor]
-    
-    var endColor = buttonColoring(goalToHit, correctAnswers)
-    
-    
-    
-    
-}
 
 
 

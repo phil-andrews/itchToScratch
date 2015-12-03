@@ -15,12 +15,10 @@ import Parse
 func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, question: PFObject, completion: () -> Void) {
     
     let questionString = question.valueForKey(questionAskKey) as! String
-    let questionAnswer = question.valueForKey(questionAnswersKey) as! NSArray
-    let answer = questionAnswer[0] as! String
     let choices = question.valueForKey(questionChoicesKey) as! NSArray
     
     let questionLabel = UILabel()
-    drawPercentageRectOffView(questionLabel, masterView.view, 22, 85)
+    drawPercentageRectOffView(questionLabel, masterView: masterView.view, heightPercentage: 22, widthPercentage: 85)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmallerRegular
@@ -32,8 +30,8 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
     
     sView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView.view)
-    questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView.view, 3.52)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView.view)
+    questionLabel.frame.origin.y = percentYFromMasterFrame(questionLabel, masterView: masterView.view, percent: 3.52)
     
     var yOriginPercent = CGFloat()
     var yOffsetBetween = CGFloat()
@@ -63,9 +61,7 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
     }
     
     var count = 2001
-    
-    var randomChoicesArray = choices as NSMutableCopying
-    
+        
     for index in choices {
         
         let choice = index as! String
@@ -73,7 +69,7 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
         button.adjustsImageWhenHighlighted = false
         button.setTitle(choice, forState: .Normal)
         button.setTitleColor(lowColor, forState: .Normal)
-        button.titleLabel?.font = fontAdjuster(choice, fontMedium, fontLarge, fontExtraLarge)
+        button.titleLabel?.font = fontAdjuster(choice, fontS: fontMedium, fontM: fontLarge, fontL: fontExtraLarge)
         button.addTarget(masterView, action: Selector("checkQuestionSubmission:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
@@ -81,16 +77,16 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
         
         if count == 2001 {
             
-            button.frame.origin.y = percentYFromBottomOfView(button, questionLabel, masterView.view, yOriginPercent)
+            button.frame.origin.y = percentYFromBottomOfView(button, viewToOffsetFrom: questionLabel, masterView: masterView.view, percent: yOriginPercent)
             
         } else if count != 2001 {
             
             let previousButton = masterView.view.viewWithTag(count - 1)
             
-            button.frame.origin.y = percentYFromBottomOfView(button, previousButton!, masterView.view, yOffsetBetween)
+            button.frame.origin.y = percentYFromBottomOfView(button, viewToOffsetFrom: previousButton!, masterView: masterView.view, percent: yOffsetBetween)
         }
         
-        button.frame.origin.x = centerXAlignment(button, masterView.view)
+        button.frame.origin.x = centerXAlignment(button, masterView: masterView.view)
         
         sView.addSubview(button)
         
@@ -106,20 +102,17 @@ func multipleChoiceQuestion(masterView: UIViewController, sView: UIView, questio
 
 func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView, question: PFObject, questionImage: UIImage, completion: () -> Void) {
     
-    let imageFile = question.valueForKey(questionImageKey) as! PFFile
     let questionString = question.valueForKey(questionAskKey) as! String
-    let questionAnswer = question.valueForKey(questionAnswersKey) as! NSArray
-    let answer = questionAnswer[0] as! String
     let choices = question.valueForKey(questionChoicesKey) as! NSArray
     
     let imageView = UIImageView()
-    drawPercentageRectOffView(imageView, masterView.view, 35.05, 100)
+    drawPercentageRectOffView(imageView, masterView: masterView.view, heightPercentage: 35.05, widthPercentage: 100)
     imageView.image = questionImage
     masterView.view.addSubview(imageView)
     
     
     let questionLabel = UILabel()
-    drawPercentageRectOffView(questionLabel, masterView.view, 13, 85)
+    drawPercentageRectOffView(questionLabel, masterView: masterView.view, heightPercentage: 13, widthPercentage: 85)
     questionLabel.text = questionString
     questionLabel.textColor = UIColor.whiteColor()
     questionLabel.font = fontSmallestRegular
@@ -130,8 +123,8 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
     
     sView.addSubview(questionLabel)
     
-    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView.view)
-    questionLabel.frame.origin.y = imageView.frame.height + percentYFromMasterFrame(questionLabel, masterView.view, 2.52)
+    questionLabel.frame.origin.x = centerXAlignment(questionLabel, masterView: masterView.view)
+    questionLabel.frame.origin.y = imageView.frame.height + percentYFromMasterFrame(questionLabel, masterView: masterView.view, percent: 2.52)
     
     var yOriginPercent = CGFloat()
     var yOffsetBetween = CGFloat()
@@ -169,7 +162,7 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
         button.adjustsImageWhenHighlighted = false
         button.setTitle(choice, forState: .Normal)
         button.setTitleColor(yellowColor, forState: .Normal)
-        button.titleLabel?.font = fontAdjuster(choice, fontSmaller, fontSmall, fontMedium)
+        button.titleLabel?.font = fontAdjuster(choice, fontS: fontSmaller, fontM: fontSmall, fontL: fontMedium)
         button.addTarget(masterView, action: Selector("checkQuestionSubmission:"), forControlEvents: .TouchUpInside)
         button.tag = count
         button.sizeToFit()
@@ -177,16 +170,16 @@ func multipleChoiceQuestionWithImage(masterView: UIViewController, sView: UIView
         
         if count == 2001 {
             
-            button.frame.origin.y = percentYFromBottomOfView(button, questionLabel, masterView.view, yOriginPercent)
+            button.frame.origin.y = percentYFromBottomOfView(button, viewToOffsetFrom: questionLabel, masterView: masterView.view, percent: yOriginPercent)
             
         } else if count != 2001 {
             
             let previousButton = masterView.view.viewWithTag(count - 1)
             
-            button.frame.origin.y = percentYFromBottomOfView(button, previousButton!, masterView.view, yOffsetBetween)
+            button.frame.origin.y = percentYFromBottomOfView(button, viewToOffsetFrom: previousButton!, masterView: masterView.view, percent: yOffsetBetween)
         }
         
-        button.frame.origin.x = centerXAlignment(button, masterView.view)
+        button.frame.origin.x = centerXAlignment(button, masterView: masterView.view)
         
         sView.addSubview(button)
         

@@ -14,17 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ObjectMapper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-projectY.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PureLayout.xcscheme</key>
+		<key>SwiftColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4EC685169D63BE3752C6EB7335DDB615</key>
+		<key>4A31CEA90D258DAA1C52CF9B1139C66D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66007E4F57C702CB0340F65865112D5E</key>
+		<key>4B124149C5DC979C81E9F500C97930AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8240A687A12B3496C485DFBEB80E79E2</key>
+		<key>872CA2A2E578848B2A3E58B3E1B718CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC875AC54729B0EF37103EE74B8EA26A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E4514B391A457E963CF111F5F5D822E0</key>
+		<key>E0ECC3BD18CAEBE408E9023D3847041A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

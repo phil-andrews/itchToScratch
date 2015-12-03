@@ -30,13 +30,19 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         matchTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.view.backgroundColor = backgroundColor
         
-        queryForLiveMatches({ (matches) -> () in
+        drawGetMatchButtons(self)
+        
+        self.checkForUser { () -> () in
             
-            self.userMatches = matches
-            self.matchTableView.reloadData()
-            self.matchTableView.setNeedsLayout()
+            queryForLiveMatches({ (matches) -> () in
+                
+                self.userMatches = matches
+                self.matchTableView.reloadData()
+                self.matchTableView.setNeedsLayout()
+                
+            })
             
-        })
+        }
         
     }
     
@@ -52,9 +58,9 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidAppear(true)
         
         matchTableView.frame.size.width = self.view.frame.width
-        matchTableView.frame.size.height = self.view.frame.height * 0.80
-        matchTableView.frame.origin.y = self.view.frame.height * 0.15
-        matchTableView.frame.origin.x = centerXAlignment(matchTableView, self.view)
+        matchTableView.frame.size.height = self.view.frame.height * 0.75
+        matchTableView.frame.origin.y = self.view.frame.height * 0.10
+        matchTableView.frame.origin.x = centerXAlignment(matchTableView, masterView: self.view)
         matchTableView.backgroundColor = backgroundColor
         
         matchTableView.setNeedsDisplay()
@@ -108,6 +114,42 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     
+    func checkForUser(completion: () -> ()) {
+        
+        if PFUser.currentUser() == nil {
+            
+            let loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+            
+            self.presentViewController(loginViewController, animated: true, completion: nil)
+            
+            
+        } else if PFUser.currentUser() != nil {
+         
+            
+            completion()
+            
+            print("user logged in already")
+           
+        }
+        
+    }
+    
+    
+    
+    func inviteToMatch() {
+        
+        
+        
+    }
+    
+    
+    
+    func getNewMatch() {
+        
+        
+    }
+        
+        
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
         return UIStatusBarStyle.LightContent
@@ -117,5 +159,7 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 }

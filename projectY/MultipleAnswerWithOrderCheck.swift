@@ -13,7 +13,7 @@ import UIKit
 
 func checkMultipleAnswerWithOrder(viewController: UIViewController, answerInputField: UITextField, section: Int, completion: (Bool) -> Void) {
     
-    println("ran")
+    print("ran")
     
     let sectionButton = viewController.view.viewWithTag(section) as! UIButton
     sectionButton.enabled = false
@@ -23,10 +23,10 @@ func checkMultipleAnswerWithOrder(viewController: UIViewController, answerInputF
     let answers = questionObjectFromGameBoardSend?.valueForKey(questionAnswersKey) as! [String]
     let answerPossibilities = questionObjectFromGameBoardSend?.valueForKey("qAnswers\(section)") as! [String]
     
-    let userAnswer = answerInputField.text.lowercaseString
+    let userAnswer = answerInputField.text!.lowercaseString
     
-    println(answerPossibilities)
-    println(userAnswer)
+    print(answerPossibilities)
+    print(userAnswer)
     
     var userAnsweredCorrect = false
     
@@ -49,16 +49,16 @@ func checkMultipleAnswerWithOrder(viewController: UIViewController, answerInputF
             
             answerInputField.text = ""
             
-            UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.8, options: nil, animations: { () -> Void in
+            UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.8, options: [], animations: { () -> Void in
                 
                 dropDownLabel.frame.origin.x += viewController.view.frame.width
                 
                 
                 }, completion: { (Bool) -> Void in
                     
-                    delay(2.0, { () -> () in
+                    delay(2.0, closure: { () -> () in
                         
-                        UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                        UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                             
                             dropDownLabel.frame.origin.x += viewController.view.frame.width
                             
@@ -103,16 +103,16 @@ func checkMultipleAnswerWithOrder(viewController: UIViewController, answerInputF
         
         answerInputField.text = ""
         
-        UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.8, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.8, options: [], animations: { () -> Void in
             
             dropDownLabel.frame.origin.x -= viewController.view.frame.width
             
             
             }, completion: { (Bool) -> Void in
                 
-                delay(2.0, { () -> () in
+                delay(2.0, closure: { () -> () in
                     
-                    UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                    UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                         
                         dropDownLabel.frame.origin.x -= viewController.view.frame.width
                         
@@ -142,12 +142,12 @@ func drawAnswerLabelsAfterFinalSubmit(viewController: UIViewController, answerIn
         
     })
     
-    let firstColor = UIColor(hex: "8036FF")
-    let secondColor = UIColor(hex: "00B2EA")
-    let thirdColor = UIColor(hex: "E9D300")
-    let fourthColor = UIColor(hex: "FF6000")
-    let fifthColor = UIColor(hex: "F953FF")
-    let sixthColor = UIColor(hex: "B22029")
+    let firstColor = UIColor(red: 34.0, green: 56.0, blue: 200.0, alpha: 1.0)
+    let secondColor = UIColor(red: 34.0, green: 56.0, blue: 200.0, alpha: 1.0)
+    let thirdColor = UIColor(red: 34.0, green: 56.0, blue: 200.0, alpha: 1.0)
+    let fourthColor = UIColor(red: 34.0, green: 56.0, blue: 200.0, alpha: 1.0)
+    let fifthColor = UIColor(red: 34.0, green: 56.0, blue: 200.0, alpha: 1.0)
+    let sixthColor = UIColor(red: 34.0, green: 56.0, blue: 200.0, alpha: 1.0)
     
     let colorArray = [firstColor, secondColor, thirdColor, fourthColor, fifthColor, sixthColor]
     

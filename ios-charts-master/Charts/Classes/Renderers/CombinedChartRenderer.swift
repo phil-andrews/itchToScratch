@@ -14,14 +14,9 @@
 import Foundation
 import CoreGraphics
 
-public class CombinedChartRenderer: ChartDataRendererBase,
-    LineChartRendererDelegate,
-    BarChartRendererDelegate,
-    ScatterChartRendererDelegate,
-    CandleStickChartRendererDelegate,
-    BubbleChartRendererDelegate
+public class CombinedChartRenderer: ChartDataRendererBase
 {
-    private weak var _chart: CombinedChartView!
+    internal weak var _chart: CombinedChartView!
     
     /// flag that enables or disables the highlighting arrow
     public var drawHighlightArrowEnabled = false
@@ -57,35 +52,35 @@ public class CombinedChartRenderer: ChartDataRendererBase,
             case .Bar:
                 if (_chart.barData !== nil)
                 {
-                    _renderers.append(BarChartRenderer(delegate: self, animator: _animator, viewPortHandler: viewPortHandler))
+                    _renderers.append(BarChartRenderer(dataProvider: _chart, animator: _animator, viewPortHandler: viewPortHandler))
                 }
                 break
                 
             case .Line:
                 if (_chart.lineData !== nil)
                 {
-                    _renderers.append(LineChartRenderer(delegate: self, animator: _animator, viewPortHandler: viewPortHandler))
+                    _renderers.append(LineChartRenderer(dataProvider: _chart, animator: _animator, viewPortHandler: viewPortHandler))
                 }
                 break
                 
             case .Candle:
                 if (_chart.candleData !== nil)
                 {
-                    _renderers.append(CandleStickChartRenderer(delegate: self, animator: _animator, viewPortHandler: viewPortHandler))
+                    _renderers.append(CandleStickChartRenderer(dataProvider: _chart, animator: _animator, viewPortHandler: viewPortHandler))
                 }
                 break
                 
             case .Scatter:
                 if (_chart.scatterData !== nil)
                 {
-                    _renderers.append(ScatterChartRenderer(delegate: self, animator: _animator, viewPortHandler: viewPortHandler))
+                    _renderers.append(ScatterChartRenderer(dataProvider: _chart, animator: _animator, viewPortHandler: viewPortHandler))
                 }
                 break
                 
             case .Bubble:
                 if (_chart.bubbleData !== nil)
                 {
-                    _renderers.append(BubbleChartRenderer(delegate: self, animator: _animator, viewPortHandler: viewPortHandler))
+                    _renderers.append(BubbleChartRenderer(dataProvider: _chart, animator: _animator, viewPortHandler: viewPortHandler))
                 }
                 break
             }
@@ -93,7 +88,7 @@ public class CombinedChartRenderer: ChartDataRendererBase,
 
     }
     
-    public override func drawData(#context: CGContext)
+    public override func drawData(context context: CGContext)
     {
         for renderer in _renderers
         {
@@ -101,7 +96,7 @@ public class CombinedChartRenderer: ChartDataRendererBase,
         }
     }
     
-    public override func drawValues(#context: CGContext)
+    public override func drawValues(context context: CGContext)
     {
         for renderer in _renderers
         {
@@ -109,7 +104,7 @@ public class CombinedChartRenderer: ChartDataRendererBase,
         }
     }
     
-    public override func drawExtras(#context: CGContext)
+    public override func drawExtras(context context: CGContext)
     {
         for renderer in _renderers
         {
@@ -117,7 +112,7 @@ public class CombinedChartRenderer: ChartDataRendererBase,
         }
     }
     
-    public override func drawHighlighted(#context: CGContext, indices: [ChartHighlight])
+    public override func drawHighlighted(context context: CGContext, indices: [ChartHighlight])
     {
         for renderer in _renderers
         {
@@ -125,7 +120,7 @@ public class CombinedChartRenderer: ChartDataRendererBase,
         }
     }
     
-    public override func calcXBounds(#chart: BarLineChartViewBase, xAxisModulus: Int)
+    public override func calcXBounds(chart chart: BarLineChartViewBase, xAxisModulus: Int)
     {
         for renderer in _renderers
         {
@@ -133,8 +128,8 @@ public class CombinedChartRenderer: ChartDataRendererBase,
         }
     }
 
-    /// Returns the sub-renderer object at the specified index.
-    public func getSubRenderer(#index: Int) -> ChartDataRendererBase?
+    /// - returns: the sub-renderer object at the specified index.
+    public func getSubRenderer(index index: Int) -> ChartDataRendererBase?
     {
         if (index >= _renderers.count || index < 0)
         {
@@ -145,59 +140,12 @@ public class CombinedChartRenderer: ChartDataRendererBase,
             return _renderers[index]
         }
     }
-    
+
     /// Returns all sub-renderers.
     public var subRenderers: [ChartDataRendererBase]
     {
         get { return _renderers }
         set { _renderers = newValue }
-    }
-
-    // MARK: - LineChartRendererDelegate
-    
-    public func lineChartRendererData(renderer: LineChartRenderer) -> LineChartData!
-    {
-        return _chart.lineData
-    }
-    
-    public func lineChartRenderer(renderer: LineChartRenderer, transformerForAxis which: ChartYAxis.AxisDependency) -> ChartTransformer!
-    {
-        return _chart.getTransformer(which)
-    }
-    
-    public func lineChartRendererFillFormatter(renderer: LineChartRenderer) -> ChartFillFormatter
-    {
-        return _chart.fillFormatter
-    }
-    
-    public func lineChartDefaultRendererValueFormatter(renderer: LineChartRenderer) -> NSNumberFormatter!
-    {
-        return _chart._defaultValueFormatter
-    }
-    
-    public func lineChartRendererChartYMax(renderer: LineChartRenderer) -> Double
-    {
-        return _chart.chartYMax
-    }
-    
-    public func lineChartRendererChartYMin(renderer: LineChartRenderer) -> Double
-    {
-        return _chart.chartYMin
-    }
-    
-    public func lineChartRendererChartXMax(renderer: LineChartRenderer) -> Double
-    {
-        return _chart.chartXMax
-    }
-    
-    public func lineChartRendererChartXMin(renderer: LineChartRenderer) -> Double
-    {
-        return _chart.chartXMin
-    }
-    
-    public func lineChartRendererMaxVisibleValueCount(renderer: LineChartRenderer) -> Int
-    {
-        return _chart.maxVisibleValueCount
     }
     
     // MARK: - BarChartRendererDelegate
@@ -395,13 +343,13 @@ public class CombinedChartRenderer: ChartDataRendererBase,
     
     // MARK: Accessors
     
-    /// returns true if drawing the highlighting arrow is enabled, false if not
+    /// - returns: true if drawing the highlighting arrow is enabled, false if not
     public var isDrawHighlightArrowEnabled: Bool { return drawHighlightArrowEnabled; }
     
-    /// returns true if drawing values above bars is enabled, false if not
+    /// - returns: true if drawing values above bars is enabled, false if not
     public var isDrawValueAboveBarEnabled: Bool { return drawValueAboveBarEnabled; }
     
-    /// returns true if drawing shadows (maxvalue) for each bar is enabled, false if not
+    /// - returns: true if drawing shadows (maxvalue) for each bar is enabled, false if not
     public var isDrawBarShadowEnabled: Bool { return drawBarShadowEnabled; }
     
     /// the order in which the provided data objects should be drawn.
