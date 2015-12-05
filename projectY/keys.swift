@@ -44,8 +44,6 @@ let player2HelpsKey = "player2Helps"
 let player1CategoryWinsKey = "player1CategoryWins"
 let player2CategoryWinsKey = "player2CategoryWins"
 
-
-
 //LocationClass Keys
 let LocationClass = "Locations"
 let locality = "Locality"
@@ -62,16 +60,12 @@ let geoPoint = "geoPoint"
 let topPlayersForArea = "topPlayersForArea"
 let opponentsQuestionsAnswered = "opponentSubmitted"
 
-
 //UserClass Keys
-let visitedLocations = "visitedLocations"
-let usersOldLocation = "usersOldLocation"
-let userGuesses = "guesses"
-let questionsAnswered = "questionsAnswered"
 let displayName = "displayName"
 let profilePic = "profilePicture"
-let whereUserAnswered = "locationOfAnswers"
-
+let questionsAnswered = "questionsAnswered"
+let userCurrentMatchesKey = "currentMatches"
+let userFinishedMatcheKey = "finishedMatches"
 
 //Question Categories
 let geographyCategory = "geography"
@@ -85,6 +79,12 @@ let productsCategory = "products"
 let peopleCategory = "people"
 let questionWithImageCategory = "imageType"
 let questionJustTextCategory = "textType"
+
+//Deep Link Keys
+let deeplinkFromUser = "sendingUser"
+let deepLinkChallenge = "challengingUser"
+let sendingUserDisplayName = "sendingUserDisplayName"
+
 
 
 //ColorPalette
@@ -106,7 +106,7 @@ let facebookColor = UIColor(hexString: "#3b5998")!
 let redColor = UIColor(hexString: "#282B35")!
 
 let userColor = UIColor(hexString: "#45F5FF")!
-let opponentColor = UIColor(hexString: "#FCB64C")!
+let opponentColor = UIColor(hexString: "#FF9A44")!
 
 //Image Assets
 

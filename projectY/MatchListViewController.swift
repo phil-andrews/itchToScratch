@@ -11,14 +11,12 @@ import Parse
 import Branch
 import MessageUI
 
-let user = PFUser.currentUser()
+var user = PFUser.currentUser()
+var userMatches = [PFObject]()
 
 class MatchListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate {
     
-    var userMatches = [PFObject]()
-    
     @IBOutlet weak var matchTableView: UITableView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +32,18 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
         drawGetMatchButtons(self)
         
-        self.checkForUser { () -> () in
+        checkForUser(self) { () -> () in
             
             queryForLiveMatches({ (matches) -> () in
                 
-                self.userMatches = matches
+                userMatches = matches!
                 self.matchTableView.reloadData()
                 self.matchTableView.setNeedsLayout()
                 
             })
             
         }
+        
         
     }
     
@@ -64,6 +63,8 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         matchTableView.frame.origin.y = self.view.frame.height * 0.10
         matchTableView.frame.origin.x = centerXAlignment(matchTableView, masterView: self.view)
         matchTableView.backgroundColor = backgroundColor
+        
+        print("these are the globals\(deepLinkChallengeUser), \(deepLinkChallengeUserDisplayName)")
         
         matchTableView.setNeedsDisplay()
         
@@ -95,7 +96,6 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
-    var count = 1
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -108,29 +108,9 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     
-    func checkForUser(completion: () -> ()) {
-        
-        if PFUser.currentUser() == nil {
-            
-            let loginViewController: LoginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
-            
-            self.presentViewController(loginViewController, animated: true, completion: nil)
-            
-            
-        } else if PFUser.currentUser() != nil {
-         
-            
-            completion()
-            
-            print("user logged in already")
-           
-        }
-        
-    }
+    var couldNotMatch = "false"
     
-    
-    
-    func inviteToMatch(sender: UIButton) {
+    func inviteToMatch(sender: AnyObject) {
         
         let messageComposeVC = MFMessageComposeViewController()
         
@@ -145,14 +125,13 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
             messageComposeVC.messageComposeDelegate = self
         
-            prefillMessageBody({ (url) -> Void in
+            prefillMessageBody(couldNotMatch, completion: { (url) -> Void in
                 
                 messageComposeVC.body = "Challenge delivered! \n \(url)"
-                    
+                
                 self.presentViewController(messageComposeVC, animated: true, completion: nil)
                 
             })
-            
             
         } else {
             
@@ -160,6 +139,44 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
             let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
             
             errorAlert.show()
+        }
+        
+    }
+    
+    
+    var count = 0
+    
+    func getNewMatch() {
+        
+        print("getting new match")
+        
+        queryForNewMatch(self) { (matchObject) -> Void in
+            
+            if matchObject == nil && self.count <= 2 {
+                
+                self.getNewMatch()
+                
+                ++self.count
+                
+            } else if matchObject != nil {
+                
+                // launch match
+                
+                self.count = 0
+                
+            } else if matchObject == nil && self.count > 2 {
+                
+                createNewMatch(user?.objectId, challengedUserID: "pending", challengedUserDisplayName: "pending", completion: { (matchID) -> Void in
+                    
+                    self.couldNotMatch = "true"
+                    
+                    print("invite a friend")
+                    
+                    //prompt user to invite friend while they wait
+                    
+                })
+                
+            }
         }
         
     }
@@ -174,30 +191,39 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         case MessageComposeResultSent.rawValue:
             print("cancelado")
             
-        case MessageComposeResultCancelled.rawValue :
-            print("canceled...")
-            controller.dismissViewControllerAnimated(true, completion: nil)
+            delay(1.5) { () -> () in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+            }
             
+        case MessageComposeResultCancelled.rawValue :
+            
+            print("canceled...")
+            delay(1.5) { () -> () in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+            }
         case MessageComposeResultFailed.rawValue :
             print("fail...")
+            
+            let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Try again in a moment", delegate: self, cancelButtonTitle: "OK")
+        
+            errorAlert.show()
             
         default:
             print("default...")
             
+            let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Try again in a moment", delegate: self, cancelButtonTitle: "OK")
             
+            errorAlert.show()
             
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
-    
-    func getNewMatch() {
-        
-        
-    }
-        
         
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         

@@ -14,9 +14,6 @@ import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-var userObject: PFObject?
-
-
 class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     ///colors
@@ -908,9 +905,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: self.loginButton, percentageSize: 7, borderWidth: 2.0)
             
-            PFUser.logInWithUsernameInBackground(userName!, password: passWord!) { (user, error: NSError?) -> Void in
+            PFUser.logInWithUsernameInBackground(userName!, password: passWord!) { (userObject, error: NSError?) -> Void in
                 
-                if user != nil && error == nil {
+                if userObject != nil && error == nil {
+                    
+                    user = userObject
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
 
@@ -922,7 +921,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     
                 }
                 
-                if user != nil && error != nil {
+                if userObject != nil && error != nil {
+                    
+                    user = userObject
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
 
@@ -937,7 +938,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                     
                 }
                 
-                if user == nil && error != nil {
+                if userObject == nil && error != nil {
                     
                     print("case 3")
                     
@@ -1095,13 +1096,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         SquaresActivityIndicator().replaceButtonWithActivityIndicator(self.view, button: registerButton, percentageSize: 7, borderWidth: 2.0)
         
-        let user = PFUser()
-        user.username = emailSignupField.text
-        user.password = passwordConfirmationSignupField.text
-        user.email = emailSignupField.text
-        user["displayName"] = userNameField.text
+        let emailUser = PFUser()
+        emailUser.username = emailSignupField.text
+        emailUser.password = passwordConfirmationSignupField.text
+        emailUser.email = emailSignupField.text
+        emailUser["displayName"] = userNameField.text
         
-        user.signUpInBackgroundWithBlock {
+        emailUser.signUpInBackgroundWithBlock {
             
             (success: Bool, error: NSError?) -> Void in
             
@@ -1196,6 +1197,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     func newUserFinishedSignup() {
         
+        user = PFUser.currentUser()
+        
+        ifNeededCreatMatchFromDeepLink { () -> () in
+            
+            
+        }
         let masterHeight = self.view.frame.height
         let onePercentOfHeight = masterHeight/100
         

@@ -15,6 +15,9 @@ import FBSDKLoginKit
 import Mapbox
 import Branch
 
+var deepLinkChallengeUser: String?
+var deepLinkChallengeUserDisplayName: String?
+
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,8 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (error == nil) {
                 if let params = params as NSDictionary? {
                     
-//                    print(params.valueForKey("matchObjectID"))
-//                    print(params.allKeys)
+                    let opponent = params.valueForKey(deepLinkChallenge) as! String?
+                    let opponentDisplayName = params.valueForKey(sendingUserDisplayName) as! String?
+                    
+                    print(opponent)
+                    print(opponentDisplayName)
+                    
+                    if opponent != nil {
+                        
+                        deepLinkChallengeUser = opponent
+                        deepLinkChallengeUserDisplayName = opponentDisplayName
+                        
+                    }
                     
                 }
                 
@@ -73,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             
             _ = Branch.getInstance().getLatestReferringParams()
+            
             
         }
         

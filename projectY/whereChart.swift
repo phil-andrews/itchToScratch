@@ -377,47 +377,47 @@ public class PPChart {
 
     func queryForPlacesPlayed(completion: (locationObjects: [PFObject], playedAreasDict: [String:Int]) -> Void) {
         
-        let user = PFUser.currentUser()
-        let locationArray = user?.valueForKey(whereUserAnswered) as! NSArray
-        
-        let locationArrayCount = NSMutableArray()
-        let locationArraySingleIds = NSMutableArray()
-        
-        for item in locationArray {
-            
-            locationArrayCount.addObject(item.count)
-            //locationArraySingleIds.addObject(item[0])
-        }
-        
-        var locationDict = [String: Int]()
-        
-        for index in 0..<locationArray.count {
-            
-            let id = locationArraySingleIds[index] as! String
-            let locationCount = locationArrayCount[index] as! Int
-            
-            locationDict[id] = locationCount
-        }
-        
-        let sortedDictKeys = locationDict.sortedKeysByValue(>)
-        
-        let query = PFQuery(className: LocationClass)
-        query.whereKey(objectId, containedIn: sortedDictKeys)
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            
-            if error == nil {
-                
-                if let objects = objects as? [PFObject] {
-                    
-                    completion(locationObjects: objects, playedAreasDict: locationDict)
-                    
-                }
-            } else if error != nil {
-                
-                print(error!.localizedDescription)
-            }
-            
-        }
+//        let user = PFUser.currentUser()
+//        let locationArray = user?.valueForKey(whereUserAnswered) as! NSArray
+//        
+//        let locationArrayCount = NSMutableArray()
+//        let locationArraySingleIds = NSMutableArray()
+//        
+//        for item in locationArray {
+//            
+//            locationArrayCount.addObject(item.count)
+//            //locationArraySingleIds.addObject(item[0])
+//        }
+//        
+//        var locationDict = [String: Int]()
+//        
+//        for index in 0..<locationArray.count {
+//            
+//            let id = locationArraySingleIds[index] as! String
+//            let locationCount = locationArrayCount[index] as! Int
+//            
+//            locationDict[id] = locationCount
+//        }
+//        
+//        let sortedDictKeys = locationDict.sortedKeysByValue(>)
+//        
+//        let query = PFQuery(className: LocationClass)
+//        query.whereKey(objectId, containedIn: sortedDictKeys)
+//        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+//            
+//            if error == nil {
+//                
+//                if let objects = objects as? [PFObject] {
+//                    
+//                    completion(locationObjects: objects, playedAreasDict: locationDict)
+//                    
+//                }
+//            } else if error != nil {
+//                
+//                print(error!.localizedDescription)
+//            }
+//            
+//        }
         
     }
     

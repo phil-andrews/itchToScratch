@@ -9,19 +9,20 @@
 import Foundation
 import UIKit
 import Branch
+import MessageUI
 
 
-func prefillMessageBody(completion: (String) -> Void) {
+func prefillMessageBody(couldNotMatch: String, completion: (String) -> Void) {
     
-    createNewMatch { (matchID) -> Void in
-        
-        let object: BranchUniversalObject = BranchUniversalObject(title: "messageFill")
-        object.title = "test title"
-        object.addMetadataKey("matchObjectID", value: "sdf9809sdf")
+        let object: BranchUniversalObject = BranchUniversalObject(title: "GameInvite")
+        object.title = "Game Invite"
+        object.addMetadataKey("sendingUser", value: user?.objectId)
+        object.addMetadataKey("CouldNotFindMatch", value: couldNotMatch)
+        object.addMetadataKey(sendingUserDisplayName, value: user?.valueForKey(displayName) as! String)
         
         let linkProperties: BranchLinkProperties = BranchLinkProperties()
         linkProperties.channel = "in-app"
-        linkProperties.addControlParam("matchObject", withValue: "matchID")
+        linkProperties.addControlParam(deepLinkChallenge, withValue: user?.objectId)
         
         object.registerView()
         
@@ -38,13 +39,8 @@ func prefillMessageBody(completion: (String) -> Void) {
             }
             
         }
-        
-        
-    }
     
 }
-
-
 
 
 

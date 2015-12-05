@@ -25,15 +25,34 @@ func drawGetMatchButtons(viewController: UIViewController) {
     addMatchButton.layer.cornerRadius = buttonHeight/2
     addMatchButton.addTarget(viewController, action: Selector("getNewMatch"), forControlEvents: .TouchUpInside)
     
+    let plusCross = UIImageView()
+    plusCross.image = UIImage(named: "plusCross")
+    plusCross.frame.size.height = addMatchButton.frame.height * 0.65
+    plusCross.frame.size.width = addMatchButton.frame.height * 0.65
+    
+    addMatchButton.addSubview(plusCross)
+    plusCross.center.y = addMatchButton.center.y
+    plusCross.center.x = addMatchButton.center.x
+    
     inviteButton.frame.size.width = buttonWidth
     inviteButton.frame.size.height = buttonHeight
     inviteButton.backgroundColor = lowestColor
     inviteButton.layer.cornerRadius = buttonHeight/2
-    inviteButton.setTitle("friend", forState: .Normal)
+    inviteButton.setTitle("invite", forState: .Normal)
     inviteButton.contentHorizontalAlignment = .Left
     inviteButton.contentEdgeInsets = UIEdgeInsetsMake(0.0, 12.5, 0.0, 0.0)
     inviteButton.titleLabel?.font = fontSmallestRegular
+    inviteButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     inviteButton.addTarget(viewController, action: Selector("inviteToMatch:"), forControlEvents: .TouchUpInside)
+    
+    let plusCrossInvite = UIImageView()
+    plusCrossInvite.image = UIImage(named: "plusCross")
+    plusCrossInvite.frame.size.height = inviteButton.frame.height * 0.60
+    plusCrossInvite.frame.size.width = inviteButton.frame.height * 0.60
+    
+    inviteButton.addSubview(plusCrossInvite)
+    plusCrossInvite.center.y = inviteButton.center.y
+    plusCrossInvite.center.x = inviteButton.center.x * 1.60
     
     viewController.view.addSubview(addMatchButton)
     viewController.view.addSubview(inviteButton)

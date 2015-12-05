@@ -50,8 +50,6 @@ class MatchTableViewCell: UITableViewCell {
 
     
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -135,11 +133,6 @@ class MatchTableViewCell: UITableViewCell {
 
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 1.0
-        
-//        self.layer.shadowOpacity = 1.0
-//        self.layer.shadowRadius = 0.75
-//        self.layer.shadowOffset = CGSizeMake(0, 1)
-//        self.layer.shadowColor = UIColor.blackColor().CGColor
         
         //turnIdentifier(self, matchDetails: matchDetails!)
         

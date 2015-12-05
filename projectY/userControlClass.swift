@@ -16,6 +16,47 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 
+func checkForUser(viewController: UIViewController, completion: () -> ()) {
+    
+    if PFUser.currentUser() == nil {
+        
+        let loginViewController: LoginViewController = viewController.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+        
+        viewController.presentViewController(loginViewController, animated: true, completion: nil)
+        
+    } else if PFUser.currentUser() != nil {
+        
+        PFUser.currentUser()?.fetchInBackgroundWithBlock({ (userObject, error) -> Void in
+            
+            if error == nil {
+                
+                user = userObject as? PFUser
+                
+                ifNeededCreatMatchFromDeepLink({ () -> () in
+                    
+                    completion()
+
+                })
+                
+                
+            } else if error != nil {
+                
+                NSLog((error?.localizedDescription)!)
+                
+                completion()
+                
+            }
+            
+            print("user logged in already")
+
+        })
+        
+    }
+    
+}
+
+
+
 func initializeUser(completion: (success: Bool?, error: NSError?) -> Void) {
     
     print("initialize user ran")
@@ -39,9 +80,7 @@ func initializeUser(completion: (success: Bool?, error: NSError?) -> Void) {
         
     }
     
-    user?.setObject([], forKey: visitedLocations)
     user?.setObject([], forKey: questionsAnswered)
-    user?.setObject([], forKey: whereUserAnswered)
     user?.setObject([], forKey: geographyCategory)
     user?.setObject([], forKey: scienceCategory)
     user?.setObject([], forKey: sportsCategory)

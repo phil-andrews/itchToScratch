@@ -129,24 +129,24 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
     
     func createMap(completion: () -> Void) {
         
-        let styleURL = NSURL(string: "asset://styles/dark-v8.json")
-        mapView = MGLMapView(frame: self.view.bounds, styleURL: styleURL)
-        mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        mapView.setCenterCoordinate(usersCurrentLocationData.coordinate, zoomLevel: 0.1, animated: true)
-        
-        mapView.zoomEnabled = true
-        mapView.attributionButton.hidden = true
-        mapView.logoView.hidden = true
-        mapView.delegate = self
-        
-        let backButton = UIButton(frame: CGRectMake(15.0, 15.0, 44.0, 44.0))
-        backButton.addTarget(self, action: "goBack:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        
-        view.addSubview(mapView)
-        view.addSubview(backButton)
-        
-        completion()
+//        let styleURL = NSURL(string: "asset://styles/dark-v8.json")
+//        mapView = MGLMapView(frame: self.view.bounds, styleURL: styleURL)
+//        mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+//        mapView.setCenterCoordinate(usersCurrentLocationData.coordinate, zoomLevel: 0.1, animated: true)
+//        
+//        mapView.zoomEnabled = true
+//        mapView.attributionButton.hidden = true
+//        mapView.logoView.hidden = true
+//        mapView.delegate = self
+//        
+//        let backButton = UIButton(frame: CGRectMake(15.0, 15.0, 44.0, 44.0))
+//        backButton.addTarget(self, action: "goBack:", forControlEvents: UIControlEvents.TouchUpInside)
+//        
+//        
+//        view.addSubview(mapView)
+//        view.addSubview(backButton)
+//        
+//        completion()
         
         
     }
@@ -471,68 +471,68 @@ class BlackController: UIViewController, UITextViewDelegate, MGLMapViewDelegate 
     
     func queryForTopPlayersProfilePictures(topUsers: [String]?, locationID: String?, completion: (sortedPlayerPics: [PFFile]?, topUsers: [String]?) -> Void) {
         
-        var topPlayersDict = [PFFile: Int]()
-        
-        if topUsers == nil {
-            
-            completion(sortedPlayerPics: nil, topUsers: nil)
-            
-            print("top users does equal nil")
-            
-            return
-            
-        } else if topUsers != nil {
-        
-            print("top users doesn't equal nil")
-            
-            let query = PFUser.query()
-            query?.whereKey(objectId, containedIn: topUsers!)
-            query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                
-                if error != nil {
-                    
-                    print(error!.localizedDescription)
-                    
-                } else if error == nil {
-                    
-                    if let objects = objects as? [PFObject] {
-                        
-                        for object in objects {
-                            
-                                let userPlacesAnswered = object.valueForKey(whereUserAnswered) as! [NSArray]
-                            
-                            for item in userPlacesAnswered {
-                                
-                                if item[0] as! String == locationID! {
-                                    
-                                    let numberOfAnsweredQuestions = item.count as Int
-                                    
-                                    let userProfilePicture = object.valueForKey(profilePic) as! PFFile
-                                    
-                                    topPlayersDict[userProfilePicture] = numberOfAnsweredQuestions
-                                    
-                                    let dict = topPlayersDict.sortedKeysByValue(>)
-                                    print(dict)
-                                    
-                                    completion(sortedPlayerPics: dict, topUsers: topUsers)
-                                    
-                                    
-                                }
-                                
-                            }
-                            
-                            
-                        }
-                        
-                        
-                    }
-                    
-                }
-                
-                
-            })
-        
-        }
+//        var topPlayersDict = [PFFile: Int]()
+//        
+//        if topUsers == nil {
+//            
+//            completion(sortedPlayerPics: nil, topUsers: nil)
+//            
+//            print("top users does equal nil")
+//            
+//            return
+//            
+//        } else if topUsers != nil {
+//        
+//            print("top users doesn't equal nil")
+//            
+//            let query = PFUser.query()
+//            query?.whereKey(objectId, containedIn: topUsers!)
+//            query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+//                
+//                if error != nil {
+//                    
+//                    print(error!.localizedDescription)
+//                    
+//                } else if error == nil {
+//                    
+//                    if let objects = objects as? [PFObject] {
+//                        
+//                        for object in objects {
+//                            
+//                                let userPlacesAnswered = object.valueForKey(whereUserAnswered) as! [NSArray]
+//                            
+//                            for item in userPlacesAnswered {
+//                                
+//                                if item[0] as! String == locationID! {
+//                                    
+//                                    let numberOfAnsweredQuestions = item.count as Int
+//                                    
+//                                    let userProfilePicture = object.valueForKey(profilePic) as! PFFile
+//                                    
+//                                    topPlayersDict[userProfilePicture] = numberOfAnsweredQuestions
+//                                    
+//                                    let dict = topPlayersDict.sortedKeysByValue(>)
+//                                    print(dict)
+//                                    
+//                                    completion(sortedPlayerPics: dict, topUsers: topUsers)
+//                                    
+//                                    
+//                                }
+//                                
+//                            }
+//                            
+//                            
+//                        }
+//                        
+//                        
+//                    }
+//                    
+//                }
+//                
+//                
+//            })
+//        
+//        }
     }
     
     
