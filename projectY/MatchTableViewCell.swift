@@ -42,7 +42,6 @@ class MatchTableViewCell: UITableViewCell {
             playerNumberOneOrTwo(m)
             opponentName.text = matchDetails!.valueForKey("player\(opponentNumber)UserName") as? String
             setCategoryIcons()
-            print(opponentNumber)
                 
             }
         }
@@ -133,10 +132,35 @@ class MatchTableViewCell: UITableViewCell {
         layoutCategoryIcons(self, opponentCategoryArray: opponentCategoryArray, userCategoryArray: userCategoryArray)
         layoutHelperInventoryIcons(self, opponentHelperIconArray: opponentHelperIconArray, userHelperIconArray: userHelperIconArray, opponentNameLabel: opponentName)
         layoutMiniGameboard(self)
+
+        self.layer.borderColor = UIColor.blackColor().CGColor
+        self.layer.borderWidth = 1.0
+        
+//        self.layer.shadowOpacity = 1.0
+//        self.layer.shadowRadius = 0.75
+//        self.layer.shadowOffset = CGSizeMake(0, 1)
+//        self.layer.shadowColor = UIColor.blackColor().CGColor
+        
         //turnIdentifier(self, matchDetails: matchDetails!)
         
     }
     
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        userCategory1.hidden = true
+        userCategory2.hidden = true
+        userCategory3.hidden = true
+        userCategory4.hidden = true
+        
+        opponentCategory1.hidden = true
+        opponentCategory2.hidden = true
+        opponentCategory3.hidden = true
+        opponentCategory4.hidden = true
+        
+    
+    }
     
     
     func setCategoryIcons(){
@@ -173,8 +197,6 @@ class MatchTableViewCell: UITableViewCell {
     func playerNumberOneOrTwo(matchObject: PFObject) {
         
         let userID = PFUser.currentUser()?.objectId
-        
-        print(userID)
         
         let matchObjectPlayerOne = matchObject.valueForKey(player1IdKey) as! String
         let matchObjectPlayerTwo = matchObject.valueForKey(player2IdKey) as! String

@@ -89,25 +89,24 @@ let questionJustTextCategory = "textType"
 
 //ColorPalette
 
-let backgroundColor = UIColor(hexString: "#282B35")//UIColor(red: 200.0, green: 43.0, blue: 54.0 , alpha: 1.0)
+let backgroundColor = UIColor(hexString: "#282B35")
 
+let lowestColor = UIColor(hexString: "#4A90E2")!
+let lowColor = UIColor(hexString: "#75CAEF")!
+let midColor = UIColor(hexString: "#50E3C2")!
+let highColor = UIColor(hexString: "#02F87B")!
+let highestColor = UIColor(hexString: "#09E136")!
+let lightColoredFont = UIColor(hexString: "#ECE7E7")!
+let orangeColor = UIColor(hexString: "#F5A623")!
+let whiteColor = UIColor(hexString: "#FFFFFF")!
+let paleGreenColor = UIColor(hexString: "#B8E986")!
+let lightPurpleColor = UIColor(hexString: "#CB83DA")!
+let yellowColor = UIColor(hexString: "#F2E96B")!
+let facebookColor = UIColor(hexString: "#3b5998")!
+let redColor = UIColor(hexString: "#282B35")!
 
-let lowestColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let lowColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let midColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let highColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let highestColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let lightColoredFont = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let orangeColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let whiteColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let paleGreenColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let lightPurpleColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let yellowColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let facebookColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let redColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-
-let userColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
-let opponentColor = UIColor(red: 20, green: 20, blue: 234.0, alpha: 1.0)
+let userColor = UIColor(hexString: "#45F5FF")!
+let opponentColor = UIColor(hexString: "#FCB64C")!
 
 //Image Assets
 

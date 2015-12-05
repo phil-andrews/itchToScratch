@@ -13,19 +13,21 @@ import ParseUI
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Mapbox
+import Branch
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
 
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var window: UIWindow?
     
-    private let appIdKey = "QfexECoKFE2BuzQRnfkNrCM82I6Ew3LTa3MiXG0V"
-    private let appClientKey = "UI1IZR60wgiCltXAligcTfIep59jKRK9cvuIpB8M"
+    let appIdKey = "QfexECoKFE2BuzQRnfkNrCM82I6Ew3LTa3MiXG0V"
+    let appClientKey = "UI1IZR60wgiCltXAligcTfIep59jKRK9cvuIpB8M"
     
-    private let twitterConsumerKey = "uCanrRSD93IscWZ3wrx2Oz5ST"
-    private let twitterConsumerSecret = "KwM8sgiBmHc64QvnUAaupjxKx9FrbFNSXWTpyNyYqcSsGLP690"
+    let twitterConsumerKey = "uCanrRSD93IscWZ3wrx2Oz5ST"
+    let twitterConsumerSecret = "KwM8sgiBmHc64QvnUAaupjxKx9FrbFNSXWTpyNyYqcSsGLP690"
     
-    private let mapboxKey = "pk.eyJ1IjoicGhpbG9uZHJlamFjayIsImEiOiJjaWV6dWczMngxZWtmc2VrcmZlZmJmcG5vIn0.3joKi4D-TfzkRZtIWVZY_g"
+    let mapboxKey = "pk.eyJ1IjoicGhpbG9uZHJlamFjayIsImEiOiJjaWV6dWczMngxZWtmc2VrcmZlZmJmcG5vIn0.3joKi4D-TfzkRZtIWVZY_g"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -39,20 +41,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         MGLAccountManager.setAccessToken(mapboxKey)
+                
+        let branch: Branch = Branch.getInstance()
+        branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: { params, error in
+            if (error == nil) {
+                if let params = params as NSDictionary? {
+                    
+//                    print(params.valueForKey("matchObjectID"))
+//                    print(params.allKeys)
+                    
+                }
+                
+                
+            }
+            
+        })
         
+
         return true
     }
     
-    func application(application: UIApplication,
-        openURL url: NSURL,
-        sourceApplication: String?,
-        annotation: AnyObject) -> Bool {
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+        //print(url.host)
+        
+        if (!Branch.getInstance().handleDeepLink(url)) {
             
-            return FBSDKApplicationDelegate.sharedInstance().application(application,
-                openURL: url,
-                sourceApplication: sourceApplication,
-                annotation: annotation)
+            FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+            
+        } else {
+            
+            _ = Branch.getInstance().getLatestReferringParams()
+            
+        }
+        
+        return true
+
     }
+    
 
 
     

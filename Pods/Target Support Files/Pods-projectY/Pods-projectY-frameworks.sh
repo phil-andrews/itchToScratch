@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-projectY/Branch.framework"
   install_framework "Pods-projectY/Mapbox.framework"
   install_framework "Pods-projectY/SwiftColors.framework"
 fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-projectY/Branch.framework"
   install_framework "Pods-projectY/Mapbox.framework"
   install_framework "Pods-projectY/SwiftColors.framework"
 fi

@@ -8,10 +8,12 @@
 
 import UIKit
 import Parse
+import Branch
+import MessageUI
 
 let user = PFUser.currentUser()
 
-class MatchListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MatchListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate {
     
     var userMatches = [PFObject]()
     
@@ -65,7 +67,6 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
         matchTableView.setNeedsDisplay()
         
-        
     }
     
     
@@ -101,13 +102,6 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         let cell: MatchTableViewCell = self.matchTableView.dequeueReusableCellWithIdentifier("matchCell", forIndexPath: indexPath) as! MatchTableViewCell
         
         cell.matchDetails = userMatches[indexPath.row]
-
-            
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.shadowRadius = 0.75
-        cell.layer.shadowOffset = CGSizeMake(0, 1)
-        cell.layer.shadowColor = UIColor.blackColor().CGColor
-        
         
         return cell
         
@@ -136,12 +130,67 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     
-    func inviteToMatch() {
+    func inviteToMatch(sender: UIButton) {
         
+        let messageComposeVC = MFMessageComposeViewController()
         
+        func canSendText() -> Bool {
+            
+            print("blue")
+            
+            return MFMessageComposeViewController.canSendText()
+        }
+        
+        if canSendText() {
+        
+            messageComposeVC.messageComposeDelegate = self
+        
+            prefillMessageBody({ (url) -> Void in
+                
+                messageComposeVC.body = "Challenge delivered! \n \(url)"
+                    
+                self.presentViewController(messageComposeVC, animated: true, completion: nil)
+                
+            })
+            
+            
+        } else {
+            
+            // Let the user know if his/her device isn't able to send text messages
+            let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
+            
+            errorAlert.show()
+        }
         
     }
     
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        
+        print(result)
+        
+        switch result.rawValue {
+            
+        case MessageComposeResultSent.rawValue:
+            print("cancelado")
+            
+        case MessageComposeResultCancelled.rawValue :
+            print("canceled...")
+            controller.dismissViewControllerAnimated(true, completion: nil)
+            
+        case MessageComposeResultFailed.rawValue :
+            print("fail...")
+            
+        default:
+            print("default...")
+            
+            
+            
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
     
     func getNewMatch() {

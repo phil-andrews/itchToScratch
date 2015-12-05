@@ -4,6 +4,7 @@ target 'projectY' do
 
 pod 'Mapbox-iOS-SDK'
 pod 'SwiftColors'
+pod 'Branch'
 
 end
 

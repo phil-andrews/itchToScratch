@@ -1,12 +1,15 @@
 PODS:
+  - Branch (0.11.11)
   - Mapbox-iOS-SDK (2.1.2)
   - SwiftColors (0.3.3)
 
 DEPENDENCIES:
+  - Branch
   - Mapbox-iOS-SDK
   - SwiftColors
 
 SPEC CHECKSUMS:
+  Branch: 71b1180c49d75e0d849e2611ecf3016de7572eac
   Mapbox-iOS-SDK: 19aa6ad9235ad79a46f507cb831ae216d6ea373e
   SwiftColors: c02dc874cda6319a20e2fd75385e1ccffc17b941
 

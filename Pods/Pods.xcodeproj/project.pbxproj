@@ -7,69 +7,162 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		006A8BA0230F66DBA7FD61D26AD490F7 /* star_tilestream_net.der in Resources */ = {isa = PBXBuildFile; fileRef = D25AD23E542ED4045F58DE8923D17296 /* star_tilestream_net.der */; };
-		026C929143B035C79A7B0D523436CD90 /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8951BBAEB499F2BCA9D4FDA6C6131D14 /* Compass@2x.png */; };
-		070BFFE1C31859DA82636980268E2283 /* Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C88E048305845572F1F7763F02E902 /* Mapbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D08A112FF1D3402F6427F5BBFCC8CA5 /* MGLAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E184F31F95D7938B648F47FE8C41F4 /* MGLAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1430569A48F8D76C75AB3C6439D9072B /* MGLShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F0B7E8BC137335E742ECEB1CEE6E4DD /* MGLShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		14ABB9E8A12DFD66E894BA09D135903A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */; };
-		15C7723CAE93433EC26C1BB3E412E800 /* MGLMultiPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 19629F0D0B0C75CBCD19E32AE579FDE5 /* MGLMultiPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17D3B0DC8063FEA6ECFE2784D4BA93E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE6EBA7C74FBF79797E1E42AA296663 /* QuartzCore.framework */; };
-		19B96A956D435698D4E24AD4D015D45D /* Mapbox-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D611D9CB809B64D7242FC22BF5C11FEC /* Mapbox-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FD78FE2FD49A40A25C1C715AC150E9A /* MGLOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 65AA10AC6D9DC73D2DC2025256B7F56C /* MGLOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24426C465DB74BADD81F1BDED6C46359 /* Compass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 728047E59FE080F26FD9FE844264D2C2 /* Compass@3x.png */; };
-		285ECC512186F3D9D13A510DCCB0F94F /* MGLPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E62D7A49AB327CCB6EA9B8ED0BE208C /* MGLPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C662DD3D5DA458E1D568482A9724B39 /* mapbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E4FA47988A6701476BDB9F65C4AB6C /* mapbox@3x.png */; };
-		2E30A944F6F01A206149C740AC02AA54 /* mapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC7E642702EFD50640FB45AFB4349 /* mapbox.png */; };
-		2F01A78B581A5CFC6DA73694E9D75D56 /* mapbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C65EC39D79D48392BB236C46E35167C /* mapbox@2x.png */; };
-		344A7A3AAA62F794A15DEAB4E4971012 /* MGLDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D139C247312FC54724EE8E1E0082A301 /* MGLDummy.m */; };
-		3B2CEAEEDFF327B78531EA4B4602024F /* MGLPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = 08F88CB72EC056FD2D321B27B9FDF6A6 /* MGLPolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D03C5D5D9D47B1FF6AB62767638ED71 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310B47F44F9C762797CAF77676A2A8F0 /* CoreLocation.framework */; };
-		3ED0DD22B27E0C9DC4EFA232B03D4C3B /* SwiftColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C884BE0FFD66B00DC5E27D3802E9CB /* SwiftColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		466D97702032CCD0D7EC928E3A2A211B /* styles in Resources */ = {isa = PBXBuildFile; fileRef = EB57F21F3396C75D795FFD07FFB1A468 /* styles */; };
-		53ADF45301E29A5FB48E02DEC3686C4B /* MGLUserLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = EE26A6C9748FBEF34CE36BA94850CE9F /* MGLUserLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56E1E351F2449A4B5D4EA55AB67F8763 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A6BD54999EB227BBC0EB1005247F5 /* CoreTelephony.framework */; };
-		58F8D5EFE7AA740C042EE39C297E41B9 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */; };
-		5C1DE8CCE242572CA69AB599591A5317 /* MGLMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A7B96D2AB438FC8890D20C065635DC /* MGLMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		688FC8F4165FAC0E0CEEF753EB8CCEDC /* Mapbox-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D70CC96077A81E1F2101E65A3339E09 /* Mapbox-iOS-SDK-dummy.m */; };
-		6AFD118C94E2360397693277795E0DBC /* MGLAnnotationImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4866DAE641B3D7A19D3AB0E51632A4D7 /* MGLAnnotationImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EB60926E41601CF17FE723A2FB8C38B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5AEE067096DB997D3C6710F0541AC /* ImageIO.framework */; };
-		891C672ECB8C97E0D2D7EA45C0FC822C /* MGLMapView+IBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 483A2C647703ABDA06CBD28D8E0A80FE /* MGLMapView+IBAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EB78A1837EE965D6DCEDC742A80F3A5 /* MGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BFE8FE5C5E26F8FF5DB79CB049BD31A /* MGLTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A6DB1952D6285CF03DD33FA4745B82F /* MGLPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7B521EB33B8D3F68A32746D57D91700 /* MGLPointAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A19A2335465BDA57287E864A324C1159 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866AB723FD27A566F45FAA3A0D2AB1F0 /* MobileCoreServices.framework */; };
-		AE2E659A83D968171D59726C8E0D78B9 /* api_mapbox_com-geotrust.der in Resources */ = {isa = PBXBuildFile; fileRef = F8119BC02280784F141805995FFFAEE6 /* api_mapbox_com-geotrust.der */; };
-		B3DB56593C827E0F47930C687279DAC2 /* Pods-projectY-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DBEDEDF9BF32B972C702A67D019EFA8 /* Pods-projectY-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC5E2A6CC887C0010C49B71C2BB3AD0F /* SwiftColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F96CA982AB17C5D078CDA9971E92654 /* SwiftColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD35D087C7E5963C086E383DEDF9266C /* api_mapbox_com-digicert.der in Resources */ = {isa = PBXBuildFile; fileRef = 960166AB14C094FB510D2418FB3F9785 /* api_mapbox_com-digicert.der */; };
-		C05230B172211308E1123A1B0C84B70C /* MGLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = D105F383B809289B9E4853E67A3D9296 /* MGLGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA69FFE0C11EF6927CC81BD9977BD2D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */; };
-		D0557FED9E6CD473D74D6B8DEF0B538C /* Pods-projectY-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB866428F5712F5686CE631878A5525 /* Pods-projectY-dummy.m */; };
-		D5716E03E5CF6D95660909865F51D56B /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F64A185E5F6FA4267E93FBF2B7DCB5 /* Compass.png */; };
-		D57F6B147837736074B489503A3ABA0F /* SwiftColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C6368C57BBC4F2B565A8B85535EB3D /* SwiftColors-dummy.m */; };
-		D67F5CB64DFDF93DFDB9AA3A6E0E21FB /* MGLMapCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F86EF6E13D2E814F0D926BD4707AA4 /* MGLMapCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAE7E502A53D32D2379111042566B759 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF243C380F6FB6E196587E7734803B8D /* GLKit.framework */; };
-		ED0D324BF917DC9AAE69EC376E6F05A4 /* MGLAccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BDBCD045AD8EB5E7B1C1EFF78765838 /* MGLAccountManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDA18F73CD70C7FBC6EADFEAD02D20E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */; };
-		EE503A1F2AFA95FC879A9E700A3B164C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF2A03396D5540D0E9C20781E2BA75E /* SystemConfiguration.framework */; };
-		FB50A94A49AF27026EA1D5E999B19F77 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 83D0522F5B4D628EF20373704DCE0D6F /* README */; };
-		FD9A817947D346BF9217BD6FAED9171C /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE45F2253B0CAE337F00A05454F054B /* SwiftColors.swift */; };
+		006A8BA0230F66DBA7FD61D26AD490F7 /* star_tilestream_net.der in Resources */ = {isa = PBXBuildFile; fileRef = 886FFA70C6C6C2DC0F54C6203E75BC6F /* star_tilestream_net.der */; };
+		026C929143B035C79A7B0D523436CD90 /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1978FEB71257D0CB65E6BE96AAD359B5 /* Compass@2x.png */; };
+		034D6A1D347B1DA340332AE03912E165 /* BranchLogoutRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9925C9CA487AA11095050219B1D3C2E7 /* BranchLogoutRequest.m */; };
+		056E0741CE61B9BBF86B2564508F687E /* BranchShortUrlSyncRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A3B05D93B35AF9177745A7FA2C66D17F /* BranchShortUrlSyncRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		057F086A4BA7D095C8B6EA8A2CFD1BCC /* BranchRegisterViewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 483730C2E75AFD57D5C373B955A86AD6 /* BranchRegisterViewRequest.m */; };
+		05EEF9DAE1647E2813897D10D68D8E0D /* BranchShortUrlRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E6FDE3433E9309EEBB2647D6C6288B8 /* BranchShortUrlRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		070BFFE1C31859DA82636980268E2283 /* Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 488FB1DE6BD5E89A2A358E89ED9A29B7 /* Mapbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B18AFF21E0C4F5B4C6D0517097CA45D /* BranchConnectDebugRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F947527D5E62594D69BA738EE1F8B267 /* BranchConnectDebugRequest.m */; };
+		0D08A112FF1D3402F6427F5BBFCC8CA5 /* MGLAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECAB92A9A663D40C64FAE38EF5CC3779 /* MGLAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E7F27F9C4E76816D6DDDC470591F753 /* BranchLinkProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C66BCCBAB41EFD31B980703A6FB6FC2 /* BranchLinkProperties.m */; };
+		0F95DB4FB5EAD6B0452FD69EFD83468A /* BNCServerRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A76186140B45345E336762C2A2DF219D /* BNCServerRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1430569A48F8D76C75AB3C6439D9072B /* MGLShape.h in Headers */ = {isa = PBXBuildFile; fileRef = B952D1EF64ED1E43321022B6E3E4987F /* MGLShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14ABB9E8A12DFD66E894BA09D135903A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103059EA5009084709EAC2464B4B4FE2 /* Foundation.framework */; };
+		15C7723CAE93433EC26C1BB3E412E800 /* MGLMultiPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = E5D6F39303F11F6AA71F721A84B27F40 /* MGLMultiPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17D3B0DC8063FEA6ECFE2784D4BA93E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BE33EE0C75C4771AD3938B8FF8813B /* QuartzCore.framework */; };
+		17DBB89D509707CDFF878BC45317E051 /* Pods-projectY-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DBEDEDF9BF32B972C702A67D019EFA8 /* Pods-projectY-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		186E5019720FF3D050A3043310207A60 /* BranchLoadRewardsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B0AD24CC86B625B56F9AA39AE51489 /* BranchLoadRewardsRequest.m */; };
+		1932412131C8BE0853392C23AD9CA7C2 /* BNCServerRequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E89ECB62285A5DB2B1977445BF3A9 /* BNCServerRequestQueue.m */; };
+		19B96A956D435698D4E24AD4D015D45D /* Mapbox-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 336C7C95C26A3DD2B54ED6DBDCBC445D /* Mapbox-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A644280CE3219EF1E8394B9E04954F7 /* BNCStrongMatchHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = A876C99329845A5CA71E6F78713C89C7 /* BNCStrongMatchHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AFA137130ABF93A44C681541F3BFBFB /* BranchDisconnectDebugRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B384F8950FA68A8E199B21AEEDA4A64F /* BranchDisconnectDebugRequest.m */; };
+		1FD78FE2FD49A40A25C1C715AC150E9A /* MGLOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B670184A3F3CA48B884D293ECAB5D79 /* MGLOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24426C465DB74BADD81F1BDED6C46359 /* Compass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF6180C9613927417D51B3EA4872C926 /* Compass@3x.png */; };
+		285ECC512186F3D9D13A510DCCB0F94F /* MGLPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = FBE6E2E63420AFDB8834FEA22C2A4F5B /* MGLPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C662DD3D5DA458E1D568482A9724B39 /* mapbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C11BC3C31D3A96DC91305D7E0B0CE21E /* mapbox@3x.png */; };
+		2D5AA01D837C595E5B9079AD8C6FC2FE /* BranchActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C80843C6D8FBEE01197BD4FFF8BF195 /* BranchActivityItemProvider.m */; };
+		2E30A944F6F01A206149C740AC02AA54 /* mapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B758971B8B8C874270803A23985F37B /* mapbox.png */; };
+		2F01A78B581A5CFC6DA73694E9D75D56 /* mapbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E34942951B35C522F020A124D9388C /* mapbox@2x.png */; };
+		31C57927393AE7BA5DEC71C699A0368A /* BranchRedeemRewardsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 806F40E4B56DF82CAB7AE838A06AD6E8 /* BranchRedeemRewardsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3325314A43863546DCDCC23CAA30252F /* BranchApplyPromoCodeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A00B54BAA15C94F19C408F1685843205 /* BranchApplyPromoCodeRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33824544ECEE9C16B3D59240DE253CD2 /* BranchLoadActionsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 65EE2A60374B0630B8C1BAC5CEE59FC6 /* BranchLoadActionsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		344A7A3AAA62F794A15DEAB4E4971012 /* MGLDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA63092A947398B177C1E8CAB49188B7 /* MGLDummy.m */; };
+		36C0A846F782E1DF020E8E9DCE973F63 /* BranchCreditHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4C1A515B0B333BCD2DB5EF4326C3C3 /* BranchCreditHistoryRequest.m */; };
+		37A441F017FE8375CFE1F92F3F93B951 /* BranchUniversalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B06D16BB9985699633778627650E68FC /* BranchUniversalObject.m */; };
+		39C3904CC7F5F878EC15EE1D31A0B5E0 /* BranchValidatePromoCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBB29AF8C4E1170A15366E5E7469CD5 /* BranchValidatePromoCodeRequest.m */; };
+		3B2CEAEEDFF327B78531EA4B4602024F /* MGLPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DC7E863E1E4E49C1991AFD83499179 /* MGLPolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B420B23D8D876E5EDFEF1ABF1DCE907 /* BNCEncodingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA2BFE8A95603673ABBB1EA27751EC /* BNCEncodingUtils.m */; };
+		3D03C5D5D9D47B1FF6AB62767638ED71 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC861F34CEE92475522BD6CB9229936 /* CoreLocation.framework */; };
+		466D97702032CCD0D7EC928E3A2A211B /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 0A991CFA6E1C239D25A9FCC488E80A63 /* styles */; };
+		4773412E78DC40760BA6331DF93790B1 /* BranchRedeemRewardsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C17F233C36C748E230028080CB83D /* BranchRedeemRewardsRequest.m */; };
+		4A6AB0D97A581B13F0976F9471FFC575 /* SwiftColors.h in Headers */ = {isa = PBXBuildFile; fileRef = EF9B3C650F19CFD4C50087B6DCA7878B /* SwiftColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CA6203A8F22CAB1ECE7DD8F8B9D28EB /* BNCError.m in Sources */ = {isa = PBXBuildFile; fileRef = C20A52812C08687DD4AE9B92DD413B88 /* BNCError.m */; };
+		5277A00E8456E4070D8174485C492B44 /* BranchUserCompletedActionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BD8BFE708628008E56153D5A9291E0CF /* BranchUserCompletedActionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52D83DF458DD6F475B5BF6D9FB515222 /* BranchActivityItemProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B93A4B2129226D2F51AECC1882BBE05 /* BranchActivityItemProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		532AA2F8CEDE746EDD338A54FB0A552A /* BNCServerInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 89CFB32B84B4DAC0F4B7F4E2D8297076 /* BNCServerInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53ADF45301E29A5FB48E02DEC3686C4B /* MGLUserLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AA1BDAD559AEF5B8C6B7B621BE5E50 /* MGLUserLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5496CDD5F4A8653281B4790A8EFE1655 /* BranchLoadActionsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B91D122B323EF572F369E086C4023E /* BranchLoadActionsRequest.m */; };
+		550AB0A68836B539AA43A01580795DEA /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08E380DE4A62D4A65E3755360663FE /* SwiftColors.swift */; };
+		55F497A5D6305C63B2A12F8E7AC52382 /* BranchSpotlightUrlRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ABC24F46AC3AD3A39C8FE880EB052F3 /* BranchSpotlightUrlRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56E1E351F2449A4B5D4EA55AB67F8763 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E1E8546A2D871DC84B4327701D398E /* CoreTelephony.framework */; };
+		588DB180657362895DEB198FAB1BEF4B /* BranchApplyPromoCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD976220609348358CFD8544BDFBA17 /* BranchApplyPromoCodeRequest.m */; };
+		5892A8783E482532016E87E3A6B58A68 /* SwiftColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA578866B9DEF1A5EEC8D2B4A226B39 /* SwiftColors-dummy.m */; };
+		58F8D5EFE7AA740C042EE39C297E41B9 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3D5946F4A469F7825FB254AEFF84CC7 /* Mapbox.bundle */; };
+		5AC6494E6A48EC51C0FF6F5CCE62E682 /* BNCServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 649E09D4E47867F11D9595489A46CDB5 /* BNCServerRequest.m */; };
+		5B07AB2E9BC2942F246C406A16F0D244 /* BNCPreferenceHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E94888447E1420ED4B53E6BBD25FD70C /* BNCPreferenceHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C1DE8CCE242572CA69AB599591A5317 /* MGLMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F6C88BC10469061F663BEA0C7B3FF9F /* MGLMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C9C2AEC39788509ADABEB21CD59AEA8 /* Branch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E62317163831B04D3CF065763607C06 /* Branch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639F8D43A80C337D90A6918AED292B4F /* BNCContentDiscoveryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7000E34A24A886413AD9746623DFB199 /* BNCContentDiscoveryManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63F9CBD3E279DCFAC2225F7B606A43C1 /* BranchLogoutRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF894339E9DEED2DC7BC569C95FB687 /* BranchLogoutRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		656F32B46BD7419B89D58CC3E46D3CD6 /* BranchInstallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B34F1191F8C47E1AFEDDB9242249637E /* BranchInstallRequest.m */; };
+		65D3192BDA75EB0E9816BD989782D65D /* BNCServerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F5B044AF2BAC633909987E489AF15F /* BNCServerInterface.m */; };
+		6658B7FA507085801BD56F800B12901B /* BranchConnectDebugRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FEFA31B04779C2A241E9AF57D7742AF /* BranchConnectDebugRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		668A0781FAE18020D1D29760147569FC /* BranchLogRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DDEBE9B66A2CBF4CF369699DCB28A3A8 /* BranchLogRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		688FC8F4165FAC0E0CEEF753EB8CCEDC /* Mapbox-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A617C9280157C5D7439E565773808A13 /* Mapbox-iOS-SDK-dummy.m */; };
+		6A5CB9DF43BDD2713F2B51BE9A1E4526 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E1E8546A2D871DC84B4327701D398E /* CoreTelephony.framework */; };
+		6AFD118C94E2360397693277795E0DBC /* MGLAnnotationImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3997DA8C0F1421719A01829F0C7C2D61 /* MGLAnnotationImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DC600C68AC2FB5F6273AAD535264474 /* BranchLoadRewardsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0874D8D786346F3D784E0812E796AFDC /* BranchLoadRewardsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E2E8ACC2C96F9BD2DE508DA46B234E7 /* BranchDisconnectDebugRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 886114BC22B065CCF9E96EF89772720B /* BranchDisconnectDebugRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		748E65D892792515942B30A936046F86 /* Branch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14750428F9DCB120F40075399B9E71B7 /* Branch-dummy.m */; };
+		75D7D943B0761D21184D2D8C5B7D34FD /* BNCSystemObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF493864A39817EE7E292B9839629CA /* BNCSystemObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76DA1A7AFCC3D2AF24CC9F37C3AFDE5E /* BNCError.h in Headers */ = {isa = PBXBuildFile; fileRef = B7026EB1EC9875EA20C603BE53713034 /* BNCError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AD0B6DFF141CB176C4176D73E132075 /* BNCServerResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DEC65687A48FC949DBFB145AC9FC421 /* BNCServerResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B5152C5C137C163397545D0EA13040E /* BranchDeepLinkingController.h in Headers */ = {isa = PBXBuildFile; fileRef = FD10FAE2F09B89D6B9AE754A0E543B72 /* BranchDeepLinkingController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DD9CC26C93F3078C96EE72542E6C90C /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E4FA677E899665DA6D3A4B6A410C4B /* Branch.m */; };
+		7EB60926E41601CF17FE723A2FB8C38B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A19E5BBFE3DCBCEB7005F778D862D4 /* ImageIO.framework */; };
+		830D9EB98C657E28FD45645697B66A02 /* BranchSpotlightUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C4A38C2913B75F5B5EF488AF9A1A7F /* BranchSpotlightUrlRequest.m */; };
+		837432E001C639CAEB59C1B082C1059B /* BNCContentDiscoveryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 273003A33DE9778F7787F99C418D1D36 /* BNCContentDiscoveryManager.m */; };
+		88AFCA14F253A090410DD64D0C52845A /* BranchOpenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6CA636BA47596967CC38D5B7DB83CD /* BranchOpenRequest.m */; };
+		891C672ECB8C97E0D2D7EA45C0FC822C /* MGLMapView+IBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 76CB80B403FEFD874271688A97232961 /* MGLMapView+IBAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89F5ED9C80DE247748C0F0CF9F63C61E /* BNCLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE1A3F301AB36822E16FD43322EF7EC /* BNCLinkData.m */; };
+		8DCACBE450AA5122BAE9E1B2D47705A7 /* BranchCSSearchableItemAttributeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2180F88874C246B2C202623CFC1DFA17 /* BranchCSSearchableItemAttributeSet.m */; };
+		8DECB5D4787941125587C7BEE7F6A9BD /* BNCEncodingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = AB29E6010115678454A471144F05FAFA /* BNCEncodingUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EB78A1837EE965D6DCEDC742A80F3A5 /* MGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BDAA80120489738BBB7835DDE007D4 /* MGLTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9068B54E042FA445A517F54E4E711029 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103059EA5009084709EAC2464B4B4FE2 /* Foundation.framework */; };
+		941C3C0046AFDB59FDF277B73E1492D3 /* BranchLinkProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CADFFC89F3F78B2E5B747ACC8F2AF5D /* BranchLinkProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95F2E69E47751FD4BA183EC8393499A8 /* BNCLinkCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E24200976DEB5B67AC656F144ACF27C /* BNCLinkCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9776CF59D7B5669AF7DC2765E8403AA7 /* BranchShortUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CF9942A24CC6A23843D2BF236FDEB9 /* BranchShortUrlRequest.m */; };
+		99FD8C991F16B0D03E00858713159D79 /* BranchLogRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F10E2DED0DD7C2DBBBF31C596799D /* BranchLogRequest.m */; };
+		9A26F2D89187D06122629A79F638325D /* BranchRegisterViewRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 46775AB4AE022858C036AE1A2B2D7D31 /* BranchRegisterViewRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A6DB1952D6285CF03DD33FA4745B82F /* MGLPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 34585124E4568B09D0805A60DE091076 /* MGLPointAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A79E27CED94495F2FB3E93BE72DDC91 /* BranchSetIdentityRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0624C65625B2B4EBA19D4BAB83C1EA1B /* BranchSetIdentityRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E9A48AC835A613EC3B96DFBEBB67F7B /* BranchGetPromoCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F2C9DCA3249A8DE3EC8ED08DB989D3 /* BranchGetPromoCodeRequest.m */; };
+		A184B619A4C9165E64B4A3D4CDCC02C5 /* BranchCreditHistoryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F1B3CA1349768471BC4B01BF60DEE1 /* BranchCreditHistoryRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A19A2335465BDA57287E864A324C1159 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1466C2DAA081AA342C3703CDC4BDBB9E /* MobileCoreServices.framework */; };
+		A1FFF7EB48ECC1F4780B98AA30C4C8B5 /* BranchConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 66321110506D9946A13BB5DFFF1371B2 /* BranchConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A901B85375D2383157079FBED8501A34 /* BNCServerRequestQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7750B3E8D568F61552040EB67F0A5DB7 /* BNCServerRequestQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC5386D74C788A27CBA09DC96C2347FB /* BranchOpenRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C8E68D5EC88D3DDA20016B2725E82A /* BranchOpenRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD83A9F17A02B6B3258B1458560920C7 /* BranchCloseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A56B3842B693C771005028CD8FFE5565 /* BranchCloseRequest.m */; };
+		AE2E659A83D968171D59726C8E0D78B9 /* api_mapbox_com-geotrust.der in Resources */ = {isa = PBXBuildFile; fileRef = 216589E23E195DC6B66534B88CA0EEF3 /* api_mapbox_com-geotrust.der */; };
+		AF3209B17EB62864F9641FA17572D9B6 /* BranchValidatePromoCodeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C4662ECB892696B52E8F9E8B7B93B94B /* BranchValidatePromoCodeRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0B23BEB9351FEE2A7D72A5163CBDCEC /* BranchConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 841559D1134AC006DF03AF6397F5248A /* BranchConstants.m */; };
+		B5248431A90073001BD999927746A8DA /* BranchShortUrlSyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01053BBD8083E5B5EC4B9305B1A9D6DE /* BranchShortUrlSyncRequest.m */; };
+		B5D759D0519388FF1EF2BBCD6F925C88 /* BranchGetPromoCodeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F90203460AD2C9D5D601C4BEDDDFE17 /* BranchGetPromoCodeRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA23D6A7B20A98C6B2C67CA56BD06517 /* BranchUniversalObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9D5F3D1D07956891D989F807FECAF4 /* BranchUniversalObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB10608A6CD0C0CDA63C3BB842D383DF /* SwiftColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0900F73CC815DB5E68A41BDF172C2B1F /* SwiftColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB6C8C8DE5667ED05B599F950581AEA7 /* BNCLinkData.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D448AD4C3AB2F6B5CA25081F0AF10B /* BNCLinkData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD35D087C7E5963C086E383DEDF9266C /* api_mapbox_com-digicert.der in Resources */ = {isa = PBXBuildFile; fileRef = 4A97681D8DD374935CF028FA4DB55B5D /* api_mapbox_com-digicert.der */; };
+		BF859203B0A0F166330CD2FAA63C68CB /* BranchCloseRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 299F7EEDA2D2ACC1819EAE4512E8C666 /* BranchCloseRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C05230B172211308E1123A1B0C84B70C /* MGLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 676E7AD9256D7A295B42A42859F5726B /* MGLGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C383B13708A978399C1A93ABCB9384F7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1466C2DAA081AA342C3703CDC4BDBB9E /* MobileCoreServices.framework */; };
+		C3B2204D845194AE7A3DBC39C02DF3C5 /* Pods-projectY-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB866428F5712F5686CE631878A5525 /* Pods-projectY-dummy.m */; };
+		C3CBF4A8DC8418E35D95D92118F40D30 /* BNCDebugRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0218F633C97C3B55F57E9BE338FB1628 /* BNCDebugRequest.m */; };
+		C83741BE6E02A36BDED3A40E86AC3861 /* Branch.h in Headers */ = {isa = PBXBuildFile; fileRef = E9FA04CA1C986CF5C18B81C2DA85FF34 /* Branch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2F2EB75303CDE71DF49803047C39BB2 /* BNCPreferenceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E6CD1D240070D82FEDB6B0706A0356 /* BNCPreferenceHelper.m */; };
+		D40C1C3EE910314BB4244066BB22C157 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103059EA5009084709EAC2464B4B4FE2 /* Foundation.framework */; };
+		D5716E03E5CF6D95660909865F51D56B /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = C783886E036FF4A826CF21E1DFA37785 /* Compass.png */; };
+		D67F5CB64DFDF93DFDB9AA3A6E0E21FB /* MGLMapCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = CC1ACA17A71016C8B9D2D7AC0D4D782E /* MGLMapCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD69952E71BB19F3D8C33F2D2FFE34ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103059EA5009084709EAC2464B4B4FE2 /* Foundation.framework */; };
+		DD99EF019E9E4FA9029FE7268EC98F67 /* BNCSystemObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A6DBCC145F6918FE80D71D5E8709E2 /* BNCSystemObserver.m */; };
+		DFA7200B7E3BDCCFFF5323144156B070 /* BNCConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 22549E582CB8DDF456ED51D678426B30 /* BNCConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFDF5ED63A32FC49001AC526A4414F3B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF4B2A6ADC9AB978958B477EFC52B78 /* AdSupport.framework */; };
+		E44F4E2476519C59DC50CCFC7DCEA1E2 /* BNCStrongMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B75DBA145D0C80DCC28BC3AF43A4C1 /* BNCStrongMatchHelper.m */; };
+		E5C49B3CCECE26E83D456F4EB5172AA5 /* BNCLinkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 195C77ECBE2E6F2A99F51B7A0833A627 /* BNCLinkCache.m */; };
+		E7A8B8844A0F65981EC39BD2FAB90343 /* BranchInstallRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E40B1032AF43985BE40A394D75EB9636 /* BranchInstallRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9DB7E16743626C8064B64EC3E8F8D93 /* BNCServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F29490E009E79847A8B53E12D98AE4A /* BNCServerResponse.m */; };
+		EA0F2FF74062BDF82E27A05E86E509CA /* BranchCSSearchableItemAttributeSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D45C14C291FC83591FF1F4A5ED257FB /* BranchCSSearchableItemAttributeSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAE7E502A53D32D2379111042566B759 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AF138213ABB915C2E023BF74CBA600 /* GLKit.framework */; };
+		ED0D324BF917DC9AAE69EC376E6F05A4 /* MGLAccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E5642C5F56BAFA6C8490153F3474B5FA /* MGLAccountManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE503A1F2AFA95FC879A9E700A3B164C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6870C68178EA3DC4CFB28B8F50F4731 /* SystemConfiguration.framework */; };
+		F420A19DD3C1BE270EBCBA4D713C9B2F /* BranchUserCompletedActionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A20ABC1C172C8C95625760B776EE79D1 /* BranchUserCompletedActionRequest.m */; };
+		F77E034EA71E903857C7DF2678BEAB9D /* BranchSetIdentityRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6288FD00EBE9F0E00E6C9B9A2CD581 /* BranchSetIdentityRequest.m */; };
+		F866E86AAAF5E91862482EE4EFCC91B1 /* BNCDebugRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C80FA913281C53E93A4D7AAAAA4DF42 /* BNCDebugRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB50A94A49AF27026EA1D5E999B19F77 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 1AA6A52FA5630E45A077DC98DBE59B30 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		086747851857C5AFB29F1590AF250C3E /* PBXContainerItemProxy */ = {
+		82A510CBFA6D525DCEAFB6793AA183FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26DDE728D845399865C11EED249B4407;
+			remoteInfo = SwiftColors;
+		};
+		944B083BC2C9DC9EB0EE8F01F8E1F390 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70D0A64A8618A200157DF626F00D26BD;
+			remoteInfo = Branch;
+		};
+		EF8C45453FD2A7250C0D170750274785 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E0ECC3BD18CAEBE408E9023D3847041A;
 			remoteInfo = "Mapbox-iOS-SDK";
-		};
-		EEA5B13305E7CFD026FD79F3CE635BFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4B124149C5DC979C81E9F500C97930AE;
-			remoteInfo = SwiftColors;
 		};
 		FCFC4E95C396D5E756F65DA92DD723A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -81,75 +174,174 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02C6368C57BBC4F2B565A8B85535EB3D /* SwiftColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftColors-dummy.m"; sourceTree = "<group>"; };
-		05A7B96D2AB438FC8890D20C065635DC /* MGLMapView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapView.h; path = Headers/MGLMapView.h; sourceTree = "<group>"; };
-		08F88CB72EC056FD2D321B27B9FDF6A6 /* MGLPolyline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolyline.h; path = Headers/MGLPolyline.h; sourceTree = "<group>"; };
-		0FF2A03396D5540D0E9C20781E2BA75E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		19629F0D0B0C75CBCD19E32AE579FDE5 /* MGLMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMultiPoint.h; path = Headers/MGLMultiPoint.h; sourceTree = "<group>"; };
+		01053BBD8083E5B5EC4B9305B1A9D6DE /* BranchShortUrlSyncRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchShortUrlSyncRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchShortUrlSyncRequest.m"; sourceTree = "<group>"; };
+		0218F633C97C3B55F57E9BE338FB1628 /* BNCDebugRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCDebugRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BNCDebugRequest.m"; sourceTree = "<group>"; };
+		0624C65625B2B4EBA19D4BAB83C1EA1B /* BranchSetIdentityRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchSetIdentityRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchSetIdentityRequest.h"; sourceTree = "<group>"; };
+		0874D8D786346F3D784E0812E796AFDC /* BranchLoadRewardsRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchLoadRewardsRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchLoadRewardsRequest.h"; sourceTree = "<group>"; };
+		0900F73CC815DB5E68A41BDF172C2B1F /* SwiftColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftColors-umbrella.h"; sourceTree = "<group>"; };
+		0A991CFA6E1C239D25A9FCC488E80A63 /* styles */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = styles; path = Mapbox.bundle/styles; sourceTree = "<group>"; };
+		103059EA5009084709EAC2464B4B4FE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1259055F52D0AE1C4D53C10EDD5C69E9 /* Mapbox-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
+		1466C2DAA081AA342C3703CDC4BDBB9E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		14750428F9DCB120F40075399B9E71B7 /* Branch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Branch-dummy.m"; sourceTree = "<group>"; };
+		154F250040D4057C9D22E72F17F9A7A1 /* Pods_projectY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16E4FA677E899665DA6D3A4B6A410C4B /* Branch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Branch.m; path = "Branch-SDK/Branch-SDK/Branch.m"; sourceTree = "<group>"; };
+		195C77ECBE2E6F2A99F51B7A0833A627 /* BNCLinkCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCLinkCache.m; path = "Branch-SDK/Branch-SDK/BNCLinkCache.m"; sourceTree = "<group>"; };
+		1978FEB71257D0CB65E6BE96AAD359B5 /* Compass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@2x.png"; path = "Mapbox.bundle/Compass@2x.png"; sourceTree = "<group>"; };
+		1AA6A52FA5630E45A077DC98DBE59B30 /* README */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README; path = Mapbox.bundle/README; sourceTree = "<group>"; };
 		1D445B57CAC5430B93BEE8C1547C8C1A /* Pods-projectY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.release.xcconfig"; sourceTree = "<group>"; };
-		24E7294D87F16B084B655B2810130661 /* Mapbox-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Mapbox-iOS-SDK.modulemap"; sourceTree = "<group>"; };
-		25F5AEE067096DB997D3C6710F0541AC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		216589E23E195DC6B66534B88CA0EEF3 /* api_mapbox_com-geotrust.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-geotrust.der"; path = "Mapbox.bundle/api_mapbox_com-geotrust.der"; sourceTree = "<group>"; };
+		2180F88874C246B2C202623CFC1DFA17 /* BranchCSSearchableItemAttributeSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchCSSearchableItemAttributeSet.m; path = "Branch-SDK/Branch-SDK/BranchCSSearchableItemAttributeSet.m"; sourceTree = "<group>"; };
+		22549E582CB8DDF456ED51D678426B30 /* BNCConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCConfig.h; path = "Branch-SDK/Branch-SDK/BNCConfig.h"; sourceTree = "<group>"; };
+		273003A33DE9778F7787F99C418D1D36 /* BNCContentDiscoveryManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCContentDiscoveryManager.m; path = "Branch-SDK/Branch-SDK/BNCContentDiscoveryManager.m"; sourceTree = "<group>"; };
+		299F7EEDA2D2ACC1819EAE4512E8C666 /* BranchCloseRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchCloseRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchCloseRequest.h"; sourceTree = "<group>"; };
+		29BFAEB61EC1D92A29CA27D03D1DB26A /* SwiftColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftColors.xcconfig; sourceTree = "<group>"; };
+		2B670184A3F3CA48B884D293ECAB5D79 /* MGLOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLOverlay.h; path = Headers/MGLOverlay.h; sourceTree = "<group>"; };
+		2B758971B8B8C874270803A23985F37B /* mapbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mapbox.png; path = Mapbox.bundle/mapbox.png; sourceTree = "<group>"; };
 		2DBEDEDF9BF32B972C702A67D019EFA8 /* Pods-projectY-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-projectY-umbrella.h"; sourceTree = "<group>"; };
-		310B47F44F9C762797CAF77676A2A8F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		3E62D7A49AB327CCB6EA9B8ED0BE208C /* MGLPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolygon.h; path = Headers/MGLPolygon.h; sourceTree = "<group>"; };
+		2E24200976DEB5B67AC656F144ACF27C /* BNCLinkCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCLinkCache.h; path = "Branch-SDK/Branch-SDK/BNCLinkCache.h"; sourceTree = "<group>"; };
+		30C8E68D5EC88D3DDA20016B2725E82A /* BranchOpenRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchOpenRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchOpenRequest.h"; sourceTree = "<group>"; };
+		336C7C95C26A3DD2B54ED6DBDCBC445D /* Mapbox-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
+		34585124E4568B09D0805A60DE091076 /* MGLPointAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPointAnnotation.h; path = Headers/MGLPointAnnotation.h; sourceTree = "<group>"; };
+		3997DA8C0F1421719A01829F0C7C2D61 /* MGLAnnotationImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotationImage.h; path = Headers/MGLAnnotationImage.h; sourceTree = "<group>"; };
+		39BE33EE0C75C4771AD3938B8FF8813B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		3BBB29AF8C4E1170A15366E5E7469CD5 /* BranchValidatePromoCodeRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchValidatePromoCodeRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchValidatePromoCodeRequest.m"; sourceTree = "<group>"; };
+		3C1F10E2DED0DD7C2DBBBF31C596799D /* BranchLogRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchLogRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchLogRequest.m"; sourceTree = "<group>"; };
+		3F8D6EB407C0486E7A00D96DF1E8CBA2 /* SwiftColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA4133550B76C79EE2F143E4D0CF9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
-		483A2C647703ABDA06CBD28D8E0A80FE /* MGLMapView+IBAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MGLMapView+IBAdditions.h"; path = "Headers/MGLMapView+IBAdditions.h"; sourceTree = "<group>"; };
-		4866DAE641B3D7A19D3AB0E51632A4D7 /* MGLAnnotationImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotationImage.h; path = Headers/MGLAnnotationImage.h; sourceTree = "<group>"; };
+		4373D7CA6C41370659A35A5B758AF7F8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46775AB4AE022858C036AE1A2B2D7D31 /* BranchRegisterViewRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchRegisterViewRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchRegisterViewRequest.h"; sourceTree = "<group>"; };
+		483730C2E75AFD57D5C373B955A86AD6 /* BranchRegisterViewRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchRegisterViewRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchRegisterViewRequest.m"; sourceTree = "<group>"; };
+		485DBDC5C504B237C74998C06FE5E9AD /* SwiftColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftColors-prefix.pch"; sourceTree = "<group>"; };
+		488FB1DE6BD5E89A2A358E89ED9A29B7 /* Mapbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mapbox.h; path = Headers/Mapbox.h; sourceTree = "<group>"; };
 		489CE33E93177AE45A0B518AE1AD48BD /* Pods-projectY-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-projectY-acknowledgements.plist"; sourceTree = "<group>"; };
-		4BAFC7E642702EFD50640FB45AFB4349 /* mapbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mapbox.png; path = Mapbox.bundle/mapbox.png; sourceTree = "<group>"; };
-		52E184F31F95D7938B648F47FE8C41F4 /* MGLAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotation.h; path = Headers/MGLAnnotation.h; sourceTree = "<group>"; };
-		5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapbox.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CE45F2253B0CAE337F00A05454F054B /* SwiftColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftColors.swift; path = SwiftColors/SwiftColors.swift; sourceTree = "<group>"; };
-		5D70CC96077A81E1F2101E65A3339E09 /* Mapbox-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mapbox-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
+		4A97681D8DD374935CF028FA4DB55B5D /* api_mapbox_com-digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-digicert.der"; path = "Mapbox.bundle/api_mapbox_com-digicert.der"; sourceTree = "<group>"; };
+		4C66BCCBAB41EFD31B980703A6FB6FC2 /* BranchLinkProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchLinkProperties.m; path = "Branch-SDK/Branch-SDK/BranchLinkProperties.m"; sourceTree = "<group>"; };
+		4C80FA913281C53E93A4D7AAAAA4DF42 /* BNCDebugRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCDebugRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BNCDebugRequest.h"; sourceTree = "<group>"; };
+		4CADFFC89F3F78B2E5B747ACC8F2AF5D /* BranchLinkProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchLinkProperties.h; path = "Branch-SDK/Branch-SDK/BranchLinkProperties.h"; sourceTree = "<group>"; };
+		4F6C88BC10469061F663BEA0C7B3FF9F /* MGLMapView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapView.h; path = Headers/MGLMapView.h; sourceTree = "<group>"; };
+		59FA2BFE8A95603673ABBB1EA27751EC /* BNCEncodingUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCEncodingUtils.m; path = "Branch-SDK/Branch-SDK/BNCEncodingUtils.m"; sourceTree = "<group>"; };
+		5ABC24F46AC3AD3A39C8FE880EB052F3 /* BranchSpotlightUrlRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchSpotlightUrlRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchSpotlightUrlRequest.h"; sourceTree = "<group>"; };
 		5DB866428F5712F5686CE631878A5525 /* Pods-projectY-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-projectY-dummy.m"; sourceTree = "<group>"; };
-		5DE6EBA7C74FBF79797E1E42AA296663 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		65AA10AC6D9DC73D2DC2025256B7F56C /* MGLOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLOverlay.h; path = Headers/MGLOverlay.h; sourceTree = "<group>"; };
-		66F64A185E5F6FA4267E93FBF2B7DCB5 /* Compass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Compass.png; path = Mapbox.bundle/Compass.png; sourceTree = "<group>"; };
-		6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftColors.xcconfig; sourceTree = "<group>"; };
-		6AD87A511E7A9D961E5E19B62F47D72B /* SwiftColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftColors-prefix.pch"; sourceTree = "<group>"; };
-		6BDBCD045AD8EB5E7B1C1EFF78765838 /* MGLAccountManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAccountManager.h; path = Headers/MGLAccountManager.h; sourceTree = "<group>"; };
-		6BFE8FE5C5E26F8FF5DB79CB049BD31A /* MGLTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLTypes.h; path = Headers/MGLTypes.h; sourceTree = "<group>"; };
-		71514FB41E5AFD152F8260291CAA2049 /* Mapbox-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
-		728047E59FE080F26FD9FE844264D2C2 /* Compass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@3x.png"; path = "Mapbox.bundle/Compass@3x.png"; sourceTree = "<group>"; };
+		5DEC65687A48FC949DBFB145AC9FC421 /* BNCServerResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCServerResponse.h; path = "Branch-SDK/Branch-SDK/BNCServerResponse.h"; sourceTree = "<group>"; };
+		5F90203460AD2C9D5D601C4BEDDDFE17 /* BranchGetPromoCodeRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchGetPromoCodeRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchGetPromoCodeRequest.h"; sourceTree = "<group>"; };
+		649E09D4E47867F11D9595489A46CDB5 /* BNCServerRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCServerRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BNCServerRequest.m"; sourceTree = "<group>"; };
+		65A6DBCC145F6918FE80D71D5E8709E2 /* BNCSystemObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCSystemObserver.m; path = "Branch-SDK/Branch-SDK/BNCSystemObserver.m"; sourceTree = "<group>"; };
+		65E34942951B35C522F020A124D9388C /* mapbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@2x.png"; path = "Mapbox.bundle/mapbox@2x.png"; sourceTree = "<group>"; };
+		65EE2A60374B0630B8C1BAC5CEE59FC6 /* BranchLoadActionsRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchLoadActionsRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchLoadActionsRequest.h"; sourceTree = "<group>"; };
+		66321110506D9946A13BB5DFFF1371B2 /* BranchConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchConstants.h; path = "Branch-SDK/Branch-SDK/BranchConstants.h"; sourceTree = "<group>"; };
+		676E7AD9256D7A295B42A42859F5726B /* MGLGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLGeometry.h; path = Headers/MGLGeometry.h; sourceTree = "<group>"; };
+		7000E34A24A886413AD9746623DFB199 /* BNCContentDiscoveryManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCContentDiscoveryManager.h; path = "Branch-SDK/Branch-SDK/BNCContentDiscoveryManager.h"; sourceTree = "<group>"; };
+		706853043362A4581A857C9E3F602071 /* SwiftColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftColors.modulemap; sourceTree = "<group>"; };
+		717820422AE93A31BFFD8EAE3B7E35F5 /* Branch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Branch.modulemap; sourceTree = "<group>"; };
+		76CB80B403FEFD874271688A97232961 /* MGLMapView+IBAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MGLMapView+IBAdditions.h"; path = "Headers/MGLMapView+IBAdditions.h"; sourceTree = "<group>"; };
+		7750B3E8D568F61552040EB67F0A5DB7 /* BNCServerRequestQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCServerRequestQueue.h; path = "Branch-SDK/Branch-SDK/BNCServerRequestQueue.h"; sourceTree = "<group>"; };
+		77B0AD24CC86B625B56F9AA39AE51489 /* BranchLoadRewardsRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchLoadRewardsRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchLoadRewardsRequest.m"; sourceTree = "<group>"; };
+		77C4A38C2913B75F5B5EF488AF9A1A7F /* BranchSpotlightUrlRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchSpotlightUrlRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchSpotlightUrlRequest.m"; sourceTree = "<group>"; };
 		7B45F3886D4792D4289E75ECE55A86EE /* Pods-projectY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-projectY.debug.xcconfig"; sourceTree = "<group>"; };
-		83D0522F5B4D628EF20373704DCE0D6F /* README */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README; path = Mapbox.bundle/README; sourceTree = "<group>"; };
-		866AB723FD27A566F45FAA3A0D2AB1F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		8951BBAEB499F2BCA9D4FDA6C6131D14 /* Compass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@2x.png"; path = "Mapbox.bundle/Compass@2x.png"; sourceTree = "<group>"; };
-		960166AB14C094FB510D2418FB3F9785 /* api_mapbox_com-digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-digicert.der"; path = "Mapbox.bundle/api_mapbox_com-digicert.der"; sourceTree = "<group>"; };
+		7D45C14C291FC83591FF1F4A5ED257FB /* BranchCSSearchableItemAttributeSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchCSSearchableItemAttributeSet.h; path = "Branch-SDK/Branch-SDK/BranchCSSearchableItemAttributeSet.h"; sourceTree = "<group>"; };
+		7E62317163831B04D3CF065763607C06 /* Branch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Branch-umbrella.h"; sourceTree = "<group>"; };
+		7FA5838C780C1D51C5AE488BC996B628 /* Branch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Branch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEFA31B04779C2A241E9AF57D7742AF /* BranchConnectDebugRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchConnectDebugRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchConnectDebugRequest.h"; sourceTree = "<group>"; };
+		806F40E4B56DF82CAB7AE838A06AD6E8 /* BranchRedeemRewardsRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchRedeemRewardsRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchRedeemRewardsRequest.h"; sourceTree = "<group>"; };
+		80E6CD1D240070D82FEDB6B0706A0356 /* BNCPreferenceHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCPreferenceHelper.m; path = "Branch-SDK/Branch-SDK/BNCPreferenceHelper.m"; sourceTree = "<group>"; };
+		80F5B044AF2BAC633909987E489AF15F /* BNCServerInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCServerInterface.m; path = "Branch-SDK/Branch-SDK/BNCServerInterface.m"; sourceTree = "<group>"; };
+		841559D1134AC006DF03AF6397F5248A /* BranchConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchConstants.m; path = "Branch-SDK/Branch-SDK/BranchConstants.m"; sourceTree = "<group>"; };
+		85B75DBA145D0C80DCC28BC3AF43A4C1 /* BNCStrongMatchHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCStrongMatchHelper.m; path = "Branch-SDK/Branch-SDK/BNCStrongMatchHelper.m"; sourceTree = "<group>"; };
+		886114BC22B065CCF9E96EF89772720B /* BranchDisconnectDebugRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchDisconnectDebugRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchDisconnectDebugRequest.h"; sourceTree = "<group>"; };
+		886FFA70C6C6C2DC0F54C6203E75BC6F /* star_tilestream_net.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = star_tilestream_net.der; path = Mapbox.bundle/star_tilestream_net.der; sourceTree = "<group>"; };
+		89CFB32B84B4DAC0F4B7F4E2D8297076 /* BNCServerInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCServerInterface.h; path = "Branch-SDK/Branch-SDK/BNCServerInterface.h"; sourceTree = "<group>"; };
+		8B9D5F3D1D07956891D989F807FECAF4 /* BranchUniversalObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchUniversalObject.h; path = "Branch-SDK/Branch-SDK/BranchUniversalObject.h"; sourceTree = "<group>"; };
+		8F29490E009E79847A8B53E12D98AE4A /* BNCServerResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCServerResponse.m; path = "Branch-SDK/Branch-SDK/BNCServerResponse.m"; sourceTree = "<group>"; };
+		93C74C08036042487827EEA2D5E96AB6 /* Mapbox-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Mapbox-iOS-SDK.modulemap"; sourceTree = "<group>"; };
+		95AF138213ABB915C2E023BF74CBA600 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		973C17F233C36C748E230028080CB83D /* BranchRedeemRewardsRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchRedeemRewardsRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchRedeemRewardsRequest.m"; sourceTree = "<group>"; };
+		975BC5EE9802EDF69BB166C746766966 /* Branch-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Branch-prefix.pch"; sourceTree = "<group>"; };
+		9925C9CA487AA11095050219B1D3C2E7 /* BranchLogoutRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchLogoutRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchLogoutRequest.m"; sourceTree = "<group>"; };
+		9B93A4B2129226D2F51AECC1882BBE05 /* BranchActivityItemProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchActivityItemProvider.h; path = "Branch-SDK/Branch-SDK/BranchActivityItemProvider.h"; sourceTree = "<group>"; };
 		9BF19E2BE5C74828FAD7E643043030F2 /* Pods-projectY.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-projectY.modulemap"; sourceTree = "<group>"; };
-		9C65EC39D79D48392BB236C46E35167C /* mapbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@2x.png"; path = "Mapbox.bundle/mapbox@2x.png"; sourceTree = "<group>"; };
-		9F0B7E8BC137335E742ECEB1CEE6E4DD /* MGLShape.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLShape.h; path = Headers/MGLShape.h; sourceTree = "<group>"; };
-		9F96CA982AB17C5D078CDA9971E92654 /* SwiftColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftColors.h; path = SwiftColors/SwiftColors.h; sourceTree = "<group>"; };
-		A50A6BD54999EB227BBC0EB1005247F5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
-		A522FE3C6BE2B335A43C353499BF4712 /* Pods_projectY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C80843C6D8FBEE01197BD4FFF8BF195 /* BranchActivityItemProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchActivityItemProvider.m; path = "Branch-SDK/Branch-SDK/BranchActivityItemProvider.m"; sourceTree = "<group>"; };
+		9E6FDE3433E9309EEBB2647D6C6288B8 /* BranchShortUrlRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchShortUrlRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchShortUrlRequest.h"; sourceTree = "<group>"; };
+		9FF894339E9DEED2DC7BC569C95FB687 /* BranchLogoutRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchLogoutRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchLogoutRequest.h"; sourceTree = "<group>"; };
+		A00B54BAA15C94F19C408F1685843205 /* BranchApplyPromoCodeRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchApplyPromoCodeRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchApplyPromoCodeRequest.h"; sourceTree = "<group>"; };
+		A045A0C5A392C408D0BC558F2848325F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20ABC1C172C8C95625760B776EE79D1 /* BranchUserCompletedActionRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchUserCompletedActionRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchUserCompletedActionRequest.m"; sourceTree = "<group>"; };
+		A3B05D93B35AF9177745A7FA2C66D17F /* BranchShortUrlSyncRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchShortUrlSyncRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchShortUrlSyncRequest.h"; sourceTree = "<group>"; };
 		A55326718234A29B0D1EFA2BC4851FFB /* Pods-projectY-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-projectY-frameworks.sh"; sourceTree = "<group>"; };
-		A9C88E048305845572F1F7763F02E902 /* Mapbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mapbox.h; path = Headers/Mapbox.h; sourceTree = "<group>"; };
-		AF243C380F6FB6E196587E7734803B8D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		A56B3842B693C771005028CD8FFE5565 /* BranchCloseRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchCloseRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchCloseRequest.m"; sourceTree = "<group>"; };
+		A617C9280157C5D7439E565773808A13 /* Mapbox-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mapbox-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
+		A76186140B45345E336762C2A2DF219D /* BNCServerRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCServerRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BNCServerRequest.h"; sourceTree = "<group>"; };
+		A876C99329845A5CA71E6F78713C89C7 /* BNCStrongMatchHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCStrongMatchHelper.h; path = "Branch-SDK/Branch-SDK/BNCStrongMatchHelper.h"; sourceTree = "<group>"; };
+		AAD976220609348358CFD8544BDFBA17 /* BranchApplyPromoCodeRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchApplyPromoCodeRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchApplyPromoCodeRequest.m"; sourceTree = "<group>"; };
+		AB29E6010115678454A471144F05FAFA /* BNCEncodingUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCEncodingUtils.h; path = "Branch-SDK/Branch-SDK/BNCEncodingUtils.h"; sourceTree = "<group>"; };
+		AC0BEC58DE35115DF5EE05879F1ECB39 /* libMapbox.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
+		AE6288FD00EBE9F0E00E6C9B9A2CD581 /* BranchSetIdentityRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchSetIdentityRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchSetIdentityRequest.m"; sourceTree = "<group>"; };
+		AF8E89ECB62285A5DB2B1977445BF3A9 /* BNCServerRequestQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCServerRequestQueue.m; path = "Branch-SDK/Branch-SDK/BNCServerRequestQueue.m"; sourceTree = "<group>"; };
+		B06D16BB9985699633778627650E68FC /* BranchUniversalObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchUniversalObject.m; path = "Branch-SDK/Branch-SDK/BranchUniversalObject.m"; sourceTree = "<group>"; };
+		B34F1191F8C47E1AFEDDB9242249637E /* BranchInstallRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchInstallRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchInstallRequest.m"; sourceTree = "<group>"; };
+		B384F8950FA68A8E199B21AEEDA4A64F /* BranchDisconnectDebugRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchDisconnectDebugRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchDisconnectDebugRequest.m"; sourceTree = "<group>"; };
+		B6D448AD4C3AB2F6B5CA25081F0AF10B /* BNCLinkData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCLinkData.h; path = "Branch-SDK/Branch-SDK/BNCLinkData.h"; sourceTree = "<group>"; };
+		B7026EB1EC9875EA20C603BE53713034 /* BNCError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCError.h; path = "Branch-SDK/Branch-SDK/BNCError.h"; sourceTree = "<group>"; };
+		B8A19E5BBFE3DCBCEB7005F778D862D4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		B952D1EF64ED1E43321022B6E3E4987F /* MGLShape.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLShape.h; path = Headers/MGLShape.h; sourceTree = "<group>"; };
+		B9E1E8546A2D871DC84B4327701D398E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BDA78E4951BB5CA2E1C194CBEF382658 /* SwiftColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftColors.modulemap; sourceTree = "<group>"; };
-		C2E4FA47988A6701476BDB9F65C4AB6C /* mapbox@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@3x.png"; path = "Mapbox.bundle/mapbox@3x.png"; sourceTree = "<group>"; };
-		C42CA3916EB4D2E0D90B994D9EEC8A7A /* libMapbox.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
-		D0C884BE0FFD66B00DC5E27D3802E9CB /* SwiftColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftColors-umbrella.h"; sourceTree = "<group>"; };
-		D105F383B809289B9E4853E67A3D9296 /* MGLGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLGeometry.h; path = Headers/MGLGeometry.h; sourceTree = "<group>"; };
-		D139C247312FC54724EE8E1E0082A301 /* MGLDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MGLDummy.m; sourceTree = "<group>"; };
-		D25AD23E542ED4045F58DE8923D17296 /* star_tilestream_net.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = star_tilestream_net.der; path = Mapbox.bundle/star_tilestream_net.der; sourceTree = "<group>"; };
-		D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D611D9CB809B64D7242FC22BF5C11FEC /* Mapbox-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapbox-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
-		D668AFD4B97D2CA1D1BE127040F6A96D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDD718A41F34558C9A2117D9BBAC388C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD8BFE708628008E56153D5A9291E0CF /* BranchUserCompletedActionRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchUserCompletedActionRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchUserCompletedActionRequest.h"; sourceTree = "<group>"; };
+		BE4C1A515B0B333BCD2DB5EF4326C3C3 /* BranchCreditHistoryRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchCreditHistoryRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchCreditHistoryRequest.m"; sourceTree = "<group>"; };
+		C11BC3C31D3A96DC91305D7E0B0CE21E /* mapbox@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@3x.png"; path = "Mapbox.bundle/mapbox@3x.png"; sourceTree = "<group>"; };
+		C20A52812C08687DD4AE9B92DD413B88 /* BNCError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCError.m; path = "Branch-SDK/Branch-SDK/BNCError.m"; sourceTree = "<group>"; };
+		C3D5946F4A469F7825FB254AEFF84CC7 /* Mapbox.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapbox.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4662ECB892696B52E8F9E8B7B93B94B /* BranchValidatePromoCodeRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchValidatePromoCodeRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchValidatePromoCodeRequest.h"; sourceTree = "<group>"; };
+		C6870C68178EA3DC4CFB28B8F50F4731 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		C783886E036FF4A826CF21E1DFA37785 /* Compass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Compass.png; path = Mapbox.bundle/Compass.png; sourceTree = "<group>"; };
+		C9BDAA80120489738BBB7835DDE007D4 /* MGLTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLTypes.h; path = Headers/MGLTypes.h; sourceTree = "<group>"; };
+		CA6CA636BA47596967CC38D5B7DB83CD /* BranchOpenRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchOpenRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchOpenRequest.m"; sourceTree = "<group>"; };
+		CB7DA814EE1DED34E45F7A1F3912E61E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF493864A39817EE7E292B9839629CA /* BNCSystemObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCSystemObserver.h; path = "Branch-SDK/Branch-SDK/BNCSystemObserver.h"; sourceTree = "<group>"; };
+		CC1ACA17A71016C8B9D2D7AC0D4D782E /* MGLMapCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapCamera.h; path = Headers/MGLMapCamera.h; sourceTree = "<group>"; };
+		CFE1A3F301AB36822E16FD43322EF7EC /* BNCLinkData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCLinkData.m; path = "Branch-SDK/Branch-SDK/BNCLinkData.m"; sourceTree = "<group>"; };
+		DB08E380DE4A62D4A65E3755360663FE /* SwiftColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftColors.swift; path = SwiftColors/SwiftColors.swift; sourceTree = "<group>"; };
+		DDC861F34CEE92475522BD6CB9229936 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		DDEBE9B66A2CBF4CF369699DCB28A3A8 /* BranchLogRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchLogRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchLogRequest.h"; sourceTree = "<group>"; };
+		DFA578866B9DEF1A5EEC8D2B4A226B39 /* SwiftColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftColors-dummy.m"; sourceTree = "<group>"; };
 		E39DB76C61B19CBC8F17B78258582244 /* Pods-projectY-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-projectY-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EB57F21F3396C75D795FFD07FFB1A468 /* styles */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = styles; path = Mapbox.bundle/styles; sourceTree = "<group>"; };
-		EB930577563035896B0F31F6ADBF29C9 /* SwiftColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE26A6C9748FBEF34CE36BA94850CE9F /* MGLUserLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLUserLocation.h; path = Headers/MGLUserLocation.h; sourceTree = "<group>"; };
-		F176598B975F8EC76A8F4AF3CA50B2AF /* Mapbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mapbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7B521EB33B8D3F68A32746D57D91700 /* MGLPointAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPointAnnotation.h; path = Headers/MGLPointAnnotation.h; sourceTree = "<group>"; };
-		F8119BC02280784F141805995FFFAEE6 /* api_mapbox_com-geotrust.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-geotrust.der"; path = "Mapbox.bundle/api_mapbox_com-geotrust.der"; sourceTree = "<group>"; };
+		E3AA1BDAD559AEF5B8C6B7B621BE5E50 /* MGLUserLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLUserLocation.h; path = Headers/MGLUserLocation.h; sourceTree = "<group>"; };
+		E40B1032AF43985BE40A394D75EB9636 /* BranchInstallRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchInstallRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchInstallRequest.h"; sourceTree = "<group>"; };
+		E5642C5F56BAFA6C8490153F3474B5FA /* MGLAccountManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAccountManager.h; path = Headers/MGLAccountManager.h; sourceTree = "<group>"; };
+		E5D6F39303F11F6AA71F721A84B27F40 /* MGLMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMultiPoint.h; path = Headers/MGLMultiPoint.h; sourceTree = "<group>"; };
+		E6F2C9DCA3249A8DE3EC8ED08DB989D3 /* BranchGetPromoCodeRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchGetPromoCodeRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchGetPromoCodeRequest.m"; sourceTree = "<group>"; };
+		E94888447E1420ED4B53E6BBD25FD70C /* BNCPreferenceHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCPreferenceHelper.h; path = "Branch-SDK/Branch-SDK/BNCPreferenceHelper.h"; sourceTree = "<group>"; };
+		E9FA04CA1C986CF5C18B81C2DA85FF34 /* Branch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Branch.h; path = "Branch-SDK/Branch-SDK/Branch.h"; sourceTree = "<group>"; };
+		EA63092A947398B177C1E8CAB49188B7 /* MGLDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MGLDummy.m; sourceTree = "<group>"; };
+		EAB335DBA3DB69D757926A5D8B0F2184 /* Mapbox-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
+		EAF4B2A6ADC9AB978958B477EFC52B78 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		ECAB92A9A663D40C64FAE38EF5CC3779 /* MGLAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLAnnotation.h; path = Headers/MGLAnnotation.h; sourceTree = "<group>"; };
+		EF9B3C650F19CFD4C50087B6DCA7878B /* SwiftColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftColors.h; path = SwiftColors/SwiftColors.h; sourceTree = "<group>"; };
+		F1F1B3CA1349768471BC4B01BF60DEE1 /* BranchCreditHistoryRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchCreditHistoryRequest.h; path = "Branch-SDK/Branch-SDK/Requests/BranchCreditHistoryRequest.h"; sourceTree = "<group>"; };
+		F3E961B98DE55971FC8D834E170DF6ED /* Branch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Branch.xcconfig; sourceTree = "<group>"; };
+		F671BFE11C30B95780D49A1B91A9F85A /* Mapbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mapbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6B91D122B323EF572F369E086C4023E /* BranchLoadActionsRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchLoadActionsRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchLoadActionsRequest.m"; sourceTree = "<group>"; };
+		F7CF9942A24CC6A23843D2BF236FDEB9 /* BranchShortUrlRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchShortUrlRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchShortUrlRequest.m"; sourceTree = "<group>"; };
+		F7DC7E863E1E4E49C1991AFD83499179 /* MGLPolyline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolyline.h; path = Headers/MGLPolyline.h; sourceTree = "<group>"; };
 		F81D42D1570BF87D52B9480A1B3F0463 /* Pods-projectY-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-projectY-resources.sh"; sourceTree = "<group>"; };
-		F9F86EF6E13D2E814F0D926BD4707AA4 /* MGLMapCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLMapCamera.h; path = Headers/MGLMapCamera.h; sourceTree = "<group>"; };
+		F947527D5E62594D69BA738EE1F8B267 /* BranchConnectDebugRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchConnectDebugRequest.m; path = "Branch-SDK/Branch-SDK/Requests/BranchConnectDebugRequest.m"; sourceTree = "<group>"; };
+		FBE6E2E63420AFDB8834FEA22C2A4F5B /* MGLPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGLPolygon.h; path = Headers/MGLPolygon.h; sourceTree = "<group>"; };
+		FD10FAE2F09B89D6B9AE754A0E543B72 /* BranchDeepLinkingController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchDeepLinkingController.h; path = "Branch-SDK/Branch-SDK/BranchDeepLinkingController.h"; sourceTree = "<group>"; };
+		FF6180C9613927417D51B3EA4872C926 /* Compass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@3x.png"; path = "Mapbox.bundle/Compass@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		193492DAB21F2BA7FE1783436D79611F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFDF5ED63A32FC49001AC526A4414F3B /* AdSupport.framework in Frameworks */,
+				6A5CB9DF43BDD2713F2B51BE9A1E4526 /* CoreTelephony.framework in Frameworks */,
+				D40C1C3EE910314BB4244066BB22C157 /* Foundation.framework in Frameworks */,
+				C383B13708A978399C1A93ABCB9384F7 /* MobileCoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2407C5623841D0BAC792EA084FFEEB95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,19 +357,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6923FCDB4F1E58C15B79FD7B9FD1124A /* Frameworks */ = {
+		E473406EEDF40CF1C1A2841B55105DC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDA18F73CD70C7FBC6EADFEAD02D20E8 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97B4AE74124AB2736855E42B8DC22F84 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA69FFE0C11EF6927CC81BD9977BD2D1 /* Foundation.framework in Frameworks */,
+				9068B54E042FA445A517F54E4E711029 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,17 +372,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FBE50890B4BEE0B3EBF085CD96DFD31F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD69952E71BB19F3D8C33F2D2FFE34ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EB5EC2D0915DAD9BF2DCAF76C461860 /* SwiftColors */ = {
+		1E2497DA7E6E1914781FB20158EDCCA5 /* Mapbox-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				9F96CA982AB17C5D078CDA9971E92654 /* SwiftColors.h */,
-				5CE45F2253B0CAE337F00A05454F054B /* SwiftColors.swift */,
-				323A49AA5EEF0291BE59068DC5C615E5 /* Support Files */,
+				488FB1DE6BD5E89A2A358E89ED9A29B7 /* Mapbox.h */,
+				E5642C5F56BAFA6C8490153F3474B5FA /* MGLAccountManager.h */,
+				ECAB92A9A663D40C64FAE38EF5CC3779 /* MGLAnnotation.h */,
+				3997DA8C0F1421719A01829F0C7C2D61 /* MGLAnnotationImage.h */,
+				EA63092A947398B177C1E8CAB49188B7 /* MGLDummy.m */,
+				676E7AD9256D7A295B42A42859F5726B /* MGLGeometry.h */,
+				CC1ACA17A71016C8B9D2D7AC0D4D782E /* MGLMapCamera.h */,
+				4F6C88BC10469061F663BEA0C7B3FF9F /* MGLMapView.h */,
+				76CB80B403FEFD874271688A97232961 /* MGLMapView+IBAdditions.h */,
+				E5D6F39303F11F6AA71F721A84B27F40 /* MGLMultiPoint.h */,
+				2B670184A3F3CA48B884D293ECAB5D79 /* MGLOverlay.h */,
+				34585124E4568B09D0805A60DE091076 /* MGLPointAnnotation.h */,
+				FBE6E2E63420AFDB8834FEA22C2A4F5B /* MGLPolygon.h */,
+				F7DC7E863E1E4E49C1991AFD83499179 /* MGLPolyline.h */,
+				B952D1EF64ED1E43321022B6E3E4987F /* MGLShape.h */,
+				C9BDAA80120489738BBB7835DDE007D4 /* MGLTypes.h */,
+				E3AA1BDAD559AEF5B8C6B7B621BE5E50 /* MGLUserLocation.h */,
+				7FD7F6FE575A8331B4E002DDAB1BC093 /* Frameworks */,
+				C187F3FF1CEE4EAB6A50C19F53003DDB /* Resources */,
+				BFC9755567B46024DB12BB424230F126 /* Support Files */,
 			);
-			path = SwiftColors;
+			path = "Mapbox-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		24002A6670E6882ECD6250D3E60F9CB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27876C79E8D8EF16049AF17469D9EF57 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27876C79E8D8EF16049AF17469D9EF57 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAF4B2A6ADC9AB978958B477EFC52B78 /* AdSupport.framework */,
+				DDC861F34CEE92475522BD6CB9229936 /* CoreLocation.framework */,
+				B9E1E8546A2D871DC84B4327701D398E /* CoreTelephony.framework */,
+				103059EA5009084709EAC2464B4B4FE2 /* Foundation.framework */,
+				95AF138213ABB915C2E023BF74CBA600 /* GLKit.framework */,
+				B8A19E5BBFE3DCBCEB7005F778D862D4 /* ImageIO.framework */,
+				1466C2DAA081AA342C3703CDC4BDBB9E /* MobileCoreServices.framework */,
+				39BE33EE0C75C4771AD3938B8FF8813B /* QuartzCore.framework */,
+				C6870C68178EA3DC4CFB28B8F50F4731 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		2827C1AB4AE3E9975402D16D77692151 /* Targets Support Files */ = {
@@ -209,55 +442,23 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		323A49AA5EEF0291BE59068DC5C615E5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DDD718A41F34558C9A2117D9BBAC388C /* Info.plist */,
-				BDA78E4951BB5CA2E1C194CBEF382658 /* SwiftColors.modulemap */,
-				6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */,
-				02C6368C57BBC4F2B565A8B85535EB3D /* SwiftColors-dummy.m */,
-				6AD87A511E7A9D961E5E19B62F47D72B /* SwiftColors-prefix.pch */,
-				D0C884BE0FFD66B00DC5E27D3802E9CB /* SwiftColors-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftColors";
-			sourceTree = "<group>";
-		};
-		583ABD5B134427A48CDE3426D6952541 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				960166AB14C094FB510D2418FB3F9785 /* api_mapbox_com-digicert.der */,
-				F8119BC02280784F141805995FFFAEE6 /* api_mapbox_com-geotrust.der */,
-				66F64A185E5F6FA4267E93FBF2B7DCB5 /* Compass.png */,
-				8951BBAEB499F2BCA9D4FDA6C6131D14 /* Compass@2x.png */,
-				728047E59FE080F26FD9FE844264D2C2 /* Compass@3x.png */,
-				4BAFC7E642702EFD50640FB45AFB4349 /* mapbox.png */,
-				9C65EC39D79D48392BB236C46E35167C /* mapbox@2x.png */,
-				C2E4FA47988A6701476BDB9F65C4AB6C /* mapbox@3x.png */,
-				83D0522F5B4D628EF20373704DCE0D6F /* README */,
-				D25AD23E542ED4045F58DE8923D17296 /* star_tilestream_net.der */,
-				EB57F21F3396C75D795FFD07FFB1A468 /* styles */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		785553737B06AFC3DA711DDEB7D56194 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C1E0FBB50CEF1527F45D3B4CF2DC96FC /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				785553737B06AFC3DA711DDEB7D56194 /* Frameworks */,
-				B8B434A1B1A01AD5149A5EEE0B640071 /* Pods */,
-				B973F407EC4FCE7F169BC434F63093B9 /* Products */,
+				24002A6670E6882ECD6250D3E60F9CB2 /* Frameworks */,
+				91193329F909E2C08496FAE067F32B29 /* Pods */,
+				ED01D46229208E6A13B797D13987A46F /* Products */,
 				2827C1AB4AE3E9975402D16D77692151 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		7FD7F6FE575A8331B4E002DDAB1BC093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC0BEC58DE35115DF5EE05879F1ECB39 /* libMapbox.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8F61F8AA78B4961DCF8C9089D2AF24C7 /* Pods-projectY */ = {
@@ -278,88 +479,184 @@
 			path = "Target Support Files/Pods-projectY";
 			sourceTree = "<group>";
 		};
-		9CC7388FCF91B86C20CE36F754AC073B /* Mapbox-iOS-SDK */ = {
+		91193329F909E2C08496FAE067F32B29 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A9C88E048305845572F1F7763F02E902 /* Mapbox.h */,
-				6BDBCD045AD8EB5E7B1C1EFF78765838 /* MGLAccountManager.h */,
-				52E184F31F95D7938B648F47FE8C41F4 /* MGLAnnotation.h */,
-				4866DAE641B3D7A19D3AB0E51632A4D7 /* MGLAnnotationImage.h */,
-				D139C247312FC54724EE8E1E0082A301 /* MGLDummy.m */,
-				D105F383B809289B9E4853E67A3D9296 /* MGLGeometry.h */,
-				F9F86EF6E13D2E814F0D926BD4707AA4 /* MGLMapCamera.h */,
-				05A7B96D2AB438FC8890D20C065635DC /* MGLMapView.h */,
-				483A2C647703ABDA06CBD28D8E0A80FE /* MGLMapView+IBAdditions.h */,
-				19629F0D0B0C75CBCD19E32AE579FDE5 /* MGLMultiPoint.h */,
-				65AA10AC6D9DC73D2DC2025256B7F56C /* MGLOverlay.h */,
-				F7B521EB33B8D3F68A32746D57D91700 /* MGLPointAnnotation.h */,
-				3E62D7A49AB327CCB6EA9B8ED0BE208C /* MGLPolygon.h */,
-				08F88CB72EC056FD2D321B27B9FDF6A6 /* MGLPolyline.h */,
-				9F0B7E8BC137335E742ECEB1CEE6E4DD /* MGLShape.h */,
-				6BFE8FE5C5E26F8FF5DB79CB049BD31A /* MGLTypes.h */,
-				EE26A6C9748FBEF34CE36BA94850CE9F /* MGLUserLocation.h */,
-				D66256E767CC9F79B9946D2067DA9B97 /* Frameworks */,
-				583ABD5B134427A48CDE3426D6952541 /* Resources */,
-				C07D0E491E0CEE54E3A4494FA1B76076 /* Support Files */,
-			);
-			path = "Mapbox-iOS-SDK";
-			sourceTree = "<group>";
-		};
-		B8B434A1B1A01AD5149A5EEE0B640071 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9CC7388FCF91B86C20CE36F754AC073B /* Mapbox-iOS-SDK */,
-				1EB5EC2D0915DAD9BF2DCAF76C461860 /* SwiftColors */,
+				ED67C6C02D6DD52B72E87CE73BC6D1EE /* Branch */,
+				1E2497DA7E6E1914781FB20158EDCCA5 /* Mapbox-iOS-SDK */,
+				9B4FC407E4059652CE9DD6903395F168 /* SwiftColors */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B973F407EC4FCE7F169BC434F63093B9 /* Products */ = {
+		9B4FC407E4059652CE9DD6903395F168 /* SwiftColors */ = {
 			isa = PBXGroup;
 			children = (
-				5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */,
-				F176598B975F8EC76A8F4AF3CA50B2AF /* Mapbox.framework */,
-				A522FE3C6BE2B335A43C353499BF4712 /* Pods_projectY.framework */,
-				EB930577563035896B0F31F6ADBF29C9 /* SwiftColors.framework */,
+				EF9B3C650F19CFD4C50087B6DCA7878B /* SwiftColors.h */,
+				DB08E380DE4A62D4A65E3755360663FE /* SwiftColors.swift */,
+				FFC0672BEE369F9A1305E55635D0EFD9 /* Support Files */,
 			);
-			name = Products;
+			path = SwiftColors;
 			sourceTree = "<group>";
 		};
-		C07D0E491E0CEE54E3A4494FA1B76076 /* Support Files */ = {
+		BFC9755567B46024DB12BB424230F126 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D668AFD4B97D2CA1D1BE127040F6A96D /* Info.plist */,
-				24E7294D87F16B084B655B2810130661 /* Mapbox-iOS-SDK.modulemap */,
-				434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */,
-				5D70CC96077A81E1F2101E65A3339E09 /* Mapbox-iOS-SDK-dummy.m */,
-				71514FB41E5AFD152F8260291CAA2049 /* Mapbox-iOS-SDK-prefix.pch */,
-				D611D9CB809B64D7242FC22BF5C11FEC /* Mapbox-iOS-SDK-umbrella.h */,
+				CB7DA814EE1DED34E45F7A1F3912E61E /* Info.plist */,
+				93C74C08036042487827EEA2D5E96AB6 /* Mapbox-iOS-SDK.modulemap */,
+				EAB335DBA3DB69D757926A5D8B0F2184 /* Mapbox-iOS-SDK.xcconfig */,
+				A617C9280157C5D7439E565773808A13 /* Mapbox-iOS-SDK-dummy.m */,
+				1259055F52D0AE1C4D53C10EDD5C69E9 /* Mapbox-iOS-SDK-prefix.pch */,
+				336C7C95C26A3DD2B54ED6DBDCBC445D /* Mapbox-iOS-SDK-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
-		C1E0FBB50CEF1527F45D3B4CF2DC96FC /* iOS */ = {
+		C10206F3F9522847660BB761825638AB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				310B47F44F9C762797CAF77676A2A8F0 /* CoreLocation.framework */,
-				A50A6BD54999EB227BBC0EB1005247F5 /* CoreTelephony.framework */,
-				D395B4D9E3AC3C6C678E938A317D8E1E /* Foundation.framework */,
-				AF243C380F6FB6E196587E7734803B8D /* GLKit.framework */,
-				25F5AEE067096DB997D3C6710F0541AC /* ImageIO.framework */,
-				866AB723FD27A566F45FAA3A0D2AB1F0 /* MobileCoreServices.framework */,
-				5DE6EBA7C74FBF79797E1E42AA296663 /* QuartzCore.framework */,
-				0FF2A03396D5540D0E9C20781E2BA75E /* SystemConfiguration.framework */,
+				717820422AE93A31BFFD8EAE3B7E35F5 /* Branch.modulemap */,
+				F3E961B98DE55971FC8D834E170DF6ED /* Branch.xcconfig */,
+				14750428F9DCB120F40075399B9E71B7 /* Branch-dummy.m */,
+				975BC5EE9802EDF69BB166C746766966 /* Branch-prefix.pch */,
+				7E62317163831B04D3CF065763607C06 /* Branch-umbrella.h */,
+				4373D7CA6C41370659A35A5B758AF7F8 /* Info.plist */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/Branch";
 			sourceTree = "<group>";
 		};
-		D66256E767CC9F79B9946D2067DA9B97 /* Frameworks */ = {
+		C187F3FF1CEE4EAB6A50C19F53003DDB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C42CA3916EB4D2E0D90B994D9EEC8A7A /* libMapbox.a */,
+				4A97681D8DD374935CF028FA4DB55B5D /* api_mapbox_com-digicert.der */,
+				216589E23E195DC6B66534B88CA0EEF3 /* api_mapbox_com-geotrust.der */,
+				C783886E036FF4A826CF21E1DFA37785 /* Compass.png */,
+				1978FEB71257D0CB65E6BE96AAD359B5 /* Compass@2x.png */,
+				FF6180C9613927417D51B3EA4872C926 /* Compass@3x.png */,
+				2B758971B8B8C874270803A23985F37B /* mapbox.png */,
+				65E34942951B35C522F020A124D9388C /* mapbox@2x.png */,
+				C11BC3C31D3A96DC91305D7E0B0CE21E /* mapbox@3x.png */,
+				1AA6A52FA5630E45A077DC98DBE59B30 /* README */,
+				886FFA70C6C6C2DC0F54C6203E75BC6F /* star_tilestream_net.der */,
+				0A991CFA6E1C239D25A9FCC488E80A63 /* styles */,
 			);
-			name = Frameworks;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ED01D46229208E6A13B797D13987A46F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FA5838C780C1D51C5AE488BC996B628 /* Branch.framework */,
+				C3D5946F4A469F7825FB254AEFF84CC7 /* Mapbox.bundle */,
+				F671BFE11C30B95780D49A1B91A9F85A /* Mapbox.framework */,
+				154F250040D4057C9D22E72F17F9A7A1 /* Pods_projectY.framework */,
+				3F8D6EB407C0486E7A00D96DF1E8CBA2 /* SwiftColors.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED67C6C02D6DD52B72E87CE73BC6D1EE /* Branch */ = {
+			isa = PBXGroup;
+			children = (
+				22549E582CB8DDF456ED51D678426B30 /* BNCConfig.h */,
+				7000E34A24A886413AD9746623DFB199 /* BNCContentDiscoveryManager.h */,
+				273003A33DE9778F7787F99C418D1D36 /* BNCContentDiscoveryManager.m */,
+				4C80FA913281C53E93A4D7AAAAA4DF42 /* BNCDebugRequest.h */,
+				0218F633C97C3B55F57E9BE338FB1628 /* BNCDebugRequest.m */,
+				AB29E6010115678454A471144F05FAFA /* BNCEncodingUtils.h */,
+				59FA2BFE8A95603673ABBB1EA27751EC /* BNCEncodingUtils.m */,
+				B7026EB1EC9875EA20C603BE53713034 /* BNCError.h */,
+				C20A52812C08687DD4AE9B92DD413B88 /* BNCError.m */,
+				2E24200976DEB5B67AC656F144ACF27C /* BNCLinkCache.h */,
+				195C77ECBE2E6F2A99F51B7A0833A627 /* BNCLinkCache.m */,
+				B6D448AD4C3AB2F6B5CA25081F0AF10B /* BNCLinkData.h */,
+				CFE1A3F301AB36822E16FD43322EF7EC /* BNCLinkData.m */,
+				E94888447E1420ED4B53E6BBD25FD70C /* BNCPreferenceHelper.h */,
+				80E6CD1D240070D82FEDB6B0706A0356 /* BNCPreferenceHelper.m */,
+				89CFB32B84B4DAC0F4B7F4E2D8297076 /* BNCServerInterface.h */,
+				80F5B044AF2BAC633909987E489AF15F /* BNCServerInterface.m */,
+				A76186140B45345E336762C2A2DF219D /* BNCServerRequest.h */,
+				649E09D4E47867F11D9595489A46CDB5 /* BNCServerRequest.m */,
+				7750B3E8D568F61552040EB67F0A5DB7 /* BNCServerRequestQueue.h */,
+				AF8E89ECB62285A5DB2B1977445BF3A9 /* BNCServerRequestQueue.m */,
+				5DEC65687A48FC949DBFB145AC9FC421 /* BNCServerResponse.h */,
+				8F29490E009E79847A8B53E12D98AE4A /* BNCServerResponse.m */,
+				A876C99329845A5CA71E6F78713C89C7 /* BNCStrongMatchHelper.h */,
+				85B75DBA145D0C80DCC28BC3AF43A4C1 /* BNCStrongMatchHelper.m */,
+				CBF493864A39817EE7E292B9839629CA /* BNCSystemObserver.h */,
+				65A6DBCC145F6918FE80D71D5E8709E2 /* BNCSystemObserver.m */,
+				E9FA04CA1C986CF5C18B81C2DA85FF34 /* Branch.h */,
+				16E4FA677E899665DA6D3A4B6A410C4B /* Branch.m */,
+				9B93A4B2129226D2F51AECC1882BBE05 /* BranchActivityItemProvider.h */,
+				9C80843C6D8FBEE01197BD4FFF8BF195 /* BranchActivityItemProvider.m */,
+				A00B54BAA15C94F19C408F1685843205 /* BranchApplyPromoCodeRequest.h */,
+				AAD976220609348358CFD8544BDFBA17 /* BranchApplyPromoCodeRequest.m */,
+				299F7EEDA2D2ACC1819EAE4512E8C666 /* BranchCloseRequest.h */,
+				A56B3842B693C771005028CD8FFE5565 /* BranchCloseRequest.m */,
+				7FEFA31B04779C2A241E9AF57D7742AF /* BranchConnectDebugRequest.h */,
+				F947527D5E62594D69BA738EE1F8B267 /* BranchConnectDebugRequest.m */,
+				66321110506D9946A13BB5DFFF1371B2 /* BranchConstants.h */,
+				841559D1134AC006DF03AF6397F5248A /* BranchConstants.m */,
+				F1F1B3CA1349768471BC4B01BF60DEE1 /* BranchCreditHistoryRequest.h */,
+				BE4C1A515B0B333BCD2DB5EF4326C3C3 /* BranchCreditHistoryRequest.m */,
+				7D45C14C291FC83591FF1F4A5ED257FB /* BranchCSSearchableItemAttributeSet.h */,
+				2180F88874C246B2C202623CFC1DFA17 /* BranchCSSearchableItemAttributeSet.m */,
+				FD10FAE2F09B89D6B9AE754A0E543B72 /* BranchDeepLinkingController.h */,
+				886114BC22B065CCF9E96EF89772720B /* BranchDisconnectDebugRequest.h */,
+				B384F8950FA68A8E199B21AEEDA4A64F /* BranchDisconnectDebugRequest.m */,
+				5F90203460AD2C9D5D601C4BEDDDFE17 /* BranchGetPromoCodeRequest.h */,
+				E6F2C9DCA3249A8DE3EC8ED08DB989D3 /* BranchGetPromoCodeRequest.m */,
+				E40B1032AF43985BE40A394D75EB9636 /* BranchInstallRequest.h */,
+				B34F1191F8C47E1AFEDDB9242249637E /* BranchInstallRequest.m */,
+				4CADFFC89F3F78B2E5B747ACC8F2AF5D /* BranchLinkProperties.h */,
+				4C66BCCBAB41EFD31B980703A6FB6FC2 /* BranchLinkProperties.m */,
+				65EE2A60374B0630B8C1BAC5CEE59FC6 /* BranchLoadActionsRequest.h */,
+				F6B91D122B323EF572F369E086C4023E /* BranchLoadActionsRequest.m */,
+				0874D8D786346F3D784E0812E796AFDC /* BranchLoadRewardsRequest.h */,
+				77B0AD24CC86B625B56F9AA39AE51489 /* BranchLoadRewardsRequest.m */,
+				9FF894339E9DEED2DC7BC569C95FB687 /* BranchLogoutRequest.h */,
+				9925C9CA487AA11095050219B1D3C2E7 /* BranchLogoutRequest.m */,
+				DDEBE9B66A2CBF4CF369699DCB28A3A8 /* BranchLogRequest.h */,
+				3C1F10E2DED0DD7C2DBBBF31C596799D /* BranchLogRequest.m */,
+				30C8E68D5EC88D3DDA20016B2725E82A /* BranchOpenRequest.h */,
+				CA6CA636BA47596967CC38D5B7DB83CD /* BranchOpenRequest.m */,
+				806F40E4B56DF82CAB7AE838A06AD6E8 /* BranchRedeemRewardsRequest.h */,
+				973C17F233C36C748E230028080CB83D /* BranchRedeemRewardsRequest.m */,
+				46775AB4AE022858C036AE1A2B2D7D31 /* BranchRegisterViewRequest.h */,
+				483730C2E75AFD57D5C373B955A86AD6 /* BranchRegisterViewRequest.m */,
+				0624C65625B2B4EBA19D4BAB83C1EA1B /* BranchSetIdentityRequest.h */,
+				AE6288FD00EBE9F0E00E6C9B9A2CD581 /* BranchSetIdentityRequest.m */,
+				9E6FDE3433E9309EEBB2647D6C6288B8 /* BranchShortUrlRequest.h */,
+				F7CF9942A24CC6A23843D2BF236FDEB9 /* BranchShortUrlRequest.m */,
+				A3B05D93B35AF9177745A7FA2C66D17F /* BranchShortUrlSyncRequest.h */,
+				01053BBD8083E5B5EC4B9305B1A9D6DE /* BranchShortUrlSyncRequest.m */,
+				5ABC24F46AC3AD3A39C8FE880EB052F3 /* BranchSpotlightUrlRequest.h */,
+				77C4A38C2913B75F5B5EF488AF9A1A7F /* BranchSpotlightUrlRequest.m */,
+				8B9D5F3D1D07956891D989F807FECAF4 /* BranchUniversalObject.h */,
+				B06D16BB9985699633778627650E68FC /* BranchUniversalObject.m */,
+				BD8BFE708628008E56153D5A9291E0CF /* BranchUserCompletedActionRequest.h */,
+				A20ABC1C172C8C95625760B776EE79D1 /* BranchUserCompletedActionRequest.m */,
+				C4662ECB892696B52E8F9E8B7B93B94B /* BranchValidatePromoCodeRequest.h */,
+				3BBB29AF8C4E1170A15366E5E7469CD5 /* BranchValidatePromoCodeRequest.m */,
+				C10206F3F9522847660BB761825638AB /* Support Files */,
+			);
+			path = Branch;
+			sourceTree = "<group>";
+		};
+		FFC0672BEE369F9A1305E55635D0EFD9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A045A0C5A392C408D0BC558F2848325F /* Info.plist */,
+				706853043362A4581A857C9E3F602071 /* SwiftColors.modulemap */,
+				29BFAEB61EC1D92A29CA27D03D1DB26A /* SwiftColors.xcconfig */,
+				DFA578866B9DEF1A5EEC8D2B4A226B39 /* SwiftColors-dummy.m */,
+				485DBDC5C504B237C74998C06FE5E9AD /* SwiftColors-prefix.pch */,
+				0900F73CC815DB5E68A41BDF172C2B1F /* SwiftColors-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftColors";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,26 +686,92 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18D3904F02E949412A26DEA5962F8F4C /* Headers */ = {
+		0D2B7CF0BDD67DD3010FE4FD79A1E6F2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ED0DD22B27E0C9DC4EFA232B03D4C3B /* SwiftColors-umbrella.h in Headers */,
-				BC5E2A6CC887C0010C49B71C2BB3AD0F /* SwiftColors.h in Headers */,
+				BB10608A6CD0C0CDA63C3BB842D383DF /* SwiftColors-umbrella.h in Headers */,
+				4A6AB0D97A581B13F0976F9471FFC575 /* SwiftColors.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40C0402AB2875BE9837F62685492579D /* Headers */ = {
+		E266C9C8ABBC7A170EAD8CE9C3029CAE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3DB56593C827E0F47930C687279DAC2 /* Pods-projectY-umbrella.h in Headers */,
+				17DBB89D509707CDFF878BC45317E051 /* Pods-projectY-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EDFD6760FBCC0C9F61562B209038DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFA7200B7E3BDCCFFF5323144156B070 /* BNCConfig.h in Headers */,
+				639F8D43A80C337D90A6918AED292B4F /* BNCContentDiscoveryManager.h in Headers */,
+				F866E86AAAF5E91862482EE4EFCC91B1 /* BNCDebugRequest.h in Headers */,
+				8DECB5D4787941125587C7BEE7F6A9BD /* BNCEncodingUtils.h in Headers */,
+				76DA1A7AFCC3D2AF24CC9F37C3AFDE5E /* BNCError.h in Headers */,
+				95F2E69E47751FD4BA183EC8393499A8 /* BNCLinkCache.h in Headers */,
+				BB6C8C8DE5667ED05B599F950581AEA7 /* BNCLinkData.h in Headers */,
+				5B07AB2E9BC2942F246C406A16F0D244 /* BNCPreferenceHelper.h in Headers */,
+				532AA2F8CEDE746EDD338A54FB0A552A /* BNCServerInterface.h in Headers */,
+				0F95DB4FB5EAD6B0452FD69EFD83468A /* BNCServerRequest.h in Headers */,
+				A901B85375D2383157079FBED8501A34 /* BNCServerRequestQueue.h in Headers */,
+				7AD0B6DFF141CB176C4176D73E132075 /* BNCServerResponse.h in Headers */,
+				1A644280CE3219EF1E8394B9E04954F7 /* BNCStrongMatchHelper.h in Headers */,
+				75D7D943B0761D21184D2D8C5B7D34FD /* BNCSystemObserver.h in Headers */,
+				5C9C2AEC39788509ADABEB21CD59AEA8 /* Branch-umbrella.h in Headers */,
+				C83741BE6E02A36BDED3A40E86AC3861 /* Branch.h in Headers */,
+				52D83DF458DD6F475B5BF6D9FB515222 /* BranchActivityItemProvider.h in Headers */,
+				3325314A43863546DCDCC23CAA30252F /* BranchApplyPromoCodeRequest.h in Headers */,
+				BF859203B0A0F166330CD2FAA63C68CB /* BranchCloseRequest.h in Headers */,
+				6658B7FA507085801BD56F800B12901B /* BranchConnectDebugRequest.h in Headers */,
+				A1FFF7EB48ECC1F4780B98AA30C4C8B5 /* BranchConstants.h in Headers */,
+				A184B619A4C9165E64B4A3D4CDCC02C5 /* BranchCreditHistoryRequest.h in Headers */,
+				EA0F2FF74062BDF82E27A05E86E509CA /* BranchCSSearchableItemAttributeSet.h in Headers */,
+				7B5152C5C137C163397545D0EA13040E /* BranchDeepLinkingController.h in Headers */,
+				6E2E8ACC2C96F9BD2DE508DA46B234E7 /* BranchDisconnectDebugRequest.h in Headers */,
+				B5D759D0519388FF1EF2BBCD6F925C88 /* BranchGetPromoCodeRequest.h in Headers */,
+				E7A8B8844A0F65981EC39BD2FAB90343 /* BranchInstallRequest.h in Headers */,
+				941C3C0046AFDB59FDF277B73E1492D3 /* BranchLinkProperties.h in Headers */,
+				33824544ECEE9C16B3D59240DE253CD2 /* BranchLoadActionsRequest.h in Headers */,
+				6DC600C68AC2FB5F6273AAD535264474 /* BranchLoadRewardsRequest.h in Headers */,
+				63F9CBD3E279DCFAC2225F7B606A43C1 /* BranchLogoutRequest.h in Headers */,
+				668A0781FAE18020D1D29760147569FC /* BranchLogRequest.h in Headers */,
+				AC5386D74C788A27CBA09DC96C2347FB /* BranchOpenRequest.h in Headers */,
+				31C57927393AE7BA5DEC71C699A0368A /* BranchRedeemRewardsRequest.h in Headers */,
+				9A26F2D89187D06122629A79F638325D /* BranchRegisterViewRequest.h in Headers */,
+				9A79E27CED94495F2FB3E93BE72DDC91 /* BranchSetIdentityRequest.h in Headers */,
+				05EEF9DAE1647E2813897D10D68D8E0D /* BranchShortUrlRequest.h in Headers */,
+				056E0741CE61B9BBF86B2564508F687E /* BranchShortUrlSyncRequest.h in Headers */,
+				55F497A5D6305C63B2A12F8E7AC52382 /* BranchSpotlightUrlRequest.h in Headers */,
+				BA23D6A7B20A98C6B2C67CA56BD06517 /* BranchUniversalObject.h in Headers */,
+				5277A00E8456E4070D8174485C492B44 /* BranchUserCompletedActionRequest.h in Headers */,
+				AF3209B17EB62864F9641FA17572D9B6 /* BranchValidatePromoCodeRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		26DDE728D845399865C11EED249B4407 /* SwiftColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E82F5B072959A11A188AD4BA1886809A /* Build configuration list for PBXNativeTarget "SwiftColors" */;
+			buildPhases = (
+				47977C7D17BFE201EFC5A38AB6450982 /* Sources */,
+				E473406EEDF40CF1C1A2841B55105DC3 /* Frameworks */,
+				0D2B7CF0BDD67DD3010FE4FD79A1E6F2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftColors;
+			productName = SwiftColors;
+			productReference = 3F8D6EB407C0486E7A00D96DF1E8CBA2 /* SwiftColors.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		4A31CEA90D258DAA1C52CF9B1139C66D /* Mapbox-iOS-SDK-Mapbox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD076C06B9E3615C0DE2E2D6603AB429 /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK-Mapbox" */;
@@ -423,43 +786,44 @@
 			);
 			name = "Mapbox-iOS-SDK-Mapbox";
 			productName = "Mapbox-iOS-SDK-Mapbox";
-			productReference = 5AB0A57A8E52D20C7799D81612FD2D58 /* Mapbox.bundle */;
+			productReference = C3D5946F4A469F7825FB254AEFF84CC7 /* Mapbox.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		4B124149C5DC979C81E9F500C97930AE /* SwiftColors */ = {
+		70D0A64A8618A200157DF626F00D26BD /* Branch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5655B91F457C59B3028C2E9FD7C64203 /* Build configuration list for PBXNativeTarget "SwiftColors" */;
+			buildConfigurationList = A462A7C0AAB939A1424978F71DADAACC /* Build configuration list for PBXNativeTarget "Branch" */;
 			buildPhases = (
-				FAEF462CFD800AB23495E146CBDE3DAD /* Sources */,
-				97B4AE74124AB2736855E42B8DC22F84 /* Frameworks */,
-				18D3904F02E949412A26DEA5962F8F4C /* Headers */,
+				86B9EED9521BE0E2EC079ABCE68AA103 /* Sources */,
+				193492DAB21F2BA7FE1783436D79611F /* Frameworks */,
+				F0EDFD6760FBCC0C9F61562B209038DF /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftColors;
-			productName = SwiftColors;
-			productReference = EB930577563035896B0F31F6ADBF29C9 /* SwiftColors.framework */;
+			name = Branch;
+			productName = Branch;
+			productReference = 7FA5838C780C1D51C5AE488BC996B628 /* Branch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		872CA2A2E578848B2A3E58B3E1B718CE /* Pods-projectY */ = {
+		D081C2F0EA150DAA6110DC7930225605 /* Pods-projectY */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19A4CE451C3F896B3503FD8C16D7DE95 /* Build configuration list for PBXNativeTarget "Pods-projectY" */;
+			buildConfigurationList = 555CB09E3E6F29F239EE7DDDDC4A0416 /* Build configuration list for PBXNativeTarget "Pods-projectY" */;
 			buildPhases = (
-				3BA1D5E9E1525C43AA7272562AF89079 /* Sources */,
-				6923FCDB4F1E58C15B79FD7B9FD1124A /* Frameworks */,
-				40C0402AB2875BE9837F62685492579D /* Headers */,
+				3B42BC39EFD77E216C5577439549D186 /* Sources */,
+				FBE50890B4BEE0B3EBF085CD96DFD31F /* Frameworks */,
+				E266C9C8ABBC7A170EAD8CE9C3029CAE /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9652C43AD26892C9E70DA7E526AFDBCE /* PBXTargetDependency */,
-				5D1A7FD8CAD72126399944B8AC5BEBE3 /* PBXTargetDependency */,
+				B855B764B69095A8114D658FA3FAADCF /* PBXTargetDependency */,
+				1F209042D64DC0198FA1AC3809E7476A /* PBXTargetDependency */,
+				7BA54C067FD61F316715858F3C36D327 /* PBXTargetDependency */,
 			);
 			name = "Pods-projectY";
 			productName = "Pods-projectY";
-			productReference = A522FE3C6BE2B335A43C353499BF4712 /* Pods_projectY.framework */;
+			productReference = 154F250040D4057C9D22E72F17F9A7A1 /* Pods_projectY.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E0ECC3BD18CAEBE408E9023D3847041A /* Mapbox-iOS-SDK */ = {
@@ -478,7 +842,7 @@
 			);
 			name = "Mapbox-iOS-SDK";
 			productName = "Mapbox-iOS-SDK";
-			productReference = F176598B975F8EC76A8F4AF3CA50B2AF /* Mapbox.framework */;
+			productReference = F671BFE11C30B95780D49A1B91A9F85A /* Mapbox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -498,14 +862,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B973F407EC4FCE7F169BC434F63093B9 /* Products */;
+			productRefGroup = ED01D46229208E6A13B797D13987A46F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				70D0A64A8618A200157DF626F00D26BD /* Branch */,
 				E0ECC3BD18CAEBE408E9023D3847041A /* Mapbox-iOS-SDK */,
 				4A31CEA90D258DAA1C52CF9B1139C66D /* Mapbox-iOS-SDK-Mapbox */,
-				872CA2A2E578848B2A3E58B3E1B718CE /* Pods-projectY */,
-				4B124149C5DC979C81E9F500C97930AE /* SwiftColors */,
+				D081C2F0EA150DAA6110DC7930225605 /* Pods-projectY */,
+				26DDE728D845399865C11EED249B4407 /* SwiftColors */,
 			);
 		};
 /* End PBXProject section */
@@ -547,11 +912,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3BA1D5E9E1525C43AA7272562AF89079 /* Sources */ = {
+		3B42BC39EFD77E216C5577439549D186 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0557FED9E6CD473D74D6B8DEF0B538C /* Pods-projectY-dummy.m in Sources */,
+				C3B2204D845194AE7A3DBC39C02DF3C5 /* Pods-projectY-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47977C7D17BFE201EFC5A38AB6450982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5892A8783E482532016E87E3A6B58A68 /* SwiftColors-dummy.m in Sources */,
+				550AB0A68836B539AA43A01580795DEA /* SwiftColors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B9EED9521BE0E2EC079ABCE68AA103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				837432E001C639CAEB59C1B082C1059B /* BNCContentDiscoveryManager.m in Sources */,
+				C3CBF4A8DC8418E35D95D92118F40D30 /* BNCDebugRequest.m in Sources */,
+				3B420B23D8D876E5EDFEF1ABF1DCE907 /* BNCEncodingUtils.m in Sources */,
+				4CA6203A8F22CAB1ECE7DD8F8B9D28EB /* BNCError.m in Sources */,
+				E5C49B3CCECE26E83D456F4EB5172AA5 /* BNCLinkCache.m in Sources */,
+				89F5ED9C80DE247748C0F0CF9F63C61E /* BNCLinkData.m in Sources */,
+				D2F2EB75303CDE71DF49803047C39BB2 /* BNCPreferenceHelper.m in Sources */,
+				65D3192BDA75EB0E9816BD989782D65D /* BNCServerInterface.m in Sources */,
+				5AC6494E6A48EC51C0FF6F5CCE62E682 /* BNCServerRequest.m in Sources */,
+				1932412131C8BE0853392C23AD9CA7C2 /* BNCServerRequestQueue.m in Sources */,
+				E9DB7E16743626C8064B64EC3E8F8D93 /* BNCServerResponse.m in Sources */,
+				E44F4E2476519C59DC50CCFC7DCEA1E2 /* BNCStrongMatchHelper.m in Sources */,
+				DD99EF019E9E4FA9029FE7268EC98F67 /* BNCSystemObserver.m in Sources */,
+				748E65D892792515942B30A936046F86 /* Branch-dummy.m in Sources */,
+				7DD9CC26C93F3078C96EE72542E6C90C /* Branch.m in Sources */,
+				2D5AA01D837C595E5B9079AD8C6FC2FE /* BranchActivityItemProvider.m in Sources */,
+				588DB180657362895DEB198FAB1BEF4B /* BranchApplyPromoCodeRequest.m in Sources */,
+				AD83A9F17A02B6B3258B1458560920C7 /* BranchCloseRequest.m in Sources */,
+				0B18AFF21E0C4F5B4C6D0517097CA45D /* BranchConnectDebugRequest.m in Sources */,
+				B0B23BEB9351FEE2A7D72A5163CBDCEC /* BranchConstants.m in Sources */,
+				36C0A846F782E1DF020E8E9DCE973F63 /* BranchCreditHistoryRequest.m in Sources */,
+				8DCACBE450AA5122BAE9E1B2D47705A7 /* BranchCSSearchableItemAttributeSet.m in Sources */,
+				1AFA137130ABF93A44C681541F3BFBFB /* BranchDisconnectDebugRequest.m in Sources */,
+				9E9A48AC835A613EC3B96DFBEBB67F7B /* BranchGetPromoCodeRequest.m in Sources */,
+				656F32B46BD7419B89D58CC3E46D3CD6 /* BranchInstallRequest.m in Sources */,
+				0E7F27F9C4E76816D6DDDC470591F753 /* BranchLinkProperties.m in Sources */,
+				5496CDD5F4A8653281B4790A8EFE1655 /* BranchLoadActionsRequest.m in Sources */,
+				186E5019720FF3D050A3043310207A60 /* BranchLoadRewardsRequest.m in Sources */,
+				034D6A1D347B1DA340332AE03912E165 /* BranchLogoutRequest.m in Sources */,
+				99FD8C991F16B0D03E00858713159D79 /* BranchLogRequest.m in Sources */,
+				88AFCA14F253A090410DD64D0C52845A /* BranchOpenRequest.m in Sources */,
+				4773412E78DC40760BA6331DF93790B1 /* BranchRedeemRewardsRequest.m in Sources */,
+				057F086A4BA7D095C8B6EA8A2CFD1BCC /* BranchRegisterViewRequest.m in Sources */,
+				F77E034EA71E903857C7DF2678BEAB9D /* BranchSetIdentityRequest.m in Sources */,
+				9776CF59D7B5669AF7DC2765E8403AA7 /* BranchShortUrlRequest.m in Sources */,
+				B5248431A90073001BD999927746A8DA /* BranchShortUrlSyncRequest.m in Sources */,
+				830D9EB98C657E28FD45645697B66A02 /* BranchSpotlightUrlRequest.m in Sources */,
+				37A441F017FE8375CFE1F92F3F93B951 /* BranchUniversalObject.m in Sources */,
+				F420A19DD3C1BE270EBCBA4D713C9B2F /* BranchUserCompletedActionRequest.m in Sources */,
+				39C3904CC7F5F878EC15EE1D31A0B5E0 /* BranchValidatePromoCodeRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,29 +985,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAEF462CFD800AB23495E146CBDE3DAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D57F6B147837736074B489503A3ABA0F /* SwiftColors-dummy.m in Sources */,
-				FD9A817947D346BF9217BD6FAED9171C /* SwiftColors.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5D1A7FD8CAD72126399944B8AC5BEBE3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftColors;
-			target = 4B124149C5DC979C81E9F500C97930AE /* SwiftColors */;
-			targetProxy = EEA5B13305E7CFD026FD79F3CE635BFD /* PBXContainerItemProxy */;
-		};
-		9652C43AD26892C9E70DA7E526AFDBCE /* PBXTargetDependency */ = {
+		1F209042D64DC0198FA1AC3809E7476A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Mapbox-iOS-SDK";
 			target = E0ECC3BD18CAEBE408E9023D3847041A /* Mapbox-iOS-SDK */;
-			targetProxy = 086747851857C5AFB29F1590AF250C3E /* PBXContainerItemProxy */;
+			targetProxy = EF8C45453FD2A7250C0D170750274785 /* PBXContainerItemProxy */;
+		};
+		7BA54C067FD61F316715858F3C36D327 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftColors;
+			target = 26DDE728D845399865C11EED249B4407 /* SwiftColors */;
+			targetProxy = 82A510CBFA6D525DCEAFB6793AA183FA /* PBXContainerItemProxy */;
+		};
+		B855B764B69095A8114D658FA3FAADCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Branch;
+			target = 70D0A64A8618A200157DF626F00D26BD /* Branch */;
+			targetProxy = 944B083BC2C9DC9EB0EE8F01F8E1F390 /* PBXContainerItemProxy */;
 		};
 		CE4F892493AD3F2D32901DA5C0F94E04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -597,9 +1015,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		16C53017BDEBC038B3C6A5B2729687DB /* Release */ = {
+		21AF03D8AE65C831B61741AC51258285 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */;
+			baseConfigurationReference = F3E961B98DE55971FC8D834E170DF6ED /* Branch.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Branch/Branch-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Branch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Branch/Branch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Branch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		471A53C9DBE751610E1BB30BF7B5F5B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29BFAEB61EC1D92A29CA27D03D1DB26A /* SwiftColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -642,6 +1087,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
@@ -660,8 +1106,9 @@
 		};
 		59D7A189184CCC240C2340D8F378E3B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
+			baseConfigurationReference = EAB335DBA3DB69D757926A5D8B0F2184 /* Mapbox-iOS-SDK.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = Mapbox;
 				SDKROOT = iphoneos;
@@ -672,7 +1119,7 @@
 		};
 		780B4C2E7C281D0BF5961DAC831B734D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
+			baseConfigurationReference = EAB335DBA3DB69D757926A5D8B0F2184 /* Mapbox-iOS-SDK.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -680,6 +1127,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Mapbox-iOS-SDK/Info.plist";
@@ -699,7 +1147,7 @@
 		};
 		79FEA649D2DD7A0AA7B55115E4B0F5B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
+			baseConfigurationReference = EAB335DBA3DB69D757926A5D8B0F2184 /* Mapbox-iOS-SDK.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = Mapbox;
@@ -709,9 +1157,39 @@
 			};
 			name = Release;
 		};
+		8BB0E92B83F69304F94DC85F9B3E0F42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D445B57CAC5430B93BEE8C1547C8C1A /* Pods-projectY.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-projectY/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-projectY/Pods-projectY.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_projectY;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		93E0AFED6A9EBCE134B17E1E8E13EF31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 434E36EE4E34074B688806AFDC7A7CA5 /* Mapbox-iOS-SDK.xcconfig */;
+			baseConfigurationReference = EAB335DBA3DB69D757926A5D8B0F2184 /* Mapbox-iOS-SDK.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -754,6 +1232,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -775,7 +1254,62 @@
 			};
 			name = Debug;
 		};
-		ACB106339BA5B3D3147E059F7B8865FB /* Debug */ = {
+		B9D61C3F7DCA1BB39F5FD2BCFE0C6BF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29BFAEB61EC1D92A29CA27D03D1DB26A /* SwiftColors.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftColors/SwiftColors-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftColors/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftColors/SwiftColors.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftColors;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFF01FFD2F7A3FB0BF9633911E703CCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E961B98DE55971FC8D834E170DF6ED /* Branch.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Branch/Branch-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Branch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Branch/Branch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Branch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F1591B09E35BFD391368AE9978010D00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B45F3886D4792D4289E75ECE55A86EE /* Pods-projectY.debug.xcconfig */;
 			buildSettings = {
@@ -806,76 +1340,9 @@
 			};
 			name = Debug;
 		};
-		C584F3B17CFFB6E146A77585706F1E0F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D445B57CAC5430B93BEE8C1547C8C1A /* Pods-projectY.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-projectY/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-projectY/Pods-projectY.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_projectY;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EF5C941C32281D3D941FEE5B717A75DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6713C7B535C9298E494C937B2494044A /* SwiftColors.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftColors/SwiftColors-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftColors/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftColors/SwiftColors.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftColors;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19A4CE451C3F896B3503FD8C16D7DE95 /* Build configuration list for PBXNativeTarget "Pods-projectY" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACB106339BA5B3D3147E059F7B8865FB /* Debug */,
-				C584F3B17CFFB6E146A77585706F1E0F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -885,11 +1352,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5655B91F457C59B3028C2E9FD7C64203 /* Build configuration list for PBXNativeTarget "SwiftColors" */ = {
+		555CB09E3E6F29F239EE7DDDDC4A0416 /* Build configuration list for PBXNativeTarget "Pods-projectY" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF5C941C32281D3D941FEE5B717A75DF /* Debug */,
-				16C53017BDEBC038B3C6A5B2729687DB /* Release */,
+				F1591B09E35BFD391368AE9978010D00 /* Debug */,
+				8BB0E92B83F69304F94DC85F9B3E0F42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A462A7C0AAB939A1424978F71DADAACC /* Build configuration list for PBXNativeTarget "Branch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF01FFD2F7A3FB0BF9633911E703CCE /* Debug */,
+				21AF03D8AE65C831B61741AC51258285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -908,6 +1384,15 @@
 			buildConfigurations = (
 				59D7A189184CCC240C2340D8F378E3B0 /* Debug */,
 				79FEA649D2DD7A0AA7B55115E4B0F5B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E82F5B072959A11A188AD4BA1886809A /* Build configuration list for PBXNativeTarget "SwiftColors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9D61C3F7DCA1BB39F5FD2BCFE0C6BF0 /* Debug */,
+				471A53C9DBE751610E1BB30BF7B5F5B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

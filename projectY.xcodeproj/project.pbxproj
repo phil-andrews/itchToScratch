@@ -17,9 +17,14 @@
 		84215C6C1BFD2380005411E9 /* SingleAnswerCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84215C6B1BFD2380005411E9 /* SingleAnswerCheck.swift */; };
 		84215C6F1BFD4302005411E9 /* OrderingQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84215C6E1BFD4302005411E9 /* OrderingQuestionCheck.swift */; };
 		84249D2B1BDAD63200773168 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84249D2A1BDAD63200773168 /* activityIndicator.swift */; };
+		842A11D71C120384001F09BB /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A11D61C120384001F09BB /* MessageComposer.swift */; };
 		842F9FE41BAE0F3800D21DA9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9FE31BAE0F3800D21DA9 /* MapController.swift */; };
 		8437813C1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */; };
 		84408B8C1B9B733A00EED2AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408B8B1B9B733A00EED2AB /* extensions.swift */; };
+		844199411C10F7AA00DC13BE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844199401C10F7AA00DC13BE /* AdSupport.framework */; };
+		844199451C10F7B000DC13BE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844199441C10F7B000DC13BE /* CoreTelephony.framework */; };
+		844199471C10F7B700DC13BE /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844199461C10F7B700DC13BE /* CoreSpotlight.framework */; };
+		844199491C10F7D800DC13BE /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844199481C10F7D800DC13BE /* SafariServices.framework */; };
 		84467E501C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84467E4F1C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift */; };
 		844EFB7A1C010A8900BFED06 /* indicatorLightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */; };
 		844EFB7C1C010CF400BFED06 /* answerLabelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */; };
@@ -155,9 +160,16 @@
 		84215C6B1BFD2380005411E9 /* SingleAnswerCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAnswerCheck.swift; sourceTree = "<group>"; };
 		84215C6E1BFD4302005411E9 /* OrderingQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderingQuestionCheck.swift; sourceTree = "<group>"; };
 		84249D2A1BDAD63200773168 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
+		842A11D61C120384001F09BB /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		842F9FE31BAE0F3800D21DA9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		8437813B1BFE837800FF0790 /* MultipleChoiceQuestionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionCheck.swift; sourceTree = "<group>"; };
 		84408B8B1B9B733A00EED2AB /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		844199401C10F7AA00DC13BE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		844199441C10F7B000DC13BE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		844199461C10F7B700DC13BE /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		844199481C10F7D800DC13BE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		8441994A1C10F7E100DC13BE /* Branch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Branch.framework; path = "Pods/../build/Debug-iphoneos/Branch.framework"; sourceTree = "<group>"; };
+		8441994C1C10F7E500DC13BE /* BranchInvite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BranchInvite.framework; path = "Pods/../build/Debug-iphoneos/BranchInvite.framework"; sourceTree = "<group>"; };
 		84467E4F1C094DF1005275E9 /* TouchHandlersForRangeQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchHandlersForRangeQuestion.swift; sourceTree = "<group>"; };
 		844EFB791C010A8900BFED06 /* indicatorLightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indicatorLightHandler.swift; sourceTree = "<group>"; };
 		844EFB7B1C010CF400BFED06 /* answerLabelHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerLabelHandler.swift; sourceTree = "<group>"; };
@@ -243,6 +255,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844199491C10F7D800DC13BE /* SafariServices.framework in Frameworks */,
+				8484D20B1B1A8E4B003273BD /* MobileCoreServices.framework in Frameworks */,
+				844199471C10F7B700DC13BE /* CoreSpotlight.framework in Frameworks */,
+				844199451C10F7B000DC13BE /* CoreTelephony.framework in Frameworks */,
+				844199411C10F7AA00DC13BE /* AdSupport.framework in Frameworks */,
 				8484D21B1B1A8E90003273BD /* Social.framework in Frameworks */,
 				8484D2191B1A8E8B003273BD /* Accounts.framework in Frameworks */,
 				841532EC1B2B814400118311 /* FBSDKLoginKit.framework in Frameworks */,
@@ -254,7 +271,6 @@
 				8484D20D1B1A8E52003273BD /* QuartzCore.framework in Frameworks */,
 				8416A97E1B9133AE009A70DD /* Charts.framework in Frameworks */,
 				841532EA1B2B813B00118311 /* FBSDKCoreKit.framework in Frameworks */,
-				8484D20B1B1A8E4B003273BD /* MobileCoreServices.framework in Frameworks */,
 				8484D2091B1A8E20003273BD /* CoreLocation.framework in Frameworks */,
 				8484D2071B1A8E1A003273BD /* CoreGraphics.framework in Frameworks */,
 				8484D2051B1A8E13003273BD /* CFNetwork.framework in Frameworks */,
@@ -399,6 +415,7 @@
 				84E6A37B1BE864AA00056845 /* Utilities */,
 				84DC630A1BEBC8A300D56895 /* QuestionTypeHandlers */,
 				8466F8EC1C0D28C4005F29DD /* MatchTableView */,
+				842A11D61C120384001F09BB /* MessageComposer.swift */,
 				84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */,
 				84FB87E31BE5744900048760 /* QuestionDetailUI.swift */,
 				84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */,
@@ -523,6 +540,12 @@
 		ED1FDC22763E67BC7819D1FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8441994C1C10F7E500DC13BE /* BranchInvite.framework */,
+				8441994A1C10F7E100DC13BE /* Branch.framework */,
+				844199481C10F7D800DC13BE /* SafariServices.framework */,
+				844199461C10F7B700DC13BE /* CoreSpotlight.framework */,
+				844199441C10F7B000DC13BE /* CoreTelephony.framework */,
+				844199401C10F7AA00DC13BE /* AdSupport.framework */,
 				D8948EF2F6905887EB7EDB45 /* Pods_projectY.framework */,
 			);
 			name = Frameworks;
@@ -584,6 +607,7 @@
 				TargetAttributes = {
 					8484D1D01B1A8D57003273BD = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7MXY3BBY42;
 					};
 					8484D1E71B1A8D57003273BD = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -768,6 +792,7 @@
 				84C2C73A1C0BD581006C0E1D /* MatchTableViewCell.swift in Sources */,
 				8483BDF91C08D7550079C2AD /* RangeQuestionCheck.swift in Sources */,
 				849E91801BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift in Sources */,
+				842A11D71C120384001F09BB /* MessageComposer.swift in Sources */,
 				8466F8F11C0D3E13005F29DD /* matchListQueries.swift in Sources */,
 				84B200FF1BAB10E8003F0C59 /* sizeAdapt.swift in Sources */,
 			);
@@ -820,6 +845,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -833,9 +859,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -860,12 +888,17 @@
 			baseConfigurationReference = FF5DF433E8FA17A522CA48C2 /* Pods-projectY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/Parthenon/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/projectY/MyPlayground.playground/Sources",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = projectY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -873,6 +906,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.philondrejack.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "projectY/Bridge-Header.h";
 			};
 			name = Debug;
@@ -881,6 +915,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -897,6 +932,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -910,6 +946,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -935,12 +972,17 @@
 			baseConfigurationReference = F5A5D42D1376DB4996C7CFEA /* Pods-projectY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/Parthenon/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/projectY/MyPlayground.playground/Sources",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = projectY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -948,6 +990,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.philondrejack.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "projectY/Bridge-Header.h";
 			};
 			name = Release;
@@ -956,6 +999,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

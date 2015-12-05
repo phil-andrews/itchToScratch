@@ -223,6 +223,46 @@ func queryForImage(file: PFFile, completion: (UIImage) -> Void){
 }
 
 
+func createNewMatch(completion: (matchID: String) -> Void) {
+    
+    let newMatch = PFObject(className: MatchClassKey)
+    newMatch[whosTurnKey] = "pending"
+    newMatch[player1IdKey] = PFUser.currentUser()?.objectId
+    newMatch[player2IdKey] = "pending"
+    newMatch[player1UserName] = PFUser.currentUser()?.valueForKey(displayName)
+    newMatch[player2UserName] = "pending"
+    newMatch[player1HelpsKey] = ["zoom", "takeTwo", "stopper"]
+    newMatch[player2HelpsKey] = ["zoom", "takeTwo", "stopper"]
+    newMatch[player2CategoryWinsKey] = []
+    newMatch[player1CategoryWinsKey] = []
+    
+    newMatch.saveInBackgroundWithBlock { (success, error) -> Void in
+        
+        if error == nil && success == true {
+            
+            completion(matchID: newMatch.objectId!)
+            
+        } else if error != nil {
+            
+            print(error?.localizedDescription)
+            
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

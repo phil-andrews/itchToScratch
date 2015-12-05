@@ -33,7 +33,7 @@ func drawGetMatchButtons(viewController: UIViewController) {
     inviteButton.contentHorizontalAlignment = .Left
     inviteButton.contentEdgeInsets = UIEdgeInsetsMake(0.0, 12.5, 0.0, 0.0)
     inviteButton.titleLabel?.font = fontSmallestRegular
-    inviteButton.addTarget(viewController, action: Selector("inviteToMatch"), forControlEvents: .TouchUpInside)
+    inviteButton.addTarget(viewController, action: Selector("inviteToMatch:"), forControlEvents: .TouchUpInside)
     
     viewController.view.addSubview(addMatchButton)
     viewController.view.addSubview(inviteButton)
@@ -45,3 +45,5 @@ func drawGetMatchButtons(viewController: UIViewController) {
     inviteButton.center.y = (viewController.view.frame.height * 0.92)
     
 }
+
+
