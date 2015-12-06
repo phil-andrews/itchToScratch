@@ -30,7 +30,7 @@ func checkForUser(viewController: UIViewController, completion: () -> ()) {
             
             if error == nil {
                 
-                user = userObject as? PFUser
+                globalUser = userObject as? PFUser
                 
                 ifNeededCreatMatchFromDeepLink({ () -> () in
                     

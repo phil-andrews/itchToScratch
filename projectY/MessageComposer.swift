@@ -16,13 +16,13 @@ func prefillMessageBody(couldNotMatch: String, completion: (String) -> Void) {
     
         let object: BranchUniversalObject = BranchUniversalObject(title: "GameInvite")
         object.title = "Game Invite"
-        object.addMetadataKey("sendingUser", value: user?.objectId)
+        object.addMetadataKey("sendingUser", value: globalUser?.objectId)
         object.addMetadataKey("CouldNotFindMatch", value: couldNotMatch)
-        object.addMetadataKey(sendingUserDisplayName, value: user?.valueForKey(displayName) as! String)
+        object.addMetadataKey(sendingUserDisplayName, value: globalUser?.valueForKey(displayName) as! String)
         
         let linkProperties: BranchLinkProperties = BranchLinkProperties()
         linkProperties.channel = "in-app"
-        linkProperties.addControlParam(deepLinkChallenge, withValue: user?.objectId)
+        linkProperties.addControlParam(deepLinkChallenge, withValue: globalUser?.objectId)
         
         object.registerView()
         

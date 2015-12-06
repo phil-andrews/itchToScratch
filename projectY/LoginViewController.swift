@@ -909,7 +909,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 
                 if userObject != nil && error == nil {
                     
-                    user = userObject
+                    globalUser = userObject
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
 
@@ -923,7 +923,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
                 
                 if userObject != nil && error != nil {
                     
-                    user = userObject
+                    globalUser = userObject
                     
                     SquaresActivityIndicator().stopIndicator(self.view)
 
@@ -1197,7 +1197,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     func newUserFinishedSignup() {
         
-        user = PFUser.currentUser()
+        globalUser = PFUser.currentUser()
         
         ifNeededCreatMatchFromDeepLink { () -> () in
             

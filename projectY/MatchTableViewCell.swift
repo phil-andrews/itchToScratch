@@ -130,9 +130,9 @@ class MatchTableViewCell: UITableViewCell {
         layoutCategoryIcons(self, opponentCategoryArray: opponentCategoryArray, userCategoryArray: userCategoryArray)
         layoutHelperInventoryIcons(self, opponentHelperIconArray: opponentHelperIconArray, userHelperIconArray: userHelperIconArray, opponentNameLabel: opponentName)
         layoutMiniGameboard(self)
-
-        self.layer.borderColor = UIColor.blackColor().CGColor
+        
         self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.blackColor().CGColor
         
         //turnIdentifier(self, matchDetails: matchDetails!)
         

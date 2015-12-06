@@ -62,19 +62,19 @@ func queryForNewMatch(viewController: UIViewController, completion: (PFObject?) 
 
             if newMatchObject?.valueForKey(player2IdKey) as! String == "pending" {
                 
-                let p2ID = user?.objectId
-                let p2DisplayName = user?.valueForKey(displayName)
+                let p2ID = globalUser?.objectId
+                let p2DisplayName = globalUser?.valueForKey(displayName)
                 newMatchObject?.setValue(p2ID, forKey: player2IdKey)
                 newMatchObject?.setValue(p2DisplayName, forKey: player2UserName)
                 newMatchObject?.setValue("first", forKey: whosTurnKey)
                 newMatchObject?.saveInBackground()
                 
-                var userMatchesArray = user!.valueForKey(userCurrentMatchesKey) as! [String]
+                var userMatchesArray = globalUser!.valueForKey(userCurrentMatchesKey) as! [String]
                 userMatchesArray.append((newMatchObject?.objectId)!)
                 
-                user?.setValue(userMatchesArray, forKey: userCurrentMatchesKey)
+                globalUser?.setValue(userMatchesArray, forKey: userCurrentMatchesKey)
                 
-                user?.saveInBackgroundWithBlock({ (success, error) -> Void in
+                globalUser?.saveInBackgroundWithBlock({ (success, error) -> Void in
                     
                     if success && error == nil {
                         
@@ -136,7 +136,7 @@ func createNewMatch(matchCreator: String?, challengedUserID: String?, challenged
     newMatch[whosTurnKey] = "pending"
     newMatch[player1IdKey] = matchCreator!
     newMatch[player2IdKey] = challengedUserID!
-    newMatch[player1UserName] = user?.valueForKey(displayName)
+    newMatch[player1UserName] = globalUser?.valueForKey(displayName)
     newMatch[player2UserName] = challengedUserDisplayName!
     newMatch[player1HelpsKey] = ["zoom", "takeTwo", "stopper"]
     newMatch[player2HelpsKey] = ["zoom", "takeTwo", "stopper"]

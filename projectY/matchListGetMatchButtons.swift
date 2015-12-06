@@ -40,7 +40,7 @@ func drawGetMatchButtons(viewController: UIViewController) {
     inviteButton.layer.cornerRadius = buttonHeight/2
     inviteButton.setTitle("invite", forState: .Normal)
     inviteButton.contentHorizontalAlignment = .Left
-    inviteButton.contentEdgeInsets = UIEdgeInsetsMake(0.0, 12.5, 0.0, 0.0)
+    inviteButton.contentEdgeInsets = UIEdgeInsetsMake(0.0, 17.5, 0.0, 0.0)
     inviteButton.titleLabel?.font = fontSmallestRegular
     inviteButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     inviteButton.addTarget(viewController, action: Selector("inviteToMatch:"), forControlEvents: .TouchUpInside)

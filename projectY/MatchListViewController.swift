@@ -11,45 +11,37 @@ import Parse
 import Branch
 import MessageUI
 
-var user = PFUser.currentUser()
+var globalUser = PFUser.currentUser()
 var userMatches = [PFObject]()
 
 class MatchListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var matchTableView: UITableView!
     
+    var matchObjectToPass : PFObject?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setFonts(self.view)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reloadMatchView"), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        
         matchTableView.delegate = self
         matchTableView.dataSource = self
         matchTableView.editing = false
         matchTableView.sectionHeaderHeight = 0.0
-        matchTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        matchTableView.bounces = true
+        //self.matchTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         self.view.backgroundColor = backgroundColor
         
         drawGetMatchButtons(self)
         
         checkForUser(self) { () -> () in
             
-            queryForLiveMatches({ (matches) -> () in
-                
-                userMatches = matches!
-                self.matchTableView.reloadData()
-                self.matchTableView.setNeedsLayout()
-                
-            })
+            self.reloadMatchView()
             
         }
-        
-        
-    }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
         
         
     }
@@ -64,8 +56,6 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         matchTableView.frame.origin.x = centerXAlignment(matchTableView, masterView: self.view)
         matchTableView.backgroundColor = backgroundColor
         
-        print("these are the globals\(deepLinkChallengeUser), \(deepLinkChallengeUserDisplayName)")
-        
         matchTableView.setNeedsDisplay()
         
     }
@@ -73,6 +63,19 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        print("press")
+        
+        self.matchObjectToPass = userMatches[indexPath.row]
+        
+        let gameBoardController: GameBoardVC = storyboard?.instantiateViewControllerWithIdentifier("GameBoardVC") as! GameBoardVC
+        
+        gameBoardController.matchObject = matchObjectToPass!
+
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            
+            self.presentViewController(gameBoardController, animated: true, completion: nil)  
+            
+        })
         
     }
 
@@ -102,6 +105,8 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         let cell: MatchTableViewCell = self.matchTableView.dequeueReusableCellWithIdentifier("matchCell", forIndexPath: indexPath) as! MatchTableViewCell
         
         cell.matchDetails = userMatches[indexPath.row]
+        cell.userInteractionEnabled = true
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         return cell
         
@@ -166,7 +171,7 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
                 
             } else if matchObject == nil && self.count > 2 {
                 
-                createNewMatch(user?.objectId, challengedUserID: "pending", challengedUserDisplayName: "pending", completion: { (matchID) -> Void in
+                createNewMatch(globalUser?.objectId, challengedUserID: "pending", challengedUserDisplayName: "pending", completion: { (matchID) -> Void in
                     
                     self.couldNotMatch = "true"
                     
@@ -224,7 +229,24 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
+    func reloadMatchView() {
         
+        print("did reload")
+        
+        queryForLiveMatches({ (matches) -> () in
+            
+            userMatches = matches!
+            self.matchTableView.reloadData()
+            self.matchTableView.setNeedsLayout()
+            
+        })
+    }
+    
+    @IBAction func unwindToMatchListViewController(segue: UIStoryboardSegue) {
+        
+   }
+    
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
         return UIStatusBarStyle.LightContent

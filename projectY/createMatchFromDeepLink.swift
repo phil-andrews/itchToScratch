@@ -14,14 +14,18 @@ func ifNeededCreatMatchFromDeepLink(completion: () -> ()) {
 
     print("checking deep link")
     
-    if deepLinkChallengeUser != nil {
+    let delegateInstance = UIApplication.sharedApplication().delegate as! AppDelegate
+    let linkUserID = delegateInstance.deepLinkChallengeUser
+    let linkUserName = delegateInstance.deepLinkChallengeUserDisplayName
+    
+    if linkUserID != nil && PFUser.currentUser() != nil {
         
         print("does not equal nil")
         
-        createNewMatch(user?.objectId, challengedUserID: deepLinkChallengeUser, challengedUserDisplayName: deepLinkChallengeUserDisplayName, completion: { (matchID) -> Void in
+        createNewMatch(globalUser!.objectId, challengedUserID: linkUserID, challengedUserDisplayName: linkUserName, completion: { (matchID) -> Void in
             
             let query = PFUser.query()
-            query?.getObjectInBackgroundWithId(deepLinkChallengeUser!, block: { (cUser, error) -> Void in
+            query?.getObjectInBackgroundWithId(linkUserID!, block: { (cUser, error) -> Void in
                 
                 cUser?.addObject(matchID, forKey: userCurrentMatchesKey)
                 cUser?.saveInBackgroundWithBlock({ (success, error) -> Void in
@@ -36,7 +40,7 @@ func ifNeededCreatMatchFromDeepLink(completion: () -> ()) {
             
         })
         
-    } else if deepLinkChallengeUser == nil {
+    } else if linkUserID == nil {
         
         completion()
     }

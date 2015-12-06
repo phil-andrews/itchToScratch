@@ -15,8 +15,7 @@ import FBSDKLoginKit
 import Mapbox
 import Branch
 
-var deepLinkChallengeUser: String?
-var deepLinkChallengeUserDisplayName: String?
+
 
 @UIApplicationMain
 
@@ -32,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let mapboxKey = "pk.eyJ1IjoicGhpbG9uZHJlamFjayIsImEiOiJjaWV6dWczMngxZWtmc2VrcmZlZmJmcG5vIn0.3joKi4D-TfzkRZtIWVZY_g"
 
+    var deepLinkChallengeUserDisplayName: String?
+    var deepLinkChallengeUser: String?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
@@ -46,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MGLAccountManager.setAccessToken(mapboxKey)
                 
         let branch: Branch = Branch.getInstance()
+        
         branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: { params, error in
             if (error == nil) {
                 if let params = params as NSDictionary? {
@@ -53,13 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let opponent = params.valueForKey(deepLinkChallenge) as! String?
                     let opponentDisplayName = params.valueForKey(sendingUserDisplayName) as! String?
                     
-                    print(opponent)
-                    print(opponentDisplayName)
-                    
                     if opponent != nil {
                         
-                        deepLinkChallengeUser = opponent
-                        deepLinkChallengeUserDisplayName = opponentDisplayName
+                        self.deepLinkChallengeUser = opponent
+                        self.deepLinkChallengeUserDisplayName = opponentDisplayName
+                        
+                        ifNeededCreatMatchFromDeepLink({ () -> () in
+                            
+                            
+                            
+                        })
                         
                     }
                     
