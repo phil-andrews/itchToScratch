@@ -169,7 +169,51 @@ func createNewMatch(matchCreator: String?, challengedUserID: String?, challenged
 
 
 
-
+func queryForFullQuestionObjects(matchesArray: [PFObject], completion: ([String: [PFObject]]) -> ()) {
+    
+    var questionObjectsToPassBackArray = [String: [PFObject]]()
+    
+    for index in 0..<matchesArray.count {
+        
+        let indexToPassBackTo = matchesArray[index].valueForKey(objectId) as! String
+        
+        var count = 1
+        
+        var qObjectsToQueryFor = [String()]
+        
+        while count <= 16 {
+            
+            let qObject = matchesArray[index].valueForKey("q\(count)") as! String
+            
+            qObjectsToQueryFor.append(qObject)
+            
+            ++count
+            
+        }
+    
+        queryForMultipleObjectsInBackgroundWithBlock(QuestionClass, keyType: objectId, objectIdentifers: qObjectsToQueryFor, completion: { (objectsToPassBack, error) -> Void in
+            
+            if error == nil {
+                
+                questionObjectsToPassBackArray[indexToPassBackTo] = objectsToPassBack
+                
+            } else if error != nil {
+                
+                NSLog(error!.localizedDescription)
+                
+            }
+            
+            if index == (matchesArray.count - 1) {
+                
+                completion(questionObjectsToPassBackArray)
+                
+            }
+            
+        })
+        
+    }
+    
+}
 
 
 

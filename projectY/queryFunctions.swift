@@ -179,30 +179,30 @@ import Bolts
 //
 //
 //
-//func queryForMultipleObjectsInBackgroundWithBlock(className: String, keyType: String, objectIdentifers: [String], completion: ([PFObject], NSError?) -> Void) {
-//    
-//    let query = PFQuery(className: className)
-//    query.whereKey(keyType, containedIn: objectIdentifers)
-//    query.findObjectsInBackgroundWithBlock { (objects, error: NSError?) -> Void in
-//        
-//        if let objects = objects as? [PFObject] {
-//            
-//            if error == nil {
-//                
-//                completion(objects, nil)
-//                
-//            } else if error != nil {
-//                
-//                completion(objects, error)
-//                
-//            }
-//            
-//        }
-//        
-//    }
-//    
-//    
-//}
+func queryForMultipleObjectsInBackgroundWithBlock(className: String, keyType: String, objectIdentifers: [String], completion: ([PFObject], NSError?) -> Void) {
+    
+    let query = PFQuery(className: className)
+    query.whereKey(keyType, containedIn: objectIdentifers)
+    query.findObjectsInBackgroundWithBlock { (objects, error: NSError?) -> Void in
+        
+        if let objects = objects as? [PFObject] {
+            
+            if error == nil {
+                
+                completion(objects, nil)
+                
+            } else if error != nil {
+                
+                completion(objects, error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+}
 //
 //
 //
@@ -221,6 +221,57 @@ func queryForImage(file: PFFile, completion: (UIImage) -> Void){
     }
     
 }
+
+
+func queryForAndReturnProfilePicture(oID: String, completion: (UIImage) -> Void) {
+    
+    let query = PFUser.query()
+    query?.getObjectInBackgroundWithId(oID, block: { (userObject, error) -> Void in
+        
+        if error == nil {
+            
+            let userImageFile = userObject?.valueForKey(profilePic) as! PFFile
+            
+            userImageFile.getDataInBackgroundWithBlock({ (imageData, error) -> Void in
+                
+                if error == nil {
+                    
+                    let image = UIImage(data: imageData!)
+                    
+                    completion(image!)
+                    
+                } else if error != nil || imageData == nil {
+                    
+                    let image = UIImage(named: defaultProfilePic)
+                    
+                    NSLog(error!.localizedDescription)
+                    
+                    completion(image!)
+                }
+                
+            })
+            
+        } else if error != nil {
+            
+            let image = UIImage(named: defaultProfilePic)
+            
+            NSLog(error!.localizedDescription)
+            
+            completion(image!)
+            
+        }
+        
+        
+    })
+    
+    
+    
+    
+    
+    
+}
+
+
 //
 //
 //

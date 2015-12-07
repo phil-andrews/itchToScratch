@@ -6,214 +6,42 @@
 //  Copyright (c) 2015 Philip Ondrejack. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Parse
-import ParseUI
-import Bolts
 
 
 
-func populateGameBoard(masterView: UIView, parseObjects: [PFObject], sortedObjectIDs: [String], locationObject: PFObject) {
+func drawGameBoard(viewController: UIViewController) {
     
-    let numberOfUsersAtLocation = locationObject.valueForKey(usersLoggedInAtLocationCount) as! Double
-    let goalToHit: Double = numberOfUsersAtLocation/2
-    
-    for index in 0..<40 {
-        
-        var question: PFObject?
-        
-        for object in parseObjects {
-            
-            if object.objectId == sortedObjectIDs[index] {
-            
-                question = object
-                
-                break
-                
-            }
-        }
-        
-        
-        let view = masterView.viewWithTag(index + 1)
-        
-        if let button = view as? UIButton {
-            
-            button.alpha = 0.0
-            
-            let questionType = question!.valueForKey(questionCategoryKey) as! String
-            let backgroundImage = UIImage(named: questionType)
-            button.setBackgroundImage(backgroundImage, forState: .Normal)
-            
-            let numberCorrect = locationObject.valueForKey("ans\(index)") as! Double
-            button.backgroundColor = lightColoredFont
-            
-            let randomNumber = arc4random_uniform(UInt32(4))
-            let randomDuration = Double(randomNumber) * 0.1
-            
-            UIView.animateWithDuration(randomDuration, animations: { () -> Void in
-                
-                button.alpha = 1.0
-                
-            }, completion: { (Bool) -> Void in
-                
-                UIView.animateWithDuration(0.2, animations: { () -> Void in
-                    
-                    button.backgroundColor = buttonColoring(goalToHit, correctAnswers: numberCorrect)
-                    
-                })
-                
-            })
-        
-        }
-    }
-    
-}
+    let buttonSpacing = viewController.view.frame.width * 0.02
+    let buttonSize = viewController.view.frame.width * 0.175
 
-
-
-func drawButtons(masterView: UIView, vc: UIViewController, action: String, completion: () -> Void) {
+    var xCoord = viewController.view.center.x - (buttonSpacing * 1.5) - (buttonSize * 2)
+    var yCoord = viewController.view.center.y - (buttonSpacing * 1.5) - (buttonSize * 2)
     
-    let masterHeight = masterView.frame.height
-    let masterWidth = masterView.frame.width
-    let onePercentOfWidth = masterWidth/100
-    let onePercentOfHeight = masterHeight/100
-    
-    var count = 1
-    
-    let yOrigin = (onePercentOfHeight * 6.86)
-    let xOrigin = (masterWidth - (((onePercentOfHeight * 9.507) * 5) + ((onePercentOfWidth * 1.562) * 4)))/2
-    var yOffset = yOrigin
-    var xOffset = xOrigin
-    
-    while count < 41 {
+    for index in 1...16 {
         
-        let button = UIButton()
-        button.tag = count
-        button.setBackgroundImage(science, forState: .Normal)
-        button.adjustsImageWhenHighlighted = false
-        button.addTarget(vc, action: Selector(action), forControlEvents: .TouchUpInside)
+        let boardButton = UIButton()
+        boardButton.tag = index
+        boardButton.frame.size = CGSizeMake(buttonSize, buttonSize)
+        boardButton.backgroundColor = UIColor.grayColor()
         
-        drawSquareRectOffView(button, masterView: masterView, heightPercentage: 9.507, widthPercentage: 9.507)
-        button.frame.origin.x = xOffset
-        button.frame.origin.y = yOffset
+        viewController.view.addSubview(boardButton)
         
-        xOffset = button.frame.maxX + (onePercentOfWidth * 1.562)
+        boardButton.frame.origin.x = xCoord
+        boardButton.frame.origin.y = yCoord
         
-        if count % 5 == 0 {
+        xCoord = xCoord + buttonSpacing + buttonSize
+        
+        if index % 4 == 0 {
             
-            xOffset = xOrigin
-            yOffset = button.frame.maxY + (onePercentOfWidth * 1.562)
+            xCoord = viewController.view.center.x - (buttonSpacing * 1.5) - (buttonSize * 2)
+            yCoord = yCoord + buttonSpacing + buttonSize
             
         }
         
-        masterView.addSubview(button)
-
-        
-        ++count
         
     }
-    
-    
-completion()
-
-}
-
-
-
-func buttonColoring(goalToHit: Double, correctAnswers: Double) -> UIColor {
-    
-    var colorToReturn = UIColor()
-    var numberOfCorrect = correctAnswers
-    
-    if numberOfCorrect == 0 {
-        
-        numberOfCorrect = 0.01
-        
-    }
-    
-    let minimum: Double = 1.0
-    var workingGoal = Double()
-    
-    if goalToHit < minimum {
-        
-        workingGoal = minimum
-        
-    } else {
-        
-        workingGoal = goalToHit
-        
-    }
-    
-    
-    let percentage = (numberOfCorrect / workingGoal)
-    
-    switch(percentage) {
-        
-    case _ where percentage <= 0.10:
-        
-        colorToReturn = lightColoredFont
-        
-    case _ where percentage <= 0.25:
-        
-        colorToReturn = lowestColor
-        
-    case _ where percentage <= 0.4:
-        
-        colorToReturn = lowColor
-        
-    case _ where percentage <= 0.6:
-        
-        colorToReturn = midColor
-        
-    case _ where percentage <= 0.8:
-        
-        colorToReturn = highColor
-        
-    case _ where percentage <= 1:
-        
-        colorToReturn = highestColor
-        
-    case _ where percentage >= 1:
-        
-        colorToReturn = highestColor
-        
-    default:
-        
-        colorToReturn = lowColor
-        
-        
-    }
-    
-    
-    return colorToReturn
     
 }
-
-
-
-func drawCityLabel(masterView: UIView, locationObject: PFObject) {
-    
-    let masterHeight = masterView.frame.height
-    let onePercentOfHeight = masterHeight/100
-    
-    let cityLabel = UILabel()
-    let cityTitle = locationObject.valueForKey(locality) as! String
-    cityLabel.text = cityTitle
-    cityLabel.textColor = lightColoredFont
-    cityLabel.font = fontSmaller
-    cityLabel.sizeToFit()
-    cityLabel.frame.origin.x = centerXAlignment(cityLabel, masterView: masterView)
-        
-    let labelOffset = ((onePercentOfHeight * 9.507) * 8) + ((onePercentOfHeight * 1.562) * 9.5)
-    
-    cityLabel.frame.origin.y = labelOffset
-    
-    masterView.addSubview(cityLabel)
-    
-}
-
-
-
-
 

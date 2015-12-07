@@ -19,6 +19,7 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var matchTableView: UITableView!
     
     var matchObjectToPass : PFObject?
+    var questionObjectsToPass = [String : [PFObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,6 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         matchTableView.editing = false
         matchTableView.sectionHeaderHeight = 0.0
         matchTableView.bounces = true
-        //self.matchTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         self.view.backgroundColor = backgroundColor
         
         drawGetMatchButtons(self)
@@ -65,11 +65,15 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
         print("press")
         
-        self.matchObjectToPass = userMatches[indexPath.row]
-        
         let gameBoardController: GameBoardVC = storyboard?.instantiateViewControllerWithIdentifier("GameBoardVC") as! GameBoardVC
         
+        self.matchObjectToPass = userMatches[indexPath.row]
+        
         gameBoardController.matchObject = matchObjectToPass!
+        
+        let matchID = matchObjectToPass?.objectId as String!
+        
+        gameBoardController.questionObjects = questionObjectsToPass[matchID]!
 
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             
@@ -235,12 +239,35 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
         
         queryForLiveMatches({ (matches) -> () in
             
+            self.matchTableView.hidden = true
+            
+            if userMatches != matches! {
+                
+                print("don't match")
+                
+                userMatches = matches!
+                
+                queryForFullQuestionObjects(userMatches, completion: { (fullQuestionObjectsForEachMatch) -> () in
+                    
+                    self.questionObjectsToPass = fullQuestionObjectsForEachMatch
+                    
+                    self.matchTableView.hidden = false
+                    
+                    // hide activity indicator
+                    
+                })
+                
+            }
+            
+            print("do match")
+
             userMatches = matches!
             self.matchTableView.reloadData()
             self.matchTableView.setNeedsLayout()
             
         })
     }
+    
     
     @IBAction func unwindToMatchListViewController(segue: UIStoryboardSegue) {
         

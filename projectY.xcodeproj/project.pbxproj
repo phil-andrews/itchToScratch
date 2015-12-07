@@ -72,7 +72,7 @@
 		8498A2271C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498A2261C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift */; };
 		849978C41BEA812A001CE745 /* MultipleChoiceQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */; };
 		849E91801BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E917F1BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift */; };
-		84A2C5D81BE42C1A008D9BCC /* GameBoardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */; };
+		84A2C5D81BE42C1A008D9BCC /* gameBoardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C5D71BE42C1A008D9BCC /* gameBoardUI.swift */; };
 		84ADA3071B5C7135002D75C2 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */; };
 		84ADA3091B5C7142002D75C2 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */; };
 		84ADA30B1B5C714C002D75C2 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84ADA30A1B5C714C002D75C2 /* Gotham-Bold.otf */; };
@@ -224,7 +224,7 @@
 		8498A2261C0A980200B0FB19 /* MultipleAnswerWithOrderCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAnswerWithOrderCheck.swift; sourceTree = "<group>"; };
 		849978C31BEA8129001CE745 /* MultipleChoiceQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionHandlers.swift; sourceTree = "<group>"; };
 		849E917F1BF52FBD006ED07E /* SingleAnswerQuestionHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestionHandlers.swift; sourceTree = "<group>"; };
-		84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardUI.swift; sourceTree = "<group>"; };
+		84A2C5D71BE42C1A008D9BCC /* gameBoardUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameBoardUI.swift; sourceTree = "<group>"; };
 		84ADA3061B5C7135002D75C2 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		84ADA3081B5C7142002D75C2 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
 		84ADA30A1B5C714C002D75C2 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
@@ -301,7 +301,6 @@
 		840EA4C21C14063D0054CD8C /* Old Files */ = {
 			isa = PBXGroup;
 			children = (
-				84A2C5D71BE42C1A008D9BCC /* GameBoardUI.swift */,
 				842F9FE31BAE0F3800D21DA9 /* MapController.swift */,
 				84FB87E31BE5744900048760 /* QuestionDetailUI.swift */,
 				84BB98D51BE3D546009C0892 /* GameBoardViewController.swift */,
@@ -313,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				840EA4C61C1406B10054CD8C /* GameBoardVC.swift */,
+				84A2C5D71BE42C1A008D9BCC /* gameBoardUI.swift */,
 			);
 			name = GameBoard;
 			sourceTree = "<group>";
@@ -809,7 +809,7 @@
 				8498A2251C0A798F00B0FB19 /* MultipleAnswerWithOrder.swift in Sources */,
 				841D78A21B93F955008DE7E2 /* keys.swift in Sources */,
 				84C4EA241C050A87000DE75D /* SingleAnswerViewController.swift in Sources */,
-				84A2C5D81BE42C1A008D9BCC /* GameBoardUI.swift in Sources */,
+				84A2C5D81BE42C1A008D9BCC /* gameBoardUI.swift in Sources */,
 				84B2C5211BF67A10006128AB /* MultipleAnswerQuestionNoImage.swift in Sources */,
 				84C4EA261C051AA3000DE75D /* MultipleChoiceViewController.swift in Sources */,
 				8484D1D71B1A8D57003273BD /* AppDelegate.swift in Sources */,
@@ -914,6 +914,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -999,6 +1000,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
